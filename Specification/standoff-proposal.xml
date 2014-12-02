@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Proposal for encoding standoff annotations in TEI</title>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Berlin task force "standoff"</authority>
+                <availability>
+                    <!-- no lincence allowed -->
+                    <p>CC+BY and BSD-2 licences</p>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <schemaSpec ident="standoff-proposal" start="TEI" status="unstable">
+                <moduleRef key="core"/>
+                <moduleRef key="tei"/>
+                <moduleRef key="textstructure"/>
+                <moduleRef key="header"/>
+                <elementSpec ident="stdf" mode="add" ns="http://standoff.proposal">
+                    <desc>Container element for standoff annotations</desc>
+                    <classes>
+                        <memberOf key="model.resourceLike" mode="add"/>
+                        <memberOf key="att.global" mode="add"/>
+                        <memberOf key="att.datcat" mode="add"/>
+                        <memberOf key="att.ascribed" mode="add"/>
+                        <memberOf key="att.datable.w3c" mode="add"/>
+                        <memberOf key="att.typed" mode="add"/>
+                        <memberOf key="att.responsibility" mode="add"/>
+                        <memberOf key="att.pointing" mode="add"/>
+                    </classes>
+                    <content>
+                        <rng:optional>
+                            <rng:ref name="soHeader"/>
+                        </rng:optional>
+                        <rng:optional>
+                            <rng:ref name="annotations"/>
+                        </rng:optional>
+                        <rng:zeroOrMore>
+                            <rng:ref name="stdf"/>
+                        </rng:zeroOrMore>
+                    </content>
+                </elementSpec>
+                
+                <elementSpec ident="soHeader" mode="add" ns="http://standoff.proposal">
+                    <desc>Metadata for the <gi>stdf</gi> element(s)</desc>
+                    <content>
+                        <rng:interleave>
+                            <rng:optional>
+                                <rng:ref name="titleStmt"/>
+                            </rng:optional>
+                            <rng:optional>
+                                <rng:ref name="publicationStmt"/>
+                            </rng:optional>
+                            <rng:optional>
+                                <rng:ref name="notesStmt"/>
+                            </rng:optional>
+                            <rng:optional>
+                                <rng:ref name="encodingDesc"/>
+                            </rng:optional>
+                            <rng:optional>
+                                <rng:ref name="profileDesc"/>
+                            </rng:optional>
+                            <rng:optional>
+                                <rng:ref name="revisionDesc"/>
+                            </rng:optional>
+                        </rng:interleave>
+                    </content>
+                </elementSpec>
+                
+                <elementSpec ident="annotations" mode="add" ns="http://standoff.proposal">
+                    <desc>Content of the <gi>stdf</gi> element</desc>
+                    <classes>
+                        <memberOf key="att.global" mode="add"/>
+                    </classes>
+                    <content>
+                        <rng:zeroOrMore>
+                            <rng:choice>
+                                <rng:ref name="model.global.meta"/>
+                                <rng:ref name="model.extAnnotation"/>
+                                <rng:ref name="model.listLike"/>
+                                <rng:ref name="listBibl"/>
+                                <rng:ref name="mapStruct"/>
+                            </rng:choice>
+                        </rng:zeroOrMore>
+                    </content>
+                </elementSpec>
+                
+                <elementSpec ident="mapStruct" mode="add" ns="http://standoff.proposal">
+                    <desc>Any element is to be interpreted as mapping its structure onto a text to
+                        be annotated</desc>
+                    <!-- need a specific namespace? -->
+                    <!-- like in egXML -->
+                </elementSpec>
+                
+                <classSpec type="model" ident="model.extAnnotation" mode="add">
+                    <desc>Initially empty class for providing easy customization with external
+                        schemas, e.g. PAULA</desc>
+                </classSpec>
+                <moduleRef key="linking"/>
+                <moduleRef key="analysis"/>
+            </schemaSpec>
+        </body>
+    </text>
+</TEI>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/Users/romary/Documents/TEI/Stand-off/stdfSpec/Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Test file with morphosyntactic annotations</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>the stdf gang</publisher>
+                <availability>
+                    <licence>CC-BY</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl>ISO MAGF</bibl>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <stdf xmlns="http://standoff.proposal">
+        <soHeader>
+            <titleStmt xmlns="http://www.tei-c.org/ns/1.0">
+                <title>Morpho-syntactic annotation</title>
+            </titleStmt>
+        </soHeader>
+        <annotations>
+            <spanGrp type="wordForm">
+                <span target="#w1" ana="#fs1" corresp="#entry1"/>
+                <span target="#w2" ana="#fs2" corresp="#entry2"/>
+                <span target="#w2" ana="#fs3" corresp="#entry3"/>
+                <span target="#w3 #w4" ana="#fs4" corresp="#entry4"/>
+                <span target="#w5" ana="#fs5" corresp="#entry5"/>
+                <span target="#w6" ana="#fs6" corresp="#entry6"/>
+            </spanGrp>
+            <fs xml:id="fs1" corresp="#entry1">
+                <f name="lemma">
+                    <string>I</string>
+                </f>
+                <f name="pos">
+                    <symbol value="PP"/>
+                </f>
+            </fs>
+            <fs xml:id="fs2">
+                <f name="lemma">
+                    <string>want</string>
+                </f>
+                <f name="pos">
+                    <symbol value="VBP"/>
+                </f>
+            </fs>
+            <fs xml:id="fs3">
+                <f name="lemma">
+                    <string>to</string>
+                </f>
+                <f name="pos">
+                    <symbol value="TO"/>
+                </f>
+            </fs>
+            <fs xml:id="fs4">
+                <f name="lemma">
+                    <string>put up</string>
+                </f>
+                <f name="pos">
+                    <symbol value="VB"/>
+                </f>
+            </fs> ISO/FDIS 24611:2012(E) © ISO 2012 – All rights reserved 17 <fs
+                xml:id="fs5">
+                <f name="lemma">
+                    <string>new</string>
+                </f>
+                <f name="pos">
+                    <symbol value="JJ"/>
+                </f>
+            </fs>
+            <fs xml:id="fs6">
+                <f name="lemma">
+                    <string>wallpaper</string>
+                </f>
+                <f name="pos">
+                    <symbol value="NN"/>
+                </f>
+            </fs>
+            <entry xml:id="entry1">
+                <form type="lemma">
+                    <orth>I</orth>
+                </form>
+            </entry>
+            <entry xml:id="entry2">
+                <form type="lemma">
+                    <orth>want</orth>
+                </form>
+            </entry>
+            <entry xml:id="entry3">
+                <form type="lemma">
+                    <orth>to</orth>
+                </form>
+            </entry>
+            <entry xml:id="entry4">
+                <form type="lemma">
+                    <orth>put up</orth>
+                </form>
+            </entry>
+            <entry xml:id="entry5">
+                <form type="lemma">
+                    <orth>new</orth>
+                </form>
+            </entry>
+            <entry xml:id="entry6">
+                <form type="lemma">
+                    <orth>wallpaper</orth>
+                </form>
+            </entry>
+        </annotations>
+    </stdf>
+    <text>
+        <body>
+            <div>
+                <p>
+                    <w xml:id="w1">I</w>
+                    <w xml:id="w2">wanna</w>
+                    <w xml:id="w3">put</w>
+                    <w xml:id="w4">up</w>
+                    <w xml:id="w5">new</w>
+                    <w xml:id="w6">wallpaper</w>
+                    <pc>.</pc>
+                </p>
+            </div>
+        </body>
+    </text>
+</TEI>
