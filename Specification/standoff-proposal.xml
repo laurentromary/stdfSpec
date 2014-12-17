@@ -16,7 +16,7 @@
                 </availability>
             </publicationStmt>
             <sourceDesc>
-                <p>Born digital</p>
+                <p>...</p>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
@@ -27,6 +27,10 @@
                 <moduleRef key="tei"/>
                 <moduleRef key="textstructure"/>
                 <moduleRef key="header"/>
+                <moduleRef key="linking"/>
+                <moduleRef key="analysis"/>
+                <moduleRef key="spoken"/>
+
                 <elementSpec ident="stdf" mode="add" ns="http://standoff.proposal">
                     <desc>Container element for standoff annotations</desc>
                     <classes>
@@ -51,7 +55,7 @@
                         </rng:zeroOrMore>
                     </content>
                 </elementSpec>
-                
+
                 <elementSpec ident="soHeader" mode="add" ns="http://standoff.proposal">
                     <desc>Metadata for the <gi>stdf</gi> element(s)</desc>
                     <content>
@@ -77,7 +81,7 @@
                         </rng:interleave>
                     </content>
                 </elementSpec>
-                
+
                 <elementSpec ident="annotations" mode="add" ns="http://standoff.proposal">
                     <desc>Content of the <gi>stdf</gi> element</desc>
                     <classes>
@@ -87,7 +91,7 @@
                         <rng:zeroOrMore>
                             <rng:choice>
                                 <rng:ref name="model.global.meta"/>
-                                <rng:ref name="model.extAnnotation"/>
+                                <rng:ref name="model.annotationPart"/>
                                 <rng:ref name="model.listLike"/>
                                 <rng:ref name="listBibl"/>
                                 <rng:ref name="mapStruct"/>
@@ -95,20 +99,47 @@
                         </rng:zeroOrMore>
                     </content>
                 </elementSpec>
-                
+
                 <elementSpec ident="mapStruct" mode="add" ns="http://standoff.proposal">
                     <desc>Any element is to be interpreted as mapping its structure onto a text to
                         be annotated</desc>
                     <!-- need a specific namespace? -->
                     <!-- like in egXML -->
                 </elementSpec>
-                
-                <classSpec type="model" ident="model.extAnnotation" mode="add">
-                    <desc>Initially empty class for providing easy customization with external
-                        schemas, e.g. PAULA</desc>
+
+
+                <elementSpec ident="annotationGrp" mode="add" ns="http://standoff.proposal">
+                    <desc>Groups together various annotations, for instance for parallel
+                        interpretations of a spoken segment</desc>
+                    <classes>
+                        <memberOf key="model.annotationPart"/>
+                        <memberOf key="model.divPart.spoken"/>
+                        <memberOf key="att.timed"/>
+                        <memberOf key="att.global"/>
+                        <memberOf key="att.ascribed"/>
+                    </classes>
+                    <content>
+                        <rng:zeroOrMore>
+                            <rng:choice>
+                                <rng:ref name="u"/>
+                                <rng:ref name="model.global.meta"/>
+                                <rng:ref name="model.annotationPart"/>
+                            </rng:choice>
+                        </rng:zeroOrMore>
+                    </content>
+                </elementSpec>
+
+                <classSpec type="model" ident="model.annotationPart" mode="add">
+                    <desc>Initially empty class for providing easy customization with additional TEI
+                        elements or external schemas, e.g. PAULA</desc>
                 </classSpec>
-                <moduleRef key="linking"/>
-                <moduleRef key="analysis"/>
+                
+                <classSpec type="model" ident="model.global.meta" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.annotationPart" mode="add"/>
+                    </classes>
+                </classSpec>
+
             </schemaSpec>
         </body>
     </text>

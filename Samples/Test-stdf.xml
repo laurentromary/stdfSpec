@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/Users/romary/Documents/TEI/Stand-off/stdfSpec/Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title></title>
+            </titleStmt>
+            <publicationStmt></publicationStmt>
+            <sourceDesc></sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <stdf xmlns="http://standoff.proposal">
+        <soHeader></soHeader>
+        <annotations>
+            <annotationGrp>
+                <span xmlns="http://www.tei-c.org/ns/1.0"></span>
+            </annotationGrp>
+        </annotations>
+    </stdf>
+</TEI>

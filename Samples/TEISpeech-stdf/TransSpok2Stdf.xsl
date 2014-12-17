@@ -21,11 +21,10 @@
     </xsl:template>
 
     <xsl:template match="annotationGrp" mode="inStdf">
-        <annotationGrp>
-            <xsl:copy>
-                <xsl:apply-templates select="spanGrp"/>
-            </xsl:copy>
-        </annotationGrp>
+        <xsl:copy>
+            <xsl:attribute name="corresp" select="concat('#',u/@xml:id)"/>
+            <xsl:apply-templates select="spanGrp"/>
+        </xsl:copy>
     </xsl:template>
 
     <xsl:template match="annotationGrp">

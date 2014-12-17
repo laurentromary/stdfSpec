@@ -6,7 +6,7 @@ namespace rng = "http://relaxng.org/ns/structure/1.0"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2014-12-02T10:42:19Z. 
+# Schema generated from ODD source 2014-12-16T15:19:01Z. 
 # Edition: Version 2.7.0. Last updated on
 #	16th September 2014, revision 13036
 # Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -47,6 +47,7 @@ data.temporal.w3c =
   | xsd:gMonthDay
   | xsd:time
   | xsd:dateTime
+data.duration.w3c = xsd:duration
 data.truthValue = xsd:boolean
 data.xTruthValue = xsd:boolean | "unknown" | "inapplicable"
 data.language = xsd:language | ""
@@ -66,6 +67,7 @@ data.word = xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
 data.text = xsd:string
 data.name = xsd:Name
 data.enumerated = data.name
+data.duration.iso = xsd:token { pattern = "[0-9.,DHMPRSTWYZ/:+\-]+" }
 att.ascribed.attributes = att.ascribed.attribute.who
 att.ascribed.attribute.who =
   
@@ -326,6 +328,16 @@ att.docStatus.attribute.status =
   ## describes the status of a document either currently or, when associated with a dated element, at the time indicated.
   ## Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] draft; 6] embargoed; 7] expired; 8] frozen; 9] galley; 10] proposed; 11] published; 12] recommendation; 13] submitted; 14] unfinished; 15] withdrawn
   [ a:defaultValue = "draft" ] attribute status { data.enumerated }?
+att.duration.w3c.attributes = att.duration.w3c.attribute.dur
+att.duration.w3c.attribute.dur =
+  
+  ## (duration) indicates the length of this element in time.
+  attribute dur { data.duration.w3c }?
+att.duration.iso.attributes = att.duration.iso.attribute.dur-iso
+att.duration.iso.attribute.dur-iso =
+  
+  ## (duration) indicates the length of this element in time.
+  attribute dur-iso { data.duration.iso }?
 att.responsibility.attributes =
   att.source.attributes,
   att.responsibility.attribute.cert,
@@ -838,7 +850,9 @@ sch:pattern [
   "   "
 ]
 att.timed.attributes =
-  att.timed.attribute.start, att.timed.attribute.end
+  att.duration.attributes,
+  att.timed.attribute.start,
+  att.timed.attribute.end
 att.timed.attribute.start =
   
   ## indicates the location within a temporal alignment at which this element begins.
@@ -1089,7 +1103,8 @@ model.stageLike_sequenceOptionalRepeatable = stage*
 model.stageLike_sequenceRepeatable = stage+
 model.entryPart = notAllowed
 model.global.edit = gap
-model.divPart = model.lLike | model.pLike | lg | sp
+model.divPart =
+  model.lLike | model.pLike | lg | sp | model.divPart.spoken
 model.publicationStmtPart.agency = publisher | distributor | authority
 model.publicationStmtPart.detail =
   address | date | pubPlace | idno | availability
@@ -1177,6 +1192,7 @@ model.global =
   | model.milestoneLike
   | model.noteLike
   | model.global.edit
+  | model.global.spoken
 model.biblPart =
   model.respLike
   | model.imprintPart
@@ -1228,7 +1244,7 @@ model.div6Like = div6
 model.div7Like = div7
 model.applicationLike = application
 model.teiHeaderPart = encodingDesc | profileDesc
-model.sourceDescPart = notAllowed
+model.sourceDescPart = scriptStmt | recordingStmt
 model.encodingDescPart =
   projectDesc
   | samplingDecl
@@ -1550,6 +1566,7 @@ gap =
   element gap {
     (model.descLike | model.certLike)*,
     att.global.attributes,
+    att.duration.attributes,
     att.editLike.attributes,
     
     ## gives the reason for omission. Sample values include sampling, inaudible, irrelevant, cancelled.
@@ -1717,6 +1734,7 @@ date =
     (text | model.gLike | model.phrase | model.global)*,
     att.global.attributes,
     att.datable.attributes,
+    att.duration.attributes,
     att.editLike.attributes,
     att.typed.attributes,
     empty
@@ -1728,6 +1746,7 @@ time =
     (text | model.gLike | model.phrase | model.global)*,
     att.global.attributes,
     att.datable.attributes,
+    att.duration.attributes,
     att.editLike.attributes,
     att.typed.attributes,
     empty
@@ -4254,6 +4273,223 @@ interpGrp =
     att.interpLike.attributes,
     empty
   }
+att.duration.attributes =
+  att.duration.w3c.attributes, att.duration.iso.attributes
+model.global.spoken =
+  pause | vocal | kinesic | incident | writing | shift
+model.recordingPart =
+  model.dateLike | media | respStmt | equipment | broadcast
+model.divPart.spoken = u | annotationGrp
+model.divPart.spoken_alternation = u | annotationGrp
+model.divPart.spoken_sequence = u, annotationGrp
+model.divPart.spoken_sequenceOptional = u?, annotationGrp?
+model.divPart.spoken_sequenceOptionalRepeatable = u*, annotationGrp*
+model.divPart.spoken_sequenceRepeatable = u+, annotationGrp+
+scriptStmt =
+  
+  ## (script statement) contains a citation giving details of the script used for a spoken text. [8.2.  2.2.7.  15.3.2. ]
+  element scriptStmt {
+    (model.pLike+ | model.biblLike),
+    att.global.attributes,
+    att.declarable.attributes,
+    empty
+  }
+recordingStmt =
+  
+  ## (recording statement) describes a set of recordings used as the basis for transcription of a spoken text. [8.2.  2.2.7. ]
+  element recordingStmt {
+    (model.pLike+ | recording+), att.global.attributes, empty
+  }
+recording =
+  
+  ## (recording event) provides details of an audio or video recording event used as the source of a spoken text, either directly or from a public broadcast. [8.2.  15.3.2. ]
+  element recording {
+    (model.recordingPart | model.pLike)*,
+    att.global.attributes,
+    att.declarable.attributes,
+    att.duration.attributes,
+    
+    ## the kind of recording.
+    [ a:defaultValue = "audio" ]
+    attribute type {
+      
+      ## audio recording
+      "audio"
+      | 
+        ## audio and video recording
+        "video"
+    }?,
+    empty
+  }
+equipment =
+  
+  ## provides technical details of the equipment and media used for an audio or video recording used as the source for a spoken text. [8.2.  15.3.2. ]
+  element equipment {
+    model.pLike+,
+    att.global.attributes,
+    att.declarable.attributes,
+    empty
+  }
+broadcast =
+  
+  ## describes a broadcast used as the source of a spoken text. [8.2.  15.3.2. ]
+  element broadcast {
+    (model.pLike+ | model.biblLike | recording),
+    att.global.attributes,
+    att.declarable.attributes,
+    empty
+  }
+u =
+  
+  ## (utterance) contains a stretch of speech usually preceded and followed by silence or by a change of speaker. [8.3.1. ]
+  element u {
+    (text | model.gLike | model.phrase | model.global)*,
+    att.global.attributes,
+    att.timed.attributes,
+    att.declaring.attributes,
+    att.ascribed.attributes,
+    
+    ## (transition) indicates the nature of the transition between this utterance and the previous one.
+    [ a:defaultValue = "smooth" ]
+    attribute trans {
+      
+      ## this utterance begins without unusual pause or rapidity.
+      "smooth"
+      | 
+        ## this utterance begins with a markedly shorter pause than normal.
+        "latching"
+      | 
+        ## this utterance begins before the previous one has finished.
+        "overlap"
+      | 
+        ## this utterance begins after a noticeable pause.
+        "pause"
+    }?,
+    empty
+  }
+pause =
+  
+  ## marks a pause either between or within utterances. [8.3.2. ]
+  element pause {
+    empty,
+    att.global.attributes,
+    att.timed.attributes,
+    att.typed.attributes,
+    att.ascribed.attributes,
+    empty
+  }
+vocal =
+  
+  ## marks any vocalized but not necessarily lexical phenomenon, for example voiced pauses, non-lexical backchannels, etc. [8.3.3. ]
+  element vocal {
+    model.descLike*,
+    att.global.attributes,
+    att.timed.attributes,
+    att.ascribed.attributes,
+    att.typed.attributes,
+    
+    ## indicates whether or not the phenomenon is repeated.
+    [ a:defaultValue = "false" ]
+    attribute iterated { data.xTruthValue }?,
+    empty
+  }
+kinesic =
+  
+  ## marks any communicative phenomenon, not necessarily vocalized, for example a gesture, frown, etc. [8.3.3. ]
+  element kinesic {
+    model.descLike*,
+    att.global.attributes,
+    att.timed.attributes,
+    att.typed.attributes,
+    att.ascribed.attributes,
+    
+    ## indicates whether or not the phenomenon is repeated.
+    [ a:defaultValue = "false" ]
+    attribute iterated { data.xTruthValue }?,
+    empty
+  }
+incident =
+  
+  ## marks any phenomenon or occurrence, not necessarily vocalized or communicative, for example incidental noises or other events affecting communication. [8.3.3. ]
+  element incident {
+    model.descLike*,
+    att.global.attributes,
+    att.timed.attributes,
+    att.typed.attributes,
+    att.ascribed.attributes,
+    empty
+  }
+writing =
+  
+  ## contains a passage of written text revealed to participants in the course of a spoken text. [8.3.4. ]
+  element writing {
+    macro.paraContent,
+    att.global.attributes,
+    att.ascribed.attributes,
+    att.typed.attributes,
+    att.timed.attributes,
+    att.source.attributes,
+    
+    ## indicates whether the writing is revealed all at once or gradually.
+    attribute gradual { data.xTruthValue }?,
+    empty
+  }
+shift =
+  
+  ## marks the point at which some paralinguistic feature of a series of utterances by any one speaker changes. [8.3.6. ]
+  element shift {
+    empty
+    >> sch:pattern [
+         id = "standoff-proposal-shift-shiftNew-constraint-10"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "tei:shift"
+           "\x{a}" ~
+           "               "
+           sch:assert [
+             role = "warning"
+             test = "@new"
+             "              \x{a}" ~
+             "The @new attribute should always be supplied; use the special value\x{a}" ~
+             '"normal" to indicate that the feature concerned ceases to be\x{a}' ~
+             "remarkable at this point."
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ],
+    att.global.attributes,
+    att.ascribed.attributes,
+    
+    ## a paralinguistic feature.
+    attribute feature {
+      
+      ## speed of utterance.
+      "tempo"
+      | 
+        ## loudness.
+        "loud"
+      | 
+        ## pitch range.
+        "pitch"
+      | 
+        ## tension or stress pattern.
+        "tension"
+      | 
+        ## rhythmic qualities.
+        "rhythm"
+      | 
+        ## voice quality.
+        "voice"
+    }?,
+    
+    ## specifies the new state of the paralinguistic feature specified.
+    [ a:defaultValue = "normal" ] attribute new { data.enumerated }?,
+    empty
+  }
 stdf =
   
   ## Container element for standoff annotations
@@ -4286,7 +4522,7 @@ annotations =
   ## Content of the stdf element
   element ns2:annotations {
     (model.global.meta
-     | model.extAnnotation
+     | model.annotationPart
      | model.listLike
      | listBibl
      | mapStruct)*,
@@ -4297,5 +4533,15 @@ mapStruct =
   
   ## Any element is to be interpreted as mapping its structure onto a text to be annotated
   element ns2:mapStruct { empty }
-model.extAnnotation = notAllowed
+annotationGrp =
+  
+  ## Groups together various annotations, for instance for parallel interpretations of a spoken segment
+  element ns2:annotationGrp {
+    (u | model.global.meta | model.annotationPart)*,
+    att.timed.attributes,
+    att.global.attributes,
+    att.ascribed.attributes,
+    empty
+  }
+model.annotationPart = model.global.meta | annotationGrp
 start = TEI
