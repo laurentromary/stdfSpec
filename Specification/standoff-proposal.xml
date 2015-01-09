@@ -117,6 +117,7 @@
                         <memberOf key="att.timed"/>
                         <memberOf key="att.global"/>
                         <memberOf key="att.ascribed"/>
+                        <memberOf key="att.typed"/>
                     </classes>
                     <content>
                         <rng:zeroOrMore>
