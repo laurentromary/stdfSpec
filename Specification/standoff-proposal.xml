@@ -30,6 +30,7 @@
                 <moduleRef key="linking"/>
                 <moduleRef key="analysis"/>
                 <moduleRef key="spoken"/>
+                <moduleRef key="namesdates"/>
 
                 <elementSpec ident="stdf" mode="add" ns="http://standoff.proposal">
                     <desc>Container element for standoff annotations</desc>
