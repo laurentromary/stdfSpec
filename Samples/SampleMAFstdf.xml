@@ -24,15 +24,15 @@
             </titleStmt>
         </soHeader>
         <annotations>
-            <spanGrp type="wordForm">
-                <span target="#w1" ana="#fs1" corresp="#entry1"/>
-                <span target="#w2" ana="#fs2" corresp="#entry2"/>
-                <span target="#w2" ana="#fs3" corresp="#entry3"/>
-                <span target="#w3 #w4" ana="#fs4" corresp="#entry4"/>
-                <span target="#w5" ana="#fs5" corresp="#entry5"/>
-                <span target="#w6" ana="#fs6" corresp="#entry6"/>
+            <spanGrp type="wordForm" xmlns="http://www.tei-c.org/ns/1.0">
+                <span from="#w1" ana="#fs1" corresp="#entry1"/>
+                <span from="#w2" ana="#fs2" corresp="#entry2"/>
+                <span from="#w2" ana="#fs3" corresp="#entry3"/>
+                <span from="#w3" to="#w4" ana="#fs4" corresp="#entry4"/>
+                <span from="#w5" ana="#fs5" corresp="#entry5"/>
+                <span from="#w6" ana="#fs6" corresp="#entry6"/>
             </spanGrp>
-            <fs xml:id="fs1" corresp="#entry1">
+            <fs xml:id="fs1" corresp="#entry1" xmlns="http://www.tei-c.org/ns/1.0">
                 <f name="lemma">
                     <string>I</string>
                 </f>
@@ -40,7 +40,7 @@
                     <symbol value="PP"/>
                 </f>
             </fs>
-            <fs xml:id="fs2">
+            <fs xml:id="fs2" xmlns="http://www.tei-c.org/ns/1.0">
                 <f name="lemma">
                     <string>want</string>
                 </f>
@@ -48,7 +48,7 @@
                     <symbol value="VBP"/>
                 </f>
             </fs>
-            <fs xml:id="fs3">
+            <fs xml:id="fs3" xmlns="http://www.tei-c.org/ns/1.0">
                 <f name="lemma">
                     <string>to</string>
                 </f>
@@ -56,15 +56,16 @@
                     <symbol value="TO"/>
                 </f>
             </fs>
-            <fs xml:id="fs4">
+            <fs xml:id="fs4" xmlns="http://www.tei-c.org/ns/1.0">
                 <f name="lemma">
                     <string>put up</string>
                 </f>
                 <f name="pos">
                     <symbol value="VB"/>
                 </f>
-            </fs> ISO/FDIS 24611:2012(E) © ISO 2012 – All rights reserved 17 <fs
-                xml:id="fs5">
+            </fs> 
+            <fs
+                xml:id="fs5" xmlns="http://www.tei-c.org/ns/1.0">
                 <f name="lemma">
                     <string>new</string>
                 </f>
@@ -72,7 +73,7 @@
                     <symbol value="JJ"/>
                 </f>
             </fs>
-            <fs xml:id="fs6">
+            <fs xml:id="fs6" xmlns="http://www.tei-c.org/ns/1.0">
                 <f name="lemma">
                     <string>wallpaper</string>
                 </f>
