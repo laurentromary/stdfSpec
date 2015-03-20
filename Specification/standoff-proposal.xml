@@ -23,14 +23,27 @@
     <text>
         <body>
             <schemaSpec ident="standoff-proposal" start="TEI" status="unstable">
-                <moduleRef key="core"/>
                 <moduleRef key="tei"/>
-                <moduleRef key="textstructure"/>
-                <moduleRef key="header"/>
-                <moduleRef key="linking"/>
+                <moduleRef key="core"/>
                 <moduleRef key="analysis"/>
-                <moduleRef key="spoken"/>
+                <moduleRef key="certainty"/>
+                <moduleRef key="corpus"/>
+                <moduleRef key="dictionaries"/>
+                <moduleRef key="drama"/>
+                <moduleRef key="figures"/>
+                <moduleRef key="gaiji"/>
+                <moduleRef key="header"/>
+                <moduleRef key="iso-fs"/>
+                <moduleRef key="linking"/>
+                <moduleRef key="msdescription"/>
                 <moduleRef key="namesdates"/>
+                <moduleRef key="nets"/>
+                <moduleRef key="spoken"/>
+                <moduleRef key="textcrit"/>
+                <moduleRef key="textstructure"/>
+                <moduleRef key="transcr"/>
+                <moduleRef key="verse"/>
+                <moduleRef key="tagdocs"/>
 
                 <elementSpec ident="stdf" mode="add" ns="http://standoff.proposal">
                     <desc>Container element for standoff annotations</desc>
@@ -90,13 +103,7 @@
                     </classes>
                     <content>
                         <rng:zeroOrMore>
-                            <rng:choice>
-                                <rng:ref name="model.global.meta"/>
-                                <rng:ref name="model.annotationPart"/>
-                                <rng:ref name="model.listLike"/>
-                                <rng:ref name="listBibl"/>
-                                <rng:ref name="mapStruct"/>
-                            </rng:choice>
+                            <rng:ref name="model.annotationPart"/>
                         </rng:zeroOrMore>
                     </content>
                 </elementSpec>
@@ -104,6 +111,9 @@
                 <elementSpec ident="mapStruct" mode="add" ns="http://standoff.proposal">
                     <desc>Any element is to be interpreted as mapping its structure onto a text to
                         be annotated</desc>
+                    <classes>
+                        <memberOf key="model.annotationPart" mode="add"/>
+                    </classes>
                     <!-- need a specific namespace? -->
                     <!-- like in egXML -->
                 </elementSpec>
@@ -124,7 +134,6 @@
                         <rng:zeroOrMore>
                             <rng:choice>
                                 <rng:ref name="u"/>
-                                <rng:ref name="model.global.meta"/>
                                 <rng:ref name="model.annotationPart"/>
                             </rng:choice>
                         </rng:zeroOrMore>
@@ -136,11 +145,32 @@
                         elements or external schemas, e.g. PAULA</desc>
                 </classSpec>
                 
+                <!--       *****       -->
+                <!-- Following are existing TEI declarations where we add our new class(es) -->
+                
                 <classSpec type="model" ident="model.global.meta" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotationPart" mode="add"/>
                     </classes>
                 </classSpec>
+                
+                <classSpec type="model" ident="model.listLike" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.annotationPart" mode="add"/>
+                    </classes>
+                </classSpec>
+                
+                <classSpec type="model" ident="model.entryLike" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.annotationPart" mode="add"/>
+                    </classes>
+                </classSpec>
+                
+                <elementSpec ident="listBibl" mode="change" module="core">
+                    <classes mode="change">
+                        <memberOf key="model.annotationPart" mode="add"/>
+                    </classes>
+                </elementSpec>
 
             </schemaSpec>
         </body>
