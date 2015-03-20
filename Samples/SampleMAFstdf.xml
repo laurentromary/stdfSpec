@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="file:/Users/romary/Documents/TEI/Stand-off/stdfSpec/Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -81,32 +81,32 @@
                     <symbol value="NN"/>
                 </f>
             </fs>
-            <entry xml:id="entry1">
+            <entry xml:id="entry1" xmlns="http://www.tei-c.org/ns/1.0">
                 <form type="lemma">
                     <orth>I</orth>
                 </form>
             </entry>
-            <entry xml:id="entry2">
+            <entry xml:id="entry2" xmlns="http://www.tei-c.org/ns/1.0">
                 <form type="lemma">
                     <orth>want</orth>
                 </form>
             </entry>
-            <entry xml:id="entry3">
+            <entry xml:id="entry3" xmlns="http://www.tei-c.org/ns/1.0">
                 <form type="lemma">
                     <orth>to</orth>
                 </form>
             </entry>
-            <entry xml:id="entry4">
+            <entry xml:id="entry4" xmlns="http://www.tei-c.org/ns/1.0">
                 <form type="lemma">
                     <orth>put up</orth>
                 </form>
             </entry>
-            <entry xml:id="entry5">
+            <entry xml:id="entry5" xmlns="http://www.tei-c.org/ns/1.0">
                 <form type="lemma">
                     <orth>new</orth>
                 </form>
             </entry>
-            <entry xml:id="entry6">
+            <entry xml:id="entry6" xmlns="http://www.tei-c.org/ns/1.0">
                 <form type="lemma">
                     <orth>wallpaper</orth>
                 </form>

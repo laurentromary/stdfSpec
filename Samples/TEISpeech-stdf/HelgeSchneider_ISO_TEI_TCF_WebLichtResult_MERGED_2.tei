@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-   <teiHeader xmlns:xs="http://www.w3.org/2001/XMLSchema"
-              xmlns:tesla="http://www.exmaralda.org"
-              xmlns:tei="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title/>
@@ -68,49 +67,43 @@
             EXMARaLDA basic transcription</change>
       </revisionDesc>
    </teiHeader>
-   <stdf>
+   <stdf xmlns="http://standoff.proposal">
       <soHeader/>
       <annotations>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T0" to="#T1">Hello! </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w1" to="#w1">gut</span>
                <span from="#w2" to="#w2">Tag</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w1" to="#w1">ADJA</span>
                <span from="#w2" to="#w2">NN</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w1" to="#w1">regular noun</span>
                <span from="#w2" to="#w2">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w2" to="#w2">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w1" to="#w1">plural</span>
                <span from="#w2" to="#w2">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w1" to="#w1">nominative</span>
                <span from="#w2" to="#w2">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T1" to="#T2">Hello, my name is Schneider. </span>
                <span from="#T2" to="#T4">I'm looking for a job. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w3" to="#w3">Gute</span>
                <span from="#w4" to="#w4">&lt;unknown&gt;</span>
                <span from="#pc1" to="#pc1">,</span>
@@ -123,7 +116,7 @@
                <span from="#w11" to="#w11">ne</span>
                <span from="#w12" to="#w12">Arbeit</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w3" to="#w3">NN</span>
                <span from="#w4" to="#w4">VVFIN</span>
                <span from="#pc1" to="#pc1">$,</span>
@@ -136,26 +129,26 @@
                <span from="#w11" to="#w11">ART</span>
                <span from="#w12" to="#w12">NN</span>
             </spanGrp>
-            <spanGrp type="named-entities">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="named-entities">
                <span from="#w4" to="#w4">person</span>
             </spanGrp>
-            <spanGrp type="morph-possessive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-possessive">
                <span from="#w5" to="#w5">true</span>
             </spanGrp>
-            <spanGrp type="morph-imperative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-imperative">
                <span from="#w10" to="#w10">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w9" to="#w9">1</span>
                <span from="#w10" to="#w10">2</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w9" to="#w9">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w9" to="#w9">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w3" to="#w3">adjective</span>
                <span from="#w4" to="#w4">regular noun</span>
                <span from="#w5" to="#w5">pronoun</span>
@@ -166,7 +159,7 @@
                <span from="#w11" to="#w11">adjective</span>
                <span from="#w12" to="#w12">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w3" to="#w3">masculine</span>
                <span from="#w4" to="#w4">masculine</span>
                <span from="#w5" to="#w5">masculine</span>
@@ -174,7 +167,7 @@
                <span from="#w11" to="#w11">feminine</span>
                <span from="#w12" to="#w12">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w3" to="#w3">singular</span>
                <span from="#w4" to="#w4">singular</span>
                <span from="#w5" to="#w5">singular</span>
@@ -185,7 +178,7 @@
                <span from="#w11" to="#w11">singular</span>
                <span from="#w12" to="#w12">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w3" to="#w3">accusative</span>
                <span from="#w4" to="#w4">accusative</span>
                <span from="#w5" to="#w5">nominative</span>
@@ -195,19 +188,16 @@
                <span from="#w11" to="#w11">accusative</span>
                <span from="#w12" to="#w12">accusative</span>
             </spanGrp>
-            <spanGrp type="morph-attributive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-attributive">
                <span from="#w5" to="#w5">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T3" to="#T4">Okay. </span>
                <span from="#T4" to="#T5">So, let's see then. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w13" to="#w13">&lt;unknown&gt;</span>
                <span from="#w14" to="#w14">dann</span>
                <span from="#w15" to="#w15">&lt;unknown&gt;</span>
@@ -215,7 +205,7 @@
                <span from="#w17" to="#w17">mal</span>
                <span from="#w18" to="#w18">&lt;unknown&gt;</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w13" to="#w13">NE</span>
                <span from="#w14" to="#w14">ADV</span>
                <span from="#w15" to="#w15">ADJA</span>
@@ -223,13 +213,13 @@
                <span from="#w17" to="#w17">ADV</span>
                <span from="#w18" to="#w18">NE</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w16" to="#w16">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w15" to="#w15">3</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w13" to="#w13">proper name</span>
                <span from="#w14" to="#w14">adverb</span>
                <span from="#w15" to="#w15">verb</span>
@@ -237,58 +227,52 @@
                <span from="#w17" to="#w17">adverb</span>
                <span from="#w18" to="#w18">adjective</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w15" to="#w15">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w15" to="#w15">past</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w13" to="#w13">feminine</span>
                <span from="#w16" to="#w16">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w13" to="#w13">singular</span>
                <span from="#w15" to="#w15">singular</span>
                <span from="#w16" to="#w16">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w13" to="#w13">nominative</span>
                <span from="#w16" to="#w16">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T5" to="#T6">Yes. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w19" to="#w19">ja</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w19" to="#w19">ADV</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w19" to="#w19">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w19" to="#w19">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w19" to="#w19">nominative</span>
                <span from="#w19" to="#w19">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T6" to="#T7">What we c/ you could do, right? </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w20" to="#w20">was</span>
                <span from="#w21" to="#w21">wir</span>
                <span from="#w22" to="#w22">&lt;unknown&gt;</span>
@@ -297,7 +281,7 @@
                <span from="#w25" to="#w25">&lt;unknown&gt;</span>
                <span from="#w26" to="#w26">&lt;unknown&gt;</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w20" to="#w20">PIS</span>
                <span from="#w21" to="#w21">PPER</span>
                <span from="#w22" to="#w22">VVFIN</span>
@@ -306,21 +290,21 @@
                <span from="#w25" to="#w25">NE</span>
                <span from="#w26" to="#w26">ADJA</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w21" to="#w21">1</span>
                <span from="#w23" to="#w23">3</span>
                <span from="#w24" to="#w24">1</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w21" to="#w21">true</span>
                <span from="#w23" to="#w23">true</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w20" to="#w20">true</span>
                <span from="#w21" to="#w21">true</span>
                <span from="#w23" to="#w23">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w20" to="#w20">pronoun</span>
                <span from="#w21" to="#w21">pronoun</span>
                <span from="#w22" to="#w22">adjective</span>
@@ -329,23 +313,23 @@
                <span from="#w25" to="#w25">regular noun</span>
                <span from="#w26" to="#w26">adjective</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w24" to="#w24">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w24" to="#w24">present</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w25" to="#w25">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w20" to="#w20">singular</span>
                <span from="#w21" to="#w21">plural</span>
                <span from="#w23" to="#w23">plural</span>
                <span from="#w24" to="#w24">plural</span>
                <span from="#w25" to="#w25">plural</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w20" to="#w20">accusative</span>
                <span from="#w20" to="#w20">neuter</span>
                <span from="#w21" to="#w21">nominative</span>
@@ -353,39 +337,33 @@
                <span from="#w25" to="#w25">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T7" to="#T8">Yes. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w27" to="#w27">Ja</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w27" to="#w27">NN</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w27" to="#w27">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w27" to="#w27">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w27" to="#w27">nominative</span>
                <span from="#w27" to="#w27">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T8" to="#T10">Well, maybe this could be a suitable job, at a company
                   called Tiekmann Söhne, as a truck driver. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w28" to="#w28">&lt;unknown&gt;</span>
                <span from="#pc2" to="#pc2">,</span>
                <span from="#w29" to="#w29">da</span>
@@ -403,7 +381,7 @@
                <span from="#w41" to="#w41">als</span>
                <span from="#w42" to="#w42">Lastwagenfahrer</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w28" to="#w28">NE</span>
                <span from="#pc2" to="#pc2">$,</span>
                <span from="#w29" to="#w29">ADV</span>
@@ -421,16 +399,16 @@
                <span from="#w41" to="#w41">KOKOM</span>
                <span from="#w42" to="#w42">NN</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w31" to="#w31">1</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w31" to="#w31">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w31" to="#w31">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w28" to="#w28">interjection</span>
                <span from="#w29" to="#w29">conjunction</span>
                <span from="#w30" to="#w30">regular noun</span>
@@ -448,10 +426,10 @@
                <span from="#w41" to="#w41">preposition</span>
                <span from="#w42" to="#w42">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-definite">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-definite">
                <span from="#w37" to="#w37">true</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w30" to="#w30">feminine</span>
                <span from="#w34" to="#w34">feminine</span>
                <span from="#w35" to="#w35">feminine</span>
@@ -461,7 +439,7 @@
                <span from="#w40" to="#w40">feminine</span>
                <span from="#w42" to="#w42">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w30" to="#w30">plural</span>
                <span from="#w31" to="#w31">plural</span>
                <span from="#w34" to="#w34">singular</span>
@@ -472,7 +450,7 @@
                <span from="#w40" to="#w40">singular</span>
                <span from="#w42" to="#w42">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w30" to="#w30">nominative</span>
                <span from="#w31" to="#w31">nominative</span>
                <span from="#w34" to="#w34">accusative</span>
@@ -485,69 +463,63 @@
                <span from="#w42" to="#w42">accusative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T9" to="#T12">No, I don't have a driver's license.</span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w43" to="#w43">&lt;unknown&gt;</span>
                <span from="#pc3" to="#pc3">,</span>
                <span from="#w44" to="#w44">haben</span>
                <span from="#w45" to="#w45">kein</span>
                <span from="#w46" to="#w46">Führerschein</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w43" to="#w43">NE</span>
                <span from="#pc3" to="#pc3">$,</span>
                <span from="#w44" to="#w44">VAIMP</span>
                <span from="#w45" to="#w45">PIAT</span>
                <span from="#w46" to="#w46">NN</span>
             </spanGrp>
-            <spanGrp type="morph-imperative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-imperative">
                <span from="#w44" to="#w44">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w44" to="#w44">2</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w43" to="#w43">regular noun</span>
                <span from="#w44" to="#w44">verb</span>
                <span from="#w45" to="#w45">pronoun</span>
                <span from="#w45" to="#w45">indefinite pronoun</span>
                <span from="#w46" to="#w46">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w45" to="#w45">masculine</span>
                <span from="#w46" to="#w46">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w43" to="#w43">singular</span>
                <span from="#w44" to="#w44">singular</span>
                <span from="#w45" to="#w45">singular</span>
                <span from="#w46" to="#w46">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w43" to="#w43">dative</span>
                <span from="#w43" to="#w43">neuter</span>
                <span from="#w45" to="#w45">nominative</span>
                <span from="#w46" to="#w46">nominative</span>
             </spanGrp>
-            <spanGrp type="morph-attributive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-attributive">
                <span from="#w45" to="#w45">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T11" to="#T13">Oh, okay. </span>
                <span from="#T13" to="#T18">Mhm, no driver's license then. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w47" to="#w47">ach</span>
                <span from="#w48" to="#w48">so</span>
                <span from="#w49" to="#w49">&lt;unknown&gt;</span>
@@ -556,7 +528,7 @@
                <span from="#w51" to="#w51">kein</span>
                <span from="#w52" to="#w52">Führerschein</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w47" to="#w47">ITJ</span>
                <span from="#w48" to="#w48">ADV</span>
                <span from="#w49" to="#w49">NN</span>
@@ -565,7 +537,7 @@
                <span from="#w51" to="#w51">PIAT</span>
                <span from="#w52" to="#w52">NN</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w47" to="#w47">interjection</span>
                <span from="#w48" to="#w48">adverb</span>
                <span from="#w49" to="#w49">proper name</span>
@@ -574,58 +546,49 @@
                <span from="#w51" to="#w51">indefinite pronoun</span>
                <span from="#w52" to="#w52">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w51" to="#w51">masculine</span>
                <span from="#w52" to="#w52">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w49" to="#w49">singular</span>
                <span from="#w51" to="#w51">singular</span>
                <span from="#w52" to="#w52">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w49" to="#w49">nominative</span>
                <span from="#w51" to="#w51">accusative</span>
                <span from="#w52" to="#w52">accusative</span>
             </spanGrp>
-            <spanGrp type="morph-attributive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-attributive">
                <span from="#w51" to="#w51">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T15" to="#T17">((clearing his throat,0,5s)) </span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T19" to="#T20">Well. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w53" to="#w53">&lt;unknown&gt;</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w53" to="#w53">NE</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w53" to="#w53">interjection</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T20" to="#T21">Well, then I'll have to have a look into my files. </span>
                <span from="#T21" to="#T22">((browsing))˙</span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w54" to="#w54">&lt;unknown&gt;</span>
                <span from="#pc5" to="#pc5">,</span>
                <span from="#w55" to="#w55">dann</span>
@@ -637,7 +600,7 @@
                <span from="#w61" to="#w61">Karteikarte</span>
                <span from="#w62" to="#w62">&lt;unknown&gt;</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w54" to="#w54">NE</span>
                <span from="#pc5" to="#pc5">$,</span>
                <span from="#w55" to="#w55">ADV</span>
@@ -649,20 +612,20 @@
                <span from="#w61" to="#w61">NN</span>
                <span from="#w62" to="#w62">VVFIN</span>
             </spanGrp>
-            <spanGrp type="morph-possessive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-possessive">
                <span from="#w60" to="#w60">true</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w57" to="#w57">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w57" to="#w57">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w56" to="#w56">1</span>
                <span from="#w57" to="#w57">1</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w54" to="#w54">interjection</span>
                <span from="#w55" to="#w55">adverb</span>
                <span from="#w56" to="#w56">verb</span>
@@ -673,83 +636,74 @@
                <span from="#w61" to="#w61">regular noun</span>
                <span from="#w62" to="#w62">verb</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w56" to="#w56">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w56" to="#w56">present</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w60" to="#w60">feminine</span>
                <span from="#w61" to="#w61">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w56" to="#w56">singular</span>
                <span from="#w57" to="#w57">singular</span>
                <span from="#w60" to="#w60">singular</span>
                <span from="#w61" to="#w61">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w57" to="#w57">nominative</span>
                <span from="#w60" to="#w60">dative</span>
                <span from="#w61" to="#w61">dative</span>
             </spanGrp>
-            <spanGrp type="morph-attributive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-attributive">
                <span from="#w60" to="#w60">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T22" to="#T23">((clearing his throat)) </span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T23" to="#T24">Well, in a leather factory?</span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w63" to="#w63">&lt;unknown&gt;</span>
                <span from="#w64" to="#w64">&lt;unknown&gt;</span>
                <span from="#w65" to="#w65">Lederfabrik</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w63" to="#w63">NE</span>
                <span from="#w64" to="#w64">ADJA</span>
                <span from="#w65" to="#w65">NN</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w63" to="#w63">interjection</span>
                <span from="#w64" to="#w64">adjective</span>
                <span from="#w65" to="#w65">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w64" to="#w64">masculine</span>
                <span from="#w65" to="#w65">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w64" to="#w64">singular</span>
                <span from="#w65" to="#w65">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w64" to="#w64">nominative</span>
                <span from="#w65" to="#w65">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T24" to="#T25">No, the smell is too bad. </span>
                <span from="#T25" to="#T26">That's too much for me. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w66" to="#w66">&lt;unknown&gt;</span>
                <span from="#pc6" to="#pc6">,</span>
                <span from="#w67" to="#w67">&lt;unknown&gt;</span>
@@ -760,7 +714,7 @@
                <span from="#w72" to="#w72">ich</span>
                <span from="#w73" to="#w73">zuviel</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w66" to="#w66">NE</span>
                <span from="#pc6" to="#pc6">$,</span>
                <span from="#w67" to="#w67">ADJD</span>
@@ -771,21 +725,21 @@
                <span from="#w72" to="#w72">PPER</span>
                <span from="#w73" to="#w73">PIAT</span>
             </spanGrp>
-            <spanGrp type="morph-imperative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-imperative">
                <span from="#w71" to="#w71">true</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w72" to="#w72">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w72" to="#w72">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w68" to="#w68">3</span>
                <span from="#w71" to="#w71">2</span>
                <span from="#w72" to="#w72">1</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w66" to="#w66">regular noun</span>
                <span from="#w67" to="#w67">adjective</span>
                <span from="#w68" to="#w68">verb</span>
@@ -796,36 +750,33 @@
                <span from="#w73" to="#w73">pronoun</span>
                <span from="#w73" to="#w73">indefinite pronoun</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w68" to="#w68">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w68" to="#w68">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w66" to="#w66">singular</span>
                <span from="#w68" to="#w68">singular</span>
                <span from="#w71" to="#w71">singular</span>
                <span from="#w72" to="#w72">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w66" to="#w66">dative</span>
                <span from="#w66" to="#w66">neuter</span>
                <span from="#w72" to="#w72">nominative</span>
             </spanGrp>
-            <spanGrp type="morph-attributive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-attributive">
                <span from="#w73" to="#w73">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T26" to="#T27">Well now, Mr. Schneider… </span>
                <span from="#T27" to="#T28">Your name was Schneider, right? </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w74" to="#w74">Ja</span>
                <span from="#w75" to="#w75">nun</span>
                <span from="#pc7" to="#pc7">,</span>
@@ -839,7 +790,7 @@
                <span from="#pc8" to="#pc8">,</span>
                <span from="#w83" to="#w83">ja</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w74" to="#w74">NN</span>
                <span from="#w75" to="#w75">ADV</span>
                <span from="#pc7" to="#pc7">$,</span>
@@ -853,13 +804,13 @@
                <span from="#pc8" to="#pc8">$,</span>
                <span from="#w83" to="#w83">ADV</span>
             </spanGrp>
-            <spanGrp type="morph-possessive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-possessive">
                <span from="#w81" to="#w81">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w80" to="#w80">3</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w74" to="#w74">particle</span>
                <span from="#w75" to="#w75">adverb</span>
                <span from="#w76" to="#w76">regular noun</span>
@@ -871,19 +822,19 @@
                <span from="#w82" to="#w82">regular noun</span>
                <span from="#w83" to="#w83">adverb</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w80" to="#w80">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w80" to="#w80">past</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w76" to="#w76">masculine</span>
                <span from="#w77" to="#w77">masculine</span>
                <span from="#w81" to="#w81">masculine</span>
                <span from="#w82" to="#w82">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w76" to="#w76">singular</span>
                <span from="#w77" to="#w77">singular</span>
                <span from="#w79" to="#w79">singular</span>
@@ -891,59 +842,53 @@
                <span from="#w81" to="#w81">singular</span>
                <span from="#w82" to="#w82">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w76" to="#w76">nominative</span>
                <span from="#w77" to="#w77">nominative</span>
                <span from="#w79" to="#w79">nominative</span>
                <span from="#w81" to="#w81">nominative</span>
                <span from="#w82" to="#w82">nominative</span>
             </spanGrp>
-            <spanGrp type="morph-attributive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-attributive">
                <span from="#w81" to="#w81">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T28" to="#T29">Yes, Schneider. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w84" to="#w84">Ja</span>
                <span from="#pc9" to="#pc9">,</span>
                <span from="#w85" to="#w85">Schneider</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w84" to="#w84">NN</span>
                <span from="#pc9" to="#pc9">$,</span>
                <span from="#w85" to="#w85">NE</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w84" to="#w84">regular noun</span>
                <span from="#w85" to="#w85">proper name</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w84" to="#w84">singular</span>
                <span from="#w85" to="#w85">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w84" to="#w84">nominative</span>
                <span from="#w84" to="#w84">neuter</span>
                <span from="#w85" to="#w85">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T29" to="#T30">It's not always a matter of what the employee wants. </span>
                <span from="#T30" to="#T31">You know: jobs are rare. </span>
                <span from="#T31" to="#T32">And you have to take what you get. </span>
                <span from="#T32" to="#T33">Even if it's a bit smelly. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w86" to="#w86">&lt;unknown&gt;</span>
                <span from="#pc10" to="#pc10">,</span>
                <span from="#w87" to="#w87">es</span>
@@ -980,7 +925,7 @@
                <span from="#w115" to="#w115">&lt;unknown&gt;</span>
                <span from="#w116" to="#w116">bißchen</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w86" to="#w86">NE</span>
                <span from="#pc10" to="#pc10">$,</span>
                <span from="#w87" to="#w87">PPER</span>
@@ -1017,7 +962,7 @@
                <span from="#w115" to="#w115">VVFIN</span>
                <span from="#w116" to="#w116">ADV</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w86" to="#w86">cardinal</span>
                <span from="#w87" to="#w87">pronoun</span>
                <span from="#w88" to="#w88">verb</span>
@@ -1052,7 +997,7 @@
                <span from="#w115" to="#w115">symbol</span>
                <span from="#w116" to="#w116">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w87" to="#w87">true</span>
                <span from="#w93" to="#w93">true</span>
                <span from="#w97" to="#w97">true</span>
@@ -1060,7 +1005,7 @@
                <span from="#w108" to="#w108">true</span>
                <span from="#w112" to="#w112">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w87" to="#w87">3</span>
                <span from="#w88" to="#w88">3</span>
                <span from="#w96" to="#w96">3</span>
@@ -1072,7 +1017,7 @@
                <span from="#w112" to="#w112">3</span>
                <span from="#w113" to="#w113">3</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w88" to="#w88">true</span>
                <span from="#w96" to="#w96">true</span>
                <span from="#w98" to="#w98">true</span>
@@ -1081,10 +1026,10 @@
                <span from="#w109" to="#w109">true</span>
                <span from="#w113" to="#w113">true</span>
             </spanGrp>
-            <spanGrp type="morph-coordination">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-coordination">
                <span from="#w103" to="#w103">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w88" to="#w88">present</span>
                <span from="#w96" to="#w96">present</span>
                <span from="#w98" to="#w98">present</span>
@@ -1093,7 +1038,7 @@
                <span from="#w109" to="#w109">present</span>
                <span from="#w113" to="#w113">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w87" to="#w87">singular</span>
                <span from="#w88" to="#w88">singular</span>
                <span from="#w93" to="#w93">singular</span>
@@ -1113,29 +1058,29 @@
                <span from="#w113" to="#w113">singular</span>
                <span from="#w116" to="#w116">plural</span>
             </spanGrp>
-            <spanGrp type="morph-negation">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-negation">
                <span from="#w89" to="#w89">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w87" to="#w87">true</span>
                <span from="#w97" to="#w97">true</span>
                <span from="#w112" to="#w112">true</span>
             </spanGrp>
-            <spanGrp type="morph-demonstrative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-demonstrative">
                <span from="#w92" to="#w92">true</span>
             </spanGrp>
-            <spanGrp type="morph-definite">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-definite">
                <span from="#w94" to="#w94">true</span>
                <span from="#w99" to="#w99">true</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w94" to="#w94">masculine</span>
                <span from="#w95" to="#w95">masculine</span>
                <span from="#w99" to="#w99">feminine</span>
                <span from="#w100" to="#w100">feminine</span>
                <span from="#w116" to="#w116">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w87" to="#w87">nominative</span>
                <span from="#w87" to="#w87">neuter</span>
                <span from="#w93" to="#w93">nominative</span>
@@ -1152,14 +1097,11 @@
                <span from="#w116" to="#w116">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T33" to="#T35">Well yes, but I just can't tolerate that. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w117" to="#w117">ja</span>
                <span from="#w118" to="#w118">nur</span>
                <span from="#w119" to="#w119">&lt;unknown&gt;</span>
@@ -1169,7 +1111,7 @@
                <span from="#w123" to="#w123">&lt;unknown&gt;</span>
                <span from="#w124" to="#w124">vertragen</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w117" to="#w117">ADV</span>
                <span from="#w118" to="#w118">ADV</span>
                <span from="#w119" to="#w119">ADJD</span>
@@ -1179,17 +1121,17 @@
                <span from="#w123" to="#w123">ADJD</span>
                <span from="#w124" to="#w124">VVPP</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w121" to="#w121">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w121" to="#w121">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w120" to="#w120">1</span>
                <span from="#w121" to="#w121">1</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w117" to="#w117">particle</span>
                <span from="#w118" to="#w118">adverb</span>
                <span from="#w119" to="#w119">adjective</span>
@@ -1199,30 +1141,27 @@
                <span from="#w123" to="#w123">adjective</span>
                <span from="#w124" to="#w124">verb</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w120" to="#w120">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w120" to="#w120">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w120" to="#w120">singular</span>
                <span from="#w121" to="#w121">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w121" to="#w121">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T34" to="#T36">Well, if you do have a medical problem, then let's see. </span>
                <span from="#T36" to="#T37">Maybe we've got something else for you. </span>
                <span from="#T37" to="#T38">((browsing))˙ </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w125" to="#w125">&lt;unknown&gt;</span>
                <span from="#pc14" to="#pc14">,</span>
                <span from="#w126" to="#w126">wenn</span>
@@ -1246,7 +1185,7 @@
                <span from="#w143" to="#w143">was</span>
                <span from="#w144" to="#w144">ander</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w125" to="#w125">NN</span>
                <span from="#pc14" to="#pc14">$,</span>
                <span from="#w126" to="#w126">KOUS</span>
@@ -1270,29 +1209,29 @@
                <span from="#w143" to="#w143">PIAT</span>
                <span from="#w144" to="#w144">ADJA</span>
             </spanGrp>
-            <spanGrp type="named-entities">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="named-entities">
                <span from="#w125" to="#w125">person</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w127" to="#w127">3</span>
                <span from="#w131" to="#w131">3</span>
                <span from="#w134" to="#w134">1</span>
                <span from="#w136" to="#w136">1</span>
                <span from="#w139" to="#w139">1</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w127" to="#w127">true</span>
                <span from="#w134" to="#w134">true</span>
                <span from="#w139" to="#w139">true</span>
                <span from="#w143" to="#w143">true</span>
                <span from="#w144" to="#w144">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w127" to="#w127">true</span>
                <span from="#w134" to="#w134">true</span>
                <span from="#w139" to="#w139">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w126" to="#w126">conjunction</span>
                <span from="#w127" to="#w127">pronoun</span>
                <span from="#w128" to="#w128">adjective</span>
@@ -1315,18 +1254,18 @@
                <span from="#w144" to="#w144">pronoun</span>
                <span from="#w144" to="#w144">indefinite pronoun</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w131" to="#w131">true</span>
                <span from="#w136" to="#w136">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w131" to="#w131">present</span>
                <span from="#w136" to="#w136">present</span>
             </spanGrp>
-            <spanGrp type="morph-demonstrative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-demonstrative">
                <span from="#w129" to="#w129">true</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w127" to="#w127">plural</span>
                <span from="#w130" to="#w130">singular</span>
                <span from="#w131" to="#w131">plural</span>
@@ -1335,7 +1274,7 @@
                <span from="#w139" to="#w139">plural</span>
                <span from="#w144" to="#w144">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w127" to="#w127">nominative</span>
                <span from="#w130" to="#w130">accusative</span>
                <span from="#w130" to="#w130">neuter</span>
@@ -1346,15 +1285,12 @@
                <span from="#w144" to="#w144">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T38" to="#T39">That would be great. </span>
                <span from="#T39" to="#T40">Would be very nice of you. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w145" to="#w145">S</span>
                <span from="#w146" to="#w146">&lt;unknown&gt;</span>
                <span from="#w147" to="#w147">schön</span>
@@ -1364,7 +1300,7 @@
                <span from="#w151" to="#w151">von</span>
                <span from="#w152" to="#w152">Sie|sie</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w145" to="#w145">NN</span>
                <span from="#w146" to="#w146">ADJD</span>
                <span from="#w147" to="#w147">ADJD</span>
@@ -1374,16 +1310,16 @@
                <span from="#w151" to="#w151">APPR</span>
                <span from="#w152" to="#w152">PPER</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w152" to="#w152">3</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w152" to="#w152">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w152" to="#w152">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w145" to="#w145">symbol</span>
                <span from="#w146" to="#w146">proper name</span>
                <span from="#w147" to="#w147">proper name</span>
@@ -1393,30 +1329,27 @@
                <span from="#w151" to="#w151">preposition</span>
                <span from="#w152" to="#w152">pronoun</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w148" to="#w148">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w148" to="#w148">singular</span>
                <span from="#w152" to="#w152">plural</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w148" to="#w148">nominative</span>
                <span from="#w151" to="#w151">dative</span>
                <span from="#w152" to="#w152">dative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T40" to="#T41">Oh, yes, maybe this could be something for you. </span>
                <span from="#T41" to="#T42">((browsing)) Yes, definitely. </span>
                <span from="#T42" to="#T43">At a company called Gervais Blumenhandel, as a flower
                   guard! </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w153" to="#w153">&lt;unknown&gt;</span>
                <span from="#pc16" to="#pc16">,</span>
                <span from="#w154" to="#w154">ja</span>
@@ -1446,7 +1379,7 @@
                <span from="#w174" to="#w174">als</span>
                <span from="#w175" to="#w175">&lt;unknown&gt;</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w153" to="#w153">VVFIN</span>
                <span from="#pc16" to="#pc16">$,</span>
                <span from="#w154" to="#w154">ADV</span>
@@ -1476,22 +1409,22 @@
                <span from="#w174" to="#w174">KOKOM</span>
                <span from="#w175" to="#w175">NN</span>
             </spanGrp>
-            <spanGrp type="morph-imperative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-imperative">
                <span from="#w173" to="#w173">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w160" to="#w160">3</span>
                <span from="#w173" to="#w173">2</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w160" to="#w160">true</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w158" to="#w158">true</span>
                <span from="#w160" to="#w160">true</span>
                <span from="#w162" to="#w162">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w153" to="#w153">interjection</span>
                <span from="#w154" to="#w154">interjection</span>
                <span from="#w155" to="#w155">article</span>
@@ -1510,21 +1443,21 @@
                <span from="#w174" to="#w174">preposition</span>
                <span from="#w175" to="#w175">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-demonstrative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-demonstrative">
                <span from="#w162" to="#w162">true</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w167" to="#w167">feminine</span>
                <span from="#w168" to="#w168">masculine</span>
                <span from="#w169" to="#w169">feminine</span>
                <span from="#w171" to="#w171">feminine</span>
                <span from="#w175" to="#w175">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-definite">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-definite">
                <span from="#w155" to="#w155">true</span>
                <span from="#w167" to="#w167">true</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w155" to="#w155">singular</span>
                <span from="#w156" to="#w156">singular</span>
                <span from="#w158" to="#w158">singular</span>
@@ -1537,7 +1470,7 @@
                <span from="#w173" to="#w173">singular</span>
                <span from="#w175" to="#w175">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w155" to="#w155">nominative</span>
                <span from="#w155" to="#w155">neuter</span>
                <span from="#w156" to="#w156">nominative</span>
@@ -1555,15 +1488,12 @@
                <span from="#w175" to="#w175">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T43" to="#T44">Where I have to make sure the flowers don't escape, or
                   what?</span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w176" to="#w176">da</span>
                <span from="#w177" to="#w177">müssen</span>
                <span from="#w178" to="#w178">ich</span>
@@ -1578,7 +1508,7 @@
                <span from="#w185" to="#w185">oder</span>
                <span from="#w186" to="#w186">&lt;unknown&gt;</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w176" to="#w176">ADV</span>
                <span from="#w177" to="#w177">VMFIN</span>
                <span from="#w178" to="#w178">PPER</span>
@@ -1593,21 +1523,21 @@
                <span from="#w185" to="#w185">KON</span>
                <span from="#w186" to="#w186">NE</span>
             </spanGrp>
-            <spanGrp type="morph-negation">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-negation">
                <span from="#w183" to="#w183">true</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w178" to="#w178">true</span>
                <span from="#w186" to="#w186">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w178" to="#w178">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w177" to="#w177">1</span>
                <span from="#w178" to="#w178">1</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w176" to="#w176">adverb</span>
                <span from="#w177" to="#w177">verb</span>
                <span from="#w178" to="#w178">pronoun</span>
@@ -1621,45 +1551,42 @@
                <span from="#w186" to="#w186">pronoun</span>
                <span from="#w186" to="#w186">indefinite pronoun</span>
             </spanGrp>
-            <spanGrp type="morph-coordination">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-coordination">
                <span from="#w185" to="#w185">true</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w177" to="#w177">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w177" to="#w177">present</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w181" to="#w181">feminine</span>
                <span from="#w182" to="#w182">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-definite">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-definite">
                <span from="#w181" to="#w181">true</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w177" to="#w177">singular</span>
                <span from="#w178" to="#w178">singular</span>
                <span from="#w181" to="#w181">plural</span>
                <span from="#w182" to="#w182">plural</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w178" to="#w178">nominative</span>
                <span from="#w181" to="#w181">nominative</span>
                <span from="#w182" to="#w182">nominative</span>
                <span from="#w186" to="#w186">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T44" to="#T46">No, you're not supposed to watch out that the flowers
                   don't leave by themselves, you're supposed to make sure the flowers aren't stolen. </span>
                <span from="#T47" to="#T49">By intruders. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w187" to="#w187">Nein</span>
                <span from="#pc23" to="#pc23">,</span>
                <span from="#w188" to="#w188">&lt;unknown&gt;</span>
@@ -1692,7 +1619,7 @@
                <span from="#w212" to="#w212">&lt;unknown&gt;</span>
                <span from="#w213" to="#w213">Eindringling</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w187" to="#w187">NN</span>
                <span from="#pc23" to="#pc23">$,</span>
                <span from="#w188" to="#w188">VVFIN</span>
@@ -1725,7 +1652,7 @@
                <span from="#w212" to="#w212">ADJA</span>
                <span from="#w213" to="#w213">NN</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w187" to="#w187">particle</span>
                <span from="#w188" to="#w188">truncated form</span>
                <span from="#w189" to="#w189">pronoun</span>
@@ -1754,31 +1681,31 @@
                <span from="#w212" to="#w212">cardinal</span>
                <span from="#w213" to="#w213">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w189" to="#w189">true</span>
                <span from="#w202" to="#w202">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w189" to="#w189">3</span>
                <span from="#w190" to="#w190">3</span>
                <span from="#w199" to="#w199">3</span>
                <span from="#w202" to="#w202">3</span>
                <span from="#w203" to="#w203">3</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w190" to="#w190">true</span>
                <span from="#w199" to="#w199">true</span>
                <span from="#w203" to="#w203">true</span>
             </spanGrp>
-            <spanGrp type="morph-coordination">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-coordination">
                <span from="#w200" to="#w200">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w190" to="#w190">present</span>
                <span from="#w199" to="#w199">present</span>
                <span from="#w203" to="#w203">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w189" to="#w189">plural</span>
                <span from="#w190" to="#w190">plural</span>
                <span from="#w195" to="#w195">plural</span>
@@ -1790,29 +1717,29 @@
                <span from="#w207" to="#w207">plural</span>
                <span from="#w213" to="#w213">plural</span>
             </spanGrp>
-            <spanGrp type="morph-negation">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-negation">
                <span from="#w191" to="#w191">true</span>
                <span from="#w208" to="#w208">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w189" to="#w189">true</span>
                <span from="#w202" to="#w202">true</span>
             </spanGrp>
-            <spanGrp type="morph-demonstrative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-demonstrative">
                <span from="#w192" to="#w192">true</span>
             </spanGrp>
-            <spanGrp type="morph-definite">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-definite">
                <span from="#w195" to="#w195">true</span>
                <span from="#w206" to="#w206">true</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w195" to="#w195">feminine</span>
                <span from="#w196" to="#w196">feminine</span>
                <span from="#w206" to="#w206">feminine</span>
                <span from="#w207" to="#w207">feminine</span>
                <span from="#w213" to="#w213">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w189" to="#w189">nominative</span>
                <span from="#w195" to="#w195">nominative</span>
                <span from="#w196" to="#w196">nominative</span>
@@ -1824,58 +1751,52 @@
                <span from="#w213" to="#w213">dative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T47" to="#T48">Well, I don't… </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w214" to="#w214">ja</span>
                <span from="#w215" to="#w215">ich</span>
                <span from="#w216" to="#w216">haben</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w214" to="#w214">ADV</span>
                <span from="#w215" to="#w215">PPER</span>
                <span from="#w216" to="#w216">VAIMP</span>
             </spanGrp>
-            <spanGrp type="morph-imperative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-imperative">
                <span from="#w216" to="#w216">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w215" to="#w215">1</span>
                <span from="#w216" to="#w216">2</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w215" to="#w215">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w215" to="#w215">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w214" to="#w214">particle</span>
                <span from="#w215" to="#w215">pronoun</span>
                <span from="#w216" to="#w216">verb</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w215" to="#w215">singular</span>
                <span from="#w216" to="#w216">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w215" to="#w215">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T49" to="#T51">Well, I don't have a gun license, and with a gun I
                   wouldn't want to anyway, okay?</span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w217" to="#w217">ja</span>
                <span from="#w218" to="#w218">ich</span>
                <span from="#w219" to="#w219">haben</span>
@@ -1892,7 +1813,7 @@
                <span from="#pc28" to="#pc28">,</span>
                <span from="#w229" to="#w229">ne</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w217" to="#w217">PTKANT</span>
                <span from="#w218" to="#w218">PPER</span>
                <span from="#w219" to="#w219">VAIMP</span>
@@ -1909,27 +1830,27 @@
                <span from="#pc28" to="#pc28">$,</span>
                <span from="#w229" to="#w229">ART</span>
             </spanGrp>
-            <spanGrp type="morph-negation">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-negation">
                <span from="#w228" to="#w228">true</span>
             </spanGrp>
-            <spanGrp type="morph-imperative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-imperative">
                <span from="#w219" to="#w219">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w218" to="#w218">1</span>
                <span from="#w219" to="#w219">2</span>
                <span from="#w226" to="#w226">1</span>
                <span from="#w229" to="#w229">1</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w218" to="#w218">true</span>
                <span from="#w226" to="#w226">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w218" to="#w218">true</span>
                <span from="#w226" to="#w226">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w217" to="#w217">particle</span>
                <span from="#w218" to="#w218">pronoun</span>
                <span from="#w219" to="#w219">verb</span>
@@ -1944,19 +1865,19 @@
                <span from="#w228" to="#w228">particle</span>
                <span from="#w229" to="#w229">verb</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w229" to="#w229">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w229" to="#w229">present</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w221" to="#w221">masculine</span>
                <span from="#w222" to="#w222">masculine</span>
                <span from="#w224" to="#w224">feminine</span>
                <span from="#w225" to="#w225">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w218" to="#w218">singular</span>
                <span from="#w219" to="#w219">singular</span>
                <span from="#w221" to="#w221">singular</span>
@@ -1966,7 +1887,7 @@
                <span from="#w226" to="#w226">singular</span>
                <span from="#w229" to="#w229">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w218" to="#w218">nominative</span>
                <span from="#w221" to="#w221">accusative</span>
                <span from="#w222" to="#w222">accusative</span>
@@ -1976,14 +1897,11 @@
                <span from="#w226" to="#w226">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T50" to="#T52">No, no, no, that's not neccesary. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w230" to="#w230">nein</span>
                <span from="#pc29" to="#pc29">,</span>
                <span from="#w231" to="#w231">nein</span>
@@ -1999,7 +1917,7 @@
                <span from="#w239" to="#w239">nicht</span>
                <span from="#w240" to="#w240">erforderlich</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w230" to="#w230">PTKANT</span>
                <span from="#pc29" to="#pc29">$,</span>
                <span from="#w231" to="#w231">PTKANT</span>
@@ -2015,13 +1933,13 @@
                <span from="#w239" to="#w239">PTKNEG</span>
                <span from="#w240" to="#w240">ADJD</span>
             </spanGrp>
-            <spanGrp type="morph-negation">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-negation">
                <span from="#w239" to="#w239">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w238" to="#w238">3</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w230" to="#w230">particle</span>
                <span from="#w231" to="#w231">particle</span>
                <span from="#w232" to="#w232">particle</span>
@@ -2034,32 +1952,29 @@
                <span from="#w239" to="#w239">particle</span>
                <span from="#w240" to="#w240">adjective</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w238" to="#w238">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w238" to="#w238">present</span>
             </spanGrp>
-            <spanGrp type="morph-definite">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-definite">
                <span from="#w233" to="#w233">true</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w233" to="#w233">singular</span>
                <span from="#w238" to="#w238">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w233" to="#w233">nominative</span>
                <span from="#w233" to="#w233">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T53" to="#T57">Well, and somehow it just doesn't appeal to me. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w241" to="#w241">Ja</span>
                <span from="#pc32" to="#pc32">,</span>
                <span from="#w242" to="#w242">&lt;unknown&gt;</span>
@@ -2070,7 +1985,7 @@
                <span from="#w247" to="#w247">aber</span>
                <span from="#w248" to="#w248">&lt;unknown&gt;</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w241" to="#w241">NN</span>
                <span from="#pc32" to="#pc32">$,</span>
                <span from="#w242" to="#w242">VVFIN</span>
@@ -2081,17 +1996,17 @@
                <span from="#w247" to="#w247">ADV</span>
                <span from="#w248" to="#w248">ADJA</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w245" to="#w245">1</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w245" to="#w245">true</span>
                <span from="#w246" to="#w246">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w245" to="#w245">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w241" to="#w241">particle</span>
                <span from="#w242" to="#w242">conjunction</span>
                <span from="#w243" to="#w243">adverb</span>
@@ -2101,35 +2016,32 @@
                <span from="#w247" to="#w247">adverb</span>
                <span from="#w248" to="#w248">adjective</span>
             </spanGrp>
-            <spanGrp type="morph-coordination">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-coordination">
                <span from="#w242" to="#w242">true</span>
             </spanGrp>
-            <spanGrp type="morph-demonstrative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-demonstrative">
                <span from="#w246" to="#w246">true</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w244" to="#w244">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w244" to="#w244">singular</span>
                <span from="#w245" to="#w245">singular</span>
                <span from="#w246" to="#w246">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w244" to="#w244">nominative</span>
                <span from="#w245" to="#w245">dative</span>
                <span from="#w246" to="#w246">nominative</span>
                <span from="#w246" to="#w246">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T54" to="#T55">Well, but what do you have… </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w249" to="#w249">Ja</span>
                <span from="#pc33" to="#pc33">,</span>
                <span from="#w250" to="#w250">aber</span>
@@ -2138,7 +2050,7 @@
                <span from="#w253" to="#w253">Sie|sie|sie</span>
                <span from="#w254" to="#w254">denn</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w249" to="#w249">NN</span>
                <span from="#pc33" to="#pc33">$,</span>
                <span from="#w250" to="#w250">KON</span>
@@ -2147,18 +2059,18 @@
                <span from="#w253" to="#w253">PPER</span>
                <span from="#w254" to="#w254">ADV</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w253" to="#w253">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w252" to="#w252">3</span>
                <span from="#w253" to="#w253">3</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w251" to="#w251">true</span>
                <span from="#w253" to="#w253">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w249" to="#w249">particle</span>
                <span from="#w250" to="#w250">adverb</span>
                <span from="#w251" to="#w251">pronoun</span>
@@ -2167,61 +2079,55 @@
                <span from="#w253" to="#w253">pronoun</span>
                <span from="#w254" to="#w254">adverb</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w252" to="#w252">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w252" to="#w252">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w252" to="#w252">plural</span>
                <span from="#w253" to="#w253">plural</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w251" to="#w251">neuter</span>
                <span from="#w253" to="#w253">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T56" to="#T58">Why not then? </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w255" to="#w255">Ja</span>
                <span from="#pc34" to="#pc34">,</span>
                <span from="#w256" to="#w256">warum</span>
                <span from="#w257" to="#w257">denn</span>
                <span from="#w258" to="#w258">nicht</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w255" to="#w255">NN</span>
                <span from="#pc34" to="#pc34">$,</span>
                <span from="#w256" to="#w256">PWAV</span>
                <span from="#w257" to="#w257">ADV</span>
                <span from="#w258" to="#w258">PTKNEG</span>
             </spanGrp>
-            <spanGrp type="morph-negation">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-negation">
                <span from="#w258" to="#w258">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w255" to="#w255">particle</span>
                <span from="#w256" to="#w256">pronomial adverb</span>
                <span from="#w257" to="#w257">adverb</span>
                <span from="#w258" to="#w258">particle</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T59" to="#T61">Well, the job is kinda stupid. </span>
                <span from="#T62" to="#T63">Sos stupid to me. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w259" to="#w259">ja</span>
                <span from="#pc35" to="#pc35">,</span>
                <span from="#w260" to="#w260">d</span>
@@ -2235,7 +2141,7 @@
                <span from="#w268" to="#w268">blöd</span>
                <span from="#w269" to="#w269">an</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w259" to="#w259">ADV</span>
                <span from="#pc35" to="#pc35">$,</span>
                <span from="#w260" to="#w260">PDS</span>
@@ -2249,13 +2155,13 @@
                <span from="#w268" to="#w268">ADJD</span>
                <span from="#w269" to="#w269">APPR</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w267" to="#w267">3</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w267" to="#w267">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w259" to="#w259">particle</span>
                <span from="#w260" to="#w260">article</span>
                <span from="#w262" to="#w262">adverb</span>
@@ -2267,23 +2173,23 @@
                <span from="#w268" to="#w268">cardinal</span>
                <span from="#w269" to="#w269">particle</span>
             </spanGrp>
-            <spanGrp type="morph-reflexive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-reflexive">
                <span from="#w267" to="#w267">true</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w265" to="#w265">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-definite">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-definite">
                <span from="#w260" to="#w260">true</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w260" to="#w260">singular</span>
                <span from="#w263" to="#w263">plural</span>
                <span from="#w264" to="#w264">plural</span>
                <span from="#w265" to="#w265">singular</span>
                <span from="#w267" to="#w267">plural</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w260" to="#w260">nominative</span>
                <span from="#w260" to="#w260">neuter</span>
                <span from="#w263" to="#w263">nominative</span>
@@ -2294,11 +2200,8 @@
                <span from="#w267" to="#w267">accusative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T60" to="#T62">Well now, you can't/</span>
                <span from="#T62" to="#T69">I mean, I've offered you three jobs, and you have to take
                   one of them, right? </span>
@@ -2306,7 +2209,7 @@
                <span from="#T73" to="#T75">I mean, without a driver's license that's not possible.
                </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w270" to="#w270">Ja</span>
                <span from="#w271" to="#w271">nun</span>
                <span from="#pc36" to="#pc36">,</span>
@@ -2355,7 +2258,7 @@
                <span from="#w313" to="#w313">ja</span>
                <span from="#w314" to="#w314">nicht</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w270" to="#w270">NN</span>
                <span from="#w271" to="#w271">ADV</span>
                <span from="#pc36" to="#pc36">$,</span>
@@ -2404,7 +2307,7 @@
                <span from="#w313" to="#w313">ADV</span>
                <span from="#w314" to="#w314">PTKNEG</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w270" to="#w270">particle</span>
                <span from="#w271" to="#w271">adverb</span>
                <span from="#w272" to="#w272">pronoun</span>
@@ -2451,7 +2354,7 @@
                <span from="#w313" to="#w313">adverb</span>
                <span from="#w314" to="#w314">particle</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w272" to="#w272">true</span>
                <span from="#w277" to="#w277">true</span>
                <span from="#w280" to="#w280">true</span>
@@ -2462,7 +2365,7 @@
                <span from="#w306" to="#w306">true</span>
                <span from="#w312" to="#w312">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w272" to="#w272">3</span>
                <span from="#w277" to="#w277">1</span>
                <span from="#w278" to="#w278">1</span>
@@ -2478,7 +2381,7 @@
                <span from="#w307" to="#w307">1</span>
                <span from="#w311" to="#w311">3</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w278" to="#w278">true</span>
                <span from="#w281" to="#w281">true</span>
                <span from="#w292" to="#w292">true</span>
@@ -2486,10 +2389,10 @@
                <span from="#w307" to="#w307">true</span>
                <span from="#w311" to="#w311">true</span>
             </spanGrp>
-            <spanGrp type="morph-coordination">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-coordination">
                <span from="#w296" to="#w296">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w278" to="#w278">present</span>
                <span from="#w281" to="#w281">present</span>
                <span from="#w292" to="#w292">present</span>
@@ -2497,7 +2400,7 @@
                <span from="#w307" to="#w307">present</span>
                <span from="#w311" to="#w311">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w272" to="#w272">plural</span>
                <span from="#w273" to="#w273">singular</span>
                <span from="#w277" to="#w277">singular</span>
@@ -2523,12 +2426,12 @@
                <span from="#w311" to="#w311">singular</span>
                <span from="#w312" to="#w312">singular</span>
             </spanGrp>
-            <spanGrp type="morph-negation">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-negation">
                <span from="#w275" to="#w275">true</span>
                <span from="#w293" to="#w293">true</span>
                <span from="#w314" to="#w314">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w272" to="#w272">true</span>
                <span from="#w277" to="#w277">true</span>
                <span from="#w280" to="#w280">true</span>
@@ -2538,10 +2441,10 @@
                <span from="#w297" to="#w297">true</span>
                <span from="#w306" to="#w306">true</span>
             </spanGrp>
-            <spanGrp type="morph-demonstrative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-demonstrative">
                <span from="#w312" to="#w312">true</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w273" to="#w273">masculine</span>
                <span from="#w284" to="#w284">feminine</span>
                <span from="#w290" to="#w290">feminine</span>
@@ -2550,11 +2453,11 @@
                <span from="#w305" to="#w305">masculine</span>
                <span from="#w310" to="#w310">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-definite">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-definite">
                <span from="#w299" to="#w299">true</span>
                <span from="#w302" to="#w302">true</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w272" to="#w272">nominative</span>
                <span from="#w273" to="#w273">accusative</span>
                <span from="#w277" to="#w277">nominative</span>
@@ -2579,14 +2482,11 @@
                <span from="#w312" to="#w312">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T64" to="#T67">Well yes, but I don't really want to. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w315" to="#w315">ja</span>
                <span from="#w316" to="#w316">nu</span>
                <span from="#pc38" to="#pc38">,</span>
@@ -2597,7 +2497,7 @@
                <span from="#pc39" to="#pc39">,</span>
                <span from="#w321" to="#w321">irgendwie</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w315" to="#w315">PTKANT</span>
                <span from="#w316" to="#w316">ITJ</span>
                <span from="#pc38" to="#pc38">$,</span>
@@ -2608,17 +2508,17 @@
                <span from="#pc39" to="#pc39">$,</span>
                <span from="#w321" to="#w321">ADV</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w317" to="#w317">1</span>
                <span from="#w318" to="#w318">1</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w317" to="#w317">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w317" to="#w317">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w315" to="#w315">particle</span>
                <span from="#w316" to="#w316">interjection</span>
                <span from="#w317" to="#w317">pronoun</span>
@@ -2627,29 +2527,26 @@
                <span from="#w320" to="#w320">adjective</span>
                <span from="#w321" to="#w321">adverb</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w318" to="#w318">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w318" to="#w318">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w317" to="#w317">singular</span>
                <span from="#w318" to="#w318">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w317" to="#w317">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T68" to="#T70">Yes, I… </span>
                <span from="#T70" to="#T71">But if I kinda can't tolerate it…</span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w322" to="#w322">ja</span>
                <span from="#pc40" to="#pc40">,</span>
                <span from="#w323" to="#w323">ich</span>
@@ -2661,7 +2558,7 @@
                <span from="#w329" to="#w329">abkann</span>
                <span from="#w330" to="#w330">irgendwie</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w322" to="#w322">ADV</span>
                <span from="#pc40" to="#pc40">$,</span>
                <span from="#w323" to="#w323">PPER</span>
@@ -2673,19 +2570,19 @@
                <span from="#w329" to="#w329">VVFIN</span>
                <span from="#w330" to="#w330">ADV</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w323" to="#w323">1</span>
                <span from="#w326" to="#w326">1</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w323" to="#w323">true</span>
                <span from="#w326" to="#w326">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w323" to="#w323">true</span>
                <span from="#w326" to="#w326">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w322" to="#w322">particle</span>
                <span from="#w323" to="#w323">pronoun</span>
                <span from="#w324" to="#w324">conjunction</span>
@@ -2696,107 +2593,98 @@
                <span from="#w329" to="#w329">adjective</span>
                <span from="#w330" to="#w330">adverb</span>
             </spanGrp>
-            <spanGrp type="morph-coordination">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-coordination">
                <span from="#w324" to="#w324">true</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w323" to="#w323">singular</span>
                <span from="#w326" to="#w326">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w323" to="#w323">nominative</span>
                <span from="#w326" to="#w326">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T74" to="#T77">Well...</span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w331" to="#w331">Ja</span>
                <span from="#pc41" to="#pc41">,</span>
                <span from="#w332" to="#w332">also</span>
                <span from="#w333" to="#w333">&lt;unknown&gt;</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w331" to="#w331">NN</span>
                <span from="#pc41" to="#pc41">$,</span>
                <span from="#w332" to="#w332">ADV</span>
                <span from="#w333" to="#w333">VVFIN</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w331" to="#w331">particle</span>
                <span from="#w332" to="#w332">adverb</span>
                <span from="#w333" to="#w333">proper name</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T76" to="#T79">So then you go and get one! </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w334" to="#w334">dann</span>
                <span from="#w335" to="#w335">machen</span>
                <span from="#w336" to="#w336">Sie|sie|sie</span>
                <span from="#w337" to="#w337">ein</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w334" to="#w334">ADV</span>
                <span from="#w335" to="#w335">VVFIN</span>
                <span from="#w336" to="#w336">PPER</span>
                <span from="#w337" to="#w337">ART</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w336" to="#w336">true</span>
                <span from="#w337" to="#w337">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w336" to="#w336">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w335" to="#w335">3</span>
                <span from="#w336" to="#w336">3</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w334" to="#w334">adverb</span>
                <span from="#w335" to="#w335">verb</span>
                <span from="#w336" to="#w336">pronoun</span>
                <span from="#w337" to="#w337">pronoun</span>
                <span from="#w337" to="#w337">indefinite pronoun</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w335" to="#w335">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w335" to="#w335">present</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w337" to="#w337">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w335" to="#w335">plural</span>
                <span from="#w336" to="#w336">plural</span>
                <span from="#w337" to="#w337">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w336" to="#w336">nominative</span>
                <span from="#w337" to="#w337">accusative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T78" to="#T81">Am I crazy, or what?</span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w338" to="#w338">na</span>
                <span from="#pc42" to="#pc42">,</span>
                <span from="#w339" to="#w339">s</span>
@@ -2808,7 +2696,7 @@
                <span from="#w344" to="#w344">oder</span>
                <span from="#w345" to="#w345">&lt;unknown&gt;</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w338" to="#w338">ITJ</span>
                <span from="#pc42" to="#pc42">$,</span>
                <span from="#w339" to="#w339">NN</span>
@@ -2820,18 +2708,18 @@
                <span from="#w344" to="#w344">KON</span>
                <span from="#w345" to="#w345">VVFIN</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w341" to="#w341">true</span>
                <span from="#w345" to="#w345">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w341" to="#w341">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w340" to="#w340">1</span>
                <span from="#w341" to="#w341">1</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w338" to="#w338">interjection</span>
                <span from="#w339" to="#w339">symbol</span>
                <span from="#w340" to="#w340">verb</span>
@@ -2842,41 +2730,38 @@
                <span from="#w345" to="#w345">pronoun</span>
                <span from="#w345" to="#w345">indefinite pronoun</span>
             </spanGrp>
-            <spanGrp type="morph-coordination">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-coordination">
                <span from="#w344" to="#w344">true</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w340" to="#w340">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w340" to="#w340">present</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w343" to="#w343">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w340" to="#w340">singular</span>
                <span from="#w341" to="#w341">singular</span>
                <span from="#w343" to="#w343">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w341" to="#w341">nominative</span>
                <span from="#w343" to="#w343">nominative</span>
                <span from="#w345" to="#w345">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T80" to="#T83">Or take the job in the leather factory. </span>
                <span from="#T83" to="#T84">Or otherwise the job as a flower guard.</span>
                <span from="#T84" to="#T86">There are no other vacancies in my files. </span>
                <span from="#T87" to="#T90">And there are others too, right, who are also looking for
                   a job. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w346" to="#w346">oder</span>
                <span from="#w347" to="#w347">Sie|sie|sie</span>
                <span from="#w348" to="#w348">nehmen</span>
@@ -2918,7 +2803,7 @@
                <span from="#w382" to="#w382">Arbeit</span>
                <span from="#w383" to="#w383">suchen</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w346" to="#w346">KON</span>
                <span from="#w347" to="#w347">PPER</span>
                <span from="#w348" to="#w348">VVFIN</span>
@@ -2960,7 +2845,7 @@
                <span from="#w382" to="#w382">NN</span>
                <span from="#w383" to="#w383">VVFIN</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w346" to="#w346">conjunction</span>
                <span from="#w347" to="#w347">pronoun</span>
                <span from="#w348" to="#w348">verb</span>
@@ -3001,33 +2886,33 @@
                <span from="#w382" to="#w382">regular noun</span>
                <span from="#w383" to="#w383">verb</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w347" to="#w347">true</span>
                <span from="#w375" to="#w375">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w347" to="#w347">3</span>
                <span from="#w348" to="#w348">3</span>
                <span from="#w364" to="#w364">3</span>
                <span from="#w374" to="#w374">1</span>
                <span from="#w375" to="#w375">1</span>
             </spanGrp>
-            <spanGrp type="morph-coordination">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-coordination">
                <span from="#w346" to="#w346">true</span>
                <span from="#w355" to="#w355">true</span>
                <span from="#w372" to="#w372">true</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w348" to="#w348">true</span>
                <span from="#w364" to="#w364">true</span>
                <span from="#w374" to="#w374">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w348" to="#w348">present</span>
                <span from="#w364" to="#w364">present</span>
                <span from="#w374" to="#w374">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w347" to="#w347">plural</span>
                <span from="#w348" to="#w348">plural</span>
                <span from="#w349" to="#w349">singular</span>
@@ -3052,25 +2937,25 @@
                <span from="#w381" to="#w381">singular</span>
                <span from="#w382" to="#w382">singular</span>
             </spanGrp>
-            <spanGrp type="morph-negation">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-negation">
                <span from="#w366" to="#w366">true</span>
                <span from="#w380" to="#w380">true</span>
             </spanGrp>
-            <spanGrp type="morph-possessive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-possessive">
                <span from="#w370" to="#w370">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w347" to="#w347">true</span>
                <span from="#w375" to="#w375">true</span>
             </spanGrp>
-            <spanGrp type="morph-definite">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-definite">
                <span from="#w349" to="#w349">true</span>
                <span from="#w353" to="#w353">true</span>
                <span from="#w357" to="#w357">true</span>
                <span from="#w361" to="#w361">true</span>
                <span from="#w381" to="#w381">true</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w349" to="#w349">feminine</span>
                <span from="#w350" to="#w350">feminine</span>
                <span from="#w351" to="#w351">feminine</span>
@@ -3088,7 +2973,7 @@
                <span from="#w381" to="#w381">feminine</span>
                <span from="#w382" to="#w382">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w347" to="#w347">nominative</span>
                <span from="#w349" to="#w349">accusative</span>
                <span from="#w350" to="#w350">accusative</span>
@@ -3111,21 +2996,18 @@
                <span from="#w381" to="#w381">accusative</span>
                <span from="#w382" to="#w382">accusative</span>
             </spanGrp>
-            <spanGrp type="morph-attributive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-attributive">
                <span from="#w370" to="#w370">true</span>
                <span from="#w378" to="#w378">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T82" to="#T85">No, I've said, right, those jobs, they're not for me. </span>
                <span from="#T85" to="#T88">All of them, I'm all thumbs when it comes to those kinds
                   of things, okay? </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w384" to="#w384">&lt;unknown&gt;</span>
                <span from="#pc46" to="#pc46">,</span>
                <span from="#w385" to="#w385">&lt;unknown&gt;</span>
@@ -3162,7 +3044,7 @@
                <span from="#pc51" to="#pc51">,</span>
                <span from="#w412" to="#w412">ne</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w384" to="#w384">NE</span>
                <span from="#pc46" to="#pc46">$,</span>
                <span from="#w385" to="#w385">ADJD</span>
@@ -3199,7 +3081,7 @@
                <span from="#pc51" to="#pc51">$,</span>
                <span from="#w412" to="#w412">ART</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w387" to="#w387">true</span>
                <span from="#w390" to="#w390">true</span>
                <span from="#w397" to="#w397">true</span>
@@ -3209,13 +3091,13 @@
                <span from="#w404" to="#w404">true</span>
                <span from="#w407" to="#w407">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w387" to="#w387">true</span>
                <span from="#w390" to="#w390">true</span>
                <span from="#w400" to="#w400">true</span>
                <span from="#w407" to="#w407">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w385" to="#w385">3</span>
                <span from="#w387" to="#w387">1</span>
                <span from="#w389" to="#w389">1</span>
@@ -3227,7 +3109,7 @@
                <span from="#w407" to="#w407">1</span>
                <span from="#w412" to="#w412">1</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w384" to="#w384">proper name</span>
                <span from="#w385" to="#w385">verb</span>
                <span from="#w386" to="#w386">symbol</span>
@@ -3260,7 +3142,7 @@
                <span from="#w411" to="#w411">regular noun</span>
                <span from="#w412" to="#w412">verb</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w385" to="#w385">true</span>
                <span from="#w389" to="#w389">true</span>
                <span from="#w395" to="#w395">true</span>
@@ -3268,7 +3150,7 @@
                <span from="#w406" to="#w406">true</span>
                <span from="#w412" to="#w412">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w385" to="#w385">past</span>
                <span from="#w389" to="#w389">present</span>
                <span from="#w395" to="#w395">present</span>
@@ -3276,13 +3158,13 @@
                <span from="#w406" to="#w406">present</span>
                <span from="#w412" to="#w412">present</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w399" to="#w399">masculine</span>
                <span from="#w409" to="#w409">masculine</span>
                <span from="#w410" to="#w410">masculine</span>
                <span from="#w411" to="#w411">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w384" to="#w384">singular</span>
                <span from="#w385" to="#w385">singular</span>
                <span from="#w387" to="#w387">singular</span>
@@ -3302,7 +3184,7 @@
                <span from="#w411" to="#w411">singular</span>
                <span from="#w412" to="#w412">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w384" to="#w384">nominative</span>
                <span from="#w387" to="#w387">nominative</span>
                <span from="#w388" to="#w388">accusative</span>
@@ -3320,15 +3202,12 @@
                <span from="#w411" to="#w411">genitive</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T89" to="#T93">But I really am, I'm really all thumbs, Mr. Geritzen.
                </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w413" to="#w413">Hab</span>
                <span from="#w414" to="#w414">ich</span>
                <span from="#w415" to="#w415">aber</span>
@@ -3340,7 +3219,7 @@
                <span from="#w420" to="#w420">&lt;unknown&gt;</span>
                <span from="#w421" to="#w421">nervig</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w413" to="#w413">NN</span>
                <span from="#w414" to="#w414">PPER</span>
                <span from="#w415" to="#w415">ADV</span>
@@ -3352,20 +3231,20 @@
                <span from="#w420" to="#w420">VVFIN</span>
                <span from="#w421" to="#w421">ADJD</span>
             </spanGrp>
-            <spanGrp type="named-entities">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="named-entities">
                <span from="#w420" to="#w420">person</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w414" to="#w414">1</span>
                <span from="#w420" to="#w420">3</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w414" to="#w414">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w414" to="#w414">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w413" to="#w413">regular noun</span>
                <span from="#w414" to="#w414">pronoun</span>
                <span from="#w415" to="#w415">adverb</span>
@@ -3376,37 +3255,34 @@
                <span from="#w420" to="#w420">verb</span>
                <span from="#w421" to="#w421">adjective</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w420" to="#w420">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w420" to="#w420">present</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w419" to="#w419">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w414" to="#w414">singular</span>
                <span from="#w418" to="#w418">plural</span>
                <span from="#w419" to="#w419">singular</span>
                <span from="#w420" to="#w420">plural</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w414" to="#w414">nominative</span>
                <span from="#w418" to="#w418">nominative</span>
                <span from="#w419" to="#w419">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T92" to="#T96">Well, Mr. Schmidt/ Schneider yes. </span>
                <span from="#T98" to="#T102">Well, then i'm afraid we have to reduce your
                   unemployment benefits. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w422" to="#w422">Ja</span>
                <span from="#pc53" to="#pc53">,</span>
                <span from="#w423" to="#w423">Herr</span>
@@ -3428,7 +3304,7 @@
                <span from="#w438" to="#w438">etwas</span>
                <span from="#w439" to="#w439">kürzen</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w422" to="#w422">NN</span>
                <span from="#pc53" to="#pc53">$,</span>
                <span from="#w423" to="#w423">NN</span>
@@ -3450,19 +3326,19 @@
                <span from="#w438" to="#w438">ADV</span>
                <span from="#w439" to="#w439">VVINF</span>
             </spanGrp>
-            <spanGrp type="named-entities">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="named-entities">
                <span from="#w424" to="#w424">person</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w434" to="#w434">1</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w434" to="#w434">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w434" to="#w434">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w422" to="#w422">regular noun</span>
                <span from="#w423" to="#w423">regular noun</span>
                <span from="#w424" to="#w424">proper name</span>
@@ -3479,15 +3355,15 @@
                <span from="#w438" to="#w438">indefinite pronoun</span>
                <span from="#w439" to="#w439">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-definite">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-definite">
                <span from="#w436" to="#w436">true</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w423" to="#w423">masculine</span>
                <span from="#w424" to="#w424">masculine</span>
                <span from="#w439" to="#w439">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w422" to="#w422">singular</span>
                <span from="#w423" to="#w423">singular</span>
                <span from="#w424" to="#w424">singular</span>
@@ -3497,7 +3373,7 @@
                <span from="#w437" to="#w437">singular</span>
                <span from="#w439" to="#w439">plural</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w422" to="#w422">nominative</span>
                <span from="#w422" to="#w422">neuter</span>
                <span from="#w423" to="#w423">nominative</span>
@@ -3510,18 +3386,15 @@
                <span from="#w437" to="#w437">neuter</span>
                <span from="#w439" to="#w439">nominative</span>
             </spanGrp>
-            <spanGrp type="morph-attributive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-attributive">
                <span from="#w438" to="#w438">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T95" to="#T97">But I don't want that. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w440" to="#w440">aber</span>
                <span from="#w441" to="#w441">&lt;unknown&gt;</span>
                <span from="#w442" to="#w442">wollen</span>
@@ -3529,7 +3402,7 @@
                <span from="#w444" to="#w444">&lt;unknown&gt;</span>
                <span from="#w445" to="#w445">nicht</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w440" to="#w440">KON</span>
                <span from="#w441" to="#w441">VVIMP</span>
                <span from="#w442" to="#w442">VMFIN</span>
@@ -3537,20 +3410,20 @@
                <span from="#w444" to="#w444">ADJD</span>
                <span from="#w445" to="#w445">PTKNEG</span>
             </spanGrp>
-            <spanGrp type="morph-negation">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-negation">
                <span from="#w445" to="#w445">true</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w443" to="#w443">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w443" to="#w443">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w442" to="#w442">1</span>
                <span from="#w443" to="#w443">1</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w440" to="#w440">conjunction</span>
                <span from="#w441" to="#w441">adjective</span>
                <span from="#w442" to="#w442">verb</span>
@@ -3558,55 +3431,52 @@
                <span from="#w444" to="#w444">adjective</span>
                <span from="#w445" to="#w445">particle</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w442" to="#w442">true</span>
             </spanGrp>
-            <spanGrp type="morph-coordination">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-coordination">
                <span from="#w440" to="#w440">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w442" to="#w442">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w442" to="#w442">singular</span>
                <span from="#w443" to="#w443">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w443" to="#w443">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T99" to="#T100">I'm not interested. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w446" to="#w446">da</span>
                <span from="#w447" to="#w447">haben</span>
                <span from="#w448" to="#w448">ich</span>
                <span from="#w449" to="#w449">kein</span>
                <span from="#w450" to="#w450">Interesse</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w446" to="#w446">ADV</span>
                <span from="#w447" to="#w447">VAFIN</span>
                <span from="#w448" to="#w448">PPER</span>
                <span from="#w449" to="#w449">PIAT</span>
                <span from="#w450" to="#w450">NN</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w448" to="#w448">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w448" to="#w448">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w447" to="#w447">1</span>
                <span from="#w448" to="#w448">1</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w446" to="#w446">adverb</span>
                <span from="#w447" to="#w447">verb</span>
                <span from="#w448" to="#w448">pronoun</span>
@@ -3614,37 +3484,34 @@
                <span from="#w449" to="#w449">indefinite pronoun</span>
                <span from="#w450" to="#w450">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w447" to="#w447">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w447" to="#w447">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w447" to="#w447">singular</span>
                <span from="#w448" to="#w448">singular</span>
                <span from="#w449" to="#w449">singular</span>
                <span from="#w450" to="#w450">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w448" to="#w448">nominative</span>
                <span from="#w449" to="#w449">accusative</span>
                <span from="#w449" to="#w449">neuter</span>
                <span from="#w450" to="#w450">accusative</span>
                <span from="#w450" to="#w450">neuter</span>
             </spanGrp>
-            <spanGrp type="morph-attributive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-attributive">
                <span from="#w449" to="#w449">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T101" to="#T104">Have you gone completely mad, or what? </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w451" to="#w451">&lt;unknown&gt;</span>
                <span from="#pc55" to="#pc55">,</span>
                <span from="#w452" to="#w452">Sie|sie|sie</span>
@@ -3659,7 +3526,7 @@
                <span from="#pc57" to="#pc57">,</span>
                <span from="#w460" to="#w460">ne</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w451" to="#w451">NN</span>
                <span from="#pc55" to="#pc55">$,</span>
                <span from="#w452" to="#w452">PPER</span>
@@ -3674,19 +3541,19 @@
                <span from="#pc57" to="#pc57">$,</span>
                <span from="#w460" to="#w460">ART</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w452" to="#w452">3</span>
                <span from="#w453" to="#w453">3</span>
                <span from="#w460" to="#w460">3</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w452" to="#w452">true</span>
                <span from="#w459" to="#w459">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w452" to="#w452">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w451" to="#w451">interjection</span>
                <span from="#w452" to="#w452">pronoun</span>
                <span from="#w453" to="#w453">verb</span>
@@ -3699,37 +3566,34 @@
                <span from="#w459" to="#w459">indefinite pronoun</span>
                <span from="#w460" to="#w460">verb</span>
             </spanGrp>
-            <spanGrp type="morph-subjunctive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-subjunctive">
                <span from="#w460" to="#w460">true</span>
             </spanGrp>
-            <spanGrp type="morph-coordination">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-coordination">
                <span from="#w458" to="#w458">true</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w453" to="#w453">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w453" to="#w453">present</span>
                <span from="#w460" to="#w460">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w452" to="#w452">plural</span>
                <span from="#w453" to="#w453">plural</span>
                <span from="#w460" to="#w460">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w452" to="#w452">nominative</span>
                <span from="#w459" to="#w459">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T103" to="#T105">I don't see another way. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w461" to="#w461">da</span>
                <span from="#w462" to="#w462">kommen</span>
                <span from="#w463" to="#w463">wir</span>
@@ -3737,7 +3601,7 @@
                <span from="#w465" to="#w465">nicht</span>
                <span from="#w466" to="#w466">umhin</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w461" to="#w461">ADV</span>
                <span from="#w462" to="#w462">VVFIN</span>
                <span from="#w463" to="#w463">PPER</span>
@@ -3745,20 +3609,20 @@
                <span from="#w465" to="#w465">PTKNEG</span>
                <span from="#w466" to="#w466">PTKVZ</span>
             </spanGrp>
-            <spanGrp type="morph-negation">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-negation">
                <span from="#w465" to="#w465">true</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w463" to="#w463">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w463" to="#w463">true</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w462" to="#w462">1</span>
                <span from="#w463" to="#w463">1</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w461" to="#w461">adverb</span>
                <span from="#w462" to="#w462">verb</span>
                <span from="#w463" to="#w463">pronoun</span>
@@ -3766,25 +3630,22 @@
                <span from="#w465" to="#w465">particle</span>
                <span from="#w466" to="#w466">particle</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w462" to="#w462">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w462" to="#w462">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w462" to="#w462">plural</span>
                <span from="#w463" to="#w463">plural</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w463" to="#w463">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T105" to="#T106">Yes. </span>
                <span from="#T106" to="#T107">Yes, that's what I expected, you know, that...</span>
                <span from="#T107" to="#T108">No imagination, huh, Mr. Geritzen, no imagination, you
@@ -3793,7 +3654,7 @@
                <span from="#T111" to="#T112">Right? </span>
                <span from="#T114" to="#T116">Well... </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w467" to="#w467">ja</span>
                <span from="#w468" to="#w468">ja</span>
                <span from="#pc58" to="#pc58">,</span>
@@ -3833,7 +3694,7 @@
                <span from="#w494" to="#w494">&lt;unknown&gt;</span>
                <span from="#w495" to="#w495">also</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w467" to="#w467">PTKANT</span>
                <span from="#w468" to="#w468">PTKANT</span>
                <span from="#pc58" to="#pc58">$,</span>
@@ -3873,10 +3734,10 @@
                <span from="#w494" to="#w494">VVFIN</span>
                <span from="#w495" to="#w495">ADV</span>
             </spanGrp>
-            <spanGrp type="named-entities">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="named-entities">
                <span from="#w481" to="#w481">person</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w467" to="#w467">regular noun</span>
                <span from="#w468" to="#w468">particle</span>
                <span from="#w470" to="#w470">verb</span>
@@ -3906,7 +3767,7 @@
                <span from="#w494" to="#w494">regular noun</span>
                <span from="#w495" to="#w495">adverb</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w470" to="#w470">2</span>
                <span from="#w471" to="#w471">1</span>
                <span from="#w472" to="#w472">1</span>
@@ -3915,23 +3776,23 @@
                <span from="#w487" to="#w487">3</span>
                <span from="#w489" to="#w489">2</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w471" to="#w471">true</span>
                <span from="#w472" to="#w472">true</span>
                <span from="#w484" to="#w484">true</span>
                <span from="#w489" to="#w489">true</span>
             </spanGrp>
-            <spanGrp type="morph-reflexive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-reflexive">
                <span from="#w472" to="#w472">true</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w474" to="#w474">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w474" to="#w474">present</span>
                <span from="#w487" to="#w487">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w467" to="#w467">singular</span>
                <span from="#w470" to="#w470">singular</span>
                <span from="#w471" to="#w471">singular</span>
@@ -3951,18 +3812,18 @@
                <span from="#w489" to="#w489">plural</span>
                <span from="#w494" to="#w494">singular</span>
             </spanGrp>
-            <spanGrp type="morph-imperative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-imperative">
                <span from="#w470" to="#w470">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w471" to="#w471">true</span>
                <span from="#w484" to="#w484">true</span>
                <span from="#w489" to="#w489">true</span>
             </spanGrp>
-            <spanGrp type="morph-subjunctive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-subjunctive">
                <span from="#w487" to="#w487">true</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w477" to="#w477">feminine</span>
                <span from="#w478" to="#w478">feminine</span>
                <span from="#w480" to="#w480">masculine</span>
@@ -3971,7 +3832,7 @@
                <span from="#w484" to="#w484">feminine</span>
                <span from="#w494" to="#w494">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w467" to="#w467">nominative</span>
                <span from="#w467" to="#w467">neuter</span>
                <span from="#w471" to="#w471">nominative</span>
@@ -3992,19 +3853,16 @@
                <span from="#w489" to="#w489">dative</span>
                <span from="#w494" to="#w494">nominative</span>
             </spanGrp>
-            <spanGrp type="morph-attributive">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-attributive">
                <span from="#w477" to="#w477">true</span>
                <span from="#w482" to="#w482">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T110" to="#T113">Well then, as you please. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w496" to="#w496">na</span>
                <span from="#w497" to="#w497">gut</span>
                <span from="#pc67" to="#pc67">,</span>
@@ -4012,7 +3870,7 @@
                <span from="#w499" to="#w499">Sie|sie|sie</span>
                <span from="#w500" to="#w500">wollen</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w496" to="#w496">ITJ</span>
                <span from="#w497" to="#w497">ADJD</span>
                <span from="#pc67" to="#pc67">$,</span>
@@ -4020,109 +3878,103 @@
                <span from="#w499" to="#w499">PPER</span>
                <span from="#w500" to="#w500">VMFIN</span>
             </spanGrp>
-            <spanGrp type="morph-person">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-person">
                <span from="#w499" to="#w499">3</span>
                <span from="#w500" to="#w500">3</span>
             </spanGrp>
-            <spanGrp type="morph-substituting">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-substituting">
                <span from="#w499" to="#w499">true</span>
             </spanGrp>
-            <spanGrp type="morph-personal">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-personal">
                <span from="#w499" to="#w499">true</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w496" to="#w496">interjection</span>
                <span from="#w497" to="#w497">adjective</span>
                <span from="#w498" to="#w498">conjunction</span>
                <span from="#w499" to="#w499">pronoun</span>
                <span from="#w500" to="#w500">verb</span>
             </spanGrp>
-            <spanGrp type="morph-degree">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-degree">
                <span from="#w498" to="#w498">comparative</span>
             </spanGrp>
-            <spanGrp type="morph-indicative">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-indicative">
                <span from="#w500" to="#w500">true</span>
             </spanGrp>
-            <spanGrp type="morph-tense">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-tense">
                <span from="#w500" to="#w500">present</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w499" to="#w499">plural</span>
                <span from="#w500" to="#w500">plural</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w499" to="#w499">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T115" to="#T117">Fine. </span>
                <span from="#T117" to="#T119">Goodbye. </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w501" to="#w501">schön</span>
                <span from="#w502" to="#w502">auf</span>
                <span from="#w503" to="#w503">Wiedersehen</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w501" to="#w501">ADJD</span>
                <span from="#w502" to="#w502">APPR</span>
                <span from="#w503" to="#w503">NN</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w501" to="#w501">regular noun</span>
                <span from="#w502" to="#w502">preposition</span>
                <span from="#w503" to="#w503">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w501" to="#w501">feminine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w501" to="#w501">plural</span>
                <span from="#w503" to="#w503">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w501" to="#w501">nominative</span>
                <span from="#w503" to="#w503">dative</span>
                <span from="#w503" to="#w503">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:tesla="http://www.exmaralda.org"
-                        xmlns:tei="http://www.tei-c.org/ns/1.0"
-                        corresp="#u1">
-            <spanGrp type="en">
+         <annotationGrp corresp="#u1">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="en">
                <span from="#T117" to="#T118">Right? </span>
             </spanGrp>
-            <spanGrp type="lemma">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="lemma">
                <span from="#w504" to="#w504">&lt;unknown&gt;</span>
                <span from="#w505" to="#w505">&lt;unknown&gt;</span>
                <span from="#w506" to="#w506">&lt;unknown&gt;</span>
             </spanGrp>
-            <spanGrp type="pos">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="pos">
                <span from="#w504" to="#w504">ADJA</span>
                <span from="#w505" to="#w505">NN</span>
                <span from="#w506" to="#w506">NE</span>
             </spanGrp>
-            <spanGrp type="morph-cat">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-cat">
                <span from="#w504" to="#w504">regular noun</span>
                <span from="#w505" to="#w505">regular noun</span>
                <span from="#w506" to="#w506">regular noun</span>
             </spanGrp>
-            <spanGrp type="morph-gender">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-gender">
                <span from="#w504" to="#w504">feminine</span>
                <span from="#w505" to="#w505">masculine</span>
                <span from="#w506" to="#w506">masculine</span>
             </spanGrp>
-            <spanGrp type="morph-number">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-number">
                <span from="#w504" to="#w504">singular</span>
                <span from="#w505" to="#w505">singular</span>
                <span from="#w506" to="#w506">singular</span>
             </spanGrp>
-            <spanGrp type="morph-case">
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="morph-case">
                <span from="#w504" to="#w504">nominative</span>
                <span from="#w505" to="#w505">nominative</span>
                <span from="#w506" to="#w506">nominative</span>
@@ -4130,9 +3982,7 @@
          </annotationGrp>
       </annotations>
    </stdf>
-   <text xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns:tesla="http://www.exmaralda.org"
-         xmlns:tei="http://www.tei-c.org/ns/1.0">
+   <text>
       <timeline unit="s" origin="#T0">
          <when absolute="00:00:00.0" xml:id="T0"/>
          <when xml:id="T1" interval="1.4999923308692669" since="#T0"/>
