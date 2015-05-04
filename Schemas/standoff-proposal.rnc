@@ -8,7 +8,7 @@ namespace s = "http://www.ascc.net/xml/schematron"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2015-05-04T15:25:40Z. 
+# Schema generated from ODD source 2015-05-04T15:30:47Z. 
 # Edition: Version 2.7.0. Last updated on
 #	16th September 2014, revision 13036
 # Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -10547,6 +10547,7 @@ model.annotationPart =
   | model.listLike
   | listBibl
   | model.entryLike
+  | listChange
   | mapStruct
   | annotationGrp
 start = TEI

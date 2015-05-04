@@ -172,6 +172,12 @@
                     </classes>
                 </elementSpec>
                 
+                <elementSpec ident="listChange" mode="change" module="header">
+                    <classes mode="change">
+                        <memberOf key="model.annotationPart" mode="add"/>
+                    </classes>
+                </elementSpec>
+                
                 <!-- Need to exclude our namespace from egXML to prevent "conflicting ID-types for attribute" errors -->
                 <macroSpec ident="macro.anyXML" mode="change" module="tagdocs">
                     <content>
