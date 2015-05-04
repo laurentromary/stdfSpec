@@ -1,17 +1,17 @@
-default namespace = "http://standoff.proposal"
+default namespace = "http://www.tei-c.org/ns/Examples"
 namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
-namespace ns1 = "http://www.isocat.org/ns/dcr"
-namespace ns2 = "http://www.tei-c.org/ns/Examples"
+namespace ns1 = "http://standoff.proposal"
+namespace ns2 = "http://www.isocat.org/ns/dcr"
 namespace ns3 = "http://www.tei-c.org/ns/1.0"
 namespace rng = "http://relaxng.org/ns/structure/1.0"
 namespace s = "http://www.ascc.net/xml/schematron"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2015-03-20T09:53:43Z. .
-# TEI Edition: Version 2.7.0. Last updated on
+# Schema generated from ODD source 2015-05-04T15:25:40Z. 
+# Edition: Version 2.7.0. Last updated on
 #	16th September 2014, revision 13036
-# TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
+# Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
 #
 
 #  CC+BY and BSD-2 licences
@@ -85,7 +85,7 @@ data.temporal.iso =
   | xsd:token { pattern = "[0-9.,DHMPRSTWYZ/:+\-]+" }
 data.duration.iso = xsd:token { pattern = "[0-9.,DHMPRSTWYZ/:+\-]+" }
 macro.anyXML =
-  element * - (ns3:* | ns2:egXML) {
+  element * - (ns3:* | egXML | ns1:*) {
     attribute * { text }*,
     (text | macro.anyXML)*
   }
@@ -281,13 +281,13 @@ att.datcat.attributes =
 att.datcat.attribute.datcat =
   
   ## contains a PID (persistent identifier) that aligns the given element with the appropriate Data Category (or categories) in ISOcat.
-  attribute ns1:datcat {
+  attribute ns2:datcat {
     list { data.pointer+ }
   }?
 att.datcat.attribute.valueDatcat =
   
   ## contains a PID (persistent identifier) that aligns the content of the given element or the value of the given attribute with the appropriate simple Data Category (or categories) in ISOcat.
-  attribute ns1:valueDatcat {
+  attribute ns2:valueDatcat {
     list { data.pointer+ }
   }?
 att.declarable.attributes = att.declarable.attribute.default
@@ -9635,7 +9635,7 @@ eg =
 egXML =
   
   ## (example of XML) contains a single well-formed XML fragment demonstrating the use of some XML element or attribute, in which the egXML element itself functions as the root element. [22.1.1. ]
-  element ns2:egXML {
+  element egXML {
     (text | macro.anyXML)*,
     att.global.attributes,
     att.source.attributes,
@@ -10497,7 +10497,7 @@ valList =
 stdf =
   
   ## Container element for standoff annotations
-  element stdf {
+  element ns1:stdf {
     soHeader?,
     annotations?,
     stdf*,
@@ -10513,7 +10513,7 @@ stdf =
 soHeader =
   
   ## Metadata for the stdf element(s)
-  element soHeader {
+  element ns1:soHeader {
     titleStmt?
     & publicationStmt?
     & notesStmt?
@@ -10524,17 +10524,17 @@ soHeader =
 annotations =
   
   ## Content of the stdf element
-  element annotations {
+  element ns1:annotations {
     model.annotationPart*, att.global.attributes, empty
   }
 mapStruct =
   
   ## Any element is to be interpreted as mapping its structure onto a text to be annotated
-  element mapStruct { empty }
+  element ns1:mapStruct { empty }
 annotationGrp =
   
   ## Groups together various annotations, for instance for parallel interpretations of a spoken segment
-  element annotationGrp {
+  element ns1:annotationGrp {
     (u | model.annotationPart)*,
     att.timed.attributes,
     att.global.attributes,
