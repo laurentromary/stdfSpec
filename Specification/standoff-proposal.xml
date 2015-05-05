@@ -44,8 +44,12 @@
                 <moduleRef key="transcr"/>
                 <moduleRef key="verse"/>
                 <moduleRef key="tagdocs"/>
-
-                <elementSpec ident="stdf" mode="add" ns="http://standoff.proposal">
+                
+                <moduleSpec ident="stand-off">
+                    <desc>Elements to allow stand-off annotations in a TEI document</desc>
+                </moduleSpec>
+                
+                <elementSpec ident="stdf" mode="add" ns="http://standoff.proposal" module="stand-off">
                     <desc>Container element for standoff annotations</desc>
                     <classes>
                         <memberOf key="model.resourceLike" mode="add"/>
@@ -70,7 +74,7 @@
                     </content>
                 </elementSpec>
 
-                <elementSpec ident="soHeader" mode="add" ns="http://standoff.proposal">
+                <elementSpec ident="soHeader" mode="add" ns="http://standoff.proposal" module="stand-off">
                     <desc>Metadata for the <gi>stdf</gi> element(s)</desc>
                     <content>
                         <rng:interleave>
@@ -96,7 +100,7 @@
                     </content>
                 </elementSpec>
 
-                <elementSpec ident="annotations" mode="add" ns="http://standoff.proposal">
+                <elementSpec ident="annotations" mode="add" ns="http://standoff.proposal" module="stand-off">
                     <desc>Content of the <gi>stdf</gi> element</desc>
                     <classes>
                         <memberOf key="att.global" mode="add"/>
@@ -108,7 +112,7 @@
                     </content>
                 </elementSpec>
 
-                <elementSpec ident="mapStruct" mode="add" ns="http://standoff.proposal">
+                <elementSpec ident="mapStruct" mode="add" ns="http://standoff.proposal" module="stand-off">
                     <desc>Any element is to be interpreted as mapping its structure onto a text to
                         be annotated</desc>
                     <classes>
@@ -119,7 +123,7 @@
                 </elementSpec>
 
 
-                <elementSpec ident="annotationGrp" mode="add" ns="http://standoff.proposal">
+                <elementSpec ident="annotationGrp" mode="add" ns="http://standoff.proposal" module="stand-off">
                     <desc>Groups together various annotations, for instance for parallel
                         interpretations of a spoken segment</desc>
                     <classes>
@@ -140,7 +144,7 @@
                     </content>
                 </elementSpec>
 
-                <classSpec type="model" ident="model.annotationPart" mode="add">
+                <classSpec type="model" ident="model.annotationPart" mode="add" module="stand-off">
                     <desc>Initially empty class for providing easy customization with additional TEI
                         elements or external schemas, e.g. PAULA</desc>
                 </classSpec>
