@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://github.com/laurentromary/stdfSpec/raw/master/Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="A040296">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="s">WeGA, Briefe, Digitale Edition</title>
+            <title level="a">Carl Maria von Weber an Gottfried Weber in Mannheim<lb/>Darmstadt, Dienstag, 21. August 1810</title>
+            <author ref="#A002068">Weber, Carl Maria von</author>
+            <editor>Veit, Joachim</editor>
+            <editor>Stadler, Peter</editor>
+            <funder>
+               <name>Carl-Maria-von-Weber-Gesamtausgabe</name>
+            </funder>
+            <respStmt>
+               <resp>Übertragung</resp>
+               <name>Eveline Bartlitz</name>
+               <name>Joachim Veit</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>WeGA elektronisch</publisher>
+            <availability status="restricted">
+               <licence target="http://opensource.org/licenses/BSD-2-Clause">BSD 2-Clause</licence>
+               <licence target="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License (CC BY 3.0)</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <p>Machine-Readable Transcriptions of Texts from the Carl Maria von Weber Complete Edition (WeGA)</p>
+         </seriesStmt>
+         <notesStmt>
+            <note type="summary">teilt mit, dass Konzertplan für <settlement ref="#A130015">Darmstadt</settlement> gescheitert sei; betrifft die Statuten des Harmonischen Vereins; plant Reise nach <settlement ref="A130020">Frankfurt</settlement></note>
+         </notesStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <country>US</country>
+                  <settlement ref="#A130200">New Haven</settlement>
+                  <repository n="US-NHub">Yale University, Beinecke Rare Book and Manuscript Library</repository>
+                  <idno>Frederick R. Koch Foundation</idno>
+               </msIdentifier>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <correspDesc>
+            <correspAction type="sent">
+               <persName ref="#A002068">Weber, Carl Maria von</persName>
+               <settlement ref="#A130015">Darmstadt</settlement>
+               <date when="1810-08-21">21. August 1810</date>
+            </correspAction>
+            <correspAction type="received">
+               <persName ref="#A002078">Weber, Gottfried</persName>
+               <settlement ref="#A130010">Mannheim</settlement>
+            </correspAction>
+         </correspDesc>
+         <langUsage>
+            <language ident="de-DE">German</language>
+         </langUsage>
+      </profileDesc>
+   </teiHeader>
+   <stdf xmlns="http://standoff.proposal">
+      <stdf>
+         <soHeader>
+            <titleStmt xmlns="http://www.tei-c.org/ns/1.0">
+               <title>Personography of the Carl-Maria-von-Weber-Gesamtausgabe</title>
+            </titleStmt>
+         </soHeader>
+         <annotations>
+            <listPerson xmlns="http://www.tei-c.org/ns/1.0">
+               <person xml:id="A002068">
+                  <idno type="gnd">http://d-nb.info/gnd/118629662</idno>
+                  <persName type="reg">Weber, Carl Maria von</persName>
+               </person>
+               <person xml:id="A002078">
+                  <idno type="gnd">http://d-nb.info/gnd/118643231</idno>
+                  <persName type="reg">Weber, Gottfried</persName>
+               </person>
+               <person xml:id="A002025">
+                  <idno type="gnd">http://d-nb.info/gnd/118627546</idno>
+                  <persName type="reg">Vogler, Georg Joseph</persName>
+               </person>
+               <person xml:id="A000584">
+                  <idno type="gnd">http://d-nb.info/gnd/118814044</idno>
+                  <persName type="reg">Gänsbacher, Johann</persName>
+               </person>
+               <person xml:id="A001590">
+                  <idno type="gnd">http://d-nb.info/gnd/118601644</idno>
+                  <persName type="reg">Rochlitz, Friedrich</persName>
+               </person>
+               <person xml:id="A001313">
+                  <idno type="gnd">http://d-nb.info/gnd/118581945</idno>
+                  <persName type="reg">Meyerbeer, Giacomo</persName>
+               </person>
+               <person xml:id="A002064">
+                  <persName type="reg">Weber, Auguste</persName>
+               </person>
+               <person xml:id="A000409">
+                  <idno type="gnd">http://d-nb.info/gnd/116256931</idno>
+                  <persName type="reg">Dusch, Alexander von</persName>
+               </person>
+               <person xml:id="A000888">
+                  <persName type="reg">Hout, Philipp Ludwig</persName>
+               </person>
+               <person xml:id="A000820">
+                  <persName type="reg">Hertling, Philipp</persName>
+               </person>
+            </listPerson>
+         </annotations>
+      </stdf>
+      <stdf>
+         <soHeader>
+            <titleStmt xmlns="http://www.tei-c.org/ns/1.0">
+               <title>Placeography of the Carl-Maria-von-Weber-Gesamtausgabe</title>
+            </titleStmt>
+         </soHeader>
+         <annotations>
+            <listPlace xmlns="http://www.tei-c.org/ns/1.0">
+               <place xml:id="A130200">
+                  <placeName type="reg">New Haven</placeName>
+                  <idno type="geonames">http://www.geonames.org/4839366</idno>
+               </place>
+               <place xml:id="A130015">
+                  <placeName type="reg">Darmstadt</placeName>
+                  <idno type="geonames">http://www.geonames.org/2938913</idno>
+               </place>
+               <place xml:id="A130010">
+                  <placeName type="reg">Mannheim</placeName>
+                  <idno type="geonames">http://www.geonames.org/2873891</idno>
+               </place>
+               <place xml:id="A130020">
+                  <placeName type="reg">Frankfurt am Main</placeName>
+                  <idno type="geonames">http://www.geonames.org/2925533</idno>
+               </place>
+            </listPlace>
+         </annotations>
+      </stdf>
+   </stdf>
+   <text>
+      <body>
+         <div type="address">
+            <ab>
+               <address>
+                  <addrLine>S: Wohlgebohren</addrLine>
+                  <addrLine>dem Herrn <hi rend="latintype">Licentiat</hi></addrLine>
+                  <addrLine><persName ref="#A002078"><hi rend="underline" n="1"><hi rend="latintype">Weber</hi></hi></persName></addrLine> 
+                  <addrLine>zu</addrLine> 
+                  <addrLine><settlement ref="#A130010"><hi rend="underline" n="1">Mannheim</hi></settlement></addrLine>
+               </address>
+            </ab>
+         </div>
+         <div type="writingSession" n="1">
+            <opener>
+               <salute>Liebster <rs type="person" ref="#A002078">Bruder</rs></salute>
+            </opener>
+            <p>Kaum bin ich 2 Tage in dem verfluchten <settlement ref="#A130015">Darmstadt</settlement>, so glaube ich schon eine Ewigkeit
+               da zu hausen, auch verfolgt mich das Mißgeschik wie ich mich hier sehen laße, aus
+               meinem <hi rend="latintype">Concert</hi> wird wohl <hi rend="underline" n="1">nichts</hi>,
+               <persName ref="#A002025"><hi rend="latintype">Vogler</hi></persName> sagt, daß jezt alles zu sehr
+               mit dem Theater beschäftigt wäre, <del rend="overwritten">und</del>
+               mit einem Wort, ich merke, daß er nicht die <hi rend="latintype">Courage</hi> hat, bey Hofe ordentlich
+               anzuklopfen, und so entgeht mir eine beträchtliche Einnahme, die ich jezt sehr gut hätte brauchen können.
+               Viele Briefe habe ich hier vorgefunden, unter andern
+               von <persName ref="#A000584"><hi rend="underline" n="1">Gänsbacher</hi></persName>,
+               der glüklich angelangt ist, und euch alle 1000 male grüßt; und
+               von der <rs type="person">bekannten Hand</rs>, die auch deine Briefe von der Redaktion
+               der Musikal: Zeitung schreibt, worin sie H: <persName ref="#A001590">Rochliz</persName> entschuldigt der gar zu viel zu
+               thun hätte, selbst eine <hi rend="latintype">Correspondenz</hi> anzuknüpfen,
+               <hi rend="latintype">pp</hi> und übrigens verflucht höflich und demüthig. <persName ref="#A001313">Beer</persName>
+               empfiehlt sich dir bestens, und ist mit Feuereifer für unsern Harmonischen Bund
+               entzündet, dieser Tage werde ich dir die Statuten
+               schikken um deine Meinung und Kritik darüber ergehen zu laßen. Schikke mir doch
+               <hi rend="underline" n="1">deine <hi rend="latintype">Sonate</hi> gleich</hi>,
+               ich habe vergeßen sie mit zu nehmen, <persName ref="#A001313"><hi rend="latintype">Beer</hi></persName> will
+               die <hi rend="latintype">Recension</hi> gleich machen.
+               Unser <rs type="person" ref="#A002025">GroßPapa</rs> grüßt dich und deine <rs type="person" ref="#A002064">Frau</rs>,
+               ich habe ihm den Polimeter gezeicht,
+               mit der gehörigen Vorrede, und er fand ihn recht schön, und sagte es mit den Worten,
+               <hi rend="underline" n="1">recht schön gedacht, ist recht viel <hi rend="latintype">Genie</hi> darin</hi>.
+               – Freuen kannst du dich darüber, aber besauf dich nur nicht. – ich 
+               habe noch manches in <settlement ref="#A130010">Mannheim</settlement> vergeßen z: B: die Wäsche, und
+               eine <rs type="person">Wäscherin</rs> die noch eine alte Forderung von 1 ƒ 30 xr
+               glaube ich, machte, sey doch so gut beydes zu bezahlen.
+               <persName ref="#A002025"><hi rend="latintype">Vogler</hi></persName> hat das
+               Haus der <persName>Frau von Hertling</persName> gekauft und zieht diese Woche hinein.
+               ich gehe dieser Tage auf einen Tag nach <settlement ref="#A130020">Frankfurt</settlement>
+               um zu sehen wie es da aussieht. </p>
+
+            <closer rend="inline">an dein liebes <rs type="person" ref="#A002064">Weibchen</rs>,
+               an Bruder <persName ref="#A000409"><hi rend="latintype">Dusch</hi></persName> und die
+               <rs type="persons" ref="#A000888"><hi rend="latintype">Hout</hi>schen</rs>,
+               <rs type="persons" ref="#A000820">Hertlings</rs> – <hi rend="latintype">pp pp ppp</hi>.
+               <hi rend="underline" n="1">alles alles</hi> mögliche.
+               <lb/><seg rend="right">ewig dein <persName ref="#A002068"><hi rend="latintype">Weber</hi></persName>.</seg>
+               
+               <dateline><settlement ref="#A130015">Darmstadt</settlement> d: 21t August
+                  <lb/> 1810.</dateline>
+            </closer>
+         </div>
+      </body>
+   </text>
+</TEI>
