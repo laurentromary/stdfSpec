@@ -7,6 +7,18 @@
         <fileDesc>
             <titleStmt>
                 <title>Proposal for encoding standoff annotations in TEI</title>
+                <author>
+                    <persName>
+                        <forename>Peter</forename>
+                        <surname>Stadler</surname>
+                    </persName>
+                </author>
+                <author>
+                    <persName>
+                        <forename>Laurent</forename>
+                        <surname>Romary</surname>
+                    </persName>
+                </author>
             </titleStmt>
             <publicationStmt>
                 <authority>Berlin task force "standoff"</authority>
@@ -22,7 +34,7 @@
     </teiHeader>
     <text>
         <body>
-            <schemaSpec ident="standoff-proposal" start="TEI" status="unstable">
+            <schemaSpec ident="standoff-proposal" start="TEI teiCorpus" status="unstable">
                 <moduleRef key="tei"/>
                 <moduleRef key="core"/>
                 <moduleRef key="analysis"/>
@@ -44,12 +56,13 @@
                 <moduleRef key="transcr"/>
                 <moduleRef key="verse"/>
                 <moduleRef key="tagdocs"/>
-                
+
                 <moduleSpec ident="stand-off">
                     <desc>Elements to allow stand-off annotations in a TEI document</desc>
                 </moduleSpec>
-                
-                <elementSpec ident="stdf" mode="add" ns="http://standoff.proposal" module="stand-off">
+
+                <elementSpec ident="stdf" mode="add" ns="http://standoff.proposal"
+                    module="stand-off">
                     <desc>Container element for standoff annotations</desc>
                     <classes>
                         <memberOf key="model.resourceLike" mode="add"/>
@@ -74,7 +87,8 @@
                     </content>
                 </elementSpec>
 
-                <elementSpec ident="soHeader" mode="add" ns="http://standoff.proposal" module="stand-off">
+                <elementSpec ident="soHeader" mode="add" ns="http://standoff.proposal"
+                    module="stand-off">
                     <desc>Metadata for the <gi>stdf</gi> element(s)</desc>
                     <content>
                         <rng:interleave>
@@ -100,7 +114,8 @@
                     </content>
                 </elementSpec>
 
-                <elementSpec ident="annotations" mode="add" ns="http://standoff.proposal" module="stand-off">
+                <elementSpec ident="annotations" mode="add" ns="http://standoff.proposal"
+                    module="stand-off">
                     <desc>Content of the <gi>stdf</gi> element</desc>
                     <classes>
                         <memberOf key="att.global" mode="add"/>
@@ -112,7 +127,8 @@
                     </content>
                 </elementSpec>
 
-                <elementSpec ident="mapStruct" mode="add" ns="http://standoff.proposal" module="stand-off">
+                <elementSpec ident="mapStruct" mode="add" ns="http://standoff.proposal"
+                    module="stand-off">
                     <desc>Any element is to be interpreted as mapping its structure onto a text to
                         be annotated</desc>
                     <classes>
@@ -123,7 +139,8 @@
                 </elementSpec>
 
 
-                <elementSpec ident="annotationGrp" mode="add" ns="http://standoff.proposal" module="stand-off">
+                <elementSpec ident="annotationGrp" mode="add" ns="http://standoff.proposal"
+                    module="stand-off">
                     <desc>Groups together various annotations, for instance for parallel
                         interpretations of a spoken segment</desc>
                     <classes>
@@ -133,6 +150,7 @@
                         <memberOf key="att.global"/>
                         <memberOf key="att.ascribed"/>
                         <memberOf key="att.typed"/>
+                        <!-- should be declarable (to point to specific availability or responsability or version layers) -->
                     </classes>
                     <content>
                         <rng:zeroOrMore>
@@ -148,40 +166,40 @@
                     <desc>Initially empty class for providing easy customization with additional TEI
                         elements or external schemas, e.g. PAULA</desc>
                 </classSpec>
-                
+
                 <!--       *****       -->
                 <!-- Following are existing TEI declarations where we add our new class(es) -->
-                
+
                 <classSpec type="model" ident="model.global.meta" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotationPart" mode="add"/>
                     </classes>
                 </classSpec>
-                
+
                 <classSpec type="model" ident="model.listLike" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotationPart" mode="add"/>
                     </classes>
                 </classSpec>
-                
+
                 <classSpec type="model" ident="model.entryLike" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotationPart" mode="add"/>
                     </classes>
                 </classSpec>
-                
+
                 <elementSpec ident="listBibl" mode="change" module="core">
                     <classes mode="change">
                         <memberOf key="model.annotationPart" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="listChange" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotationPart" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <!-- Need to exclude our namespace from egXML to prevent "conflicting ID-types for attribute" errors -->
                 <macroSpec ident="macro.anyXML" mode="change" module="tagdocs">
                     <content>
