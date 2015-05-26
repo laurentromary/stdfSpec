@@ -14,7 +14,8 @@ Most important files
 * [`Schemas/standoff-proposal.rnc`](https://github.com/laurentromary/stdfSpec/blob/master/Schemas/standoff-proposal.rnc):	The derived RelaxNG schema for testing with your TEI files 
 * [`Samples/Test-stdf.xml`](https://github.com/laurentromary/stdfSpec/blob/master/Samples/Test-stdf.xml): A very basic example which should give you an idea of the proposed new elements
 * [`Samples/SampleMAFstdf.xml`](https://github.com/laurentromary/stdfSpec/blob/master/Samples/SampleMAFstdf.xml): A test file with morphosyntactic annotations
-* [`HelgeSchneider_ISO_TEI_TCF_WebLichtResult_MERGED_2.tei`](https://github.com/laurentromary/stdfSpec/blob/master/Samples/TEISpeech-stdf/HelgeSchneider_ISO_TEI_TCF_WebLichtResult_MERGED_2.tei): An elaborate 'real world' example taken and transformed from the [EXMARaLDA-Demokorpus](http://www.exmaralda.org/corpora/demokorpus.html)
+* [`Samples/TEISpeech-stdf/HelgeSchneider_ISO_TEI_TCF_WebLichtResult_MERGED_2.tei`](https://github.com/laurentromary/stdfSpec/blob/master/Samples/TEISpeech-stdf/HelgeSchneider_ISO_TEI_TCF_WebLichtResult_MERGED_2.tei): An elaborate 'real world' example taken and transformed from the [EXMARaLDA-Demokorpus](http://www.exmaralda.org/corpora/demokorpus.html)
+* [`Samples/WeGA-A040296.xml`](https://github.com/laurentromary/stdfSpec/blob/master/Samples/WeGA-A040296.xml): Not truly standoff, but a possible use case for externalizing all sorts of lists that are currently to be found within sourceDesc or profileDesc
 
 
 License
