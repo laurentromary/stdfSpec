@@ -170,6 +170,18 @@
                 <!--       *****       -->
                 <!-- Following are existing TEI declarations where we add our new class(es) -->
 
+                <classSpec type="atts" ident="att.confidence">
+                    <desc>provides attributes indicating the level of confidence associated with the
+                        content of the current element</desc>
+                    <attList>
+                        <attDef ident="degree">
+                            <datatype>
+                                <rng:ref name="data.probability"/>
+                            </datatype>
+                        </attDef>
+                    </attList>
+                </classSpec>
+
                 <classSpec type="model" ident="model.global.meta" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotationPart" mode="add"/>
