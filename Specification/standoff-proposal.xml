@@ -61,7 +61,7 @@
                     <desc>Elements to allow stand-off annotations in a TEI document</desc>
                 </moduleSpec>
 
-                <elementSpec ident="standoff" mode="add" ns="http://standoff.proposal"
+                <elementSpec ident="standOff" mode="add" ns="http://standoff.proposal"
                     module="standOff">
                     <desc>Container element for standoff annotations</desc>
                     <classes>
@@ -76,18 +76,18 @@
                     </classes>
                     <content>
                         <rng:optional>
-                            <rng:ref name="standoffHeader"/>
+                            <rng:ref name="teiHeader"/>
                         </rng:optional>
                         <rng:zeroOrMore>
                             <rng:ref name="listAnnotation"/>
                         </rng:zeroOrMore>
                         <rng:zeroOrMore>
-                            <rng:ref name="standoff"/>
+                            <rng:ref name="standOff"/>
                         </rng:zeroOrMore>
                     </content>
                 </elementSpec>
 
-                <elementSpec ident="standoffHeader" mode="add" ns="http://standoff.proposal"
+                <elementSpec ident="standOffHeader" mode="add" ns="http://standoff.proposal"
                     module="standOff">
                     <desc>Metadata for the <gi>stdf</gi> element(s)</desc>
                     <content>
@@ -132,11 +132,16 @@
                            <rng:ref name="model.annotation"/>
                         </rng:oneOrMore>
                     </content>
+                   <remarks>
+                      <p>The global xml:base  attribute is used on this element both to specify the target of the annotations and to serve as the base for any
+                      target URIs contained by the annotation elements. If this attribute is
+                      not supplied, the listAnnotation must be embedded within the complete TEI
+                      document to which it applies. </p>
+                   </remarks>
                 </elementSpec>
 
                 <classSpec type="model" ident="model.annotation" mode="add" module="standOff">
-                    <desc>Initially empty class for providing easy customization with additional TEI
-                        elements or external schemas, e.g. PAULA</desc>
+                    <desc>class of elements containing standoff annotation</desc>
                 </classSpec>
 
                 <!--       *****       -->
@@ -171,6 +176,38 @@
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
+               
+               <elementSpec ident="graph" mode="change" module="header">
+                  <classes mode="change">
+                     <memberOf key="model.annotation" mode="add"/>
+                  </classes>
+               </elementSpec>
+               
+               <elementSpec ident="forest" mode="change" module="header">
+                  <classes mode="change">
+                     <memberOf key="model.annotation" mode="add"/>
+                  </classes>
+               </elementSpec>
+               
+               <elementSpec ident="listForest" mode="change" module="header">
+                  <classes mode="change">
+                     <memberOf key="model.annotation" mode="add"/>
+                  </classes>
+               </elementSpec>
+               
+               <elementSpec ident="tree" mode="change" module="header">
+                  <classes mode="change">
+                     <memberOf key="model.annotation" mode="add"/>
+                  </classes>
+               </elementSpec>
+               
+               <elementSpec ident="eTree" mode="change" module="header">
+                  <classes mode="change">
+                     <memberOf key="model.annotation" mode="add"/>
+                  </classes>
+               </elementSpec>
+               
+               <!--graph, listgraph forest, -->
 
                 <!-- Need to exclude our namespace from egXML to prevent "conflicting ID-types for attribute" errors -->
                 <macroSpec ident="macro.anyXML" mode="change" module="tagdocs">
