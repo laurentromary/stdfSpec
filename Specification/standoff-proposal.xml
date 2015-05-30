@@ -127,18 +127,6 @@
                     </content>
                 </elementSpec>
 
-                <elementSpec ident="mapStruct" mode="add" ns="http://standoff.proposal"
-                    module="stand-off">
-                    <desc>Any element is to be interpreted as mapping its structure onto a text to
-                        be annotated</desc>
-                    <classes>
-                        <memberOf key="model.annotationPart" mode="add"/>
-                    </classes>
-                    <!-- need a specific namespace? -->
-                    <!-- like in egXML -->
-                </elementSpec>
-
-
                 <elementSpec ident="annotationGrp" mode="add" ns="http://standoff.proposal"
                     module="stand-off">
                     <desc>Groups together various annotations, for instance for parallel
