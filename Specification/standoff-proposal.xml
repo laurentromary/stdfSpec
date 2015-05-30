@@ -61,7 +61,7 @@
                     <desc>Elements to allow stand-off annotations in a TEI document</desc>
                 </moduleSpec>
 
-                <elementSpec ident="stdf" mode="add" ns="http://standoff.proposal"
+                <elementSpec ident="standoff" mode="add" ns="http://standoff.proposal"
                     module="standOff">
                     <desc>Container element for standoff annotations</desc>
                     <classes>
@@ -76,18 +76,18 @@
                     </classes>
                     <content>
                         <rng:optional>
-                            <rng:ref name="soHeader"/>
-                        </rng:optional>
-                        <rng:optional>
-                            <rng:ref name="annotations"/>
+                            <rng:ref name="standoffHeader"/>
                         </rng:optional>
                         <rng:zeroOrMore>
-                            <rng:ref name="stdf"/>
+                            <rng:ref name="listAnnotation"/>
+                        </rng:zeroOrMore>
+                        <rng:zeroOrMore>
+                            <rng:ref name="standoff"/>
                         </rng:zeroOrMore>
                     </content>
                 </elementSpec>
 
-                <elementSpec ident="soHeader" mode="add" ns="http://standoff.proposal"
+                <elementSpec ident="standoffHeader" mode="add" ns="http://standoff.proposal"
                     module="standOff">
                     <desc>Metadata for the <gi>stdf</gi> element(s)</desc>
                     <content>
