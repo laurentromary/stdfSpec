@@ -57,12 +57,12 @@
                 <moduleRef key="verse"/>
                 <moduleRef key="tagdocs"/>
 
-                <moduleSpec ident="stand-off">
+                <moduleSpec ident="standOff">
                     <desc>Elements to allow stand-off annotations in a TEI document</desc>
                 </moduleSpec>
 
                 <elementSpec ident="stdf" mode="add" ns="http://standoff.proposal"
-                    module="stand-off">
+                    module="standOff">
                     <desc>Container element for standoff annotations</desc>
                     <classes>
                         <memberOf key="model.resourceLike" mode="add"/>
@@ -88,7 +88,7 @@
                 </elementSpec>
 
                 <elementSpec ident="soHeader" mode="add" ns="http://standoff.proposal"
-                    module="stand-off">
+                    module="standOff">
                     <desc>Metadata for the <gi>stdf</gi> element(s)</desc>
                     <content>
                         <rng:interleave>
@@ -114,43 +114,27 @@
                     </content>
                 </elementSpec>
 
-                <elementSpec ident="annotations" mode="add" ns="http://standoff.proposal"
-                    module="stand-off">
-                    <desc>Content of the <gi>stdf</gi> element</desc>
-                    <classes>
-                        <memberOf key="att.global" mode="add"/>
-                    </classes>
-                    <content>
-                        <rng:zeroOrMore>
-                            <rng:ref name="model.annotationPart"/>
-                        </rng:zeroOrMore>
-                    </content>
-                </elementSpec>
-
-                <elementSpec ident="annotationGrp" mode="add" ns="http://standoff.proposal"
-                    module="stand-off">
+                <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal"
+                    module="standOff">
                     <desc>Groups together various annotations, for instance for parallel
                         interpretations of a spoken segment</desc>
                     <classes>
-                        <memberOf key="model.annotationPart"/>
-                        <memberOf key="model.divPart.spoken"/>
+                        <memberOf key="model.annotation"/>
+<!--                        <memberOf key="model.divPart.spoken"/>-->
                         <memberOf key="att.timed"/>
                         <memberOf key="att.global"/>
                         <memberOf key="att.ascribed"/>
                         <memberOf key="att.typed"/>
-                        <!-- should be declarable (to point to specific availability or responsability or version layers) -->
+                        <memberOf key="att.declaring"/>
                     </classes>
                     <content>
-                        <rng:zeroOrMore>
-                            <rng:choice>
-                                <rng:ref name="u"/>
-                                <rng:ref name="model.annotationPart"/>
-                            </rng:choice>
-                        </rng:zeroOrMore>
+                        <rng:oneOrMore>
+                           <rng:ref name="model.annotation"/>
+                        </rng:oneOrMore>
                     </content>
                 </elementSpec>
 
-                <classSpec type="model" ident="model.annotationPart" mode="add" module="stand-off">
+                <classSpec type="model" ident="model.annotation" mode="add" module="standOff">
                     <desc>Initially empty class for providing easy customization with additional TEI
                         elements or external schemas, e.g. PAULA</desc>
                 </classSpec>
@@ -172,31 +156,31 @@
 
                 <classSpec type="model" ident="model.global.meta" mode="change">
                     <classes mode="change">
-                        <memberOf key="model.annotationPart" mode="add"/>
+                        <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </classSpec>
 
                 <classSpec type="model" ident="model.listLike" mode="change">
                     <classes mode="change">
-                        <memberOf key="model.annotationPart" mode="add"/>
+                        <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </classSpec>
 
                 <classSpec type="model" ident="model.entryLike" mode="change">
                     <classes mode="change">
-                        <memberOf key="model.annotationPart" mode="add"/>
+                        <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </classSpec>
 
                 <elementSpec ident="listBibl" mode="change" module="core">
                     <classes mode="change">
-                        <memberOf key="model.annotationPart" mode="add"/>
+                        <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
 
                 <elementSpec ident="listChange" mode="change" module="header">
                     <classes mode="change">
-                        <memberOf key="model.annotationPart" mode="add"/>
+                        <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
 
