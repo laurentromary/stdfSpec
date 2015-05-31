@@ -23,6 +23,12 @@
                 <titleStmt>
                     <title>Morpho-syntactic annotation</title>
                 </titleStmt>
+               <publicationStmt>
+                  <p>freely available</p>
+               </publicationStmt>
+               <sourceDesc>
+                  <p>born digital</p>
+               </sourceDesc>
             </fileDesc>
         </teiHeader>
         <listAnnotation>

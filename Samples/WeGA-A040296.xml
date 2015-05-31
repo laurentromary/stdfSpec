@@ -72,10 +72,16 @@
                <titleStmt>
                   <title>Personography of the Carl-Maria-von-Weber-Gesamtausgabe</title>
                </titleStmt>
+               <publicationStmt>
+                  <p>freely available</p>
+               </publicationStmt>
+               <sourceDesc>
+                  <p>born digital</p>
+               </sourceDesc>
             </fileDesc>
          </teiHeader>
          <listAnnotation>
-            <listPerson>
+            <listPerson xmlns="http://www.tei-c.org/ns/1.0">
                <person xml:id="A002068">
                   <idno type="gnd">http://d-nb.info/gnd/118629662</idno>
                   <persName type="reg">Weber, Carl Maria von</persName>
@@ -122,6 +128,12 @@
                <titleStmt xmlns="http://www.tei-c.org/ns/1.0">
                   <title>Placeography of the Carl-Maria-von-Weber-Gesamtausgabe</title>
                </titleStmt>
+               <publicationStmt>
+                  <p>freely available</p>
+               </publicationStmt>
+               <sourceDesc>
+                  <p>born digital</p>
+               </sourceDesc>
             </fileDesc>
          </teiHeader>
          <listAnnotation>

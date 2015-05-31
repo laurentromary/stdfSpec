@@ -15,7 +15,19 @@
         </fileDesc>
     </teiHeader>
     <standOff xmlns="http://standoff.proposal">
-        <teiHeader xmlns="http://www.tei-c.org/ns/1.0"></teiHeader>
+        <teiHeader xmlns="http://www.tei-c.org/ns/1.0">
+           <fileDesc>
+              <titleStmt>
+                 <title>The title for the standoff annotation(s)</title>
+              </titleStmt>
+              <publicationStmt>
+                 <p>freely available</p>
+              </publicationStmt>
+              <sourceDesc>
+                 <p>born digital</p>
+              </sourceDesc>
+           </fileDesc>
+        </teiHeader>
         <listAnnotation>
             <listAnnotation>
                 <span xmlns="http://www.tei-c.org/ns/1.0"></span>
