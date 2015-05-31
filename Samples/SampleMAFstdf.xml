@@ -17,13 +17,15 @@
             </sourceDesc>
         </fileDesc>
     </teiHeader>
-    <stdf xmlns="http://standoff.proposal">
-        <soHeader>
-            <titleStmt xmlns="http://www.tei-c.org/ns/1.0">
-                <title>Morpho-syntactic annotation</title>
-            </titleStmt>
-        </soHeader>
-        <annotations>
+    <standOff xmlns="http://standoff.proposal">
+        <teiHeader xmlns="http://www.tei-c.org/ns/1.0">
+            <fileDesc>
+                <titleStmt>
+                    <title>Morpho-syntactic annotation</title>
+                </titleStmt>
+            </fileDesc>
+        </teiHeader>
+        <listAnnotation>
             <spanGrp type="wordForm" xmlns="http://www.tei-c.org/ns/1.0">
                 <span from="#w1" ana="#fs1" corresp="#entry1"/>
                 <span from="#w2" ana="#fs2" corresp="#entry2"/>
@@ -63,9 +65,8 @@
                 <f name="pos">
                     <symbol value="VB"/>
                 </f>
-            </fs> 
-            <fs
-                xml:id="fs5" xmlns="http://www.tei-c.org/ns/1.0">
+            </fs>
+            <fs xml:id="fs5" xmlns="http://www.tei-c.org/ns/1.0">
                 <f name="lemma">
                     <string>new</string>
                 </f>
@@ -111,8 +112,8 @@
                     <orth>wallpaper</orth>
                 </form>
             </entry>
-        </annotations>
-    </stdf>
+        </listAnnotation>
+    </standOff>
     <text>
         <body>
             <div>

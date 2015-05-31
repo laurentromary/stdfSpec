@@ -87,7 +87,7 @@
                     </content>
                 </elementSpec>
 
-                <elementSpec ident="standOffHeader" mode="add" ns="http://standoff.proposal"
+               <!-- <elementSpec ident="standOffHeader" mode="add" ns="http://standoff.proposal"
                     module="standOff">
                     <desc>Metadata for the <gi>stdf</gi> element(s)</desc>
                     <content>
@@ -112,7 +112,7 @@
                             </rng:optional>
                         </rng:interleave>
                     </content>
-                </elementSpec>
+                </elementSpec>-->
 
                 <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal"
                     module="standOff">

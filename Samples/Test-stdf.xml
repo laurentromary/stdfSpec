@@ -14,12 +14,12 @@
             </sourceDesc>
         </fileDesc>
     </teiHeader>
-    <stdf xmlns="http://standoff.proposal">
-        <soHeader></soHeader>
-        <annotations>
-            <annotationGrp>
+    <standOff xmlns="http://standoff.proposal">
+        <teiHeader xmlns="http://www.tei-c.org/ns/1.0"></teiHeader>
+        <listAnnotation>
+            <listAnnotation>
                 <span xmlns="http://www.tei-c.org/ns/1.0"></span>
-            </annotationGrp>
-        </annotations>
-    </stdf>
+            </listAnnotation>
+        </listAnnotation>
+    </standOff>
 </TEI>
