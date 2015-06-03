@@ -1,20 +1,20 @@
 default namespace = "http://www.tei-c.org/ns/Examples"
 namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
-namespace ns1 = "http://standoff.proposal"
-namespace ns2 = "http://www.isocat.org/ns/dcr"
+namespace ns1 = "http://www.isocat.org/ns/dcr"
+namespace ns2 = "http://standoff.proposal"
 namespace ns3 = "http://www.tei-c.org/ns/1.0"
 namespace rng = "http://relaxng.org/ns/structure/1.0"
 namespace s = "http://www.ascc.net/xml/schematron"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2015-05-30T17:08:30Z. .
+# Schema generated from ODD source 2015-06-03T06:52:57Z. .
 # TEI Edition: Version 2.8.0. Last updated on
 #	6th April 2015, revision 13197
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
 #
 
-#  CC+BY and BSD-2 licences
+# CC+BY and BSD-2 licences
 macro.paraContent =
   (text
    | model.gLike
@@ -91,7 +91,7 @@ data.temporal.iso =
   | xsd:token { pattern = "[0-9.,DHMPRSTWYZ/:+\-]+" }
 data.duration.iso = xsd:token { pattern = "[0-9.,DHMPRSTWYZ/:+\-]+" }
 macro.anyXML =
-  element * - (ns3:* | egXML | ns1:*) {
+  element * - (ns3:* | egXML | ns2:*) {
     attribute * { text }*,
     (text | macro.anyXML)*
   }
@@ -287,13 +287,13 @@ att.datcat.attributes =
 att.datcat.attribute.datcat =
   
   ## contains a PID (persistent identifier) that aligns the given element with the appropriate Data Category (or categories) in ISOcat.
-  attribute ns2:datcat {
+  attribute ns1:datcat {
     list { data.pointer+ }
   }?
 att.datcat.attribute.valueDatcat =
   
   ## contains a PID (persistent identifier) that aligns the content of the given element or the value of the given attribute with the appropriate simple Data Category (or categories) in ISOcat.
-  attribute ns2:valueDatcat {
+  attribute ns1:valueDatcat {
     list { data.pointer+ }
   }?
 att.declarable.attributes = att.declarable.attribute.default
@@ -2930,8 +2930,8 @@ biblStruct =
            "\x{a}" ~
            "               "
            sch:report [
-             test = "child::tei:idno"
              role = "nonfatal"
+             test = "child::tei:idno"
              "WARNING: use of deprecated method — the use of the idno element as a direct child of the biblStruct element will be removed from the TEI on 2016-09-18"
            ]
            "\x{a}" ~
@@ -6985,8 +6985,8 @@ msPart =
            "\x{a}" ~
            "               "
            sch:report [
-             test = "child::tei:altIdentifier"
              role = "nonfatal"
+             test = "child::tei:altIdentifier"
              "WARNING: use of deprecated method — the use of the altIdentifier element as a direct child of the msPart element will be removed from the TEI on 2016-09-09"
            ]
            "\x{a}" ~
@@ -8247,8 +8247,8 @@ shift =
            "\x{a}" ~
            "               "
            sch:assert [
-             test = "@new"
              role = "warning"
+             test = "@new"
              "              \x{a}" ~
              "The @new attribute should always be supplied; use the special value\x{a}" ~
              '"normal" to indicate that the feature concerned ceases to be\x{a}' ~
@@ -10768,7 +10768,7 @@ textNode =
 standOff =
   
   ## Container element for standoff annotations
-  element ns1:standOff {
+  element ns2:standOff {
     teiHeader?,
     listAnnotation*,
     standOff*,
@@ -10783,7 +10783,7 @@ standOff =
 listAnnotation =
   
   ## Groups together various annotations, for instance for parallel interpretations of a spoken segment
-  element ns1:listAnnotation {
+  element ns2:listAnnotation {
     model.annotation+,
     att.timed.attributes,
     att.global.attributes,
