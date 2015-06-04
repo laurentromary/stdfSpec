@@ -34,7 +34,7 @@
     </teiHeader>
     <text>
         <body>
-            <schemaSpec ident="standoff-proposal" start="TEI teiCorpus" status="unstable">
+            <schemaSpec ident="standoff-proposal" start="TEI teiCorpus">
                 <moduleRef key="tei"/>
                 <moduleRef key="core"/>
                 <moduleRef key="analysis"/>
