@@ -4853,7 +4853,7 @@ in transcribing and in authoring.</desc>
     documento.</desc><desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi vuoti che descrivono lo status di
     altri elementi, per esempio stabilendo gruppi di collegamenti o interpretazioni astratte, oppure
     fornendo indicazioni di certezza, ecc., e che possono apparire in qualsiasi punto all'interno di
-    un documento</desc><classes><memberOf key="model.annotationPart"/><memberOf key="model.global"/></classes><attList/></classSpec><classSpec module="tei" xml:id="REFSYS" type="model" ident="model.milestoneLike">
+    un documento</desc><classes><memberOf key="model.annotation"/><memberOf key="model.global"/></classes><attList/></classSpec><classSpec module="tei" xml:id="REFSYS" type="model" ident="model.milestoneLike">
   <desc versionDate="2007-10-18" xml:lang="en">groups milestone-style
 elements used to represent reference systems.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">참조 체계를 표상하는 이정표 유형의 요소를 모아 놓는다.</desc>
@@ -4985,7 +4985,7 @@ expliquer d'autres parties d'un document.</desc>
   <classes>
     <memberOf key="model.inter"/>
   </classes>
-</classSpec><classSpec rend="change" module="tei" xml:id="LISTS" type="model" ident="model.listLike"><desc versionDate="2007-10-03" xml:lang="en">groups list-like elements.</desc><desc versionDate="2007-12-20" xml:lang="ko">목록 같은 요소를 모아 놓는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">匯集所有類似列表的元素</desc><desc versionDate="2008-04-05" xml:lang="ja">リスト相当の要素をまとめる．</desc><desc versionDate="2007-06-12" xml:lang="fr">regroupe les éléments de type liste.</desc><desc versionDate="2007-05-04" xml:lang="es">agrupa todos los elementos del tipo de lista.</desc><desc versionDate="2007-01-21" xml:lang="it">raggruppa tutti gli elementi del tipo lista</desc><classes><memberOf key="model.annotationPart"/><memberOf key="model.inter"/></classes><attList/></classSpec><classSpec module="tei" xml:id="NOTES" type="model" ident="model.noteLike">
+</classSpec><classSpec rend="change" module="tei" xml:id="LISTS" type="model" ident="model.listLike"><desc versionDate="2007-10-03" xml:lang="en">groups list-like elements.</desc><desc versionDate="2007-12-20" xml:lang="ko">목록 같은 요소를 모아 놓는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">匯集所有類似列表的元素</desc><desc versionDate="2008-04-05" xml:lang="ja">リスト相当の要素をまとめる．</desc><desc versionDate="2007-06-12" xml:lang="fr">regroupe les éléments de type liste.</desc><desc versionDate="2007-05-04" xml:lang="es">agrupa todos los elementos del tipo de lista.</desc><desc versionDate="2007-01-21" xml:lang="it">raggruppa tutti gli elementi del tipo lista</desc><classes><memberOf key="model.annotation"/><memberOf key="model.inter"/></classes><attList/></classSpec><classSpec module="tei" xml:id="NOTES" type="model" ident="model.noteLike">
   <desc versionDate="2007-10-03" xml:lang="en">groups globally-available note-like elements.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">전체적으로 이용 가능한 주석 같은 요소를 모아 놓는다.</desc>
   <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集所有類似註解的元素。</desc>
@@ -14665,7 +14665,7 @@ Licensing, etc.</ref>
   </listRef>
 </elementSpec><elementSpec rend="change" module="core" ident="listBibl"><gloss versionDate="2005-01-14" xml:lang="en">citation list</gloss><gloss versionDate="2007-12-20" xml:lang="ko">인용 목록</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">書目列表</gloss><gloss versionDate="2009-01-06" xml:lang="fr">liste de références bibliographiques</gloss><gloss versionDate="2007-05-04" xml:lang="es">lista de cita</gloss><gloss versionDate="2007-01-21" xml:lang="it">lista di citazioni</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a list of bibliographic citations of any kind.</desc><desc versionDate="2007-12-20" xml:lang="ko">여러 종류의 서지 인용 목록을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含任何種類的書目資料列表。</desc><desc versionDate="2008-04-05" xml:lang="ja">
         書誌項目引用のリストを示す．</desc><desc versionDate="2009-01-06" xml:lang="fr">contient une liste de références
-        bibliographiques de toute nature.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una lista de citas bibliográficas de cualquier tipo.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una lista di citazioni bibliografiche di qualsiasi natura.</desc><classes><memberOf key="model.annotationPart"/><memberOf key="att.global"/><memberOf key="att.sortable"/><memberOf key="att.declarable"/><memberOf key="att.typed"/><memberOf key="model.biblLike"/></classes><content><group xmlns="http://relaxng.org/ns/structure/1.0"><zeroOrMore><ref name="model.headLike"/></zeroOrMore><oneOrMore><choice><ref name="model.biblLike"/><ref name="model.milestoneLike"/></choice></oneOrMore><zeroOrMore><choice><ref name="relation"/><ref name="listRelation"/></choice></zeroOrMore></group></content><attList/><exemplum xml:lang="en">
+        bibliographiques de toute nature.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una lista de citas bibliográficas de cualquier tipo.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una lista di citazioni bibliografiche di qualsiasi natura.</desc><classes><memberOf key="model.annotation"/><memberOf key="att.global"/><memberOf key="att.sortable"/><memberOf key="att.declarable"/><memberOf key="att.typed"/><memberOf key="model.biblLike"/></classes><content><group xmlns="http://relaxng.org/ns/structure/1.0"><zeroOrMore><ref name="model.headLike"/></zeroOrMore><oneOrMore><choice><ref name="model.biblLike"/><ref name="model.milestoneLike"/></choice></oneOrMore><zeroOrMore><choice><ref name="relation"/><ref name="listRelation"/></choice></zeroOrMore></group></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <listBibl>
         <head>Works consulted</head>
@@ -19012,7 +19012,7 @@ be used.</p>
 </elementSpec><classSpec rend="change" module="dictionaries" xml:id="COMPDICT" type="model" ident="model.entryLike" predeclare="true"><desc versionDate="2007-10-03" xml:lang="en">groups elements structurally analogous to paragraphs within dictionaries.</desc><desc versionDate="2007-12-20" xml:lang="ko">사전 내에서 문단과 구조적으로 유사한 요소들을 모아 놓는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">匯集字典的基礎標籤組所獨有的元件層次元素。</desc><desc versionDate="2008-04-05" xml:lang="ja">辞書において，構造上段落に相当する要素をまとめる．</desc><desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments structurellement analogues aux
     paragraphes dans des dictionnaires.</desc><desc versionDate="2007-05-04" xml:lang="es">agrupa los elementos componentes de nivel que son
     exclusivos del conjunto de la etiqueta base para diccionarios.</desc><desc versionDate="2007-01-21" xml:lang="it">raggruppa quegli elementi a livello di componenti
-    esclusivi per l'insieme di marcatori per dizionari.</desc><classes><memberOf key="model.annotationPart"/><memberOf key="model.common"/></classes><attList/></classSpec><classSpec module="dictionaries" xml:id="ENTRIES" type="atts" ident="att.entryLike">
+    esclusivi per l'insieme di marcatori per dizionari.</desc><classes><memberOf key="model.annotation"/><memberOf key="model.common"/></classes><attList/></classSpec><classSpec module="dictionaries" xml:id="ENTRIES" type="atts" ident="att.entryLike">
   <desc versionDate="2005-10-10" xml:lang="en">groups the different styles of dictionary entries.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">사전 표제 항목의 다른 형식을 모아 놓는다.</desc>
   <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集不同格式的字典辭條</desc>
@@ -32590,7 +32590,7 @@ supplied to printer.</change>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#msph2">10.7.2. Writing, Decoration, and Other Notations</ref>
   </listRef>
 </elementSpec><elementSpec rend="change" ident="listChange" module="header"><desc versionDate="2013-04-14" xml:lang="en">groups a number of change descriptions associated 
-with either the creation of a source text or the revision of an encoded text.</desc><classes><memberOf key="model.annotationPart"/><memberOf key="att.global"/><memberOf key="att.sortable"/></classes><content><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><ref name="listChange"/><ref name="change"/></choice></oneOrMore></content><attList><attDef ident="ordered">
+with either the creation of a source text or the revision of an encoded text.</desc><classes><memberOf key="model.annotation"/><memberOf key="att.global"/><memberOf key="att.sortable"/></classes><content><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><ref name="listChange"/><ref name="change"/></choice></oneOrMore></content><attList><attDef ident="ordered">
       <desc versionDate="2013-04-14" xml:lang="en">indicates whether the ordering of its child <gi>change</gi>
 elements is to be considered significant or not</desc>
       <datatype>
@@ -45549,63 +45549,9 @@ specification.</p></remarks>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDNYM">13.3.5. Names and Nyms</ref>
   </listRef>
-</elementSpec><elementSpec module="nets" ident="graph">
-  <gloss versionDate="2007-06-12" xml:lang="fr">graphe</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en">encodes a graph, which is a collection of nodes, and arcs which
-connect the nodes.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">노드와 이 노드를 연결하는 호로 구성된 그래프를 부호화한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">標記一個圖形，內含節點與節點之間的連線。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">グラフを示す．ノードと矢(無向の場合は辺)の集合．</desc>
-  <desc versionDate="2009-11-17" xml:lang="fr">encode un graphe, c'est-à-dire un ensemble
-      constitué de nœuds et d'arcs qui les relient entre eux.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">codifica un gráfico, es decir un conjunto de nodos y arcos que conectan los nodos.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">codifica un grafo, cioè una raccolta di nodi e archi che collegano i nodi</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.divPart"/>
-  </classes>
-  <content>
-    <group xmlns="http://relaxng.org/ns/structure/1.0">
-      <optional>
-        <ref name="label"/>
-        <zeroOrMore>
-          <ref name="model.global"/>
-        </zeroOrMore>
-      </optional>
-      <choice>
-        <group>
-          <oneOrMore>
-            <ref name="node"/>
-            <zeroOrMore>
-              <ref name="model.global"/>
-            </zeroOrMore>
-          </oneOrMore>
-          <zeroOrMore>
-            <ref name="arc"/>
-            <zeroOrMore>
-              <ref name="model.global"/>
-            </zeroOrMore>
-          </zeroOrMore>
-        </group>
-        <group>
-          <oneOrMore>
-            <ref name="arc"/>
-            <zeroOrMore>
-              <ref name="model.global"/>
-            </zeroOrMore>
-          </oneOrMore>
-          <oneOrMore>
-            <ref name="node"/>
-            <zeroOrMore>
-              <ref name="model.global"/>
-            </zeroOrMore>
-          </oneOrMore>
-        </group>
-      </choice>
-    </group>
-  </content>
-  <attList>
-    <attDef ident="type" usage="rec">
+</elementSpec><elementSpec rend="change" module="nets" ident="graph"><gloss versionDate="2007-06-12" xml:lang="fr">graphe</gloss><desc versionDate="2005-01-14" xml:lang="en">encodes a graph, which is a collection of nodes, and arcs which
+connect the nodes.</desc><desc versionDate="2007-12-20" xml:lang="ko">노드와 이 노드를 연결하는 호로 구성된 그래프를 부호화한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">標記一個圖形，內含節點與節點之間的連線。</desc><desc versionDate="2008-04-05" xml:lang="ja">グラフを示す．ノードと矢(無向の場合は辺)の集合．</desc><desc versionDate="2009-11-17" xml:lang="fr">encode un graphe, c'est-à-dire un ensemble
+      constitué de nœuds et d'arcs qui les relient entre eux.</desc><desc versionDate="2007-05-04" xml:lang="es">codifica un gráfico, es decir un conjunto de nodos y arcos que conectan los nodos.</desc><desc versionDate="2007-01-21" xml:lang="it">codifica un grafo, cioè una raccolta di nodi e archi che collegano i nodi</desc><classes><memberOf key="model.annotation"/><memberOf key="att.global"/><memberOf key="model.divPart"/></classes><content><group xmlns="http://relaxng.org/ns/structure/1.0"><optional><ref name="label"/><zeroOrMore><ref name="model.global"/></zeroOrMore></optional><choice><group><oneOrMore><ref name="node"/><zeroOrMore><ref name="model.global"/></zeroOrMore></oneOrMore><zeroOrMore><ref name="arc"/><zeroOrMore><ref name="model.global"/></zeroOrMore></zeroOrMore></group><group><oneOrMore><ref name="arc"/><zeroOrMore><ref name="model.global"/></zeroOrMore></oneOrMore><oneOrMore><ref name="node"/><zeroOrMore><ref name="model.global"/></zeroOrMore></oneOrMore></group></choice></group></content><attList><attDef ident="type" usage="rec">
       <desc versionDate="2005-01-14" xml:lang="en">describes the type of graph.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">그래프의 유형을 기술한다.</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">描述圖形類型。</desc>
@@ -45685,8 +45631,7 @@ instead of the <att>adj</att> attribute.</p>
 	<att>adjFrom</att>と<att>adjTo</att>が使われるべきである．
 	</p>
       </remarks>
-    </attDef>
-    <attDef ident="order" usage="opt">
+    </attDef><attDef ident="order" usage="opt">
       <desc versionDate="2005-01-14" xml:lang="en">states the order of the graph, i.e., the number of its nodes.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">그래프의 순서를 진술한다. 즉, 그래프 노드의 번호.</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">說明圖形次序，例如：節點數目。</desc>
@@ -45697,8 +45642,7 @@ instead of the <att>adj</att> attribute.</p>
       <datatype>
         <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.count"/>
       </datatype>
-    </attDef>
-    <attDef ident="size" usage="opt">
+    </attDef><attDef ident="size" usage="opt">
       <desc versionDate="2005-01-14" xml:lang="en">states the size of the graph, i.e., the number of its arcs.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">그래프의 크기를 진술한다. 즉, 그래프 호의 수.</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">說明圖形大小，例如：連線數目。</desc>
@@ -45709,9 +45653,7 @@ instead of the <att>adj</att> attribute.</p>
       <datatype>
         <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.count"/>
       </datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
+    </attDef></attList><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <graph xml:id="cug1" type="undirected" order="5" size="4" rend="LABEL-PLACE bottom center NODE-FRAME none ARC solid line">
         <label>Airline Connections in Southwestern USA</label>
@@ -45736,8 +45678,7 @@ instead of the <att>adj</att> attribute.</p>
         <arc from="#phx" to="#tus"/>
       </graph>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <graph xml:id="fr_cug1" type="undirected" order="5" size="4" rend="LABEL-PLACE bottom center           NODE-FRAME none ARC solid line">
         <label>Inter-connexions des compagnies aériennes dans le Sud-Ouest des Etats-Unis.</label>
@@ -45762,8 +45703,7 @@ instead of the <att>adj</att> attribute.</p>
         <arc from="#fr_phx" to="#tus"/>
       </graph>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <graph xml:id="zh-tw_cug1" type="undirected" order="5" size="4" rend="LABEL-PLACE bottom center NODE-FRAME none ARC solid line">
         <label>美國西南部航空站</label>
@@ -45788,23 +45728,18 @@ instead of the <att>adj</att> attribute.</p>
         <arc from="#zh-tw_phx" to="#zh-tw_tus"/>
       </graph>
     </egXML>
-  </exemplum>
-  <remarks versionDate="2005-01-14" xml:lang="en">
+  </exemplum><remarks versionDate="2005-01-14" xml:lang="en">
     <p rend="dataDesc">One
 or more nodes and zero or more arcs in any order.</p>
-  </remarks>
-  <remarks versionDate="2009-11-17" xml:lang="fr">
+  </remarks><remarks versionDate="2009-11-17" xml:lang="fr">
     <p rend="dataDesc">un ou plusieurs nœuds et zéro, un ou plusieurs arcs dans un ordre quelconque.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
+  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
     <p rend="dataDesc">
     ひとつ以上のノードと，ゼロ以上の矢(辺)．
     </p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/GD.html#GDGR">19.1. Graphs and Digraphs</ref>
-  </listRef>
-</elementSpec><elementSpec module="nets" ident="node">
+  </listRef></elementSpec><elementSpec module="nets" ident="node">
   <gloss versionDate="2007-06-12" xml:lang="fr">nœud</gloss>
   <desc versionDate="2005-01-14" xml:lang="en">encodes a node, a possibly labeled point in a graph.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">그래프에서 (표지가 붙는 지점일 수도 있는) 노드를 부호화한다.</desc>
@@ -46252,44 +46187,8 @@ qu'avec des arcs.</p>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/GD.html#GDGR">19.1. Graphs and Digraphs</ref>
   </listRef>
-</elementSpec><elementSpec module="nets" ident="tree">
-  <gloss versionDate="2007-06-12" xml:lang="fr">arbre</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en">encodes a tree, which is made up of a root, internal nodes,
-leaves, and arcs from root to leaves.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">수형도를 부호화하며, 이 수형도는 뿌리, 내부 노드, 단말노드, 그리고 뿌리로부터 단말 노드에 이르는 호로 구성된다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">標記一個樹狀結構，包含根節點、內部節點、葉節點、以及從根到葉的連線。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">根，内部ノード，葉，矢(または辺)から成る木を示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">encode un arbre, qui est composé d'une racine, de nœuds internes, de feuilles et d'arcs allant de la racine vers les feuilles.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">codifica un árbol, que se constituye de raíz, nodos internos, hojas, y arcos que conectan raíz y hojas.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">codifica un albero, che è costituito da radice, nodi interni, foglie, e archi che collegano radice e foglie</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.divPart"/>
-  </classes>
-  <content>
-    <group xmlns="http://relaxng.org/ns/structure/1.0">
-      <optional>
-        <ref name="label"/>
-      </optional>
-      <group>
-        <zeroOrMore>
-          <choice>
-            <ref name="leaf"/>
-            <ref name="iNode"/>
-          </choice>
-        </zeroOrMore>
-        <ref name="root"/>
-        <zeroOrMore>
-          <choice>
-            <ref name="leaf"/>
-            <ref name="iNode"/>
-          </choice>
-        </zeroOrMore>
-      </group>
-    </group>
-  </content>
-  <attList>
-    <attDef ident="arity" usage="opt">
+</elementSpec><elementSpec rend="change" module="nets" ident="tree"><gloss versionDate="2007-06-12" xml:lang="fr">arbre</gloss><desc versionDate="2005-01-14" xml:lang="en">encodes a tree, which is made up of a root, internal nodes,
+leaves, and arcs from root to leaves.</desc><desc versionDate="2007-12-20" xml:lang="ko">수형도를 부호화하며, 이 수형도는 뿌리, 내부 노드, 단말노드, 그리고 뿌리로부터 단말 노드에 이르는 호로 구성된다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">標記一個樹狀結構，包含根節點、內部節點、葉節點、以及從根到葉的連線。</desc><desc versionDate="2008-04-05" xml:lang="ja">根，内部ノード，葉，矢(または辺)から成る木を示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">encode un arbre, qui est composé d'une racine, de nœuds internes, de feuilles et d'arcs allant de la racine vers les feuilles.</desc><desc versionDate="2007-05-04" xml:lang="es">codifica un árbol, que se constituye de raíz, nodos internos, hojas, y arcos que conectan raíz y hojas.</desc><desc versionDate="2007-01-21" xml:lang="it">codifica un albero, che è costituito da radice, nodi interni, foglie, e archi che collegano radice e foglie</desc><classes><memberOf key="model.annotation"/><memberOf key="att.global"/><memberOf key="model.divPart"/></classes><content><group xmlns="http://relaxng.org/ns/structure/1.0"><optional><ref name="label"/></optional><group><zeroOrMore><choice><ref name="leaf"/><ref name="iNode"/></choice></zeroOrMore><ref name="root"/><zeroOrMore><choice><ref name="leaf"/><ref name="iNode"/></choice></zeroOrMore></group></group></content><attList><attDef ident="arity" usage="opt">
       <desc versionDate="2005-01-14" xml:lang="en">gives the maximum number of children of the root and internal
 nodes of the tree.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">뿌리의 자식 노드 및 수형도의 내부 노드의 최대 수를 제시한다.</desc>
@@ -46302,8 +46201,7 @@ nodes of the tree.</desc>
       <datatype>
         <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.count"/>
       </datatype>
-    </attDef>
-    <attDef ident="ord" usage="req">
+    </attDef><attDef ident="ord" usage="req">
       <gloss versionDate="2007-07-04" xml:lang="en">ordered</gloss>
       <gloss versionDate="2007-12-20" xml:lang="ko">순서가 있는</gloss>
       <gloss versionDate="2008-04-06" xml:lang="es">ordenado</gloss>
@@ -46320,7 +46218,7 @@ partially ordered.</desc>
       <datatype>
         <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
       </datatype>
-      
+      <!-- cant be boolean because we have to allow for partial ordering -->
       <valList type="closed">
         <valItem ident="true">
           <desc versionDate="2007-06-27" xml:lang="en">indicates that all of the branching nodes of the tree are ordered.</desc>
@@ -46355,8 +46253,7 @@ unordered.</desc>
           <desc versionDate="2007-01-21" xml:lang="it">indica che tutti i nodi ramo dell'albero non sono ordinati</desc>
         </valItem>
       </valList>
-    </attDef>
-    <attDef ident="order" usage="opt">
+    </attDef><attDef ident="order" usage="opt">
       <desc versionDate="2005-01-14" xml:lang="en">gives the order of the tree, i.e., the number of its nodes.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">수형도의 순서를 제시한다. 즉, 그 노드의 수</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">提供樹狀結構的次序，例如節點數目。</desc>
@@ -46382,9 +46279,7 @@ attribute.</p>
         従って，属性<att>size</att>と<att>order</att>の2つは必要ない．
         </p>
       </remarks>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="und">
+    </attDef></attList><exemplum xml:lang="und">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <tree n="ex2" arity="2" ord="partial" order="13">
         <root xml:id="G-div1" children="#G-plu1 #G-exp1" ord="true">
@@ -46428,8 +46323,7 @@ attribute.</p>
         </leaf>
       </tree>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <tree n="ex2" arity="2" ord="partial" order="13">
         <root xml:id="fr_G-div1" children="#fr_G-plu1 #fr_G-exp1" ord="true">
@@ -46473,25 +46367,20 @@ attribute.</p>
         </leaf>
       </tree>
     </egXML>
-  </exemplum>
-  <remarks versionDate="2005-01-14" xml:lang="en">
+  </exemplum><remarks versionDate="2005-01-14" xml:lang="en">
     <p rend="dataDesc">A root, and zero or more internal nodes and leaves, but if
 there is an internal node, there must also be at least one leaf.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2009-11-17">
+  </remarks><remarks xml:lang="fr" versionDate="2009-11-17">
     <p rend="dataDesc">Il doit y avoir un nœud racine et zéro, un ou plusieurs nœuds internes
       et feuilles. S'il y a un nœud interne, il doit y avoir au moins une feuille.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
+  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
     <p rend="dataDesc">
     根がひとつ，，0以上の内部ノード，複数の葉．但し，内部ノードが1つの
     場合は，葉は1つになる．
     </p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/GD.html#GDTR">19.2. Trees</ref>
-  </listRef>
-</elementSpec><elementSpec module="nets" ident="root">
+  </listRef></elementSpec><elementSpec module="nets" ident="root">
   <gloss versionDate="2005-01-14" xml:lang="en">root node</gloss>
   <gloss versionDate="2007-12-20" xml:lang="ko">뿌리 노드</gloss>
   <gloss versionDate="2007-05-02" xml:lang="zh-TW">根節點</gloss>
@@ -46913,43 +46802,8 @@ the element which is the value of the attribute.</p>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/GD.html#GDTR">19.2. Trees</ref>
   </listRef>
-</elementSpec><elementSpec module="nets" ident="eTree">
-  <gloss versionDate="2005-01-14" xml:lang="en">embedding tree</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">내포 수형도</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW">嵌入樹狀結構</gloss>
-  <gloss versionDate="2007-06-12" xml:lang="fr">arbre englobant</gloss>
-  <gloss versionDate="2007-05-04" xml:lang="es">árbol integrado</gloss>
-  <gloss versionDate="2007-01-21" xml:lang="it">albero integrato</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en">provides an alternative to tree element for representing ordered rooted tree structures.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">순서가 있고 뿌리가 있는 수형 구조를 표시하기 위해 수형도 요소에 대체안을 제시한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">提供樹元素的替換，用來表示整齊具有根節點的樹狀結構。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">順序付き根付き木を構成する部分木を示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">élément à utiliser lorsqu'on a besoin d'imbriquer
-    plusieurs structures arborescentes à racine et ordonnées, pour encoder chacune de ces structures (en effet, il n'est pas possible d'imbriquer des éléments <gi>tree</gi>).</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">representa una alternativa al elemento árbol para la representación de estructuras del tipo árbol enraizado ordenado</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">rapresenta un'alternativa all'elemento albero per la rappresentazione di strutture del tipo albero radicato ordinato</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.divPart"/>
-    <memberOf key="att.typed"/>
-  </classes>
-  <content>
-    <group xmlns="http://relaxng.org/ns/structure/1.0">
-      <optional>
-        <ref name="label"/>
-      </optional>
-      <zeroOrMore>
-        <choice>
-          <ref name="eTree"/>
-          <ref name="triangle"/>
-          <ref name="eLeaf"/>
-          <ref name="model.ptrLike"/>
-        </choice>
-      </zeroOrMore>
-    </group>
-  </content>
-  <attList>
-    <attDef ident="value" usage="opt">
+</elementSpec><elementSpec rend="change" module="nets" ident="eTree"><gloss versionDate="2005-01-14" xml:lang="en">embedding tree</gloss><gloss versionDate="2007-12-20" xml:lang="ko">내포 수형도</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">嵌入樹狀結構</gloss><gloss versionDate="2007-06-12" xml:lang="fr">arbre englobant</gloss><gloss versionDate="2007-05-04" xml:lang="es">árbol integrado</gloss><gloss versionDate="2007-01-21" xml:lang="it">albero integrato</gloss><desc versionDate="2005-01-14" xml:lang="en">provides an alternative to tree element for representing ordered rooted tree structures.</desc><desc versionDate="2007-12-20" xml:lang="ko">순서가 있고 뿌리가 있는 수형 구조를 표시하기 위해 수형도 요소에 대체안을 제시한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">提供樹元素的替換，用來表示整齊具有根節點的樹狀結構。</desc><desc versionDate="2008-04-05" xml:lang="ja">順序付き根付き木を構成する部分木を示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">élément à utiliser lorsqu'on a besoin d'imbriquer
+    plusieurs structures arborescentes à racine et ordonnées, pour encoder chacune de ces structures (en effet, il n'est pas possible d'imbriquer des éléments <gi>tree</gi>).</desc><desc versionDate="2007-05-04" xml:lang="es">representa una alternativa al elemento árbol para la representación de estructuras del tipo árbol enraizado ordenado</desc><desc versionDate="2007-01-21" xml:lang="it">rapresenta un'alternativa all'elemento albero per la rappresentazione di strutture del tipo albero radicato ordinato</desc><classes><memberOf key="model.annotation"/><memberOf key="att.global"/><memberOf key="model.divPart"/><memberOf key="att.typed"/></classes><content><group xmlns="http://relaxng.org/ns/structure/1.0"><optional><ref name="label"/></optional><zeroOrMore><choice><ref name="eTree"/><ref name="triangle"/><ref name="eLeaf"/><ref name="model.ptrLike"/></choice></zeroOrMore></group></content><attList><attDef ident="value" usage="opt">
       <desc versionDate="2005-01-14" xml:lang="en">provides the value of an embedding tree, which is a feature
 structure or other analytic element.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">내포 수형도의 값을 제시하며, 그 값은 자질 구조 또는 기타 분석적 요소이다.</desc>
@@ -46961,9 +46815,7 @@ structure or other analytic element.</desc>
       <datatype>
         <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
       </datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
+    </attDef></attList><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <eTree n="ex1">
         <label>PP</label>
@@ -46990,8 +46842,7 @@ structure or other analytic element.</desc>
         </eTree>
       </eTree>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <eTree n="ex1">
         <label>PP</label>
@@ -47018,23 +46869,18 @@ structure or other analytic element.</desc>
         </eTree>
       </eTree>
     </egXML>
-  </exemplum>
-  <remarks versionDate="2007-03-02" xml:lang="en">
+  </exemplum><remarks versionDate="2007-03-02" xml:lang="en">
     <p rend="dataDesc">an optional label followed by zero or more
     embedding trees, triangles, or embedding leafs.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2007-06-12">
+  </remarks><remarks xml:lang="fr" versionDate="2007-06-12">
     <p rend="dataDesc">une étiquette facultative suivie de zéro, un ou plusieurs arbres englobants, triangles ou feuilles englobantes.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
+  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
     <p rend="dataDesc">
     ひとつ以上の部分木や部分木の葉に続いて，選択的にラベルをとる．
     </p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/GD.html#GDAT">19.3. Another Tree Notation</ref>
-  </listRef>
-</elementSpec><elementSpec module="nets" ident="triangle">
+  </listRef></elementSpec><elementSpec module="nets" ident="triangle">
   <gloss versionDate="2007-09-24" xml:lang="en">underspecified embedding tree, so called because of its
   characteristic shape when drawn</gloss>
   <gloss versionDate="2007-12-20" xml:lang="ko">미명시된 내포 수형도, 도출될 때 그 특성적 모양 때문에 그렇게 불린다.</gloss>
@@ -47195,30 +47041,7 @@ embedding trees; they are distinguished by their arrangement.</p>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/GD.html#GDAT">19.3. Another Tree Notation</ref>
   </listRef>
-</elementSpec><elementSpec module="nets" ident="forest">
-  <gloss versionDate="2007-06-12" xml:lang="fr">forêt</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en">provides for groups of rooted trees.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">뿌리가 있는 수형도군을 제공한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集具根節點的樹狀結構群組。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">根付き木のの集合を示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">permet d'encoder des groupes d'arbres à racine.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">define grupos de árboles enraizados.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">definisce gruppi di alberi radicati</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="model.divPart"/>
-  </classes>
-  <content>
-    <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-      <choice>
-        <ref name="tree"/>
-        <ref name="eTree"/>
-        <ref name="triangle"/>
-      </choice>
-    </oneOrMore>
-  </content>
-  <exemplum xml:lang="und">
+</elementSpec><elementSpec rend="change" module="nets" ident="forest"><gloss versionDate="2007-06-12" xml:lang="fr">forêt</gloss><desc versionDate="2005-01-14" xml:lang="en">provides for groups of rooted trees.</desc><desc versionDate="2007-12-20" xml:lang="ko">뿌리가 있는 수형도군을 제공한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">匯集具根節點的樹狀結構群組。</desc><desc versionDate="2008-04-05" xml:lang="ja">根付き木のの集合を示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">permet d'encoder des groupes d'arbres à racine.</desc><desc versionDate="2007-05-04" xml:lang="es">define grupos de árboles enraizados.</desc><desc versionDate="2007-01-21" xml:lang="it">definisce gruppi di alberi radicati</desc><classes><memberOf key="model.annotation"/><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.divPart"/></classes><content><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><ref name="tree"/><ref name="eTree"/><ref name="triangle"/></choice></oneOrMore></content><attList/><exemplum xml:lang="und">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <forest n="ex5" type="derivation-syntactic">
         <eTree n="Stage 1" xml:id="s1SBAR">
@@ -47265,35 +47088,18 @@ embedding trees; they are distinguished by their arrangement.</p>
         </eTree>
       </forest>
     </egXML>
-  </exemplum>
-  <remarks versionDate="2005-01-14" xml:lang="en">
+  </exemplum><remarks versionDate="2005-01-14" xml:lang="en">
     <p rend="dataDesc">One or more trees, embedding trees, or underspecified embedding
 trees (triangles).</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2007-06-12">
+  </remarks><remarks xml:lang="fr" versionDate="2007-06-12">
     <p rend="dataDesc">Un ou plusieurs arbres, des arbres englobants ou des arbres englobants sommaires (triangles).</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
+  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
     <p rend="dataDesc">
     ひとつ以上の木，部分木，省略部分木．
     </p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/GD.html#GDAT">19.3. Another Tree Notation</ref>
-  </listRef>
-</elementSpec><elementSpec module="nets" ident="listForest">
-  <desc versionDate="2011-12-02" xml:lang="en">provides for lists of forests.</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.divPart"/>
-  </classes>
-  <content>
-    <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-      <ref name="forest"/>
-    </oneOrMore>
-  </content>
-  <attList>
-    <attDef ident="type" usage="opt">
+  </listRef></elementSpec><elementSpec rend="change" module="nets" ident="listForest"><desc versionDate="2011-12-02" xml:lang="en">provides for lists of forests.</desc><classes><memberOf key="model.annotation"/><memberOf key="att.global"/><memberOf key="model.divPart"/></classes><content><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="forest"/></oneOrMore></content><attList><attDef ident="type" usage="opt">
       <desc versionDate="2011-12-02" xml:lang="en">identifies the type of the forest group.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">수형도군의 유형을 식별한다.</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">標明森林群組的類型。</desc>
@@ -47306,9 +47112,7 @@ trees (triangles).</p>
       <datatype>
         <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
       </datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="und">
+    </attDef></attList><exemplum xml:lang="und">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <listForest>
         <forest type="derivation-syntactic">
@@ -47327,25 +47131,19 @@ trees (triangles).</p>
         </forest>
       </listForest>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples"> </egXML>
-  </exemplum>
-  <remarks versionDate="2011-12-02" xml:lang="en">
+  </exemplum><remarks versionDate="2011-12-02" xml:lang="en">
     <p rend="dataDesc">One or more forests representing the same object.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2007-06-12">
+  </remarks><remarks xml:lang="fr" versionDate="2007-06-12">
     <p rend="dataDesc">Une ou plusieurs forêts.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
+  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
     <p rend="dataDesc">
     ひとつ以上の森．
     </p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/GD.html#GDAT">19.3. Another Tree Notation</ref>
-  </listRef>
-</elementSpec><classSpec module="spoken" predeclare="true" type="atts" ident="att.duration">
+  </listRef></elementSpec><classSpec module="spoken" predeclare="true" type="atts" ident="att.duration">
   
   <desc versionDate="2007-04-20" xml:lang="en">provides attributes for normalization of elements that contain datable events.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">날짜를 정할 수 있는 사건을 포함하는 요소의 규격화를 위한 속성을 제공한다.</desc>
@@ -61143,7 +60941,8 @@ an attribute may take, additional to the information carried by the
  <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TD">22. Documentation Elements</ref>
   </listRef>
-</elementSpec><moduleSpec ident="stand-off"><desc>Elements to allow stand-off annotations in a TEI document</desc></moduleSpec><elementSpec rend="add" ident="stdf" mode="add" ns="http://standoff.proposal" module="stand-off"><desc>Container element for standoff annotations</desc><classes><memberOf key="model.resourceLike" mode="add"/><memberOf key="att.global" mode="add"/><memberOf key="att.datcat" mode="add"/><memberOf key="att.ascribed" mode="add"/><memberOf key="att.datable.w3c" mode="add"/><memberOf key="att.typed" mode="add"/><memberOf key="att.pointing" mode="add"/></classes><content><optional xmlns="http://relaxng.org/ns/structure/1.0"><ref name="soHeader"/></optional><optional xmlns="http://relaxng.org/ns/structure/1.0"><ref name="annotations"/></optional><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="stdf"/></zeroOrMore></content><attList/></elementSpec><elementSpec rend="add" ident="soHeader" mode="add" ns="http://standoff.proposal" module="stand-off"><desc>Metadata for the <gi>stdf</gi> element(s)</desc><content><interleave xmlns="http://relaxng.org/ns/structure/1.0"><optional><ref name="titleStmt"/></optional><optional><ref name="publicationStmt"/></optional><optional><ref name="notesStmt"/></optional><optional><ref name="encodingDesc"/></optional><optional><ref name="profileDesc"/></optional><optional><ref name="revisionDesc"/></optional></interleave></content><attList/></elementSpec><elementSpec rend="add" ident="annotations" mode="add" ns="http://standoff.proposal" module="stand-off"><desc>Content of the <gi>stdf</gi> element</desc><classes><memberOf key="att.global" mode="add"/></classes><content><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="model.annotationPart"/></zeroOrMore></content><attList/></elementSpec><elementSpec rend="add" ident="mapStruct" mode="add" ns="http://standoff.proposal" module="stand-off"><desc>Any element is to be interpreted as mapping its structure onto a text to
-                        be annotated</desc><classes><memberOf key="model.annotationPart" mode="add"/></classes><attList/></elementSpec><elementSpec rend="add" ident="annotationGrp" mode="add" ns="http://standoff.proposal" module="stand-off"><desc>Groups together various annotations, for instance for parallel
-                        interpretations of a spoken segment</desc><classes><memberOf key="model.annotationPart"/><memberOf key="model.divPart.spoken"/><memberOf key="att.timed"/><memberOf key="att.global"/><memberOf key="att.ascribed"/><memberOf key="att.typed"/></classes><content><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><ref name="u"/><ref name="model.annotationPart"/></choice></zeroOrMore></content><attList/></elementSpec><classSpec rend="add" predeclare="true" type="model" ident="model.annotationPart" mode="add" module="stand-off"><desc>Initially empty class for providing easy customization with additional TEI
-                        elements or external schemas, e.g. PAULA</desc></classSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="AI" xml:id="DAI" ident="analysis"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="CC" xml:id="DCCHDR" ident="corpus"/><moduleSpec n="DI" xml:id="DDIBO" ident="dictionaries"/><moduleSpec n="DR" xml:id="DDR" ident="drama"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec n="WD" xml:id="DWD" ident="gaiji"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="FS" xml:id="DFS" ident="iso-fs"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="MS" xml:id="DMSD2" ident="msdescription"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="GD" xml:id="DGD" ident="nets"/><moduleSpec n="TS" xml:id="DTS" ident="spoken"/><moduleSpec n="TC" xml:id="DTC" ident="textcrit"/><moduleSpec n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec n="PH" xml:id="DPH" ident="transcr"/><moduleSpec n="VE" xml:id="DVE" ident="verse"/><moduleSpec xmlns:s="http://www.ascc.net/xml/schematron" xmlns:sch="http://purl.oclc.org/dsdl/schematron" n="TD" xml:id="DTDDTD" ident="tagdocs"/></schemaSpec></body></text></TEI>
+</elementSpec><moduleSpec ident="standOff"><desc>Elements to allow stand-off annotations in a TEI document</desc></moduleSpec><elementSpec rend="add" ident="standOff" mode="add" ns="http://standoff.proposal" module="standOff"><desc>Container element for standoff annotations</desc><classes><memberOf key="model.resourceLike" mode="add"/><memberOf key="att.global" mode="add"/><memberOf key="att.datcat" mode="add"/><memberOf key="att.ascribed" mode="add"/><memberOf key="att.datable.w3c" mode="add"/><memberOf key="att.typed" mode="add"/><memberOf key="att.pointing" mode="add"/></classes><content><optional xmlns="http://relaxng.org/ns/structure/1.0"><ref name="teiHeader"/></optional><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="listAnnotation"/></zeroOrMore><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="standOff"/></zeroOrMore></content><attList/></elementSpec><elementSpec rend="add" ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff"><desc>Groups together various annotations, for instance for parallel
+                        interpretations of a spoken segment</desc><classes><memberOf key="model.annotation"/><memberOf key="att.timed"/><memberOf key="att.global"/><memberOf key="att.ascribed"/><memberOf key="att.typed"/><memberOf key="att.declaring"/></classes><content><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="model.annotation"/></oneOrMore></content><attList/><remarks><p>The global xml:base  attribute is used on this element both to specify the target of the annotations and to serve as the base for any
+                      target URIs contained by the annotation elements. If this attribute is
+                      not supplied, the listAnnotation must be embedded within the complete TEI
+                      document to which it applies. </p></remarks></elementSpec><classSpec rend="add" predeclare="true" type="model" ident="model.annotation" mode="add" module="standOff"><desc>class of elements containing standoff annotation</desc></classSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="AI" xml:id="DAI" ident="analysis"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="CC" xml:id="DCCHDR" ident="corpus"/><moduleSpec n="DI" xml:id="DDIBO" ident="dictionaries"/><moduleSpec n="DR" xml:id="DDR" ident="drama"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec n="WD" xml:id="DWD" ident="gaiji"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="FS" xml:id="DFS" ident="iso-fs"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="MS" xml:id="DMSD2" ident="msdescription"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="GD" xml:id="DGD" ident="nets"/><moduleSpec n="TS" xml:id="DTS" ident="spoken"/><moduleSpec n="TC" xml:id="DTC" ident="textcrit"/><moduleSpec n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec n="PH" xml:id="DPH" ident="transcr"/><moduleSpec n="VE" xml:id="DVE" ident="verse"/><moduleSpec xmlns:s="http://www.ascc.net/xml/schematron" xmlns:sch="http://purl.oclc.org/dsdl/schematron" n="TD" xml:id="DTDDTD" ident="tagdocs"/></schemaSpec></body></text></TEI>
