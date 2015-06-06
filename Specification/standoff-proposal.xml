@@ -79,6 +79,9 @@
                             <rng:ref name="teiHeader"/>
                         </rng:optional>
                         <rng:zeroOrMore>
+                            <rng:ref name="model.resourceLike"/>
+                        </rng:zeroOrMore>
+                        <rng:zeroOrMore>
                             <rng:ref name="listAnnotation"/>
                         </rng:zeroOrMore>
                         <rng:zeroOrMore>

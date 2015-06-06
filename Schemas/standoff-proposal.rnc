@@ -8,7 +8,7 @@ namespace s = "http://www.ascc.net/xml/schematron"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2015-06-06T07:21:55Z. .
+# Schema generated from ODD source 2015-06-06T08:38:35Z. .
 # TEI Edition: Version 2.8.0. Last updated on
 #	6th April 2015, revision 13197
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
@@ -10770,6 +10770,7 @@ standOff =
   ## Container element for standoff annotations
   element ns2:standOff {
     teiHeader?,
+    model.resourceLike*,
     listAnnotation*,
     standOff*,
     att.global.attributes,
