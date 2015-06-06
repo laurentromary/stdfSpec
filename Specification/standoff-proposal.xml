@@ -206,6 +206,12 @@
                      <memberOf key="model.annotation" mode="add"/>
                   </classes>
                </elementSpec>
+                
+                <elementSpec ident="zone" module="transcr" mode="change">
+                    <classes mode="change">
+                        <memberOf mode="add" key="model.annotation"/>
+                    </classes>
+                </elementSpec>
                
                <!--graph, listgraph forest, -->
 
