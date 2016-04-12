@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <cit n="c">
+            <q xml:lang="kr">미아가 선생이었다 <note place="inline">(nominal
+               predicate)</note></q>
+            <q type="transliteration">mia-ka sensayng-i-ess-ta</q>
+            <q type="morphosyntax">Mia-NOM teacher-COP-PAST-DECL</q>
+            <q type="morphosyntax">Mia was a teacher</q>
+         </cit>
+         <annotationBlock n="c">
+            <u xml:lang="kr">미아가 선생이었다 </u>
+            <span type="transliteration">mia-ka sensayng-i-ess-ta<note place="inline">(nominal
+               predicate)</note></span>
+            <span type="morphosyntax">Mia-NOM teacher-COP-PAST-DECL</span>
+            <span type="gloss">Mia was a teacher</span>          
+         </annotationBlock>
+      </body>
+  </text>
+</TEI>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="tei_odds.rnc" type="application/relax-ng-compact-syntax"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <teiHeader>
         <fileDesc>
@@ -34,6 +34,7 @@
     </teiHeader>
     <text>
         <body>
+            <!-- http://wiki.tei-c.org/index.php/Proposal_for_@selector_attribute_on_rendition -->
             <schemaSpec ident="standoff-proposal" start="TEI teiCorpus">
                 <moduleRef key="tei"/>
                 <moduleRef key="core"/>
@@ -61,8 +62,7 @@
                     <desc>Elements to allow stand-off annotations in a TEI document</desc>
                 </moduleSpec>
 
-                <elementSpec ident="standOff" mode="add" ns="http://standoff.proposal"
-                    module="standOff">
+                <elementSpec ident="standOff" mode="add" ns="http://standoff.proposal" module="standOff">
                     <desc>Container element for standoff annotations</desc>
                     <classes>
                         <memberOf key="model.resourceLike" mode="add"/>
@@ -90,7 +90,7 @@
                     </content>
                 </elementSpec>
 
-               <!-- <elementSpec ident="standOffHeader" mode="add" ns="http://standoff.proposal"
+                <!-- <elementSpec ident="standOffHeader" mode="add" ns="http://standoff.proposal"
                     module="standOff">
                     <desc>Metadata for the <gi>stdf</gi> element(s)</desc>
                     <content>
@@ -117,13 +117,11 @@
                     </content>
                 </elementSpec>-->
 
-                <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal"
-                    module="standOff">
-                    <desc>Groups together various annotations, for instance for parallel
-                        interpretations of a spoken segment</desc>
+                <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff">
+                    <desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc>
                     <classes>
                         <memberOf key="model.annotation"/>
-<!--                        <memberOf key="model.divPart.spoken"/>-->
+                        <!--                        <memberOf key="model.divPart.spoken"/>-->
                         <memberOf key="att.timed"/>
                         <memberOf key="att.global"/>
                         <memberOf key="att.ascribed"/>
@@ -131,25 +129,71 @@
                         <memberOf key="att.declaring"/>
                     </classes>
                     <content>
-                        <rng:oneOrMore>
-                           <rng:ref name="model.annotation"/>
-                        </rng:oneOrMore>
+                        <rng:choice>
+                            <rng:oneOrMore>
+                                <rng:ref name="listAnnotation"/>
+                            </rng:oneOrMore>
+                            <rng:oneOrMore>
+                                <rng:ref name="annotationBlock"/>
+                            </rng:oneOrMore>
+                        </rng:choice>
                     </content>
-                   <remarks>
-                      <p>The global xml:base  attribute is used on this element both to specify the target of the annotations and to serve as the base for any
-                      target URIs contained by the annotation elements. If this attribute is
-                      not supplied, the listAnnotation must be embedded within the complete TEI
-                      document to which it applies. </p>
-                   </remarks>
+                    <remarks>
+                        <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
+                            elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p>
+                    </remarks>
+                </elementSpec>
+
+                <elementSpec ident="annotationBlock" mode="add" module="standOff">
+                    <desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc>
+                    <classes>
+                        <memberOf key="model.divPart.spoken"/>
+                        <memberOf key="att.timed"/>
+                        <memberOf key="att.global"/>
+                        <memberOf key="att.ascribed"/>
+                        <memberOf key="att.typed"/>
+                        <memberOf key="att.declaring"/>
+                    </classes>
+                    <content>
+                        <rng:group>
+                            <rng:optional>
+                                <rng:ref name="model.annotableSegment"/>
+                            </rng:optional>
+                            <rng:oneOrMore>
+                                <rng:ref name="model.annotation"/>
+                            </rng:oneOrMore>
+                        </rng:group>
+                    </content>
+                    <remarks>
+                        <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
+                            elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p>
+                    </remarks>
                 </elementSpec>
 
                 <classSpec type="model" ident="model.annotation" mode="add" module="standOff">
-                    <desc>class of elements containing standoff annotation</desc>
+                    <desc>groups together any kind of element that may be used to annotate an annotable segment</desc>
                 </classSpec>
+
+                <classSpec type="model" ident="model.annotableSegment" mode="add" module="standOff">
+                    <desc>groups together elements that may be annotated within an <gi>annotationBlock</gi> element</desc>
+                </classSpec>
+                
 
                 <!--       *****       -->
                 <!-- Following are existing TEI declarations where we add our new class(es) -->
-
+                
+                <elementSpec ident="u" mode="change" module="spoken">
+                    <classes mode="change">
+                        <memberOf key="model.annotableSegment" mode="add"/>
+                    </classes>
+                </elementSpec>
+                
+                <elementSpec ident="seg" mode="change" module="linking">
+                    <classes mode="change">
+                        <memberOf key="model.annotableSegment" mode="add"/>
+                    </classes>
+                </elementSpec>
+                
                 <classSpec type="model" ident="model.global.meta" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
@@ -179,44 +223,44 @@
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-               
-               <elementSpec ident="graph" mode="change" module="header">
-                  <classes mode="change">
-                     <memberOf key="model.annotation" mode="add"/>
-                  </classes>
-               </elementSpec>
-               
-               <elementSpec ident="forest" mode="change" module="header">
-                  <classes mode="change">
-                     <memberOf key="model.annotation" mode="add"/>
-                  </classes>
-               </elementSpec>
-               
-               <elementSpec ident="listForest" mode="change" module="header">
-                  <classes mode="change">
-                     <memberOf key="model.annotation" mode="add"/>
-                  </classes>
-               </elementSpec>
-               
-               <elementSpec ident="tree" mode="change" module="header">
-                  <classes mode="change">
-                     <memberOf key="model.annotation" mode="add"/>
-                  </classes>
-               </elementSpec>
-               
-               <elementSpec ident="eTree" mode="change" module="header">
-                  <classes mode="change">
-                     <memberOf key="model.annotation" mode="add"/>
-                  </classes>
-               </elementSpec>
-                
+
+                <elementSpec ident="graph" mode="change" module="header">
+                    <classes mode="change">
+                        <memberOf key="model.annotation" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+                <elementSpec ident="forest" mode="change" module="header">
+                    <classes mode="change">
+                        <memberOf key="model.annotation" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+                <elementSpec ident="listForest" mode="change" module="header">
+                    <classes mode="change">
+                        <memberOf key="model.annotation" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+                <elementSpec ident="tree" mode="change" module="header">
+                    <classes mode="change">
+                        <memberOf key="model.annotation" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+                <elementSpec ident="eTree" mode="change" module="header">
+                    <classes mode="change">
+                        <memberOf key="model.annotation" mode="add"/>
+                    </classes>
+                </elementSpec>
+
                 <elementSpec ident="zone" module="transcr" mode="change">
                     <classes mode="change">
                         <memberOf mode="add" key="model.annotation"/>
                     </classes>
                 </elementSpec>
-               
-               <!--graph, listgraph forest, -->
+
+                <!--graph, listgraph forest, -->
 
                 <!-- Need to exclude our namespace from egXML to prevent "conflicting ID-types for attribute" errors -->
                 <macroSpec ident="macro.anyXML" mode="change" module="tagdocs">

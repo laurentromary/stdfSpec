@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/Users/romary/Documents/Workbench/stdfSpec/Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title/>
+            </titleStmt>
+            <publicationStmt>
+                <p>...</p>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl>http://www.tei-c.org/Vault/AI/aiw07a.txt </bibl>
+                <bibl> http://www.tei-c.org/Vault/AI/aiw01.txt</bibl>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <div>
+                    <p>Date: Tue, 5 Dec 89 08:30:05 CST Sender: Text Encoding Initiative - Text Analysis and Interpretation Committee <email>TEI-ANA@UICVM</email> From: Gary Simons
+                            <email>gary@TXSIL.LONESTAR.ORG</email> To: TEI-ANA distribution list From: Gary Simons Date: December 4, 1989</p>
+                    <p> Appended is the document which Terry Langendoen referred to as SSS in his recent mailing. It was originally distributed to a subset of the TEI-ANA committee along with a
+                        photocopy of a chapter of the IT (Interlinear Text) system documentation on which it was based. At Terry's request I have revised the original document slightly to make it
+                        suitable for posting on its own. </p>
+                </div>
+                <div>
+                    <div>
+                        <p>------------------------------------------------------------</p>
+
+
+                        <p>Text Encoding Initiative</p>
+                        <p>Committee on Text Analysis and Interpretation</p>
+
+                        <p>November 1, 1989</p>
+                        <p>Revised December 4, 1989</p>
+
+
+
+
+                        <p> PROPOSED FRAMEWORK FOR ENCODING ANALYSIS AND INTERPRETATION OF RUNNING TEXT</p>
+
+
+                        <p> Gary F. Simons</p>
+
+                        <p>
+                            <orgName>Summer Institute of Linguistics</orgName>
+                            <address> 7500 W. Camp Wisdom Rd.
+                        Dallas, TX  75236</address> UUCP: ...!texbell!txsil!gary Internet: gary@txsil.lonestar.org</p>
+
+                    </div>
+
+                    <div>
+                        <p>This document proposes a framework for encoding the linguistic analysis and interpretation of running text (as opposed to the encoding of isolated displays used as examples
+                            in articles or books). This presentation assumes familiarity with the text encoding used in the IT (Interlinear Text) system developed by the Summer Institute of
+                            Linguistics (SIL). The MS- DOS version of IT is documented in "How to Use IT: a guide to interlinar text processing," by Gary F. Simons and Larry Versaw (SIL, Dallas, TX,
+                            1987), and the Macintosh version in "How to Use IT: interlinear text processing on the Macintosh," by Gary F. Simons and John V. Thomson (Linguist's Software, Edmonds, WA,
+                            1988). IT uses backslash markers to tag kinds of information in an analyzed text and uses column alignment to encode the relationships between the elements in different
+                            tagged fields. This document suggests how the same kinds of information could be encoded in SGML.</p>
+
+                        <p>The IT documentation illustrates many kinds of information that can be encoded in analyzed texts. The focus in this document is not on the variety of things that can be
+                            encoded (and for which we would eventually need to develop tags), but on a basic strategy for encoding text analysis in SGML (particularly where there is simultaneously an
+                            analysis of the text at different levels of structure).</p>
+
+                        <p>Most of the discussion below gives the justification for what I am proposing and gives examples to illustrate. There are some specific proposals, however. Where these occur,
+                            I have drawn attention to them by setting them apart in an indented paragraph. I have also given each a unique reference number to facilitate future discussion of the
+                            proposals. In the discussion below I use some of the terminology of the IT system. The baseline text is the original text being analyzed. The analyses added to the text are
+                            called annotations.</p>
+                    </div>
+
+                    <div>
+                        <head>Word-level analysis</head>
+
+                        <p> I will begin with a simple example (from page 2-19 of the IT manual) which involves only word-level annotation: </p>
+                        <!-- 
+     \ot Ma  nau ku rikia kini  eri  ne  kuu   ka  bula
+     \rt Ma  nau ku rikia kini  'eri ne  ku'u  ka  bula
+     \wg and I   I  saw   woman that who drank she be drunk
+    -->
+                        <annotationBlock>
+                            <seg type="ot">Ma nau ku rikia kini eri ne kuu ka bula</seg>
+                            <seg type="rt">Ma nau ku rikia kini 'eri ne ku'u ka bula</seg>
+                            <seg type="wg">and I I saw woman that who drank she be drunk</seg>
+                        </annotationBlock>
+                        
+                        <annotationBlock>
+                            <seg type="ot"><w>Ma</w> <w>nau</w> <w>ku</w> <w>rikia</w> <w>kini</w> <w>eri</w> <w>ne</w> <w>kuu</w> <w>ka</w> <w>bula</w></seg>
+                            <seg type="rt"><w>Ma</w> <w>nau</w> <w>ku</w> <w>rikia</w> <w>kini</w> <w>'eri</w> <w>ne</w> <w>ku'u</w> <w>ka</w> <w>bula</w></seg>
+                            <seg type="wg"><w>and</w> <w>I</w> <w>I</w> <w>saw</w> <w>woman</w> <w>that</w> <w>who</w> <w>drank</w> <w>she</w> <w>be drunk</w></seg>
+                        </annotationBlock>
+
+
+                        <p>Here, \ot stands for `original transcription,' \rt for `retranscription,' and \wg for `word gloss.' </p>
+                        <p> In the interlinear presentation of text, the associations between words and their annotations are achieved by means of explicit manipulation of format. In a data
+                            interchange standard we need to get away from that, for at least two reasons: (1) the actual formatting (such as the size of the spaces between words) is dependent on the
+                            size and style of the fonts that are eventually used, and (2) software could not understand the structure of an interlinear text (and the relationships among its elements)
+                            without having a special purpose parser. To remedy this, the interchange standard should explicitly encode the structure of the interlinear text in its descriptive markup.
+                            This leads to the first proposal:</p>
+
+                        <p> 1. A markup element, say <tag type="start">w</tag> ... <tag type="end">w</tag>, is needed to enclose a word and all of its annotations in an interlinear text.</p>
+
+                        <p>Within this element, the base word and each of the annotations are also marked with a descriptive tag. I will assume that the DTD specifies that end tags are optional for
+                            these lowest level tags. Following this scheme, the above example (keeping the same markup tags) would be encoded as:</p>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <w>
+                                <ot>Ma</ot>
+                                <rt>Ma</rt>
+                                <wg>and</wg>
+                            </w>
+                            <w>
+                                <ot>nau</ot>
+                                <rt>nau</rt>
+                                <wg>I</wg>
+                            </w>
+                            <w>
+                                <ot>ku</ot>
+                                <rt>ku</rt>
+                                <wg>I</wg>
+                            </w>
+                            <w>
+                                <ot>rikia</ot>
+                                <rt>rikia</rt>
+                                <wg>saw</wg>
+                            </w>
+                            <w>
+                                <ot>kini</ot>
+                                <rt>kini</rt>
+                                <wg>woman</wg>
+                            </w>
+                            <w>
+                                <ot>eri</ot>
+                                <rt>'eri</rt>
+                                <wg>that</wg>
+                            </w>
+                            <w>
+                                <ot>ne</ot>
+                                <rt>ne</rt>
+                                <wg>who</wg>
+                            </w>
+                            <w>
+                                <ot>kuu</ot>
+                                <rt>ku'u</rt>
+                                <wg>drank</wg>
+                            </w>
+                            <w>
+                                <ot>ka</ot>
+                                <rt>ka</rt>
+                                <wg>she</wg>
+                            </w>
+                            <w>
+                                <ot>bula</ot>
+                                <rt>bula</rt>
+                                <wg>be drunk</wg>
+                            </w>
+                        </egXML>
+
+                        <p> In this example, a space has been put after each data item. It is my feeling that the standard should ignore any white space following a data item within a <gi>w</gi>
+                            element. This flexibility is needed, especially as analysis structures get more complex, in order to make interchange formats human readable. Thus,</p>
+                        <p> 2. Within the <gi>w</gi> element, all spaces and newlines preceding a markup tag are superfluous. </p>
+                        <p>Thus the above sample means exactly the same thing as the following in which all the superfluous spaces are omitted (thus producing a file that is highly compact but much
+                            less human readable): </p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <w><ot>Ma</ot><rt>Ma</rt><wg>and</wg></w>
+                            <w><ot>nau</ot><rt>nau</rt><wg>I</wg></w>
+                            <w><ot>ku</ot><rt>ku</rt><wg>I</wg></w>
+                            <w><ot>rikia</ot><rt>rikia</rt><wg>saw</wg></w>
+                            <w><ot>kini</ot><rt>kini</rt><wg>woman</wg></w>
+                            <w><ot>eri</ot><rt>'eri</rt><wg>that</wg></w>
+                            <w><ot>ne</ot><rt>ne</rt><wg>who</wg></w>
+                            <w><ot>kuu</ot><rt>ku'u</rt><wg>drank</wg></w>
+                            <w><ot>ka</ot><rt>ka</rt><wg>she</wg></w>
+                            <w><ot>bula</ot><rt>bula</rt><wg>be drunk</wg></w>
+                        </egXML>
+
+                        <!--
+Likewise, the above two encodings are equivalent to the following
+in which extra spaces are added to achieve a very human readable
+format:
+ 
+     <w> <ot>Ma    <rt>Ma    <wg>and      </w>
+     <w> <ot>nau   <rt>nau   <wg>I        </w>
+     <w> <ot>ku    <rt>ku    <wg>I        </w>
+     <w> <ot>rikia <rt>rikia <wg>saw      </w>
+     <w> <ot>kini  <rt>kini  <wg>woman    </w>
+     <w> <ot>eri   <rt>'eri  <wg>that     </w>
+     <w> <ot>ne    <rt>ne    <wg>who      </w>
+     <w> <ot>kuu   <rt>ku'u  <wg>drank    </w>
+     <w> <ot>ka    <rt>ka    <wg>she      </w>
+     <w> <ot>bula  <rt>bula  <wg>be drunk </w>
+ 
+The following is still another possible encoding of the very same
+information:
+ 
+     <w>
+        <ot>Ma
+        <rt>Ma
+        <wg>and </w>
+     <w>
+        <ot>nau
+        <rt>nau
+        <wg>I </w>
+     <w>
+        <ot>ku
+        <rt>ku
+        <wg>I </w>
+     <w>
+        <ot>rikia
+        <rt>rikia
+        <wg>saw </w>
+     etc.
+ -->
+                        <p>The examples below which involve morpheme analysis within word analysis demonstrate the necessity for being able to treat newlines as well as spaces as superfluous. </p>
+                        <p> I further propose, as shown in the above samples, that: </p>
+                        <p> 3. Within the <gi>w</gi> element, the baseline text element should have a markup tag just as do all the annotations.</p>
+
+                        <p>This means that <gi>w</gi> will always be followed immediately by the baseline tag. This appears redundant, and one could argue that the baseline word should be the content
+                            of the <gi>w</gi> tag. I prefer to have the baseline separately tagged for the following reasons: (1) The <gi>w</gi> element is more like a record of a database than an
+                            element with running text; in this perspective, the baseline word is a field of information as are all the annotations. (2) The baseline text may be drawn from any of a
+                            number of domains -- phonetic transcription, phonemic transcription, standard orthography, historical orthography -- which happen to be among the domains that are possible
+                            for annotations as well. This proposal ensures that elements are tagged consistently, whether they are base forms or annotations. (3) If the baseline were not tagged, then
+                            the meaning of <gi>w</gi> would be variable depending on the kind of representation being used for the baseline. With the baseline separately tagged, <gi>w</gi> always
+                            means exactly the same thing, namely, "This is a bundle of information about a word."</p>
+                    </div>
+
+                    <div>
+                        <head>Morpheme-level analysis</head>
+                        <p> Now we shift to a more complex example involving morpheme- level analysis within the word-level analysis. The example is from Eskimo, a highly agglutinative language. In
+                            interlinear format (from page 2-33 of the IT manual) the example looks like this:</p>
+
+                        <!-- \tx Akutchilighmik-uvva          uqaaqtullangniaqtunga.
+     \at akut    -chi-ligh-mik  =uvva uqaaqtu   -llang-niaq-tunga
+     \mr akutuq  -si -liq -mik  =uvva uqaaqtuq  -llak -niaq-tunga
+     \mg icecream-RSL-GER -s.MOD=now  tell story-DUR  -INT -1s.I
+     \wg about making Eskimo icecream I am going to tell a story-->
+
+                        <annotationBlock>
+                            <seg>\tx Akutchilighmik-uvva uqaaqtullangniaqtunga.</seg>
+                            <seg>\at akut -chi-ligh-mik =uvva uqaaqtu -llang-niaq-tunga</seg>
+                            <seg>\mr akutuq -si -liq -mik =uvva uqaaqtuq -llak -niaq-tunga</seg>
+                            <seg>\mg icecream-RSL-GER -s.MOD=now tell story-DUR -INT -1s.I</seg>
+                            <seg>\wg about making Eskimo icecream I am going to tell a story</seg>
+                        </annotationBlock>
+
+                        <p>The field codes in this case are \tx for `baseline text,' \at for `allomorphic transcription' (that is, with morph cuts indicated in the surface form of the word), \mr for
+                            `morphemic representa- tion' (that is, underlying forms), \mg for `morpheme gloss,' and \wg for `word gloss.'</p>
+
+                        <p> In this example we have the elements of the baseline text and the word gloss lines working at the word level. But the middle three lines are further subdivided into a
+                            morpheme level of analysis. We could ignore this and treat everything as a word-level annotation, as in</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <w>
+                                <tx>Akutchilighmik-uvva</tx>
+                                <at>akut-chi-ligh-mik=uvva</at>
+                                <mr>akutuq-si-liq-mik=uvva</mr>
+                                <mg>icecream-RSL-GER-s.MOD=now</mg>
+                                <wg>about making Eskimo icecream</wg>
+                            </w>
+                            <w>
+                                <tx>uqaaqtullangniaqtunga.</tx>
+                                <at>uqaaqtu-llang-niaq-tunga</at>
+                                <mr>uqaaqtuq-llak-niaq-tunga</mr>
+                                <mg>tell story-DUR-INT-1s.I</mg>
+                                <wg>I am going to tell a story</wg>
+                            </w>
+                        </egXML>
+                        <p>Note that in this representation we have preserved the morpheme break characters in the data so that the human reader can reconstruct the relationships between the parts of
+                            the related lines, but we have not encoded those relationships explicitly in the markup. Without a special purpose parser, the morpheme subalignments are lost to computer
+                            software.</p>
+
+                        <p> To handle the morphemic substructure in the markup, we need an element like <gi>w</gi> above, but which works at the morpheme level and can be embedded inside <gi>w</gi>
+                            elements. Thus,</p>
+
+                        <p>4. A markup element, say <tag type="start">m</tag> ... <tag type="end">m</tag>, is needed to enclose a morpheme and all of its annotations in an interlinear text.</p>
+
+                        <p>Proposal 2 above, about superfluous newlines and spaces, applies as well within the scope of the <gi>m</gi> element. So does proposal 3, which in this case means that the
+                            first item within a <gi>m</gi> element should have a descriptive tag.</p>
+
+                        <p> To translate the above interlinear example into descriptive SGML markup requires one more step. We must realize that the three lines which will be expressed at the morpheme
+                            level inside <gi>m</gi> elements function together as a single element at the word level. In the same way that \wg provides a gloss for the whole word, the set of three
+                            lines provides a morphemic analysis for the whole word. We thus introduce <gi>ma</gi> for `morphemic analysis' as a word-level annotation in which to embed the
+                            morpheme-level analyses. The descriptive markup of the Eskimo example then becomes something like: </p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <w>
+                                <tx>Akutchilighmik-uvva</tx>
+                                <ma>
+                                    <m>
+                                        <at>akut</at>
+                                        <mr>akutuq</mr>
+                                        <mg>icecream</mg>
+                                    </m>
+                                    <m>
+                                        <at>-chi</at>
+                                        <mr>-si</mr>
+                                        <mg>-RSL</mg>
+                                    </m>
+                                    <m>
+                                        <at>-ligh</at>
+                                        <mr>-liq</mr>
+                                        <mg>-GER</mg>
+                                    </m>
+                                    <m>
+                                        <at>-mik</at>
+                                        <mr>-mik</mr>
+                                        <mg>-s.MOD</mg>
+                                    </m>
+                                    <m>
+                                        <at>=uvva</at>
+                                        <mr>=uvva</mr>
+                                        <mg>=now</mg>
+                                    </m>
+                                </ma>
+                                <wg>about making Eskimo icecream</wg>
+                            </w>
+                            <w>
+                                <tx>uqaaqtullangniaqtunga.</tx>
+                                <ma>
+                                    <m>
+                                        <at>uqaaqtu</at>
+                                        <mr>uqaaqtuq</mr>
+                                        <mg>tell story</mg>
+                                    </m>
+                                    <m>
+                                        <at>-llang</at>
+                                        <mr>-llak</mr>
+                                        <mg>-DUR</mg>
+                                    </m>
+                                    <m>
+                                        <at>-niaq</at>
+                                        <mr>-niaq</mr>
+                                        <mg>-INT</mg>
+                                    </m>
+                                    <m>
+                                        <at>-tunga</at>
+                                        <mr>-tunga</mr>
+                                        <mg>-1s.I</mg>
+                                    </m>
+                                </ma>
+                                <wg>I am going to tell a story</wg>
+                            </w>
+                        </egXML>
+
+                        <p>Note that this is just one possible way to use indentations and newlines to format the encoded information. By proposal 2 above, many others would be possible.</p>
+                    </div>
+                    <div>
+                        <head>Above word level</head>
+
+                        <p>Text analysis must also go above the word level. For instance, the free translations of conventional interlinear text analysis are annotations at a sentence or clause level.
+                            One could also perform analysis and annotation at a phrase level or at a paragraph level. Markup can be generalized at any level by doing what we did to embed morpheme
+                            analysis inside word level analysis. Thus,</p>
+
+                        <p> 5. For each level at which annotation is to be done, a markup tag (along the lines of <gi>w</gi> and <gi>m</gi> introduced above) should be created. If a lower level of
+                            anno- tation is to be embedded within it, then a markup tag to embed the lower level analysis must also be created.</p>
+
+                        <p>The second sentence refers to a tag like <gi>ma</gi> which had to be created to embed morpheme analyses inside of word analyses. </p>
+                        <p> Consider this example (adapted from page 2-64 of the IT manual):</p>
+
+                        <!--  \ref BARU u 11
+     \tx "Hata     ma  haia,
+     \wg  vine sp. and putty nut
+ 
+     \lt "Hata vine and putty nut,
+ 
+     \ft "There is plenty of hata vine and putty nut around,
+ 
+     \bi Hata is a vine used for stitching together the planks
+         of canoes.  The nut of the haia tree (Parinarium
+         glaberrimum) contains a putty-like substance used for
+         caulking canoes.-->
+                        <p> In this example, \ref stands for `reference,' \tx for the baseline text, \wg for `word gloss,' \lt for `literal translation,' \ft for `free translation,' and \bi for
+                            `background information.'</p>
+
+                        <p> For the purposes of text glossing, this particular text was divided into units of convenient size for translation (often more than a single clause but less than a
+                            sentence). Since the division does not correspond to a linguistic level like sentence or clause, we will simply call it `unit' and use <gi>unit</gi> as the tag for this
+                            unit. Within the unit, we have word-level analysis. Thus we need a tag to embed the lower level of analysis. We will use <gi>wa</gi> for `word-by-word analysis.' The above
+                            would then be marked up as:</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <unit>
+                                <number> 11</number>
+                                <wa>
+                                    <w>
+                                        <tx>"Hata</tx>
+                                        <wg> vine sp.</wg>
+                                    </w>
+                                    <w>
+                                        <tx>ma</tx>
+                                        <wg>and</wg>
+                                    </w>
+                                    <w>
+                                        <tx>haia</tx>
+                                        <wg>putty nut</wg>
+                                    </w>
+                                </wa>
+                                <lt>"Hata vine and putty nut,</lt>
+                                <ft>"There is plenty of hata vine and putty nut around,</ft>
+                                <bi>Hata is a vine used for stitching together the planks of canoes. The nut of the haia tree (Parinarium glaberrimum) contains a putty-like substance used for caulking
+                                    canoes.</bi>
+                            </unit>
+                        </egXML>
+                        <p>If the words exhibited complex morphology, then a <gi>ma</gi> element would be further embedded within the <gi>wa</gi> element.</p>
+                    </div>
+                    <div>
+                        <head>Where next?</head>
+                        <p> My purpose here has been to suggest a possible framework for the markup of analysis and interpretation in texts. If this framework is adopted, then it seems that the major
+                            task of the committee would be to devise a standard set of tags for all the kinds of information that could be encoded in analyzed texts. The IT manual proposes more than
+                            30, but many more are possible. The following are some of the difficulties I foresee along the way:</p>
+
+                        <p> (1) This kind of text is not amenable to the once-for-all DTD in the same way that something like an academic book or article (a la the AAP tag set) has proven to be. Two
+                            reasons come to mind. First, there is not a closed tag set. The imaginative analyst could invent new ways of interpreting and analyzing text for which appropriate
+                            standardized markup tags have not been devised. Second, each analyzed text potentially has a unique DTD rather than all analyzed texts sharing the same DTD. In a particular
+                            analyzed text, the analyst makes a selection of the kinds of information that will be included; the analyst should then be consistent in following that model throughout.
+                            The analyst's selection thus would ideally define a unique DTD for the text which consistently enforces the analyst's intention. We could probably live with a once-for-all
+                            general- purpose DTD, but it would permit sloppy work in which each element of the text could be annotated with a different selection of fields.</p>
+
+                        <p> (2) The whole scheme presented above is optimal for situations where there is a one-to-one correspondence between all the analysis items at the same level. What do we do
+                            when there is not? For instance, what happens if one word in the baseline text is a contraction that needs to be represented as two words in the next line of the analysis.
+                            Or, what if two words in the baseline text are a single lexeme which should be represented as a single item in a later line of analysis. This problem gets even more
+                            difficult when the items involved are discontinuous.</p>
+
+                        <p> (3) The example above shows only a traditional single-tier approach to morphology. Encoding of multiple-tier analyses will be tricky because the associations between
+                            elements on different tiers are typically not one-to-one.</p>
+
+                        <p>(4) It is unclear to me how encoding the interpretation and analysis of a running text (which is what this working paper considers) should relate to the encoding of
+                            linguistic examples in a book or article. It seems pretty obvious that the encoding of interlinear examples can be covered by the same mechanism. For other kinds of
+                            examples, such as syntactic tree diagrams or the multi-tier displays common in phonology, it is not so clear. It seems that it would be possible to force these into the
+                            above model (and indeed we probably want this for the case where these kinds of analysis are used in annotating a running text). However, it also seems that it might be
+                            better to have a separate encoding scheme optimized for these special kinds of displays.</p>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </text>
+</TEI>

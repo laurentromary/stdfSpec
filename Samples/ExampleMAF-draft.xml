@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <standOff xmlns="http://standoff.proposal">
+      <listAnnotation>
+
+         <token xml:id="tok1" target="#string-range(seg0,0,1)"/>
+         <token xml:id="tok2" target="#string-range(seg0,1,1)"/>
+         <token xml:id="tok3" target="#string-range(seg0,2,1)"/>
+         <token xml:id="tok4" target="#string-range(seg0,3,1)"/>
+         <token xml:id="tok5" target="#string-range(seg0,4,1)"/>
+         <wordForm lemma="白菜" tokens="#tok1 #tok2" entry="urn:lexicon:cn:white_vegetable"/>
+         <wordForm lemma="和" tokens="#tok3" entry="urn:lexicon:cn:accord"/>
+         <wordForm lemma="猪肉" tokens="#tok4 #tok5" entry="urn:lexicon:cn:pork">
+            <wordForm lemma="猪" tokens="#tok4" entry="urn:lexicon:cn:pig"/>
+            <wordForm lemma="肉" tokens="#tok5" entry="urn:lexicon:cn:meat"/>
+         </wordForm>
+      </listAnnotation>
+   </standOff>
+   <text>
+      <body>
+         <p><seg xml:id="seg0">白菜和猪肉</seg></p>
+      </body>
+   </text>
+</TEI>
