@@ -70,7 +70,6 @@
                         <memberOf key="att.datcat" mode="add"/>
                         <memberOf key="att.ascribed" mode="add"/>
                         <memberOf key="att.datable.w3c" mode="add"/>
-                        <memberOf key="att.typed" mode="add"/>
                         <memberOf key="att.responsibility" mode="add"/>
                         <memberOf key="att.pointing" mode="add"/>
                     </classes>
@@ -88,40 +87,17 @@
                             <rng:ref name="standOff"/>
                         </rng:zeroOrMore>
                     </content>
+		    <attList>
+		      <attDef ident="type" module="att.typed" usage="req">
+			<desc>standOff type</desc>
+		      </attDef>
+		    </attList>
                 </elementSpec>
-
-                <!-- <elementSpec ident="standOffHeader" mode="add" ns="http://standoff.proposal"
-                    module="standOff">
-                    <desc>Metadata for the <gi>stdf</gi> element(s)</desc>
-                    <content>
-                        <rng:interleave>
-                            <rng:optional>
-                                <rng:ref name="titleStmt"/>
-                            </rng:optional>
-                            <rng:optional>
-                                <rng:ref name="publicationStmt"/>
-                            </rng:optional>
-                            <rng:optional>
-                                <rng:ref name="notesStmt"/>
-                            </rng:optional>
-                            <rng:optional>
-                                <rng:ref name="encodingDesc"/>
-                            </rng:optional>
-                            <rng:optional>
-                                <rng:ref name="profileDesc"/>
-                            </rng:optional>
-                            <rng:optional>
-                                <rng:ref name="revisionDesc"/>
-                            </rng:optional>
-                        </rng:interleave>
-                    </content>
-                </elementSpec>-->
 
                 <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff">
                     <desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc>
                     <classes>
                         <memberOf key="model.annotation"/>
-                        <!--                        <memberOf key="model.divPart.spoken"/>-->
                         <memberOf key="att.timed"/>
                         <memberOf key="att.global"/>
                         <memberOf key="att.ascribed"/>
@@ -131,11 +107,11 @@
                     <content>
                         <rng:choice>
                             <rng:oneOrMore>
-                                <rng:ref name="listAnnotation"/>
+                              <rng:ref name="listAnnotation"/>
                             </rng:oneOrMore>
-                            <rng:oneOrMore>
-                                <rng:ref name="annotationBlock"/>
-                            </rng:oneOrMore>
+			    <rng:oneOrMore>
+			      <rng:ref name="span"/>
+			    </rng:oneOrMore>
                         </rng:choice>
                     </content>
                     <remarks>
@@ -144,31 +120,6 @@
                     </remarks>
                 </elementSpec>
 
-                <elementSpec ident="annotationBlock" mode="add" module="standOff">
-                    <desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc>
-                    <classes>
-                        <memberOf key="model.divPart.spoken"/>
-                        <memberOf key="att.timed"/>
-                        <memberOf key="att.global"/>
-                        <memberOf key="att.ascribed"/>
-                        <memberOf key="att.typed"/>
-                        <memberOf key="att.declaring"/>
-                    </classes>
-                    <content>
-                        <rng:group>
-                            <rng:optional>
-                                <rng:ref name="model.annotableSegment"/>
-                            </rng:optional>
-                            <rng:oneOrMore>
-                                <rng:ref name="model.annotation"/>
-                            </rng:oneOrMore>
-                        </rng:group>
-                    </content>
-                    <remarks>
-                        <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
-                            elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p>
-                    </remarks>
-                </elementSpec>
 
                 <classSpec type="model" ident="model.annotation" mode="add" module="standOff">
                     <desc>groups together any kind of element that may be used to annotate an annotable segment</desc>
@@ -179,6 +130,19 @@
                 </classSpec>
                 
 
+		<elementSpec ident="span" mode="change">
+		  <content>
+		    <rng:optional>
+		      <rng:attribute name="pos"/>
+		    </rng:optional>
+		    <rng:attribute name="lemma">
+		      <rng:data type="string">
+			<rng:param name="minLength">1</rng:param>
+		      </rng:data>
+		    </rng:attribute>
+		    </content>
+		</elementSpec>
+		
                 <!--       *****       -->
                 <!-- Following are existing TEI declarations where we add our new class(es) -->
                 
