@@ -144,25 +144,12 @@
                     </remarks>
                 </elementSpec>
 
-                <elementSpec ident="annotationBlock" mode="add" module="standOff">
-                    <desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc>
-                    <classes>
-                        <memberOf key="model.divPart.spoken"/>
-                        <memberOf key="att.timed"/>
-                        <memberOf key="att.global"/>
-                        <memberOf key="att.ascribed"/>
-                        <memberOf key="att.typed"/>
-                        <memberOf key="att.declaring"/>
-                    </classes>
+
+                <elementSpec ident="annotationBlock" mode="change" module="spoken">
                     <content>
-                        <rng:group>
-                            <rng:optional>
-                                <rng:ref name="model.annotableSegment"/>
-                            </rng:optional>
-                            <rng:oneOrMore>
-                                <rng:ref name="model.annotation"/>
-                            </rng:oneOrMore>
-                        </rng:group>
+                        <rng:oneOrMore>
+                            <rng:ref name="model.annotation"/>
+                        </rng:oneOrMore>
                     </content>
                     <remarks>
                         <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
@@ -174,26 +161,23 @@
                     <desc>groups together any kind of element that may be used to annotate an annotable segment</desc>
                 </classSpec>
 
-                <classSpec type="model" ident="model.annotableSegment" mode="add" module="standOff">
-                    <desc>groups together elements that may be annotated within an <gi>annotationBlock</gi> element</desc>
-                </classSpec>
-                
+
 
                 <!--       *****       -->
                 <!-- Following are existing TEI declarations where we add our new class(es) -->
-                
+
                 <elementSpec ident="u" mode="change" module="spoken">
                     <classes mode="change">
-                        <memberOf key="model.annotableSegment" mode="add"/>
+                        <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="seg" mode="change" module="linking">
                     <classes mode="change">
-                        <memberOf key="model.annotableSegment" mode="add"/>
+                        <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <classSpec type="model" ident="model.global.meta" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
