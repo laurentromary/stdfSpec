@@ -32,16 +32,25 @@
                 <interp inst="#span32" ana="#person28"/>
                 <span xml:id="span32" from="#w1" to="#w3"></span>
             </annotationBlock>
-            
+            <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
+                <person xml:id="person28">
+                    <persName></persName>
+                </person>
+                <interp inst="#span32" ana="#person28"/>
+                <span xml:id="span32" from="#string-range(//p[@xml:id='p1'],0,17)"></span>
+            </annotationBlock>
         </listAnnotation>
         <listAnnotation type="places">
-            
+            ....
         </listAnnotation>
     </standOff>
     <text>
         <body>
             <div>
                 <p><w xml:id="w1">Charles</w> <w xml:id="w2">de</w> <w xml:id="w3">Gaulle</w></p>
+            </div>
+            <div>
+                <p xml:id="p1">Charles de Gaulle</p>
             </div>
         </body>
     </text>
