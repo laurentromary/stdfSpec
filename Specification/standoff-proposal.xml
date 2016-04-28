@@ -23,7 +23,7 @@
             <publicationStmt>
                 <authority>Berlin task force "standoff"</authority>
                 <availability>
-                    <!-- no lincence allowed -->
+                    <!-- no licence allowed -->
                     <p>CC+BY and BSD-2 licences</p>
                 </availability>
             </publicationStmt>
@@ -70,9 +70,9 @@
                         <memberOf key="att.datcat" mode="add"/>
                         <memberOf key="att.ascribed" mode="add"/>
                         <memberOf key="att.datable.w3c" mode="add"/>
-                        <memberOf key="att.typed" mode="add"/>
                         <memberOf key="att.responsibility" mode="add"/>
                         <memberOf key="att.pointing" mode="add"/>
+                        <memberOf key="att.typed" mode="add"/>
                     </classes>
                     <content>
                         <rng:optional>
@@ -90,38 +90,31 @@
                     </content>
                 </elementSpec>
 
-                <!-- <elementSpec ident="standOffHeader" mode="add" ns="http://standoff.proposal"
-                    module="standOff">
-                    <desc>Metadata for the <gi>stdf</gi> element(s)</desc>
-                    <content>
-                        <rng:interleave>
-                            <rng:optional>
-                                <rng:ref name="titleStmt"/>
-                            </rng:optional>
-                            <rng:optional>
-                                <rng:ref name="publicationStmt"/>
-                            </rng:optional>
-                            <rng:optional>
-                                <rng:ref name="notesStmt"/>
-                            </rng:optional>
-                            <rng:optional>
-                                <rng:ref name="encodingDesc"/>
-                            </rng:optional>
-                            <rng:optional>
-                                <rng:ref name="profileDesc"/>
-                            </rng:optional>
-                            <rng:optional>
-                                <rng:ref name="revisionDesc"/>
-                            </rng:optional>
-                        </rng:interleave>
-                    </content>
-                </elementSpec>-->
+                <elementSpec ident="standOff" module="standOff" mode="change"
+                    ns="http://standoff.proposal">
+                    <constraintSpec ident="StandOffNamespace" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="stdf"
+                                uri="http://standoff.proposal"/>
+                        </constraint>
+                    </constraintSpec>
+                    <constraintSpec ident="SecondLevelStandOffTyping" scheme="isoschematron"
+                        mode="add">
+                        <constraint>
+                            <assert xmlns="http://purl.oclc.org/dsdl/schematron"
+                                test="@type or not(ancestor::stdf:standOff)">This <name/> element
+                                must have a @type attribute, since it has an ancestor
+                                <name/></assert>
+                        </constraint>
+                    </constraintSpec>
+                </elementSpec>
 
-                <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff">
-                    <desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc>
+                <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal"
+                    module="standOff">
+                    <desc>Groups together various annotations, for instance for parallel
+                        interpretations of a spoken segment</desc>
                     <classes>
                         <memberOf key="model.annotation"/>
-                        <!--                        <memberOf key="model.divPart.spoken"/>-->
                         <memberOf key="att.timed"/>
                         <memberOf key="att.global"/>
                         <memberOf key="att.ascribed"/>
@@ -131,10 +124,7 @@
                     <content>
                         <rng:choice>
                             <rng:oneOrMore>
-                                <rng:ref name="listAnnotation"/>
-                            </rng:oneOrMore>
-                            <rng:oneOrMore>
-                                <rng:ref name="annotationBlock"/>
+                              <rng:ref name="listAnnotation"/>
                             </rng:oneOrMore>
                         </rng:choice>
                     </content>
@@ -160,9 +150,6 @@
                 <classSpec type="model" ident="model.annotation" mode="add" module="standOff">
                     <desc>groups together any kind of element that may be used to annotate an annotable segment</desc>
                 </classSpec>
-
-
-
                 <!--       *****       -->
                 <!-- Following are existing TEI declarations where we add our new class(es) -->
 
