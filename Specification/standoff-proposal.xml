@@ -121,14 +121,22 @@
                 </elementSpec>
 
 
+                <elementSpec ident="annotationBlock" mode="change" module="spoken">
+                    <content>
+                        <rng:oneOrMore>
+                            <rng:ref name="model.annotation"/>
+                        </rng:oneOrMore>
+                    </content>
+                    <remarks>
+                        <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
+                            elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p>
+                    </remarks>
+                </elementSpec>
+
                 <classSpec type="model" ident="model.annotation" mode="add" module="standOff">
                     <desc>groups together any kind of element that may be used to annotate an annotable segment</desc>
                 </classSpec>
 
-                <classSpec type="model" ident="model.annotableSegment" mode="add" module="standOff">
-                    <desc>groups together elements that may be annotated within an <gi>annotationBlock</gi> element</desc>
-                </classSpec>
-                
 
 		<elementSpec ident="span" mode="change">
 		  <content>
@@ -145,19 +153,19 @@
 		
                 <!--       *****       -->
                 <!-- Following are existing TEI declarations where we add our new class(es) -->
-                
+
                 <elementSpec ident="u" mode="change" module="spoken">
                     <classes mode="change">
-                        <memberOf key="model.annotableSegment" mode="add"/>
+                        <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="seg" mode="change" module="linking">
                     <classes mode="change">
-                        <memberOf key="model.annotableSegment" mode="add"/>
+                        <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <classSpec type="model" ident="model.global.meta" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
