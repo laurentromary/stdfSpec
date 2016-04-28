@@ -72,6 +72,7 @@
                         <memberOf key="att.datable.w3c" mode="add"/>
                         <memberOf key="att.responsibility" mode="add"/>
                         <memberOf key="att.pointing" mode="add"/>
+                        <memberOf key="att.typed" mode="add"/>
                     </classes>
                     <content>
                         <rng:optional>
@@ -87,11 +88,6 @@
                             <rng:ref name="standOff"/>
                         </rng:zeroOrMore>
                     </content>
-		    <attList>
-		      <attDef ident="type" module="att.typed" usage="req">
-			<desc>standOff type</desc>
-		      </attDef>
-		    </attList>
                 </elementSpec>
 
                 <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff">

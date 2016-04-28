@@ -9,7 +9,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2016-04-28T07:36:05Z. .
+# Schema generated from ODD source 2016-04-28T08:05:44Z. .
 # TEI Edition: Version 3.0.0. Last updated on
 #	29th March 2016, revision 89ba24e
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
@@ -11870,9 +11870,7 @@ standOff =
     att.ascribed.attributes,
     att.datable.w3c.attributes,
     att.pointing.attributes,
-    
-    ## standOff type
-    attribute type { text },
+    att.typed.attributes,
     empty
   }
 listAnnotation =
