@@ -9,7 +9,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2016-04-28T08:05:44Z. .
+# Schema generated from ODD source 2016-04-28T13:59:46Z. .
 # TEI Edition: Version 3.0.0. Last updated on
 #	29th March 2016, revision 89ba24e
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
@@ -3665,10 +3665,7 @@ span =
   
   ## associates an interpretative annotation directly with a span of text. [17.3. Spans and Interpretations]
   element span {
-    attribute pos { text }?,
-    attribute lemma {
-      xsd:string { minLength = "1" }
-    }
+    macro.phraseSeq.limited
     >> sch:pattern [
          id = "standoff-proposal-span-targetfrom-constraint-13"
          "\x{a}" ~
@@ -11864,7 +11861,34 @@ standOff =
     teiHeader?,
     model.resourceLike*,
     listAnnotation*,
-    standOff*,
+    (standOff*)
+    >> sch:ns [ prefix = "stdf" uri = "http://standoff.proposal" ]
+    >> sch:pattern [
+         id =
+           "standoff-proposal-standOff-SecondLevelStandOffTyping-constraint-32"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "stdf:standOff"
+           "\x{a}" ~
+           "               "
+           sch:assert [
+             test = "@type or not(ancestor::stdf:standOff)"
+             "This "
+             sch:name [ ]
+             " element\x{a}" ~
+             "                                must have a @type attribute, since it has an ancestor\x{a}" ~
+             "                                "
+             sch:name [ ]
+             "\x{a}" ~
+             "               "
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ],
     att.global.attributes,
     att.datcat.attributes,
     att.ascribed.attributes,
@@ -11877,7 +11901,7 @@ listAnnotation =
   
   ## Groups together various annotations, for instance for parallel interpretations of a spoken segment
   element ns2:listAnnotation {
-    (listAnnotation+ | span+),
+    listAnnotation+,
     att.timed.attributes,
     att.global.attributes,
     att.ascribed.attributes,

@@ -90,8 +90,29 @@
                     </content>
                 </elementSpec>
 
-                <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff">
-                    <desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc>
+                <elementSpec ident="standOff" module="standOff" mode="change"
+                    ns="http://standoff.proposal">
+                    <constraintSpec ident="StandOffNamespace" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="stdf"
+                                uri="http://standoff.proposal"/>
+                        </constraint>
+                    </constraintSpec>
+                    <constraintSpec ident="SecondLevelStandOffTyping" scheme="isoschematron"
+                        mode="add">
+                        <constraint>
+                            <assert xmlns="http://purl.oclc.org/dsdl/schematron"
+                                test="@type or not(ancestor::stdf:standOff)">This <name/> element
+                                must have a @type attribute, since it has an ancestor
+                                <name/></assert>
+                        </constraint>
+                    </constraintSpec>
+                </elementSpec>
+
+                <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal"
+                    module="standOff">
+                    <desc>Groups together various annotations, for instance for parallel
+                        interpretations of a spoken segment</desc>
                     <classes>
                         <memberOf key="model.annotation"/>
                         <memberOf key="att.timed"/>
@@ -105,9 +126,6 @@
                             <rng:oneOrMore>
                               <rng:ref name="listAnnotation"/>
                             </rng:oneOrMore>
-			    <rng:oneOrMore>
-			      <rng:ref name="span"/>
-			    </rng:oneOrMore>
                         </rng:choice>
                     </content>
                     <remarks>
@@ -132,21 +150,6 @@
                 <classSpec type="model" ident="model.annotation" mode="add" module="standOff">
                     <desc>groups together any kind of element that may be used to annotate an annotable segment</desc>
                 </classSpec>
-
-
-		<elementSpec ident="span" mode="change">
-		  <content>
-		    <rng:optional>
-		      <rng:attribute name="pos"/>
-		    </rng:optional>
-		    <rng:attribute name="lemma">
-		      <rng:data type="string">
-			<rng:param name="minLength">1</rng:param>
-		      </rng:data>
-		    </rng:attribute>
-		    </content>
-		</elementSpec>
-		
                 <!--       *****       -->
                 <!-- Following are existing TEI declarations where we add our new class(es) -->
 
