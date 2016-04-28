@@ -171,6 +171,12 @@
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
+                
+                <elementSpec ident="span" mode="change" module="analysis">
+                    <classes mode="change">
+                        <memberOf key="model.annotation" mode="add"/>
+                    </classes>
+                </elementSpec>
 
                 <elementSpec ident="seg" mode="change" module="linking">
                     <classes mode="change">
