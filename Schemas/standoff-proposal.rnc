@@ -9,7 +9,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2016-04-28T13:59:46Z. .
+# Schema generated from ODD source 2016-04-29T12:12:34Z. .
 # TEI Edition: Version 3.0.0. Last updated on
 #	29th March 2016, revision 89ba24e
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
@@ -11860,7 +11860,7 @@ standOff =
   element ns2:standOff {
     teiHeader?,
     model.resourceLike*,
-    listAnnotation*,
+    (listAnnotation* | annotationBlock*),
     (standOff*)
     >> sch:ns [ prefix = "stdf" uri = "http://standoff.proposal" ]
     >> sch:pattern [
@@ -11901,7 +11901,7 @@ listAnnotation =
   
   ## Groups together various annotations, for instance for parallel interpretations of a spoken segment
   element ns2:listAnnotation {
-    listAnnotation+,
+    (listAnnotation* | annotationBlock*),
     att.timed.attributes,
     att.global.attributes,
     att.ascribed.attributes,
@@ -11913,6 +11913,7 @@ model.annotation =
   model.global.meta
   | model.listLike
   | listBibl
+  | span
   | model.entryLike
   | listChange
   | seg
