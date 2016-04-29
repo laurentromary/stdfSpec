@@ -126,12 +126,12 @@
                     </classes>
                     <content>
                         <rng:choice>
-                            <rng:zeroOrMore>
+                            <rng:oneOrMore>
                               <rng:ref name="listAnnotation"/>
-                            </rng:zeroOrMore>
-                            <rng:zeroOrMore>
-                                <rng:ref name="annotationBlock"/>
-                            </rng:zeroOrMore>
+                            </rng:oneOrMore>
+                            <rng:oneOrMore>
+                                <rng:ref name="model.annotation"/>
+                            </rng:oneOrMore>
                         </rng:choice>
                     </content>
                     <remarks>
@@ -142,6 +142,9 @@
 
 
                 <elementSpec ident="annotationBlock" mode="change" module="spoken">
+                    <classes mode="change">
+                        <memberOf key="model.annotation" mode="add"/>
+                    </classes>
                     <content>
                         <rng:oneOrMore>
                             <rng:ref name="model.annotation"/>
