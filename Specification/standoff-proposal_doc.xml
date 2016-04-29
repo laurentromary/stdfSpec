@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xml:base=""><?TEIVERSION Version 3.0.0. Last updated on
-	29th March 2016, revision 89ba24e?><teiHeader><fileDesc><titleStmt><title>Proposal for encoding standoff annotations in TEI</title><author><persName><forename>Peter</forename><surname>Stadler</surname></persName></author><author><persName><forename>Laurent</forename><surname>Romary</surname></persName></author></titleStmt><publicationStmt><authority>Berlin task force "standoff"</authority><availability><!-- no lincence allowed --><p>CC+BY and BSD-2 licences</p></availability></publicationStmt><sourceDesc><p>...</p></sourceDesc></fileDesc></teiHeader><text><body><!-- http://wiki.tei-c.org/index.php/Proposal_for_@selector_attribute_on_rendition --><schemaSpec ident="standoff-proposal" start="TEI teiCorpus" source="/usr/share/xml/tei/odd/p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
+	29th March 2016, revision 89ba24e?><teiHeader><fileDesc><titleStmt><title>Proposal for encoding standoff annotations in TEI</title><author><persName><forename>Peter</forename><surname>Stadler</surname></persName></author><author><persName><forename>Laurent</forename><surname>Romary</surname></persName></author></titleStmt><publicationStmt><authority>Berlin task force "standoff"</authority><availability><!-- no licence allowed --><p>CC+BY and BSD-2 licences</p></availability></publicationStmt><sourceDesc><p>...</p></sourceDesc></fileDesc></teiHeader><text><body><!-- http://wiki.tei-c.org/index.php/Proposal_for_@selector_attribute_on_rendition --><schemaSpec ident="standoff-proposal" start="TEI teiCorpus" source="/usr/share/xml/tei/odd/p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
   <desc versionDate="2006-01-05" xml:lang="en">provides attributes for elements representing speech or action that can be ascribed to a
     specific individual.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">특정 개인의 대화 또는 행위를 표시하는 요소에 대한 속성을 제공한다.</desc>
@@ -16546,54 +16546,32 @@ etc. as appropriate.</p>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILC">17.1. Linguistic Segment Categories</ref>
   </listRef>
-</elementSpec><elementSpec module="analysis" ident="span">
-  <desc versionDate="2005-01-14" xml:lang="en">associates an interpretative annotation directly with a span of text.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">해석적 부호를 텍스트의 일정 부분과 직접적으로 연결시킨다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">將詮釋性註釋直接和一段文字段連結。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">テキスト部分に解釈的注釈を関連づける．</desc>
-  <desc versionDate="2009-02-13" xml:lang="fr">associe une interprétation sous forme d'annotation
-    directement à un passage donné dans un texte.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">asocia una anotación interpretativa directamente con un
-    periodo de texto.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">associa direttamente l'annotazione interpretativa ad una
-    prozione di testo</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="att.interpLike"/>
-    <memberOf key="att.pointing"/>
-    <memberOf key="model.global.meta"/>
-  </classes>
-  <content>
-    <macroRef key="macro.phraseSeq.limited"/>
-  </content>
-  <constraintSpec ident="targetfrom" scheme="isoschematron">
+</elementSpec><elementSpec rend="change" module="analysis" ident="span"><desc versionDate="2005-01-14" xml:lang="en">associates an interpretative annotation directly with a span of text.</desc><desc versionDate="2007-12-20" xml:lang="ko">해석적 부호를 텍스트의 일정 부분과 직접적으로 연결시킨다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">將詮釋性註釋直接和一段文字段連結。</desc><desc versionDate="2008-04-05" xml:lang="ja">テキスト部分に解釈的注釈を関連づける．</desc><desc versionDate="2009-02-13" xml:lang="fr">associe une interprétation sous forme d'annotation
+    directement à un passage donné dans un texte.</desc><desc versionDate="2007-05-04" xml:lang="es">asocia una anotación interpretativa directamente con un
+    periodo de texto.</desc><desc versionDate="2007-01-21" xml:lang="it">associa direttamente l'annotazione interpretativa ad una
+    prozione di testo</desc><classes><memberOf key="model.annotation"/><memberOf key="att.global"/><memberOf key="att.interpLike"/><memberOf key="att.pointing"/><memberOf key="model.global.meta"/></classes><content><macroRef key="macro.phraseSeq.limited"/></content><constraintSpec ident="targetfrom" scheme="isoschematron">
     <constraint>
       <report xmlns="http://purl.oclc.org/dsdl/schematron" test="@from and @target">
 Only one of the attributes @target and @from may be supplied on <name/>
          </report>
     </constraint>
-  </constraintSpec>
-  <constraintSpec ident="targetto" scheme="isoschematron">
+  </constraintSpec><constraintSpec ident="targetto" scheme="isoschematron">
     <constraint>
       <report xmlns="http://purl.oclc.org/dsdl/schematron" test="@to and @target">
 Only one of the attributes @target and @to may be supplied on <name/>
          </report>
     </constraint>
-  </constraintSpec>
-  <constraintSpec ident="tonotfrom" scheme="isoschematron">
+  </constraintSpec><constraintSpec ident="tonotfrom" scheme="isoschematron">
     <constraint>
       <report xmlns="http://purl.oclc.org/dsdl/schematron" test="@to and not(@from)">
 If @to is supplied on <name/>, @from must be supplied as well</report>
     </constraint>
-  </constraintSpec>
-  <constraintSpec ident="tofrom" scheme="isoschematron">
+  </constraintSpec><constraintSpec ident="tofrom" scheme="isoschematron">
     <constraint>
       <report xmlns="http://purl.oclc.org/dsdl/schematron" test="contains(normalize-space(@to),' ') or contains(normalize-space(@from),' ')">
 The attributes @to and @from on <name/> may each contain only a single value</report>
     </constraint>
-  </constraintSpec>
-  <attList>
-    <attDef ident="from" usage="opt">
+  </constraintSpec><attList><attDef ident="from" usage="opt">
       <desc versionDate="2013-01-15" xml:lang="en">gives the identifier of the node which is the starting point of the span of text being annotated; if not accompanied by a <att>to</att> attribute, gives the identifier of the node of the entire span of text being annotated.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">현재 부호를 붙이는 단락의 처음을 명시함; <att>to</att> 속성과 같이 쓰이지 않으면
         전체 문단을 명시함.</desc>
@@ -16607,8 +16585,7 @@ The attributes @to and @from on <name/> may each contain only a single value</re
       <desc versionDate="2007-01-21" xml:lang="it">indica l'inizio di un brano annotato; se non è
         accompagnato dall'attributo <att>to</att> indica l'inero brano</desc>
       <datatype><dataRef key="teidata.pointer"/></datatype>
-    </attDef>
-    <attDef ident="to" usage="opt">
+    </attDef><attDef ident="to" usage="opt">
       <desc versionDate="2013-01-15" xml:lang="en">gives the identifier of the node which is the end-point of the span of text being annotated.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">부호를 붙이는 단락의 끝을 명시한다.</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">指出被註解段落的終點。</desc>
@@ -16617,9 +16594,7 @@ The attributes @to and @from on <name/> may each contain only a single value</re
       <desc versionDate="2007-05-04" xml:lang="es">especifica el final del pasaje que se anota.</desc>
       <desc versionDate="2007-01-21" xml:lang="it">indica la fine del brano annotato</desc>
       <datatype><dataRef key="teidata.pointer"/></datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
+    </attDef></attList><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <p xml:id="para2">(The "aftermath" starts here)</p>
       <p xml:id="para3">(The "aftermath" continues here)</p>
@@ -16627,16 +16602,14 @@ The attributes @to and @from on <name/> may each contain only a single value</re
       <!-- ... -->
       <span type="structure" from="#para2" to="#para4">aftermath</span>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <p xml:id="fr_para2">(la "conséquence" commence ici)</p>
       <p xml:id="fr_para3">(la "conséquence" continue ici)</p>
       <p xml:id="fr_para4">(la "conséquence" se termine dans ce paragraphe)</p>
       <span type="structure" from="#fr_para2" to="#para4">conséquence</span>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <p xml:id="zh-tw_第二小節">("結局"從這裡開始)</p>
       <p xml:id="zh-tw_第三小節">("結局"持續)</p>
@@ -16644,11 +16617,9 @@ The attributes @to and @from on <name/> may each contain only a single value</re
       <!-- ... -->
       <span type="架構" from="#第二小節" to="#第四小節">結局</span>
     </egXML>
-  </exemplum>
-  <listRef>
+  </exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AISP">17.3. Spans and Interpretations</ref>
-  </listRef>
-</elementSpec><elementSpec module="analysis" ident="spanGrp">
+  </listRef></elementSpec><elementSpec module="analysis" ident="spanGrp">
   <gloss versionDate="2005-01-14" xml:lang="en">span group</gloss>
   <gloss versionDate="2007-12-20" xml:lang="ko">범위 집단</gloss>
   <gloss versionDate="2007-05-02" xml:lang="zh-TW">文字段群組</gloss>
@@ -35357,7 +35328,7 @@ name to categorize the library's contents.</p>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSSAPA">8.4.2. Synchronization and Overlap</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SACS">16.4. Correspondence and Alignment</ref>
   </listRef>
-</elementSpec><elementSpec rend="change" module="linking" ident="seg"><gloss versionDate="2005-01-14" xml:lang="en">arbitrary segment</gloss><gloss versionDate="2007-12-20" xml:lang="ko">임의의 분절</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">隨機分割</gloss><gloss versionDate="2007-06-12" xml:lang="fr">segment quelconque</gloss><gloss versionDate="2007-05-04" xml:lang="es">segmento arbitrario</gloss><gloss versionDate="2007-01-21" xml:lang="it">segmento arbitrario</gloss><desc versionDate="2008-01-31" xml:lang="en">represents any segmentation of text below the <soCalled>chunk</soCalled> level.</desc><desc versionDate="2007-12-20" xml:lang="ko">(다른 분절 요소를 포함하여) 텍스트의 임의의 구-층위 단위를 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含文件中任何隨機字詞層次的單元 (包括其他分割元素)。</desc><desc versionDate="2008-04-05" xml:lang="ja">任意の句レベルのテキスト単位を示す(要素segを含む)．</desc><desc versionDate="2009-10-06" xml:lang="fr">contient une unité de texte quelconque de niveau <soCalled>segment</soCalled>.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene cualquier unidad textual a nivel sintagmático (inclusive otros elementos de tipo seg.)</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una qualsiasi unità testuale a livello sintagmatico (ivi compresi altri elementi del tipo seg)</desc><classes><memberOf key="model.annotableSegment"/><memberOf key="att.global"/><memberOf key="model.segLike"/><memberOf key="att.segLike"/><memberOf key="att.typed"/><memberOf key="att.source"/><memberOf key="att.written"/><memberOf key="model.choicePart"/></classes><content><macroRef key="macro.paraContent"/></content><attList/><exemplum xml:lang="en">
+</elementSpec><elementSpec rend="change" module="linking" ident="seg"><gloss versionDate="2005-01-14" xml:lang="en">arbitrary segment</gloss><gloss versionDate="2007-12-20" xml:lang="ko">임의의 분절</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">隨機分割</gloss><gloss versionDate="2007-06-12" xml:lang="fr">segment quelconque</gloss><gloss versionDate="2007-05-04" xml:lang="es">segmento arbitrario</gloss><gloss versionDate="2007-01-21" xml:lang="it">segmento arbitrario</gloss><desc versionDate="2008-01-31" xml:lang="en">represents any segmentation of text below the <soCalled>chunk</soCalled> level.</desc><desc versionDate="2007-12-20" xml:lang="ko">(다른 분절 요소를 포함하여) 텍스트의 임의의 구-층위 단위를 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含文件中任何隨機字詞層次的單元 (包括其他分割元素)。</desc><desc versionDate="2008-04-05" xml:lang="ja">任意の句レベルのテキスト単位を示す(要素segを含む)．</desc><desc versionDate="2009-10-06" xml:lang="fr">contient une unité de texte quelconque de niveau <soCalled>segment</soCalled>.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene cualquier unidad textual a nivel sintagmático (inclusive otros elementos de tipo seg.)</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una qualsiasi unità testuale a livello sintagmatico (ivi compresi altri elementi del tipo seg)</desc><classes><memberOf key="model.annotation"/><memberOf key="att.global"/><memberOf key="model.segLike"/><memberOf key="att.segLike"/><memberOf key="att.typed"/><memberOf key="att.source"/><memberOf key="att.written"/><memberOf key="model.choicePart"/></classes><content><macroRef key="macro.paraContent"/></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <seg>When are you leaving?</seg>
       <seg>Tomorrow.</seg>
@@ -47623,7 +47594,7 @@ an audio or video recording used as the source for a spoken text.</desc>
   </listRef>
 </elementSpec><elementSpec rend="change" module="spoken" ident="u"><gloss versionDate="2005-01-14" xml:lang="en">utterance</gloss><gloss versionDate="2007-12-20" xml:lang="ko">발화</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">話語</gloss><gloss versionDate="2007-06-12" xml:lang="fr">énonciation</gloss><gloss versionDate="2007-05-04" xml:lang="es">enunciado</gloss><gloss versionDate="2007-01-21" xml:lang="it">enunciato</gloss><desc versionDate="2012-12-27" xml:lang="en">contains a stretch of speech usually preceded and followed by
 silence or by a change of speaker.</desc><desc versionDate="2007-12-20" xml:lang="ko">일반적으로 침묵 또는 화자 바뀜에 의해 구분되는, 말의 연속체.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">一段言詞，通常在說話前後是一段沉默、或是另一個人的說話。</desc><desc versionDate="2008-04-05" xml:lang="ja">一般に沈黙または話者交替が前後する，発話の時間．</desc><desc versionDate="2007-06-12" xml:lang="fr">partie de discours généralement précédée et
-			suivie d'un silence ou d'un changement de locuteur.</desc><desc versionDate="2007-05-04" xml:lang="es">fragmento de texto hablado precedido y seguido normalmente de un silencio o de un cambio de hablante</desc><desc versionDate="2007-01-21" xml:lang="it">porzione di parlato solitamente preceduta e seguita da un silenzio o da un cambio di parlante</desc><classes><memberOf key="model.annotableSegment"/><memberOf key="att.global"/><memberOf key="att.timed"/><memberOf key="model.divPart.spoken"/><memberOf key="att.declaring"/><memberOf key="att.ascribed"/><memberOf key="att.notated"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><textNode/><classRef key="model.gLike"/><classRef key="model.phrase"/><classRef key="model.global"/></alternate></content><attList><attDef ident="trans" usage="opt">
+			suivie d'un silence ou d'un changement de locuteur.</desc><desc versionDate="2007-05-04" xml:lang="es">fragmento de texto hablado precedido y seguido normalmente de un silencio o de un cambio de hablante</desc><desc versionDate="2007-01-21" xml:lang="it">porzione di parlato solitamente preceduta e seguita da un silenzio o da un cambio di parlante</desc><classes><memberOf key="model.annotation"/><memberOf key="att.global"/><memberOf key="att.timed"/><memberOf key="model.divPart.spoken"/><memberOf key="att.declaring"/><memberOf key="att.ascribed"/><memberOf key="att.notated"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><textNode/><classRef key="model.gLike"/><classRef key="model.phrase"/><classRef key="model.global"/></alternate></content><attList><attDef ident="trans" usage="opt">
       <gloss versionDate="2007-07-04" xml:lang="en">transition</gloss>
       <gloss versionDate="2007-12-20" xml:lang="ko">전이</gloss>
       <gloss versionDate="2008-04-06" xml:lang="es">transición</gloss>
@@ -48242,26 +48213,8 @@ very loudly.</p>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSSASH">8.3.6. Shifts</ref>
   </listRef>
-</elementSpec><elementSpec ident="annotationBlock" module="spoken">
-    
-    <desc xml:lang="en" versionDate="2016-02-27">groups together various annotations, e.g.
-        for parallel interpretations of a spoken segment.</desc>
-    <classes>
-        
-        <memberOf key="model.divPart.spoken"/>
-        <memberOf key="att.ascribed"/>
-        <memberOf key="att.timed"/>
-        <memberOf key="att.global"/>
-    </classes>
-    <content>
-        <alternate minOccurs="0" maxOccurs="unbounded">
-            <elementRef key="u"/>
-            <elementRef key="spanGrp"/>
-            <classRef key="model.global.spoken"/>
-        </alternate>
-    </content>
-    
-    <exemplum xml:lang="en">
+</elementSpec><elementSpec rend="change" ident="annotationBlock" module="spoken"><desc xml:lang="en" versionDate="2016-02-27">groups together various annotations, e.g.
+        for parallel interpretations of a spoken segment.</desc><classes><memberOf key="model.annotation"/><memberOf key="model.divPart.spoken"/><memberOf key="att.ascribed"/><memberOf key="att.timed"/><memberOf key="att.global"/></classes><content><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="model.annotation"/></oneOrMore></content><attList/><exemplum xml:lang="en">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <annotationBlock who="#SPK1" start="#T2" end="#T3" xml:id="ag20">
                 <u xml:id="u20">
@@ -48278,11 +48231,10 @@ very loudly.</p>
                 </u>
             </annotationBlock>
         </egXML>
-    </exemplum>
-  <listRef>
+    </exemplum><remarks><p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
+                            elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p></remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSTPAC">8.4.6. Analytic Coding</ref>
-  </listRef>
-</elementSpec><classSpec module="textcrit" type="model" ident="model.rdgLike">
+  </listRef></elementSpec><classSpec module="textcrit" type="model" ident="model.rdgLike">
   <desc versionDate="2007-10-03" xml:lang="en">groups elements which contain a single reading, other than the lemma, within a textual
     variation.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">텍스트 변이형 내에서 레마 외에 단일 독법을 포함하는 요소를 모아 놓는다.</desc>
@@ -61429,6 +61381,8 @@ an attribute may take, additional to the information carried by the
  <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TD">22. Documentation Elements</ref>
   </listRef>
-</elementSpec><moduleSpec ident="standOff"><desc>Elements to allow stand-off annotations in a TEI document</desc></moduleSpec><elementSpec rend="add" ident="standOff" mode="add" ns="http://standoff.proposal" module="standOff"><desc>Container element for standoff annotations</desc><classes><memberOf key="model.resourceLike" mode="add"/><memberOf key="att.global" mode="add"/><memberOf key="att.datcat" mode="add"/><memberOf key="att.ascribed" mode="add"/><memberOf key="att.datable.w3c" mode="add"/><memberOf key="att.typed" mode="add"/><memberOf key="att.pointing" mode="add"/></classes><content><optional xmlns="http://relaxng.org/ns/structure/1.0"><ref name="teiHeader"/></optional><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="model.resourceLike"/></zeroOrMore><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="listAnnotation"/></zeroOrMore><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="standOff"/></zeroOrMore></content><attList/></elementSpec><elementSpec rend="add" ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff"><desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc><classes><memberOf key="model.annotation"/><memberOf key="att.timed"/><memberOf key="att.global"/><memberOf key="att.ascribed"/><memberOf key="att.typed"/><memberOf key="att.declaring"/></classes><content><choice xmlns="http://relaxng.org/ns/structure/1.0"><oneOrMore><ref name="listAnnotation"/></oneOrMore><oneOrMore><ref name="annotationBlock"/></oneOrMore></choice></content><attList/><remarks><p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
-                            elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p></remarks></elementSpec><elementSpec rend="add" ident="annotationBlock" mode="add" module="standOff"><desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc><classes><memberOf key="model.divPart.spoken"/><memberOf key="att.timed"/><memberOf key="att.global"/><memberOf key="att.ascribed"/><memberOf key="att.typed"/><memberOf key="att.declaring"/></classes><content><group xmlns="http://relaxng.org/ns/structure/1.0"><optional><ref name="model.annotableSegment"/></optional><oneOrMore><ref name="model.annotation"/></oneOrMore></group></content><attList/><remarks><p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
-                            elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p></remarks></elementSpec><classSpec rend="add" predeclare="true" type="model" ident="model.annotation" mode="add" module="standOff"><desc>groups together any kind of element that may be used to annotate an annotable segment</desc></classSpec><classSpec rend="add" predeclare="true" type="model" ident="model.annotableSegment" mode="add" module="standOff"><desc>groups together elements that may be annotated within an <gi>annotationBlock</gi> element</desc></classSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="AI" xml:id="DAI" ident="analysis"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="CC" xml:id="DCCHDR" ident="corpus"/><moduleSpec n="DI" xml:id="DDIBO" ident="dictionaries"/><moduleSpec n="DR" xml:id="DDR" ident="drama"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec n="WD" xml:id="DWD" ident="gaiji"/><moduleSpec xmlns:xi="http://www.w3.org/2001/XInclude" n="HD" xml:id="DHD" ident="header"/><moduleSpec n="FS" xml:id="DFS" ident="iso-fs"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="MS" xml:id="DMSD2" ident="msdescription"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="GD" xml:id="DGD" ident="nets"/><moduleSpec n="TS" xml:id="DTS" ident="spoken"/><moduleSpec n="TC" xml:id="DTC" ident="textcrit"/><moduleSpec n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec n="PH" xml:id="DPH" ident="transcr"/><moduleSpec n="VE" xml:id="DVE" ident="verse"/><moduleSpec xmlns:s="http://www.ascc.net/xml/schematron" xmlns:sch="http://purl.oclc.org/dsdl/schematron" n="TD" xml:id="DTDDTD" ident="tagdocs"/></schemaSpec></body></text></TEI>
+</elementSpec><moduleSpec ident="standOff"><desc>Elements to allow stand-off annotations in a TEI document</desc></moduleSpec><elementSpec rend="add" ident="standOff" mode="add" ns="http://standoff.proposal" module="standOff"><desc>Container element for standoff annotations</desc><classes><memberOf key="model.resourceLike"/><memberOf key="att.global"/><memberOf key="att.datcat"/><memberOf key="att.ascribed"/><memberOf key="att.datable.w3c"/><memberOf key="att.pointing"/><memberOf key="att.typed"/></classes><content><optional xmlns="http://relaxng.org/ns/structure/1.0"><ref name="teiHeader"/></optional><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="model.resourceLike"/></zeroOrMore><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="listAnnotation"/></zeroOrMore><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="standOff"/></zeroOrMore></content><constraintSpec ident="StandOffNamespace" scheme="isoschematron" mode="add"><constraint><ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="stdf" uri="http://standoff.proposal"/></constraint></constraintSpec><constraintSpec ident="SecondLevelStandOffTyping" scheme="isoschematron" mode="add"><constraint><assert xmlns="http://purl.oclc.org/dsdl/schematron" test="@type or not(ancestor::stdf:standOff)">This <name/> element
+                                must have a @type attribute, since it has an ancestor
+                                <name/></assert></constraint></constraintSpec><attList/></elementSpec><elementSpec rend="add" ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff"><desc>Groups together various annotations, for instance for parallel
+                        interpretations of a spoken segment</desc><classes><memberOf key="model.annotation"/><memberOf key="att.timed"/><memberOf key="att.global"/><memberOf key="att.ascribed"/><memberOf key="att.typed"/><memberOf key="att.declaring"/></classes><content><choice xmlns="http://relaxng.org/ns/structure/1.0"><oneOrMore><ref name="listAnnotation"/></oneOrMore><oneOrMore><ref name="model.annotation"/></oneOrMore></choice></content><attList/><remarks><p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
+                            elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p></remarks></elementSpec><classSpec rend="add" predeclare="true" type="model" ident="model.annotation" mode="add" module="standOff"><desc>groups together any kind of element that may be used to annotate an annotable segment</desc></classSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="AI" xml:id="DAI" ident="analysis"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="CC" xml:id="DCCHDR" ident="corpus"/><moduleSpec n="DI" xml:id="DDIBO" ident="dictionaries"/><moduleSpec n="DR" xml:id="DDR" ident="drama"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec n="WD" xml:id="DWD" ident="gaiji"/><moduleSpec xmlns:xi="http://www.w3.org/2001/XInclude" n="HD" xml:id="DHD" ident="header"/><moduleSpec n="FS" xml:id="DFS" ident="iso-fs"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="MS" xml:id="DMSD2" ident="msdescription"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="GD" xml:id="DGD" ident="nets"/><moduleSpec n="TS" xml:id="DTS" ident="spoken"/><moduleSpec n="TC" xml:id="DTC" ident="textcrit"/><moduleSpec n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec n="PH" xml:id="DPH" ident="transcr"/><moduleSpec n="VE" xml:id="DVE" ident="verse"/><moduleSpec xmlns:s="http://www.ascc.net/xml/schematron" xmlns:sch="http://purl.oclc.org/dsdl/schematron" n="TD" xml:id="DTDDTD" ident="tagdocs"/></schemaSpec></body></text></TEI>
