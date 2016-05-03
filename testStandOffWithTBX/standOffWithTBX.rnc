@@ -9,7 +9,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2016-05-03T09:58:20Z. .
+# Schema generated from ODD source 2016-05-03T10:27:45Z. .
 # TEI Edition: 
 # TEI Edition Location: http://www.tei-c.org/Vault/P5//
 #
@@ -1240,6 +1240,9 @@ model.global.meta =
   | spanGrp
   | interp
   | interpGrp
+  | fs
+  | fLib
+  | fvLib
 model.milestoneLike = milestone | gb | pb | lb | cb | anchor
 model.gLike = notAllowed
 model.oddDecl = notAllowed
@@ -1300,6 +1303,9 @@ model.stageLike_sequence = stage
 model.stageLike_sequenceOptional = stage?
 model.stageLike_sequenceOptionalRepeatable = stage*
 model.stageLike_sequenceRepeatable = stage+
+model.featureVal.complex = fs | vColl | vNot | vMerge
+model.featureVal.single =
+  binary | symbol | numeric | \string | vLabel | \default | vAlt
 model.entryPart =
   superEntry
   | hom
@@ -1439,22 +1445,56 @@ model.quoteLike_sequence = quote, cit
 model.quoteLike_sequenceOptional = quote?, cit?
 model.quoteLike_sequenceOptionalRepeatable = quote*, cit*
 model.quoteLike_sequenceRepeatable = quote+, cit+
-model.qLike = model.quoteLike | said | q
-model.qLike_alternation = model.quoteLike_alternation | said | q
-model.qLike_sequence = model.quoteLike_sequence, said, q
+model.qLike = model.quoteLike | said | q | floatingText
+model.qLike_alternation =
+  model.quoteLike_alternation | said | q | floatingText
+model.qLike_sequence = model.quoteLike_sequence, said, q, floatingText
 model.qLike_sequenceOptional =
-  model.quoteLike_sequenceOptional?, said?, q?
+  model.quoteLike_sequenceOptional?, said?, q?, floatingText?
 model.qLike_sequenceOptionalRepeatable =
-  model.quoteLike_sequenceOptionalRepeatable*, said*, q*
+  model.quoteLike_sequenceOptionalRepeatable*, said*, q*, floatingText*
 model.qLike_sequenceRepeatable =
-  model.quoteLike_sequenceRepeatable+, said+, q+
+  model.quoteLike_sequenceRepeatable+, said+, q+, floatingText+
 model.respLike =
   author | editor | respStmt | meeting | sponsor | funder | principal
-model.divWrapper = meeting
-model.divTopPart = model.headLike
+model.divWrapper =
+  meeting
+  | byline
+  | dateline
+  | argument
+  | epigraph
+  | salute
+  | docAuthor
+  | docDate
+model.divTopPart = model.headLike | opener | signed
 model.divTop = model.divWrapper | model.divTopPart
-model.divBottomPart = notAllowed
+model.frontPart.drama = notAllowed
+model.pLike.front =
+  head
+  | byline
+  | argument
+  | epigraph
+  | docTitle
+  | titlePart
+  | docAuthor
+  | docEdition
+  | docImprint
+  | docDate
+model.divBottomPart = trailer | closer | signed | postscript
 model.divBottom = model.divWrapper | model.divBottomPart
+model.titlepagePart =
+  graphic
+  | binaryObject
+  | byline
+  | argument
+  | epigraph
+  | docTitle
+  | titlePart
+  | docAuthor
+  | imprimatur
+  | docEdition
+  | docImprint
+  | docDate
 model.choicePart =
   sic | corr | reg | orig | unclear | abbr | expan | seg
 model.imprintPart = publisher | biblScope | pubPlace | distributor
@@ -1520,6 +1560,7 @@ model.global =
   | model.milestoneLike
   | model.noteLike
   | model.global.edit
+model.featureVal = model.featureVal.complex | model.featureVal.single
 model.biblPart =
   model.respLike
   | model.imprintPart
@@ -1532,6 +1573,7 @@ model.biblPart =
   | extent
   | availability
   | listRelation
+model.frontPart = model.frontPart.drama | divGen | titlePage
 model.addrPart = model.nameLike | addrLine | street | postCode | postBox
 model.pPart.data =
   model.dateLike
@@ -1569,7 +1611,13 @@ model.limitedPhrase =
   | model.pPart.data
 model.divLike = \div
 model.divGenLike = divGen
-model.div1Like = notAllowed
+model.div1Like = div1
+model.div2Like = div2
+model.div3Like = div3
+model.div4Like = div4
+model.div5Like = div5
+model.div6Like = div6
+model.div7Like = div7
 model.applicationLike = application
 model.teiHeaderPart = encodingDesc | profileDesc
 model.sourceDescPart = notAllowed
@@ -1584,6 +1632,7 @@ model.encodingDescPart =
   | classDecl
   | geoDecl
   | appInfo
+  | fsdDecl
 model.editorialDeclPart =
   correction
   | normalization
@@ -1614,7 +1663,7 @@ att.source.attribute.source =
   attribute source {
     list { xsd:anyURI+ }
   }?
-model.resourceLike = \text | standOff
+model.resourceLike = \text | standOff | fsdDecl
 att.personal.attributes =
   att.naming.attributes,
   att.personal.attribute.full,
@@ -3859,7 +3908,11 @@ TEI =
   
   ## contains a single text of any kind, whether unitary or composite, for example a poem or drama, a collection of essays, a novel, a dictionary, or a corpus sample. [4. Default Text Structure 15.1. Varieties of Composite Text]
   element tei:text {
-    (model.global*, (body), model.global*),
+    (model.global*,
+     (front, model.global*)?,
+     (body | group),
+     model.global*,
+     (back, model.global*)?),
     att.global.attributes,
     att.declaring.attributes,
     att.typed.attributes,
@@ -3881,6 +3934,32 @@ body =
      (model.divBottom, model.global*)*),
     att.global.attributes,
     att.declaring.attributes,
+    empty
+  }
+group =
+  
+  ## contains the body of a composite text, grouping together a sequence of distinct texts (or groups of such texts) which are regarded as a unit for some purpose, for example the collected works of an author, a sequence of prose essays, etc. [4. Default Text Structure 4.3.1. Grouped Texts 15.1. Varieties of Composite Text]
+  element tei:group {
+    ((model.divTop | model.global)*,
+     ((\text | group), (\text | group | model.global)*),
+     model.divBottom*),
+    att.global.attributes,
+    att.declaring.attributes,
+    att.typed.attributes,
+    empty
+  }
+floatingText =
+  
+  ## contains a single text of any kind, whether unitary or composite, which interrupts the text containing it at any point and after which the surrounding text resumes. [4.3.2. Floating Texts]
+  element tei:floatingText {
+    (model.global*,
+     (front, model.global*)?,
+     (body | group),
+     model.global*,
+     (back, model.global*)?),
+    att.global.attributes,
+    att.declaring.attributes,
+    att.typed.attributes,
     empty
   }
 \div =
@@ -3940,6 +4019,355 @@ body =
     att.typed.attributes,
     att.declaring.attributes,
     att.written.attributes,
+    empty
+  }
+div1 =
+  
+  ## (level-1 text division) contains a first-level subdivision of the front, body, or back of a text. [4.1.2. Numbered Divisions]
+  element tei:div1 {
+    ((model.divTop | model.global)*,
+     ((((model.div2Like | model.divGenLike), model.global*)+
+       | ((model.common, model.global*)+,
+          ((model.div2Like | model.divGenLike), model.global*)*)),
+      (model.divBottom, model.global*)*)?),
+    att.global.attributes,
+    att.divLike.attributes,
+    att.typed.attributes,
+    att.declaring.attributes,
+    empty
+  }
+div2 =
+  
+  ## (level-2 text division) contains a second-level subdivision of the front, body, or back of a text. [4.1.2. Numbered Divisions]
+  element tei:div2 {
+    ((model.divTop | model.global)*,
+     ((((model.div3Like | model.divGenLike), model.global*)+
+       | ((model.common, model.global*)+,
+          ((model.div3Like | model.divGenLike), model.global*)*)),
+      (model.divBottom, model.global*)*)?),
+    att.global.attributes,
+    att.divLike.attributes,
+    att.typed.attributes,
+    att.declaring.attributes,
+    empty
+  }
+div3 =
+  
+  ## (level-3 text division) contains a third-level subdivision of the front, body, or back of a text. [4.1.2. Numbered Divisions]
+  element tei:div3 {
+    ((model.divTop | model.global)*,
+     ((((model.div4Like | model.divGenLike), model.global*)+
+       | ((model.common, model.global*)+,
+          ((model.div4Like | model.divGenLike), model.global*)*)),
+      (model.divBottom, model.global*)*)?),
+    att.global.attributes,
+    att.divLike.attributes,
+    att.typed.attributes,
+    att.declaring.attributes,
+    empty
+  }
+div4 =
+  
+  ## (level-4 text division) contains a fourth-level subdivision of the front, body, or back of a text. [4.1.2. Numbered Divisions]
+  element tei:div4 {
+    ((model.divTop | model.global)*,
+     ((((model.div5Like | model.divGenLike), model.global*)+
+       | ((model.common, model.global*)+,
+          ((model.div5Like | model.divGenLike), model.global*)*)),
+      (model.divBottom, model.global*)*)?),
+    att.global.attributes,
+    att.divLike.attributes,
+    att.typed.attributes,
+    att.declaring.attributes,
+    empty
+  }
+div5 =
+  
+  ## (level-5 text division) contains a fifth-level subdivision of the front, body, or back of a text. [4.1.2. Numbered Divisions]
+  element tei:div5 {
+    ((model.divTop | model.global)*,
+     ((((model.div6Like | model.divGenLike), model.global*)+
+       | ((model.common, model.global*)+,
+          ((model.div6Like | model.divGenLike), model.global*)*)),
+      (model.divBottom, model.global*)*)?),
+    att.global.attributes,
+    att.divLike.attributes,
+    att.typed.attributes,
+    att.declaring.attributes,
+    empty
+  }
+div6 =
+  
+  ## (level-6 text division) contains a sixth-level subdivision of the front, body, or back of a text. [4.1.2. Numbered Divisions]
+  element tei:div6 {
+    ((model.divTop | model.global)*,
+     ((((model.div7Like | model.divGenLike), model.global*)+
+       | ((model.common, model.global*)+,
+          ((model.div7Like | model.divGenLike), model.global*)*)),
+      (model.divBottom, model.global*)*)?),
+    att.global.attributes,
+    att.divLike.attributes,
+    att.typed.attributes,
+    att.declaring.attributes,
+    empty
+  }
+div7 =
+  
+  ## (level-7 text division) contains the smallest possible subdivision of the front, body or back of a text, larger than a paragraph. [4.1.2. Numbered Divisions]
+  element tei:div7 {
+    ((model.divTop | model.global)*,
+     ((model.common, model.global*)+,
+      (model.divBottom, model.global*)*)?),
+    att.global.attributes,
+    att.divLike.attributes,
+    att.typed.attributes,
+    att.declaring.attributes,
+    empty
+  }
+trailer =
+  
+  ## contains a closing title or footer appearing at the end of a division of a text. [4.2.4. Content of Textual Divisions 4.2. Elements Common to All Divisions]
+  element tei:trailer {
+    (text
+     | lg
+     | model.gLike
+     | model.phrase
+     | model.inter
+     | model.lLike
+     | model.global)*,
+    att.global.attributes,
+    att.typed.attributes,
+    empty
+  }
+byline =
+  
+  ## contains the primary statement of responsibility given for a work on its title page or at the head or end of the work. [4.2.2. Openers and Closers 4.5. Front Matter]
+  element tei:byline {
+    (text | model.gLike | model.phrase | docAuthor | model.global)*,
+    att.global.attributes,
+    empty
+  }
+dateline =
+  
+  ## contains a brief description of the place, date, time, etc. of production of a letter, newspaper story, or other work, prefixed or suffixed to it as a kind of heading or trailer. [4.2.2. Openers and Closers]
+  element tei:dateline {
+    (text | model.gLike | model.phrase | model.global | docDate)*,
+    att.global.attributes,
+    empty
+  }
+argument =
+  
+  ## contains a formal list or prose description of the topics addressed by a subdivision of a text. [4.2. Elements Common to All Divisions 4.6. Title Pages]
+  element tei:argument {
+    ((model.global | model.headLike)*, (model.common, model.global*)+),
+    att.global.attributes,
+    empty
+  }
+epigraph =
+  
+  ## contains a quotation, anonymous or attributed, appearing at the start or end of a section or on a title page. [4.2.3. Arguments, Epigraphs, and Postscripts 4.2. Elements Common to All Divisions 4.6. Title Pages]
+  element tei:epigraph {
+    (model.common | model.global)*, att.global.attributes, empty
+  }
+opener =
+  
+  ## groups together dateline, byline, salutation, and similar phrases appearing as a preliminary group at the start of a division, especially of a letter. [4.2. Elements Common to All Divisions]
+  element tei:opener {
+    (text
+     | model.gLike
+     | model.phrase
+     | argument
+     | byline
+     | dateline
+     | epigraph
+     | salute
+     | signed
+     | model.global)*,
+    att.global.attributes,
+    att.written.attributes,
+    empty
+  }
+closer =
+  
+  ## groups together salutations, datelines, and similar phrases appearing as a final group at the end of a division, especially of a letter. [4.2.2. Openers and Closers 4.2. Elements Common to All Divisions]
+  element tei:closer {
+    (text
+     | model.gLike
+     | signed
+     | dateline
+     | salute
+     | model.phrase
+     | model.global)*,
+    att.global.attributes,
+    att.written.attributes,
+    empty
+  }
+salute =
+  
+  ## (salutation) contains a salutation or greeting prefixed to a foreword, dedicatory epistle, or other division of a text, or the salutation in the closing of a letter, preface, etc. [4.2.2. Openers and Closers]
+  element tei:salute {
+    macro.paraContent,
+    att.global.attributes,
+    att.written.attributes,
+    empty
+  }
+signed =
+  
+  ## (signature) contains the closing salutation, etc., appended to a foreword, dedicatory epistle, or other division of a text. [4.2.2. Openers and Closers]
+  element tei:signed { macro.paraContent, att.global.attributes, empty }
+postscript =
+  
+  ## contains a postscript, e.g. to a letter. [4.2. Elements Common to All Divisions]
+  element tei:postscript {
+    ((model.global | model.divTopPart)*,
+     model.common,
+     (model.global | model.common)*,
+     (model.divBottomPart, model.global*)*),
+    att.global.attributes,
+    empty
+  }
+titlePage =
+  
+  ## (title page) contains the title page of a text, appearing within the front or back matter. [4.6. Title Pages]
+  element tei:titlePage {
+    (model.global*,
+     model.titlepagePart,
+     (model.titlepagePart | model.global)*),
+    att.global.attributes,
+    
+    ## classifies the title page according to any convenient typology.
+    attribute type {
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    }?,
+    empty
+  }
+docTitle =
+  
+  ## (document title) contains the title of a document, including all its constituents, as given on a title page. [4.6. Title Pages]
+  element tei:docTitle {
+    (model.global*, (titlePart, model.global*)+),
+    att.global.attributes,
+    att.canonical.attributes,
+    empty
+  }
+titlePart =
+  
+  ## contains a subsection or division of the title of a work, as indicated on a title page. [4.6. Title Pages]
+  element tei:titlePart {
+    macro.paraContent,
+    att.global.attributes,
+    
+    ## specifies the role of this subdivision of the title.
+    ## Suggested values include: 1] main; 2] sub(subordinate) ; 3] alt(alternate) ; 4] short; 5] desc(descriptive) 
+    [ a:defaultValue = "main" ]
+    attribute type {
+      
+      ## main title of the work
+      "main"
+      | 
+        ## (subordinate) subtitle of the work
+        "sub"
+      | 
+        ## (alternate) alternative title of the work
+        "alt"
+      | 
+        ## abbreviated form of title
+        "short"
+      | 
+        ## (descriptive) descriptive paraphrase of the work
+        "desc"
+      | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    }?,
+    empty
+  }
+docAuthor =
+  
+  ## (document author) contains the name of the author of the document, as given on the title page (often but not always contained in a byline). [4.6. Title Pages]
+  element tei:docAuthor {
+    macro.phraseSeq,
+    att.global.attributes,
+    att.canonical.attributes,
+    empty
+  }
+imprimatur =
+  
+  ## contains a formal statement authorizing the publication of a work, sometimes required to appear on a title page or its verso. [4.6. Title Pages]
+  element tei:imprimatur {
+    macro.paraContent, att.global.attributes, empty
+  }
+docEdition =
+  
+  ## (document edition) contains an edition statement as presented on a title page of a document. [4.6. Title Pages]
+  element tei:docEdition {
+    macro.paraContent, att.global.attributes, empty
+  }
+docImprint =
+  
+  ## (document imprint) contains the imprint statement (place and date of publication, publisher name), as given (usually) at the foot of a title page. [4.6. Title Pages]
+  element tei:docImprint {
+    (text
+     | model.gLike
+     | model.phrase
+     | pubPlace
+     | docDate
+     | publisher
+     | model.global)*,
+    att.global.attributes,
+    empty
+  }
+docDate =
+  
+  ## (document date) contains the date of a document, as given on a title page or in a dateline. [4.6. Title Pages]
+  element tei:docDate {
+    macro.phraseSeq,
+    att.global.attributes,
+    
+    ## gives the value of the date in standard form, i.e. YYYY-MM-DD.
+    attribute when {
+      xsd:date
+      | xsd:gYear
+      | xsd:gMonth
+      | xsd:gDay
+      | xsd:gYearMonth
+      | xsd:gMonthDay
+      | xsd:time
+      | xsd:dateTime
+    }?,
+    empty
+  }
+front =
+  
+  ## (front matter) contains any prefatory matter (headers, abstracts, title page, prefaces, dedications, etc.) found at the start of a document, before the main body. [4.6. Title Pages 4. Default Text Structure]
+  element tei:front {
+    ((model.frontPart
+      | model.pLike
+      | model.pLike.front
+      | model.global)*,
+     (((model.div1Like,
+        (model.div1Like | model.frontPart | model.global)*)
+       | (model.divLike,
+          (model.divLike | model.frontPart | model.global)*)),
+      (model.divBottom, (model.divBottom | model.global)*)?)?),
+    att.global.attributes,
+    att.declaring.attributes,
+    empty
+  }
+back =
+  
+  ## (back matter) contains any appendixes, etc. following the main part of a text. [4.7. Back Matter 4. Default Text Structure]
+  element tei:back {
+    ((model.frontPart
+      | model.pLike.front
+      | model.pLike
+      | model.listLike
+      | model.global)*,
+     ((model.div1Like,
+       (model.frontPart | model.div1Like | model.global)*)
+      | (model.divLike,
+         (model.frontPart | model.divLike | model.global)*))?,
+     (model.divBottomPart, (model.divBottomPart | model.global)*)?),
+    att.global.attributes,
+    att.declaring.attributes,
     empty
   }
 att.datable.custom.attributes =
@@ -6394,6 +6822,329 @@ listAnnotation =
     att.declaring.attributes,
     empty
   }
+fsdDecl =
+  
+  ## (feature system declaration) provides a feature system declaration comprising one or more feature structure declarations or feature structure declaration links. [18.11. Feature System Declaration]
+  element tei:fsdDecl {
+    (fsDecl | fsdLink)+, att.global.attributes, empty
+  }
+fsDecl =
+  
+  ## (feature structure declaration) declares one type of feature structure. [18.11. Feature System Declaration]
+  element tei:fsDecl {
+    (fsDescr?, fDecl+, fsConstraints?),
+    att.global.attributes,
+    
+    ## gives a name for the type of feature structure being declared.
+    attribute type {
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    },
+    
+    ## gives the name of one or more typed feature structures from which this type inherits feature specifications and constraints; if this type includes a feature specification with the same name as that of any of those specified by this attribute, or if more than one specification of the same name is inherited, then the set of possible values is defined by unification. Similarly, the set of constraints applicable is derived by combining those specified explicitly within this element with those implied by the baseTypes attribute. When no baseTypes attribute is specified, no feature specification or constraint is inherited.
+    attribute baseTypes {
+      list { xsd:Name+ }
+    }?,
+    empty
+  }
+fsDescr =
+  
+  ## (feature system description (in FSD)) describes in prose what is represented by the type of feature structure declared in the enclosing fsDecl. [18.11. Feature System Declaration]
+  element tei:fsDescr {
+    macro.limitedContent, att.global.attributes, empty
+  }
+fsdLink =
+  
+  ## (feature structure declaration link) associates the name of a typed feature structure with a feature structure declaration for it. [18.11. Feature System Declaration]
+  element tei:fsdLink {
+    empty,
+    att.global.attributes,
+    
+    ## identifies the type of feature structure to be documented; this will be the value of the type attribute on at least one feature structure.
+    attribute type {
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    },
+    
+    ## supplies a pointer to a feature structure declaration (fsDecl) element within the current document or elsewhere.
+    attribute target { xsd:anyURI },
+    empty
+  }
+fDecl =
+  
+  ## (feature declaration) declares a single feature, specifying its name, organization, range of allowed values, and optionally its default value. [18.11. Feature System Declaration]
+  element tei:fDecl {
+    (fDescr?, vRange, vDefault?),
+    att.global.attributes,
+    
+    ## a single word which follows the rules defining a legal XML name (see ), indicating the name of the feature being declared; matches the name attribute of f elements in the text.
+    attribute name { xsd:Name },
+    
+    ## indicates whether or not the value of this feature may be present.
+    [ a:defaultValue = "true" ] attribute optional { xsd:boolean }?,
+    empty
+  }
+fDescr =
+  
+  ## (feature description (in FSD)) describes in prose what is represented by the feature being declared and its values. [18.11. Feature System Declaration]
+  element tei:fDescr {
+    macro.limitedContent, att.global.attributes, empty
+  }
+vRange =
+  
+  ## (value range) defines the range of allowed values for a feature, in the form of an fs, vAlt, or primitive value; for the value of an f to be valid, it must be subsumed by the specified range; if the f contains multiple values (as sanctioned by the org attribute), then each value must be subsumed by the vRange. [18.11. Feature System Declaration]
+  element tei:vRange { model.featureVal, att.global.attributes, empty }
+vDefault =
+  
+  ## (value default) declares the default value to be supplied when a feature structure does not contain an instance of f for this name; if unconditional, it is specified as one (or, depending on the value of the org attribute of the enclosing fDecl) more fs elements or primitive values; if conditional, it is specified as one or more if elements; if no default is specified, or no condition matches, the value none is assumed. [18.11. Feature System Declaration]
+  element tei:vDefault {
+    (model.featureVal+ | if+), att.global.attributes, empty
+  }
+if =
+  
+  ## defines a conditional default value for a feature; the condition is specified as a feature structure, and is met if it subsumes the feature structure in the text for which a default value is sought. [18.11. Feature System Declaration]
+  element tei:if {
+    ((fs | f), then, model.featureVal),
+    att.global.attributes,
+    empty
+  }
+then =
+  
+  ## separates the condition from the default in an if, or the antecedent and the consequent in a cond element. [18.11. Feature System Declaration]
+  element tei:then { empty, att.global.attributes, empty }
+fsConstraints =
+  
+  ## (feature-structure constraints) specifies constraints on the content of valid feature structures. [18.11. Feature System Declaration]
+  element tei:fsConstraints {
+    (cond | bicond)*, att.global.attributes, empty
+  }
+cond =
+  
+  ## (conditional feature-structure constraint) defines a conditional feature-structure constraint; the consequent and the antecedent are specified as feature structures or feature-structure collections; the constraint is satisfied if both the antecedent and the consequent subsume a given feature structure, or if the antecedent does not. [18.11. Feature System Declaration]
+  element tei:cond {
+    ((fs | f), then, (fs | f)),
+    att.global.attributes,
+    empty
+  }
+bicond =
+  
+  ## (bi-conditional feature-structure constraint) defines a biconditional feature-structure constraint; both consequent and antecedent are specified as feature structures or groups of feature structures; the constraint is satisfied if both subsume a given feature structure, or if both do not. [18.11. Feature System Declaration]
+  element tei:bicond {
+    ((fs | f), iff, (fs | f)),
+    att.global.attributes,
+    empty
+  }
+iff =
+  
+  ## (if and only if) separates the condition from the consequence in a bicond element. [18.11. Feature System Declaration]
+  element tei:iff { empty, att.global.attributes, empty }
+fs =
+  
+  ## (feature structure) represents a feature structure, that is, a collection of feature-value pairs organized as a structural unit. [18.2. Elementary Feature Structures and the Binary
+  ## Feature Value]
+  element tei:fs {
+    f*,
+    att.global.attributes,
+    att.datcat.attributes,
+    
+    ## specifies the type of the feature structure.
+    attribute type {
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    }?,
+    
+    ## (features) references the feature-value specifications making up this feature structure.
+    attribute feats {
+      list { xsd:anyURI+ }
+    }?,
+    empty
+  }
+f =
+  
+  ## (feature) represents a feature value specification, that is, the association of a name with a value of any of several different types. [18.2. Elementary Feature Structures and the Binary
+  ## Feature Value]
+  element tei:f {
+    ((text | model.gLike | model.featureVal)*)
+    >> sch:pattern [
+         id = "standOffWithTBX-f-f-has-child-or-PCDATA-constraint-24"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "tei:f"
+           "\x{a}" ~
+           "               "
+           sch:report [
+             test = "tei:*  and  text()[normalize-space(.) ne '']"
+             "A feature value cannot contain both text and element content"
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ]
+    >> sch:pattern [
+         id =
+           "standOffWithTBX-f-f-has-max-one-child-element-constraint-25"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "tei:f"
+           "\x{a}" ~
+           "               "
+           sch:report [
+             test = "count(tei:*) gt 1"
+             "A feature value can contain only one child element"
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ],
+    att.global.attributes,
+    att.datcat.attributes,
+    
+    ## a single word which follows the rules defining a legal XML name (see ), providing a name for the feature.
+    attribute name { xsd:Name },
+    
+    ## (feature value) references any element which can be used to represent the value of a feature.
+    attribute fVal { xsd:anyURI }?,
+    empty
+  }
+binary =
+  
+  ## (binary value) represents the value part of a feature-value specification which can contain either of exactly two possible values. [18.2. Elementary Feature Structures and the Binary
+  ## Feature Value]
+  element tei:binary {
+    empty,
+    att.global.attributes,
+    att.datcat.attributes,
+    
+    ## supplies a binary value.
+    attribute value { xsd:boolean },
+    empty
+  }
+symbol =
+  
+  ## (symbolic value) represents the value part of a feature-value specification which contains one of a finite list of symbols. [18.3. Other Atomic Feature Values]
+  element tei:symbol {
+    empty,
+    att.global.attributes,
+    att.datcat.attributes,
+    
+    ## supplies a symbolic value for the feature, one of a finite list that may be specified in a feature declaration.
+    attribute value {
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    },
+    empty
+  }
+numeric =
+  
+  ## (numeric value) represents the value part of a feature-value specification which contains a numeric value or range. [18.3. Other Atomic Feature Values]
+  element tei:numeric {
+    empty,
+    att.global.attributes,
+    att.datcat.attributes,
+    
+    ## supplies a lower bound for the numeric value represented, and also (if max is not supplied) its upper bound.
+    attribute value {
+      xsd:double
+      | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+      | xsd:decimal
+    },
+    
+    ## supplies an upper bound for the numeric value represented.
+    attribute max {
+      xsd:double
+      | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+      | xsd:decimal
+    }?,
+    
+    ## specifies whether the value represented should be truncated to give an integer value.
+    attribute trunc { xsd:boolean }?,
+    empty
+  }
+\string =
+  
+  ## (string value) represents the value part of a feature-value specification which contains a string. [18.3. Other Atomic Feature Values]
+  element tei:string {
+    macro.xtext, att.global.attributes, att.datcat.attributes, empty
+  }
+vLabel =
+  
+  ## (value label) represents the value part of a feature-value specification which appears at more than one point in a feature structure. [18.6. Re-entrant Feature Structures]
+  element tei:vLabel {
+    model.featureVal?,
+    att.global.attributes,
+    
+    ## supplies a name identifying the sharing point.
+    attribute name {
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    },
+    empty
+  }
+vColl =
+  
+  ## (collection of values) represents the value part of a feature-value specification which contains multiple values organized as a set, bag, or list. [18.7. Collections as Complex Feature Values]
+  element tei:vColl {
+    (fs | model.featureVal.single)*,
+    att.global.attributes,
+    
+    ## (organization) indicates organization of given value or values as set, bag or list.
+    attribute org {
+      
+      ## indicates that the given values are organized as a set.
+      "set"
+      | 
+        ## indicates that the given values are organized as a bag (multiset).
+        "bag"
+      | 
+        ## indicates that the given values are organized as a list.
+        "list"
+    }?,
+    empty
+  }
+\default =
+  
+  ## (default feature value) represents the value part of a feature-value specification which contains a defaulted value. [18.9. Default Values]
+  element tei:default { empty, att.global.attributes, empty }
+vAlt =
+  
+  ## (value alternation) represents the value part of a feature-value specification which contains a set of values, only one of which can be valid. [18.8.1. Alternation]
+  element tei:vAlt {
+    (model.featureVal, model.featureVal+), att.global.attributes, empty
+  }
+vNot =
+  
+  ## (value negation) represents a feature value which is the negation of its content. [18.8.2. Negation]
+  element tei:vNot { model.featureVal, att.global.attributes, empty }
+vMerge =
+  
+  ## (merged collection of values) represents a feature value which is the result of merging together the feature values contained by its children, using the organization specified by the org attribute. [18.8.3. Collection of Values]
+  element tei:vMerge {
+    model.featureVal+,
+    att.global.attributes,
+    
+    ## indicates the organization of the resulting merged values as set, bag or list.
+    attribute org {
+      
+      ## indicates that the resulting values are organized as a set.
+      "set"
+      | 
+        ## indicates that the resulting values are organized as a bag (multiset).
+        "bag"
+      | 
+        ## indicates that the resulting values are organized as a list.
+        "list"
+    }?,
+    empty
+  }
+fLib =
+  
+  ## (feature library) assembles a library of feature elements. [18.4. Feature Libraries and Feature-Value Libraries]
+  element tei:fLib { f+, att.global.attributes, empty }
+fvLib =
+  
+  ## (feature-value library) assembles a library of reusable feature value elements (including complete feature structures). [18.4. Feature Libraries and Feature-Value Libraries]
+  element tei:fvLib { model.featureVal*, att.global.attributes, empty }
 termEntry =
   
   ## groups the components of a single Terminological Entry as defined in ISO 16642 (TMF)

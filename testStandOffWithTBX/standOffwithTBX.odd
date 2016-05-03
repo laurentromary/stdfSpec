@@ -34,14 +34,14 @@
           <moduleRef key="tei"/>
           <moduleRef key="header" except="biblFull xenoData"/>
           <moduleRef key="core"/>
-          <moduleRef key="textstructure" include="TEI text div body"/>
+          <moduleRef key="textstructure"/>
           <moduleRef key="namesdates"/>
           <moduleRef key="linking"/>
           <moduleRef key="analysis"/>
           <moduleRef key="corpus"/>
           <moduleRef key="dictionaries"/>
           <moduleRef key="standOff"/>
-          
+          <moduleRef key="iso-fs"/>
           
           <!-- TBX is described from termEntry downwards -->
           <elementSpec ident="termEntry" ns="http://www.tbx.org" mode="add">
