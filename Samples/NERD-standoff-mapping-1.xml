@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='utf8'?>
+<TEI>
+    <standOff>
+        <listAnnotation subType="organisation" type="generic">
+            <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
+                <p xml:id="a6590794f2fd66738d3a0f28a4857762">United</p>
+                <interp ana="a6590794f2fd66738d3a0f28a4857762" inst="27bfdf3e2a34e059e76e471400dbeb07" />
+                <span from="#string-range(//p[@xml:id='66afc2363d2c4d625c2876ed36b003f9'],109,115)" xml:id="27bfdf3e2a34e059e76e471400dbeb07" />
+                <listBibl type="categories" />
+                <listBibl type="definitions" />
+            </annotationBlock>
+        </listAnnotation>
+        <listAnnotation type="location">
+            <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
+                <place xml:id="d8b00929dec65d422303256336ada04f">
+                    <placeName>Germany</placeName>
+                </place>
+                <interp ana="d8b00929dec65d422303256336ada04f" inst="73e3b58303f241fcd752cba14b7ef591" />
+                <span from="#string-range(//p[@xml:id='66afc2363d2c4d625c2876ed36b003f9'],55,62)" xml:id="73e3b58303f241fcd752cba14b7ef591" />
+                <listBibl type="categories">
+                    <biblStruct>
+                        <title>Germany</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>694965</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>European countries</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>696064</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Western Europe</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>709722</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Alpine countries</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>733030</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>G8 nations</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>5943575</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>German-speaking countries</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>6154812</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Liberal democracies</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>8409834</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Countries bordering the Atlantic Ocean</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>14363704</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Countries bordering the Baltic Sea</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>14370503</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Federal countries</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>16686184</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>G20 nations</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>22242627</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>States and territories established in 1871</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>22470489</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Member states of the Union for the Mediterranean</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>25468207</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Article Feedback Pilot</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>28823705</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Member states of the European Union</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>30410535</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Member states of NATO</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>31293267</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Member states of the United Nations</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>32089177</idno>
+                    </biblStruct>
+                </listBibl>
+                <listBibl type="definitions">
+                    <bibl>'''Germany''', officially the '''Federal Republic of Germany''', is a [[federation|federal]] [[parliamentary republic]] in [[Europe]]. The country consists of [[Lands of Germany|sixteen states]] while the [[capital city|capital]] and [[List of cities in Germany by population|largest city]] is [[Berlin]]. It covers an area of 357,021&amp;nbsp;km2 and has a largely temperate seasonal climate. With 81.8&amp;nbsp;million inhabitants, it is the most populous member state and the [[List of countries by GDP (PPP)|largest economy]] in the [[European Union]]. It is one of the major political powers of the European continent and a technological leader in many fields.</bibl>
+                </listBibl>
+            </annotationBlock>
+            <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
+                <place xml:id="d0aa2dffa0da83f1f34681308d04db5d">
+                    <placeName>Los Angeles</placeName>
+                </place>
+                <interp ana="d0aa2dffa0da83f1f34681308d04db5d" inst="c73ca95e5530ffc92879bf10713d2740" />
+                <span from="#string-range(//p[@xml:id='66afc2363d2c4d625c2876ed36b003f9'],186,197)" xml:id="c73ca95e5530ffc92879bf10713d2740" />
+                <listBibl type="categories">
+                    <biblStruct>
+                        <title>Host cities of the Summer Olympic Games</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>1147016</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Los Angeles, California</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>1732034</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Communities on U.S. Route 66</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>4733005</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>County seats in California</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>6773394</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Port settlements in the United States</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>19440626</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Cities in Los Angeles County, California</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>22222743</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Populated places established in 1781</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>27640698</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Populated coastal places in California</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>27684780</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Article Feedback Pilot</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>28823705</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Incorporated cities and towns in California</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>30852960</idno>
+                    </biblStruct>
+                    <biblStruct>
+                        <title>Populated places in the United States with Hispanic plurality populations</title>
+                        <publisher>wikipedia-en</publisher>
+                        <idno>31945606</idno>
+                    </biblStruct>
+                </listBibl>
+                <listBibl type="definitions">
+                    <bibl>'''Los Angeles''' ( ; , English: "The Angels"), with a population at the [[2010 United States Census]] of 3,792,621, is the [[List of cities in California (by population)|most populous city]] in [[California]] and the [[List of United States cities by population|second most populous]] in the [[United States]], after [[New York City]], on a land area of , and is located in the [[Southern California|southern region of the state]]. It is the focal point of the larger [[Los Angeles-Long Beach-Riverside, CA CSA|Los Angeles-Long Beach-Riverside combined statistical area]], which contains nearly 17.8&amp;nbsp;million people and which is one of the [[List of metropolitan areas by population|most populous metropolitan areas]] in the world and the second largest in the United States. Los Angeles is also the [[county seat|seat]] of [[Los Angeles County, California|Los Angeles County]], the most populated and one of the most multicultural [[county (US)|counties]] in the United States, while the entire Los Angeles area itself is recognized and regarded as the most diverse metropolitan area in the United States. The city's inhabitants are referred to as "Angelenos".</bibl>
+                </listBibl>
+            </annotationBlock>
+        </listAnnotation>
+    </standOff>
+    <text>
+        <body>
+            <p xml:id="66afc2363d2c4d625c2876ed36b003f9">The holocaust was a problem in the second world war... Germany was strong and heavy. Many people flee in the United stated, since they wanted a new life. My brother preferred to stay in Los Angeles. </p>
+        </body>
+    </text>
+</TEI>
