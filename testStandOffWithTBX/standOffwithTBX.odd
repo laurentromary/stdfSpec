@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../Schemas/tei_odds.rnc" type="application/relax-ng-compact-syntax"?>
-<TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0"
-  xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:tbx="http://www.tbx.org">
+<TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:tbx="http://www.tbx.org">
   <teiHeader>
     <fileDesc>
       <titleStmt>
@@ -13,11 +12,9 @@
       <publicationStmt>
         <authority>Inria</authority>
         <availability status="free">
-          <p></p>
-          <licence
-            target="http://creativecommons.org/licenses/by/3.0/">
-            <p>The Creative Commons Attribution 3.0 Unported (CC BY 3.0) Licence
-              applies to this document.</p>
+          <p/>
+          <licence target="http://creativecommons.org/licenses/by/3.0/">
+            <p>The Creative Commons Attribution 3.0 Unported (CC BY 3.0) Licence applies to this document.</p>
             <p>You can quote this document as: <q>Romary, L., TBX extension to the standOff specification; ODD specification. 2016</q></p>
           </licence>
         </availability>
@@ -42,11 +39,30 @@
           <moduleRef key="dictionaries"/>
           <moduleRef key="standOff"/>
           <moduleRef key="iso-fs"/>
-          
+
+          <!-- Specific change for the Termith project -->
+
+          <elementSpec ident="textDesc" mode="change" module="corpus">
+            <content>
+              <rng:oneOrMore>
+                <rng:choice>
+                  <rng:ref name="channel"/>
+                  <rng:ref name="constitution"/>
+                  <rng:ref name="derivation"/>
+                  <rng:ref name="domain"/>
+                  <rng:ref name="factuality"/>
+                  <rng:ref name="interaction"/>
+                  <rng:ref name="preparedness"/>
+                  <rng:ref name="purpose"/>
+                </rng:choice>
+              </rng:oneOrMore>
+            </content>
+          </elementSpec>
+
+
           <!-- TBX is described from termEntry downwards -->
           <elementSpec ident="termEntry" ns="http://www.tbx.org" mode="add">
-            <desc>groups the components of a single Terminological Entry as defined in ISO 16642
-              (TMF)</desc>
+            <desc>groups the components of a single Terminological Entry as defined in ISO 16642 (TMF)</desc>
             <!-- see TCW20 for TEI style rules e.g. each desc should be a headless sentence with implied subject "The component 
            being defined ..."-->
             <classes>
@@ -80,11 +96,13 @@
                 </termEntry>
               </egXML>
             </exemplum>
-            <remarks><p>Informally a Terminological Entry may be defined as .... </p></remarks>
+            <remarks>
+              <p>Informally a Terminological Entry may be defined as .... </p>
+            </remarks>
           </elementSpec>
+
           <elementSpec ident="langSet" ns="http://www.tbx.org" mode="add">
-            <desc>groups all information relevant to the Language Section component as defined in
-              ISO 16642 (TMF)</desc>
+            <desc>groups all information relevant to the Language Section component as defined in ISO 16642 (TMF)</desc>
             <classes>
               <memberOf key="att.global"/>
             </classes>
@@ -108,11 +126,10 @@
               </egXML>
             </exemplum>
           </elementSpec>
-          
-          
+
+
           <elementSpec ident="tig" ns="http://www.tbx.org" mode="add">
-            <desc>groups all information relevant to the Term Section component as defined in ISO
-              16642 (TMF)</desc>
+            <desc>groups all information relevant to the Term Section component as defined in ISO 16642 (TMF)</desc>
             <!-- as above -->
             <classes>
               <memberOf key="att.global"/>
@@ -129,12 +146,14 @@
                   <rng:group>
                     <rng:ref name="gramGrp"/>
                   </rng:group>
-                  <rng:group><rng:zeroOrMore>
-                    <rng:ref name="termNote"/>
-                  </rng:zeroOrMore>
+                  <rng:group>
+                    <rng:zeroOrMore>
+                      <rng:ref name="termNote"/>
+                    </rng:zeroOrMore>
                     <rng:zeroOrMore>
                       <rng:ref name="model.auxInfo"/>
-                    </rng:zeroOrMore></rng:group>
+                    </rng:zeroOrMore>
+                  </rng:group>
                 </rng:choice>
                 <rng:zeroOrMore>
                   <rng:ref name="termNote"/>
@@ -152,7 +171,7 @@
               </egXML>
             </exemplum>
           </elementSpec>
-          
+
           <elementSpec ident="term" ns="http://www.tbx.org" prefix="t_" mode="add">
             <desc>...</desc>
             <!-- ????? -->
@@ -165,7 +184,7 @@
               <!-- no chance of <g>s? -->
             </content>
           </elementSpec>
-          
+
           <elementSpec ident="termNote" ns="http://www.tbx.org" mode="add">
             <desc>...</desc>
             <classes>
@@ -182,7 +201,7 @@
               </rng:zeroOrMore>
             </content>
           </elementSpec>
-          
+
           <elementSpec ident="descrip" ns="http://www.tbx.org" mode="add">
             <desc>provides descriptive information about the node in question.</desc>
             <classes>
@@ -219,7 +238,7 @@
               <p>The <gi>descrip</gi> element can be nested within a <gi>descripGrp</gi></p>
             </remarks>
           </elementSpec>
-          
+
           <elementSpec ident="descripGrp" ns="http://www.tbx.org" mode="add">
             <desc>...</desc>
             <classes>
@@ -244,7 +263,7 @@
               </egXML>
             </exemplum>
           </elementSpec>
-          
+
           <elementSpec ident="transacGrp" ns="http://www.tbx.org" mode="add">
             <desc>Groups together transaction information</desc>
             <classes>
@@ -264,7 +283,7 @@
               <rng:text/>
             </content>
           </elementSpec>
-          
+
           <elementSpec ident="transacNote" ns="http://www.tbx.org" mode="add">
             <desc>...</desc>
             <classes>
@@ -282,7 +301,7 @@
               </rng:zeroOrMore>
             </content>
           </elementSpec>
-          
+
           <elementSpec ident="transac" ns="http://www.tbx.org" mode="add">
             <desc>...</desc>
             <classes>
@@ -299,7 +318,7 @@
               </rng:zeroOrMore>
             </content>
           </elementSpec>
-          
+
           <elementSpec ident="admin" ns="http://www.tbx.org" mode="add">
             <desc>contains information of an administrative nature for the node in question</desc>
             <classes>
@@ -317,15 +336,13 @@
               </rng:zeroOrMore>
             </content>
             <remarks>
-              <p>In the TBX standard the <gi>admin</gi> element can be nested within a
-                  <gi>adminGrp</gi> which is not defined in the present customisation</p>
+              <p>In the TBX standard the <gi>admin</gi> element can be nested within a <gi>adminGrp</gi> which is not defined in the present customisation</p>
             </remarks>
           </elementSpec>
-          
+
           <elementSpec ident="bpt" ns="http://www.tbx.org" mode="add">
             <gloss>begin paired tags</gloss>
-            <desc>meta-markup tags that are used to mark up, i.e., encapsulate markup to distinguish
-              it from text</desc>
+            <desc>meta-markup tags that are used to mark up, i.e., encapsulate markup to distinguish it from text</desc>
             <classes>
               <memberOf key="att.global"/>
               <memberOf key="att.typed"/>
@@ -341,27 +358,26 @@
               </rng:zeroOrMore>
             </content>
           </elementSpec>
-          
+
           <classSpec ident="model.auxInfo" type="model" mode="add">
             <desc>...</desc>
             <!-- please explain what this class is for! -->
           </classSpec>
-          
+
           <classSpec ident="model.ptrLike" type="model" mode="change">
             <classes mode="change">
               <memberOf mode="add" key="model.auxInfo"/>
             </classes>
           </classSpec>
-          
+
           <classSpec ident="model.noteLike" type="model" mode="change">
             <classes mode="change">
               <memberOf mode="add" key="model.auxInfo"/>
             </classes>
           </classSpec>
-          
+
           <classSpec ident="model.metaMarkup" type="model" mode="add">
-            <desc>groups together all meta-markup elements intended to encapsulate legacy (non XML)
-              markup in a textual segment</desc>
+            <desc>groups together all meta-markup elements intended to encapsulate legacy (non XML) markup in a textual segment</desc>
           </classSpec>
         </schemaSpec>
       </div>
