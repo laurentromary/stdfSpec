@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -34,8 +34,9 @@
 
       <listAnnotation type="location">
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
-            <place xml:id="9891739094756d2605946c867b32ad28">
-               <placeName>Austria</placeName>
+            <place  xml:id="9891739094756d2605946c867b32ad28">
+               <placeName key="" type="preferred">Austria</placeName>
+               <placeName type="rawName">Austria</placeName>
                <gloss resp="wikipedia-en">'''Austria''', officially the '''Republic of Austria''',
                   is a [[landlocked country]] of roughly 8.4&amp;nbsp;million people in [[Central
                   Europe]]. It is bordered by the [[Czech Republic]] and [[Germany]] to the north,
