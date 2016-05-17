@@ -35,7 +35,8 @@
       <listAnnotation type="location">
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place  xml:id="9891739094756d2605946c867b32ad28">
-               <placeName key="" type="preferred">Austria</placeName>
+               <idno type="wikipedia-en">???????</idno>
+               <placeName type="preferred">Austria</placeName>
                <placeName type="rawName">Austria</placeName>
                <gloss resp="wikipedia-en">'''Austria''', officially the '''Republic of Austria''',
                   is a [[landlocked country]] of roughly 8.4&amp;nbsp;million people in [[Central
