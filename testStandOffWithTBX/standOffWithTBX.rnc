@@ -9,7 +9,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2016-05-03T10:27:45Z. .
+# Schema generated from ODD source 2016-05-04T13:04:26Z. .
 # TEI Edition: 
 # TEI Edition Location: http://www.tei-c.org/Vault/P5//
 #
@@ -5932,14 +5932,14 @@ textDesc =
   
   ## (text description) provides a description of a text in terms of its situational parameters. [15.2.1. The Text Description]
   element tei:textDesc {
-    (channel,
-     constitution,
-     derivation,
-     domain,
-     factuality,
-     interaction,
-     preparedness,
-     purpose+),
+    (channel
+     | constitution
+     | derivation
+     | domain
+     | factuality
+     | interaction
+     | preparedness
+     | purpose)+,
     att.global.attributes,
     att.declarable.attributes,
     empty

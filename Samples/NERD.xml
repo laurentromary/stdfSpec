@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="file:/Users/romary/Documents/Workbench/stdfSpec/Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -47,7 +47,7 @@
     <text>
         <body>
             <div>
-                <p><w xml:id="w1">Charles</w> <w xml:id="w2">de</w> <w xml:id="w3">Gaulle</w></p>
+                <p><w xml:id="w1"> Charles</w> <w xml:id="w2">de</w> <w xml:id="w3">Gaulle</w></p>
             </div>
             <div>
                 <p xml:id="p1">Charles de Gaulle</p>
