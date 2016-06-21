@@ -39,6 +39,18 @@
           <moduleRef key="dictionaries"/>
           <moduleRef key="standOff"/>
           <moduleRef key="iso-fs"/>
+          <moduleRef key="certainty"/>
+          <moduleRef key="drama"/>
+          <moduleRef key="figures"/>
+          <moduleRef key="gaiji"/>
+          <moduleRef key="msdescription"/>
+          <moduleRef key="nets"/>
+          <moduleRef key="spoken"/>
+          <moduleRef key="textcrit"/>
+          <moduleRef key="transcr"/>
+          <moduleRef key="verse"/>
+          <moduleRef key="tagdocs"/>
+
 
           <!-- Specific change for the Termith project -->
 
@@ -62,7 +74,8 @@
 
           <!-- TBX is described from termEntry downwards -->
           <elementSpec ident="termEntry" ns="http://www.tbx.org" mode="add">
-            <desc>groups the components of a single Terminological Entry as defined in ISO 16642 (TMF)</desc>
+            <desc>groups the components of a single Terminological Entry as defined in ISO 16642
+              (TMF)</desc>
             <!-- see TCW20 for TEI style rules e.g. each desc should be a headless sentence with implied subject "The component 
            being defined ..."-->
             <classes>
