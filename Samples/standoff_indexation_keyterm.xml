@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--exemple_tei_indexation_istex-rd...-->
+<standOff>
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Indexation de documents</title>
+                <respStmt>
+                    <resp>enrichissement indexation ISTEX-RD</resp>
+                    <name resp="istex-rd">ISTEX-RD</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>L’élément standOff de ce document est distribué sous licence Creative Commons 4.0 non transposée (CC BY 4.0)</p>
+                        <p>Ce standOff a été créé dans le cadre du projet ISTEX – Initiative d’Excellence en Information Scientifique et Technique</p>
+                    </licence>            
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <idno type="ISTEX">FC2BA5855622DFA40569339622B5E45389C8027E</idno>
+                </biblStruct>
+            </sourceDesc>
+            <encodingDesc>
+                <appInfo>
+                    <application ident="grobid-keyterm" version="0.1" when="04-07-2016">
+                        <label>grobid-keyterm</label>
+                    </application>
+                </appInfo>
+                <classDecl>
+                    <taxonomy xml:id="wikipedia-categories">
+                        <gloss>Les catégories Wikipedia regroupent des pages portant sur des sujets similaires<ref target="https://en.wikipedia.org/wiki/Portal:Contents/Categories"/></gloss>
+                    </taxonomy>
+					<taxonomy xml:id="wikipedia">
+                        <gloss>The Free Encyclopedia <ref target="https://en.wikipedia.org"/></gloss>
+                    </taxonomy>
+                </classDecl>
+            </encodingDesc>
+        </fileDesc>
+        <profileDesc/>
+        <revisionDesc>
+            <change when="04-07-2016" who="#istex-rd" xml:id="keyterm-run1">Indexation de documents ISTEX</change>
+        </revisionDesc>
+    </teiHeader>
+    <listAnnotation type="keyphrase">
+        <annotationBlock xmls="https//www.tei-c.org/ns/1.0" corresp="#text">
+            <keywords resp="#istex-rd" change="#keyterm-run1">
+				<term cert="0.0795">carotid artery</term>
+				<term cert="0.0156">artery wall</term>
+				<term cert="0.0099">spin echo</term>
+				<term cert="0.0098">atherosclerotic plaque</term>
+            </keywords>
+        </annotationBlock>
+    </listAnnotation>
+    <listAnnotation type="keyconcept">
+        <annotationBlock xmls="https//www.tei-c.org/ns/1.0" corresp="#text">    
+            <keywords scheme="#wikipedia" resp="#istex-rd" change="#keyterm-run1">
+               	<term key="curid:2591840" cert="0.0795">Common carotid artery</term>
+				<term key="curid:7937743" cert="0.0099">Spin echo</term>
+				<term key="curid:7937743" cert="0.0098">Atheroma</term>
+            </keywords>
+        </annotationBlock>
+    </listAnnotation>
+    <listAnnotation type="keycategories">
+        <annotationBlock xmls="https//www.tei-c.org/ns/1.0" corresp="#text">
+            <keywords scheme="#wikipedia-categories" resp="#istex-rd" change="#keyterm-run1">
+		        <term key="curid:21973766" cert="0.2600">Arteries of the head and neck</term>
+				<term key="curid:21973664" cert="0.2600">Arteries of the thorax</term>
+				<term key="curid:32535848" cert="0.0943">Vascular diseases</term>
+				<term key="curid:27084679" cert="0.0943">Diseases of arteries, arterioles and capillaries</term>
+            </keywords>
+        </annotationBlock>
+    </listAnnotation>
+</standOff>
