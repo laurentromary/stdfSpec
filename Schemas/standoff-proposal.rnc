@@ -11860,7 +11860,7 @@ standOff =
   element ns2:standOff {
     teiHeader?,
     model.resourceLike*,
-    listAnnotation*,
+    (listAnnotation* | annotationBlock*),
     (standOff*)
     >> sch:ns [ prefix = "stdf" uri = "http://standoff.proposal" ]
     >> sch:pattern [

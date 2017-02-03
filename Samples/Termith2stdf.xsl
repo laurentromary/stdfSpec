@@ -24,15 +24,25 @@
     </xsl:element>
   </xsl:template>
 
-  <xsl:template match="ns:annotations">
-    <xsl:element name="ns:listAnnotation">
+  <xsl:template match="ns:annotations" mode="annotationsGrp">
+    <xsl:element name="annotationBlock">
       <xsl:apply-templates select="@* | node()"/>
     </xsl:element>
   </xsl:template>
   
-  <xsl:template match="ns:stdf">
+  <xsl:template match="ns:annotationsGrp"/>
+  <xsl:template match="ns:annotationGrp"/>
+  
+  <xsl:template match="ns:annotations"/>
+  
+  <xsl:template match="ns:stdf | ns:standOff">
     <xsl:element name="ns:standOff">
-      <xsl:apply-templates select="@* | node()"/>
+      <xsl:apply-templates select="@*[not(parent::ns:annotationsGrp or parent::ns:annotationGrp)] | node()[not(ns:annotationsGrp or ns:annotationGrp)]"/>
+      <xsl:element name="ns:listAnnotation">
+      <xsl:for-each select="ns:annotations">
+        <xsl:apply-templates select="current()" mode="annotationsGrp"/>
+      </xsl:for-each>
+      </xsl:element>
     </xsl:element>
   </xsl:template>
 
