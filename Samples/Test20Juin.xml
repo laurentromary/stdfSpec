@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:standOff>
+    <teiHeader>
+        <sourceDesc>
+            <biblStruct>
+                <idno type="istex">1AB88E10DA77757CB823BD21D9857DDBCAB554AA</idno>
+            </biblStruct>
+        </sourceDesc>
+        <encodingDesc>
+            <appInfo>
+                <application ident="UnitexCasSys" version="4190">
+                    <label>Unitex CasSys</label>
+                </application>
+            </appInfo>
+        </encodingDesc>
+        <fileDesc>
+            <publicationStmt>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>L’élément standOff de ce document est distribué sous licence Creative Commons 4.0 non transposée (CC BY 4.0)</p>
+                        <p>Ce standOff a été créé dans le cadre du projet ISTEX – Initiative d’Excellence en Information Scientifique et Technique</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <titleStmt>
+                <title>Détection d’entités nommées</title>
+                <respStmt xml:id="ISTEX-RD">
+                    <resp>enrichissement entités nommées ISTEX RD</resp>
+                    <name>ISTEX R&D</name>
+                </respStmt>
+            </titleStmt>
+        </fileDesc>
+        <revisionDesc>
+            <change who="#ISTEX-RD" when="2016-01" xml:id="Unitex-3.1">version 4190</change>
+        </revisionDesc>
+    </teiHeader>
+    <ns:listAnnotation>
+        <annotationBlock corresp="#p2" mode="jusBody">
+            
+        </annotationBlock>
+        
+        <annotationBlock mode="OA">
+            <bibl></bibl>
+            <interp/>
+            <span/>
+        </annotationBlock>
+    </ns:listAnnotation>
+    <ns:listAnnotation type="placeName" xml:lang="en">
+        <ns:annotationBlock>
+            <placeName>Finland</placeName>
+            <fs type="statistics">
+                <f name="frequency">
+                    <numeric>03</numeric>
+                </f>
+            </fs>
+        </ns:annotationBlock>
+        <ns:annotationGrp>
+            <placeName>Kellerberrin</placeName>
+            <fs type="statistics">
+                <f name="frequency">
+                    <numeric>01</numeric>
+                </f>
+            </fs>
+        </ns:annotationGrp>
+    </ns:listAnnotation>
+    <ns:listAnnotation type="ref" subtype="bibl" xml:lang="en">
+        <ns:annotationGrp>
+            <ref type="bibl">Burkhardt and Eiden 1994</ref>
+        </ns:annotationGrp>
+    </ns:listAnnotation>
+    <ns:listAnnotation type="ref" subtype="url" xml:lang="en">
+        <ns:annotationGrp>
+            <ref type="url"> http://www.inist.fr</ref>
+        </ns:annotationGrp>
+    </ns:listAnnotation>
+    <ns:listAnnotation type="orgName" xml:lang="en">
+        <ns:annotationGrp>
+            <orgName>CNRS</orgName>
+        </ns:annotationGrp>
+        <ns:listAnnotation type="orgName" subtype="funder" xml:lang="en">
+            <ns:annotationGrp>
+                <orgName type="funder">NSF Career Grant AST 9733789</orgName>
+            </ns:annotationGrp>
+        </ns:listAnnotation>
+    </ns:listAnnotation>
+</ns:standOff>

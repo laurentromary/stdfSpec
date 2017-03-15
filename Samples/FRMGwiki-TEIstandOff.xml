@@ -5,8 +5,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Named Entities recognition and disambiguation (NERD), XML-TEI
-                            output</title>
+            <title>Named Entities recognition and disambiguation (NERD), XML-TEI output</title>
          </titleStmt>
          <publicationStmt>
             <p/>
@@ -452,22 +451,14 @@
       <listAnnotation type="individual">
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <person xml:id="E2N1">
-               <persName>
-      Léo
-     
-      Hamon
-    </persName>
+               <persName> Léo Hamon </persName>
             </person>
             <interp ana="#E2N1" inst="#d1e80"/>
             <span from="#E2T5" to="#E2T6" xml:id="d1e80"/>
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <person xml:id="E266N2">
-               <persName>
-      puis-
-     
-      sions
-    </persName>
+               <persName> puis- sions </persName>
             </person>
             <interp ana="#E266N2" inst="#d1e28023"/>
             <span from="#E266T24" to="#E266T25" xml:id="d1e28023"/>
@@ -476,7 +467,9 @@
             <person xml:id="E473N2">
                <persName>Abbas Bader El Dine</persName>
                <idno type="aleda">1000000000592329</idno>
-               <gloss resp="wikipedia-fr">Né Abbas Hussein Bader el-Dine (arabe : عباس بدر الدين ; orthographes alternatives : Badr el-Din ou Badreddine) est un journaliste, fondateur, directeur et rédacteur en chef de l'Agence wakalett akhbar lubnan, et conseiller politique libanais né le 28 février 1938 à Nabatiyeh (Liban du Sud), porté disparu après une visite effectuée en Libye le 25 août 1978.</gloss>
+               <gloss resp="wikipedia-fr">Né Abbas Hussein Bader el-Dine (arabe : عباس بدر الدين ; orthographes alternatives : Badr el-Din ou Badreddine) est un journaliste, fondateur, directeur et
+                  rédacteur en chef de l'Agence wakalett akhbar lubnan, et conseiller politique libanais né le 28 février 1938 à Nabatiyeh (Liban du Sud), porté disparu après une visite effectuée en
+                  Libye le 25 août 1978.</gloss>
                <bibl>http://fr.wikipedia.org/wiki/Abbas Bader El Dine</bibl>
                <weight>22</weight>
             </person>
@@ -485,29 +478,21 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <person xml:id="E473N1">
-               <persName>
-      TRISTAN
-    </persName>
+               <persName> TRISTAN </persName>
             </person>
             <interp ana="#E473N1" inst="#d1e39719"/>
             <span from="#E473T4" to="#E473T4" xml:id="d1e39719"/>
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <person xml:id="E483N1">
-               <persName>
-      Tristan
-    </persName>
+               <persName> Tristan </persName>
             </person>
             <interp ana="#E483N1" inst="#d1e40371"/>
             <span from="#E483T28" to="#E483T28" xml:id="d1e40371"/>
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <person xml:id="E552N1">
-               <persName>
-      pas-
-     
-      sionnaient
-    </persName>
+               <persName> pas- sionnaient </persName>
             </person>
             <interp ana="#E552N1" inst="#d1e47235"/>
             <span from="#E552T7" to="#E552T8" xml:id="d1e47235"/>
@@ -516,7 +501,8 @@
             <person xml:id="E687N1">
                <persName>Jacques Piette</persName>
                <idno type="aleda">1000000001382126</idno>
-               <gloss resp="wikipedia-fr">Jacques Piette est un homme politique et un résistant français, né le 13 mai 1916 à Issy-les-Moulineaux (Hauts-de-Seine) et mort le 2 avril 1990 à Boulogne-Billancourt (même département).</gloss>
+               <gloss resp="wikipedia-fr">Jacques Piette est un homme politique et un résistant français, né le 13 mai 1916 à Issy-les-Moulineaux (Hauts-de-Seine) et mort le 2 avril 1990 à
+                  Boulogne-Billancourt (même département).</gloss>
                <bibl>http://fr.wikipedia.org/wiki/Jacques Piette</bibl>
                <weight>8</weight>
             </person>
@@ -750,36 +736,28 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E42N1">
-               <placeName>
-      ajou-
-    </placeName>
+               <placeName> ajou- </placeName>
             </place>
             <interp ana="#E42N1" inst="#d1e4630"/>
             <span from="#E42T27" to="#E42T27" xml:id="d1e4630"/>
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E44N6">
-               <placeName>
-      Loutsk
-    </placeName>
+               <placeName> Loutsk </placeName>
             </place>
             <interp ana="#E44N6" inst="#d1e4896"/>
             <span from="#E44T18" to="#E44T18" xml:id="d1e4896"/>
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E44N4">
-               <placeName>
-      Loutsk
-    </placeName>
+               <placeName> Loutsk </placeName>
             </place>
             <interp ana="#E44N4" inst="#d1e4899"/>
             <span from="#E44T24" to="#E44T24" xml:id="d1e4899"/>
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E44N2">
-               <placeName>
-      Loutsk
-    </placeName>
+               <placeName> Loutsk </placeName>
             </place>
             <interp ana="#E44N2" inst="#d1e4901"/>
             <span from="#E44T33" to="#E44T33" xml:id="d1e4901"/>
@@ -866,9 +844,7 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E51N1">
-               <placeName>
-      vou-
-    </placeName>
+               <placeName> vou- </placeName>
             </place>
             <interp ana="#E51N1" inst="#d1e6614"/>
             <span from="#E51T29" to="#E51T29" xml:id="d1e6614"/>
@@ -923,9 +899,7 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E89N6">
-               <placeName>
-      sem-
-    </placeName>
+               <placeName> sem- </placeName>
             </place>
             <interp ana="#E89N6" inst="#d1e11944"/>
             <span from="#E89T13" to="#E89T13" xml:id="d1e11944"/>
@@ -1012,9 +986,7 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E93N1">
-               <placeName>
-      arri-
-    </placeName>
+               <placeName> arri- </placeName>
             </place>
             <interp ana="#E93N1" inst="#d1e12352"/>
             <span from="#E93T27" to="#E93T27" xml:id="d1e12352"/>
@@ -1149,27 +1121,21 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E189N1">
-               <placeName>
-      négo-
-    </placeName>
+               <placeName> négo- </placeName>
             </place>
             <interp ana="#E189N1" inst="#d1e23514"/>
             <span from="#E189T25" to="#E189T25" xml:id="d1e23514"/>
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E204N1">
-               <placeName>
-      Algérie
-    </placeName>
+               <placeName> Algérie </placeName>
             </place>
             <interp ana="#E204N1" inst="#d1e25258"/>
             <span from="#E204T31" to="#E204T31" xml:id="d1e25258"/>
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E227N1">
-               <placeName>
-      Vogüé
-    </placeName>
+               <placeName> Vogüé </placeName>
             </place>
             <interp ana="#E227N1" inst="#d1e26024"/>
             <span from="#E227T3" to="#E227T3" xml:id="d1e26024"/>
@@ -1304,9 +1270,7 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E320N1">
-               <placeName>
-      Roumanie
-    </placeName>
+               <placeName> Roumanie </placeName>
             </place>
             <interp ana="#E320N1" inst="#d1e31290"/>
             <span from="#E320T12" to="#E320T12" xml:id="d1e31290"/>
@@ -1393,9 +1357,7 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E487N2">
-               <placeName>
-      Stockholm
-    </placeName>
+               <placeName> Stockholm </placeName>
             </place>
             <interp ana="#E487N2" inst="#d1e41191"/>
             <span from="#E487T34" to="#E487T34" xml:id="d1e41191"/>
@@ -1562,9 +1524,7 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E560N2">
-               <placeName>
-      Téhéran
-    </placeName>
+               <placeName> Téhéran </placeName>
             </place>
             <interp ana="#E560N2" inst="#d1e47660"/>
             <span from="#E560T15" to="#E560T15" xml:id="d1e47660"/>
@@ -1635,9 +1595,7 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E739N1">
-               <placeName>
-      veuil-
-    </placeName>
+               <placeName> veuil- </placeName>
             </place>
             <interp ana="#E739N1" inst="#d1e54702"/>
             <span from="#E739T17" to="#E739T17" xml:id="d1e54702"/>
@@ -1692,27 +1650,21 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E799N1">
-               <placeName>
-      Auger
-    </placeName>
+               <placeName> Auger </placeName>
             </place>
             <interp ana="#E799N1" inst="#d1e58436"/>
             <span from="#E799T7" to="#E799T7" xml:id="d1e58436"/>
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E801N1">
-               <placeName>
-      Fresney
-    </placeName>
+               <placeName> Fresney </placeName>
             </place>
             <interp ana="#E801N1" inst="#d1e58632"/>
             <span from="#E801T11" to="#E801T11" xml:id="d1e58632"/>
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <place xml:id="E802N1">
-               <placeName>
-      Auger
-    </placeName>
+               <placeName> Auger </placeName>
             </place>
             <interp ana="#E802N1" inst="#d1e58749"/>
             <span from="#E802T1" to="#E802T1" xml:id="d1e58749"/>
@@ -1721,27 +1673,21 @@
       <listAnnotation type="organization">
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <org xml:id="E12N1">
-               <orgName>
-      Verdier
-    </orgName>
+               <orgName> Verdier </orgName>
             </org>
             <interp ana="#E12N1" inst="#d1e503"/>
             <span from="#E12T7" to="#E12T7" xml:id="d1e503"/>
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <org xml:id="E15N1">
-               <orgName>
-      Verdier
-    </orgName>
+               <orgName> Verdier </orgName>
             </org>
             <interp ana="#E15N1" inst="#d1e1043"/>
             <span from="#E15T1" to="#E15T1" xml:id="d1e1043"/>
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <org xml:id="E21N2">
-               <orgName>
-      Verdier
-    </orgName>
+               <orgName> Verdier </orgName>
             </org>
             <interp ana="#E21N2" inst="#d1e1627"/>
             <span from="#E21T6" to="#E21T6" xml:id="d1e1627"/>
@@ -1759,9 +1705,7 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <org xml:id="E26N1">
-               <orgName>
-      Verdier
-    </orgName>
+               <orgName> Verdier </orgName>
             </org>
             <interp ana="#E26N1" inst="#d1e2375"/>
             <span from="#E26T54" to="#E26T54" xml:id="d1e2375"/>
@@ -1790,9 +1734,7 @@
          </annotationBlock>
          <annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
             <org xml:id="E100N1">
-               <orgName>
-      Résistance
-    </orgName>
+               <orgName> Résistance </orgName>
             </org>
             <interp ana="#E100N1" inst="#d1e13555"/>
             <span from="#E100T20" to="#E100T20" xml:id="d1e13555"/>
@@ -1856,7 +1798,8 @@
             <org xml:id="E180N1">
                <orgName>Elis</orgName>
                <idno type="aleda">1000000001565519</idno>
-               <gloss resp="wikipedia-fr">Elis est une entreprise de services aux entreprises et aux collectivités au travers la fourniture/location de linge, vêtement de travail et produits d'hygiéne, appartenant à Eurazeo.</gloss>
+               <gloss resp="wikipedia-fr">Elis est une entreprise de services aux entreprises et aux collectivités au travers la fourniture/location de linge, vêtement de travail et produits
+                  d'hygiéne, appartenant à Eurazeo.</gloss>
                <bibl>http://fr.wikipedia.org/wiki/Elis (entreprise)</bibl>
                <weight>1</weight>
             </org>
@@ -1867,7 +1810,8 @@
             <org xml:id="E188N1">
                <orgName>Elis</orgName>
                <idno type="aleda">1000000001565519</idno>
-               <gloss resp="wikipedia-fr">Elis est une entreprise de services aux entreprises et aux collectivités au travers la fourniture/location de linge, vêtement de travail et produits d'hygiéne, appartenant à Eurazeo.</gloss>
+               <gloss resp="wikipedia-fr">Elis est une entreprise de services aux entreprises et aux collectivités au travers la fourniture/location de linge, vêtement de travail et produits
+                  d'hygiéne, appartenant à Eurazeo.</gloss>
                <bibl>http://fr.wikipedia.org/wiki/Elis (entreprise)</bibl>
                <weight>1</weight>
             </org>
@@ -1878,7 +1822,8 @@
             <org xml:id="E196N1">
                <orgName>Elis</orgName>
                <idno type="aleda">1000000001565519</idno>
-               <gloss resp="wikipedia-fr">Elis est une entreprise de services aux entreprises et aux collectivités au travers la fourniture/location de linge, vêtement de travail et produits d'hygiéne, appartenant à Eurazeo.</gloss>
+               <gloss resp="wikipedia-fr">Elis est une entreprise de services aux entreprises et aux collectivités au travers la fourniture/location de linge, vêtement de travail et produits
+                  d'hygiéne, appartenant à Eurazeo.</gloss>
                <bibl>http://fr.wikipedia.org/wiki/Elis (entreprise)</bibl>
                <weight>1</weight>
             </org>
@@ -1911,7 +1856,8 @@
             <org xml:id="E535N1">
                <orgName>Gringoire</orgName>
                <idno type="aleda">1000000000780661</idno>
-               <gloss resp="wikipedia-fr">Gringoire est un hebdomadaire politique et littéraire français d'extrême droite fondé en 1928 par Horace de Carbuccia assisté de Georges Suarez et Joseph Kessel.</gloss>
+               <gloss resp="wikipedia-fr">Gringoire est un hebdomadaire politique et littéraire français d'extrême droite fondé en 1928 par Horace de Carbuccia assisté de Georges Suarez et Joseph
+                  Kessel.</gloss>
                <bibl>http://fr.wikipedia.org/wiki/Gringoire</bibl>
                <weight>12</weight>
             </org>

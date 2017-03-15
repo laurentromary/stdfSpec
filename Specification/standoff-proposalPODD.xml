@@ -20,10 +20,10 @@
                         <surname>Romary</surname>
                     </persName>
                 </author>
-		<respStmt>
-		  <resp>Aide à la mise en pure ODD</resp>
-		  <name>Lou Burnard</name>
-		</respStmt>
+                <respStmt>
+                    <resp>Aide à la mise en pure ODD</resp>
+                    <name>Lou Burnard</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
                 <authority>Berlin task force "standoff"</authority>
@@ -79,36 +79,30 @@
                         <memberOf key="att.pointing" mode="add"/>
                         <memberOf key="att.typed" mode="add"/>
                     </classes>
-		    <content>
-		      <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
-		      <classRef key="model.resourceLike" minOccurs="0" maxOccurs="1"/>
-		      <elementRef key="listAnnotation" minOccurs="0" maxOccurs="1"/>
-		      <elementRef key="standOff" minOccurs="0" maxOccurs="1"/>
-		    </content>
-		     <constraintSpec ident="StandOffNamespace" scheme="isoschematron" mode="add">
+                    <content>
+                        <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
+                        <classRef key="model.resourceLike" minOccurs="0" maxOccurs="1"/>
+                        <elementRef key="listAnnotation" minOccurs="0" maxOccurs="1"/>
+                        <elementRef key="standOff" minOccurs="0" maxOccurs="1"/>
+                    </content>
+                    <constraintSpec ident="StandOffNamespace" scheme="isoschematron" mode="add">
                         <constraint>
-                            <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="stdf"
-                                uri="http://standoff.proposal"/>
+                            <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="stdf" uri="http://standoff.proposal"/>
                         </constraint>
                     </constraintSpec>
-                    <constraintSpec ident="SecondLevelStandOffTyping" scheme="isoschematron"
-                        mode="add">
+                    <constraintSpec ident="SecondLevelStandOffTyping" scheme="isoschematron" mode="add">
                         <constraint>
-                            <assert xmlns="http://purl.oclc.org/dsdl/schematron"
-                                test="@type or not(ancestor::stdf:standOff)">This <name/> element
-                                must have a @type attribute, since it has an ancestor
+                            <assert xmlns="http://purl.oclc.org/dsdl/schematron" test="@type or not(ancestor::stdf:standOff)">This <name/> element must have a @type attribute, since it has an ancestor
                                 <name/></assert>
                         </constraint>
                     </constraintSpec>
-                  
+
                 </elementSpec>
 
-               
 
-                <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal"
-                    module="standOff">
-                    <desc>Groups together various annotations, for instance for parallel
-                        interpretations of a spoken segment</desc>
+
+                <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff">
+                    <desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc>
                     <classes>
                         <memberOf key="model.annotation"/>
                         <memberOf key="att.timed"/>
@@ -118,13 +112,13 @@
                         <memberOf key="att.declaring"/>
                     </classes>
                     <content>
-			<alternate>
-			  <elementRef key="listAnnotation" minOccurs="1" maxOccurs="unbounded"/>
-			  <alternate minOccurs="1" maxOccurs="unbounded">
-			    <classRef key="model.annotation"/>
-			    <classRef key="model.global.meta"/>
-			  </alternate>
-			</alternate>
+                        <alternate>
+                            <elementRef key="listAnnotation" minOccurs="1" maxOccurs="unbounded"/>
+                            <alternate minOccurs="1" maxOccurs="unbounded">
+                                <classRef key="model.annotation"/>
+                                <classRef key="model.global.meta"/>
+                            </alternate>
+                        </alternate>
                     </content>
                     <remarks>
                         <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
@@ -138,10 +132,10 @@
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                     <content>
-                      <alternate minOccurs="1" maxOccurs="unbounded">
-			<classRef key="model.annotation"/>
-			<classRef key="model.global.meta"/>
-		      </alternate>
+                        <alternate minOccurs="1" maxOccurs="unbounded">
+                            <classRef key="model.annotation"/>
+                            <classRef key="model.global.meta"/>
+                        </alternate>
                     </content>
                     <remarks>
                         <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
@@ -160,7 +154,7 @@
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="span" mode="change" module="analysis">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
@@ -173,7 +167,7 @@
                     </classes>
                 </elementSpec>
 
-           
+
 
                 <classSpec type="model" ident="model.listLike" mode="change">
                     <classes mode="change">
@@ -238,7 +232,7 @@
                 <!--graph, listgraph forest, -->
 
                 <!-- Need to exclude our namespace from egXML to prevent "conflicting ID-types for attribute" errors -->
-		<!-- this is still in relaxNG....   -->
+                <!-- this is still in relaxNG....   -->
                 <macroSpec ident="macro.anyXML" mode="change" module="tagdocs">
                     <content>
                         <rng:element>
