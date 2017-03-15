@@ -7,18 +7,8 @@
         <fileDesc>
             <titleStmt>
                 <title>Proposal for encoding standoff annotations in TEI</title>
-                <author>
-                    <persName>
-                        <forename>Peter</forename>
-                        <surname>Stadler</surname>
-                    </persName>
-                </author>
-                <author>
-                    <persName>
-                        <forename>Laurent</forename>
-                        <surname>Romary</surname>
-                    </persName>
-                </author>
+                <author>Peter Stadler</author>
+                <author>Laurent Romary</author>
             </titleStmt>
             <publicationStmt>
                 <authority>Berlin task force "standoff"</authority>
