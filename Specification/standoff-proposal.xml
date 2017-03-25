@@ -31,6 +31,12 @@
                 <p>...</p>
             </sourceDesc>
         </fileDesc>
+        <revisionDesc>
+            <change when="2017-03-16" who="#pb">purified this ODD</change>
+            <change when="2017-03-15" who="#pb">combined two elementSpec for "standoff" into one, removed the macroSpec redeclaration (it had no effect on the compiled ODD)</change>
+            <change when="2015-03-14" who="#ps">modification and extension (changes since that date not logged here, see the <ref target="https://github.com/laurentromary/stdfSpec/commits/master">repository history</ref>)</change>
+            <change when="2014-12-02" who="#lr">initial version created (changes since that date not logged here, see the <ref target="https://github.com/laurentromary/stdfSpec/commits/master">repository history</ref>)</change>
+        </revisionDesc>
     </teiHeader>
     <text>
         <body>
@@ -57,11 +63,11 @@
                 <moduleRef key="transcr"/>
                 <moduleRef key="verse"/>
                 <moduleRef key="tagdocs"/>
-
+                
                 <moduleSpec ident="standOff">
                     <desc>Elements to allow stand-off annotations in a TEI document</desc>
                 </moduleSpec>
-
+                
                 <elementSpec ident="standOff" mode="add" ns="http://standoff.proposal" module="standOff">
                     <desc>Container element for standoff annotations</desc>
                     <classes>
@@ -75,23 +81,11 @@
                         <memberOf key="att.typed" mode="add"/>
                     </classes>
                     <content>
-                        <rng:optional>
-                            <rng:ref name="teiHeader"/>
-                        </rng:optional>
-                        <rng:zeroOrMore>
-                            <rng:ref name="model.resourceLike"/>
-                        </rng:zeroOrMore>
-                        <rng:zeroOrMore>
-                            <rng:ref name="listAnnotation"/>
-                        </rng:zeroOrMore>
-                        <rng:zeroOrMore>
-                            <rng:ref name="standOff"/>
-                        </rng:zeroOrMore>
+                        <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
+                        <classRef key="model.resourceLike" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="listAnnotation" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="standOff" minOccurs="0" maxOccurs="unbounded"/>
                     </content>
-                </elementSpec>
-
-                <elementSpec ident="standOff" module="standOff" mode="change"
-                    ns="http://standoff.proposal">
                     <constraintSpec ident="StandOffNamespace" scheme="isoschematron" mode="add">
                         <constraint>
                             <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="stdf"
@@ -108,7 +102,8 @@
                         </constraint>
                     </constraintSpec>
                 </elementSpec>
-
+                
+                
                 <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal"
                     module="standOff">
                     <desc>Groups together various annotations, for instance for parallel
@@ -122,43 +117,37 @@
                         <memberOf key="att.declaring"/>
                     </classes>
                     <content>
-                        <rng:choice>
-                            <rng:oneOrMore>
-                              <rng:ref name="listAnnotation"/>
-                            </rng:oneOrMore>
-                            <rng:oneOrMore>
-                                <rng:ref name="model.annotation"/>
-                            </rng:oneOrMore>
-                        </rng:choice>
+                        <alternate>
+                            <elementRef key="listAnnotation" minOccurs="1" maxOccurs="unbounded"/>
+                            <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
+                        </alternate>
                     </content>
                     <remarks>
                         <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
                             elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p>
                     </remarks>
                 </elementSpec>
-
-
+                
+                
                 <elementSpec ident="annotationBlock" mode="change" module="spoken">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                     <content>
-                        <rng:oneOrMore>
-                            <rng:ref name="model.annotation"/>
-                        </rng:oneOrMore>
+                        <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
                     </content>
                     <remarks>
                         <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
                             elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p>
                     </remarks>
                 </elementSpec>
-
+                
                 <classSpec type="model" ident="model.annotation" mode="add" module="standOff">
                     <desc>groups together any kind of element that may be used to annotate an annotable segment</desc>
                 </classSpec>
                 <!--       *****       -->
                 <!-- Following are existing TEI declarations where we add our new class(es) -->
-
+                
                 <elementSpec ident="u" mode="change" module="spoken">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
@@ -170,107 +159,81 @@
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-
+                
                 <elementSpec ident="seg" mode="change" module="linking">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-
+                
                 <classSpec type="model" ident="model.global.meta" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </classSpec>
-
+                
                 <classSpec type="model" ident="model.listLike" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </classSpec>
-
+                
                 <classSpec type="model" ident="model.entryLike" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </classSpec>
-
+                
                 <elementSpec ident="listBibl" mode="change" module="core">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-
+                
                 <elementSpec ident="listChange" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-
+                
                 <elementSpec ident="graph" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-
+                
                 <elementSpec ident="forest" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-
+                
                 <elementSpec ident="listForest" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-
+                
                 <elementSpec ident="tree" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-
+                
                 <elementSpec ident="eTree" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-
+                
                 <elementSpec ident="zone" module="transcr" mode="change">
                     <classes mode="change">
                         <memberOf mode="add" key="model.annotation"/>
                     </classes>
                 </elementSpec>
-
+                
                 <!--graph, listgraph forest, -->
-
-                <!-- Need to exclude our namespace from egXML to prevent "conflicting ID-types for attribute" errors -->
-                <macroSpec ident="macro.anyXML" mode="change" module="tagdocs">
-                    <content>
-                        <rng:element>
-                            <rng:anyName>
-                                <rng:except>
-                                    <rng:nsName ns="http://www.tei-c.org/ns/1.0"/>
-                                    <rng:name ns="http://www.tei-c.org/ns/Examples">egXML</rng:name>
-                                    <rng:nsName ns="http://standoff.proposal"/>
-                                </rng:except>
-                            </rng:anyName>
-                            <rng:zeroOrMore>
-                                <rng:attribute>
-                                    <rng:anyName/>
-                                </rng:attribute>
-                            </rng:zeroOrMore>
-                            <rng:zeroOrMore>
-                                <rng:choice>
-                                    <rng:text/>
-                                    <rng:ref name="macro.anyXML"/>
-                                </rng:choice>
-                            </rng:zeroOrMore>
-                        </rng:element>
-                    </content>
-                </macroSpec>
-
+                
             </schemaSpec>
         </body>
     </text>
