@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="tei_odds.rnc" type="application/relax-ng-compact-syntax"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <teiHeader>
         <fileDesc>
@@ -34,8 +31,10 @@
         <revisionDesc>
             <change when="2017-03-16" who="#pb">purified this ODD</change>
             <change when="2017-03-15" who="#pb">combined two elementSpec for "standoff" into one, removed the macroSpec redeclaration (it had no effect on the compiled ODD)</change>
-            <change when="2015-03-14" who="#ps">modification and extension (changes since that date not logged here, see the <ref target="https://github.com/laurentromary/stdfSpec/commits/master">repository history</ref>)</change>
-            <change when="2014-12-02" who="#lr">initial version created (changes since that date not logged here, see the <ref target="https://github.com/laurentromary/stdfSpec/commits/master">repository history</ref>)</change>
+            <change when="2015-03-14" who="#ps">modification and extension (changes since that date not logged here, see the <ref target="https://github.com/laurentromary/stdfSpec/commits/master"
+                    >repository history</ref>)</change>
+            <change when="2014-12-02" who="#lr">initial version created (changes since that date not logged here, see the <ref target="https://github.com/laurentromary/stdfSpec/commits/master"
+                    >repository history</ref>)</change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -63,11 +62,11 @@
                 <moduleRef key="transcr"/>
                 <moduleRef key="verse"/>
                 <moduleRef key="tagdocs"/>
-                
+
                 <moduleSpec ident="standOff">
                     <desc>Elements to allow stand-off annotations in a TEI document</desc>
                 </moduleSpec>
-                
+
                 <elementSpec ident="standOff" mode="add" ns="http://standoff.proposal" module="standOff">
                     <desc>Container element for standoff annotations</desc>
                     <classes>
@@ -84,30 +83,24 @@
                         <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
                         <classRef key="model.resourceLike" minOccurs="0" maxOccurs="unbounded"/>
                         <elementRef key="listAnnotation" minOccurs="0" maxOccurs="unbounded"/>
-                        <elementRef key="standOff" minOccurs="0" maxOccurs="unbounded"/>
+<!--                        <elementRef key="standOff" minOccurs="0" maxOccurs="unbounded"/>-->
                     </content>
                     <constraintSpec ident="StandOffNamespace" scheme="isoschematron" mode="add">
                         <constraint>
-                            <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="stdf"
-                                uri="http://standoff.proposal"/>
+                            <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="stdf" uri="http://standoff.proposal"/>
                         </constraint>
                     </constraintSpec>
-                    <constraintSpec ident="SecondLevelStandOffTyping" scheme="isoschematron"
-                        mode="add">
+                    <constraintSpec ident="SecondLevelStandOffTyping" scheme="isoschematron" mode="add">
                         <constraint>
-                            <assert xmlns="http://purl.oclc.org/dsdl/schematron"
-                                test="@type or not(ancestor::stdf:standOff)">This <name/> element
-                                must have a @type attribute, since it has an ancestor
+                            <assert xmlns="http://purl.oclc.org/dsdl/schematron" test="@type or not(ancestor::stdf:standOff)">This <name/> element must have a @type attribute, since it has an ancestor
                                 <name/></assert>
                         </constraint>
                     </constraintSpec>
                 </elementSpec>
-                
-                
-                <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal"
-                    module="standOff">
-                    <desc>Groups together various annotations, for instance for parallel
-                        interpretations of a spoken segment</desc>
+
+
+                <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff">
+                    <desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc>
                     <classes>
                         <memberOf key="model.annotation"/>
                         <memberOf key="att.timed"/>
@@ -127,8 +120,8 @@
                             elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p>
                     </remarks>
                 </elementSpec>
-                
-                
+
+
                 <elementSpec ident="annotationBlock" mode="change" module="spoken">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
@@ -141,99 +134,99 @@
                             elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p>
                     </remarks>
                 </elementSpec>
-                
+
                 <classSpec type="model" ident="model.annotation" mode="add" module="standOff">
                     <desc>groups together any kind of element that may be used to annotate an annotable segment</desc>
                 </classSpec>
                 <!--       *****       -->
                 <!-- Following are existing TEI declarations where we add our new class(es) -->
-                
+
                 <elementSpec ident="u" mode="change" module="spoken">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="span" mode="change" module="analysis">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="seg" mode="change" module="linking">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <classSpec type="model" ident="model.global.meta" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </classSpec>
-                
+
                 <classSpec type="model" ident="model.listLike" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </classSpec>
-                
+
                 <classSpec type="model" ident="model.entryLike" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </classSpec>
-                
+
                 <elementSpec ident="listBibl" mode="change" module="core">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="listChange" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="graph" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="forest" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="listForest" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="tree" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="eTree" mode="change" module="header">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="zone" module="transcr" mode="change">
                     <classes mode="change">
                         <memberOf mode="add" key="model.annotation"/>
                     </classes>
                 </elementSpec>
-                
+
                 <!--graph, listgraph forest, -->
-                
+
             </schemaSpec>
         </body>
     </text>
