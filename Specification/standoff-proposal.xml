@@ -168,11 +168,11 @@
                     </classes>
                 </classSpec>
 
-                <elementSpec ident="listBibl" mode="change" module="core">
+                <classSpec type="model" ident="model.biblLike" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
-                </elementSpec>
+                </classSpec>
 
                 <elementSpec ident="listChange" mode="change" module="header">
                     <classes mode="change">
