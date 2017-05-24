@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://standoff.proposal" xmlns:dcr="http://www.isocat.org/ns/dcr" xmlns:ns1="http://standoff.proposal" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.tmp"/>
+  <xs:import namespace="http://www.tei-c.org/ns/1.0" schemaLocation="standoff-proposal.xsd.tmp"/>
+  <xs:import namespace="http://www.tei-c.org/ns/Examples" schemaLocation="teix.tmp"/>
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.tmp"/>
+  <xs:element name="standOff">
+    <xs:annotation>
+      <xs:documentation>Container element for standoff annotations</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="tei:teiHeader"/>
+        <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:model.resourceLike"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:listAnnotation"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="tei:att.global.attributes"/>
+      <xs:attributeGroup ref="tei:att.datcat.attributes"/>
+      <xs:attributeGroup ref="tei:att.ascribed.attributes"/>
+      <xs:attributeGroup ref="tei:att.datable.w3c.attributes"/>
+      <xs:attributeGroup ref="tei:att.pointing.attributes"/>
+      <xs:attributeGroup ref="tei:att.typed.attributes"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listAnnotation">
+    <xs:annotation>
+      <xs:documentation>Groups together various annotations, for instance for parallel interpretations of a spoken segment</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group maxOccurs="unbounded" ref="tei:model.annotation"/>
+      <xs:attributeGroup ref="tei:att.timed.attributes"/>
+      <xs:attributeGroup ref="tei:att.global.attributes"/>
+      <xs:attributeGroup ref="tei:att.ascribed.attributes"/>
+      <xs:attributeGroup ref="tei:att.typed.attributes"/>
+      <xs:attributeGroup ref="tei:att.declaring.attributes"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

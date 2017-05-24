@@ -83,7 +83,7 @@
                         <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
                         <classRef key="model.resourceLike" minOccurs="0" maxOccurs="unbounded"/>
                         <elementRef key="listAnnotation" minOccurs="0" maxOccurs="unbounded"/>
-<!--                        <elementRef key="standOff" minOccurs="0" maxOccurs="unbounded"/>-->
+                        <!--                        <elementRef key="standOff" minOccurs="0" maxOccurs="unbounded"/>-->
                     </content>
                     <constraintSpec ident="StandOffNamespace" scheme="isoschematron" mode="add">
                         <constraint>
@@ -110,10 +110,7 @@
                         <memberOf key="att.declaring"/>
                     </classes>
                     <content>
-                        <alternate>
-                            <elementRef key="listAnnotation" minOccurs="1" maxOccurs="unbounded"/>
-                            <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
-                        </alternate>
+                        <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
                     </content>
                     <remarks>
                         <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
@@ -142,12 +139,6 @@
                 <!-- Following are existing TEI declarations where we add our new class(es) -->
 
                 <elementSpec ident="u" mode="change" module="spoken">
-                    <classes mode="change">
-                        <memberOf key="model.annotation" mode="add"/>
-                    </classes>
-                </elementSpec>
-
-                <elementSpec ident="span" mode="change" module="analysis">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
