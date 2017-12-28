@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Stand-off use cases</title>
+            <author>
+               <persName>
+                  <forename>Laurent</forename>
+                  <surname>Romary</surname>
+                  <affiliation>
+                     <orgName>Inria</orgName>
+                  </affiliation>
+               </persName>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <authority>TEI</authority>
+            <availability>
+               <licence/>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Born digital document</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div>
+            <head>Introduction</head>
+            <p>This document compiles various concrete use cases implementing the suggested <gi>standOff</gi> element in order to refine the possible constraints that may bear upon it and its
+               sub-elements. It is based on the experience gained in various projects since the initial workshop that launched the definition of this element as well as on some ongoing activities that
+               are being pursued in several national projects in France and Germany (mong others), in internaitonal institutions (EPO) as well as in the content of several ISO projects (some of which
+               have already been published as standards).</p>
+            <p>The major conclusions that can be drawn from these use cases are the following:</p>
+            <list>
+               <item>...</item>
+            </list>
+         </div>
+         <div>
+            <head>Aligning with the Open Annotation model</head>
+         </div>
+         <div>
+            <head>Morphosyntactic annotation</head>
+            <p><ref target="#ISO24611">ISO 24611 (MAF)</ref> contains a TEI based serialisation for morpho-syntactic annotations. The underlying model of ISO 24611 is based upon a two level model
+               distinguishing between:</p>
+            <list>
+               <item>Tokens: elementary units segmented in the source textual content, and</item>
+               <item>Word forms: the abstract lexical units that may group together one or several tokens.</item>
+
+            </list>
+            <note>A token can also be associated to more than one word forms, e.g. in French: <mentioned>du</mentioned>, combining <mentioned>de</mentioned> and <mentioned>le</mentioned>.</note>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <p>
+                  <w xml:id="w1">I</w>
+                  <w xml:id="w2">wanna</w>
+                  <w xml:id="w3">put</w>
+                  <w xml:id="w4">up</w>
+                  <w xml:id="w5">new</w>
+                  <w xml:id="w6">wallpaper</w>
+                  <pc>.</pc>
+               </p>
+               <spanGrp type="wordForm">
+                  <span target="#w1" ana="#fs1" corresp="#entry1"/>
+                  <span target="#w2" ana="#fs2" corresp="#entry2"/>
+                  <span target="#w2" ana="#fs3" corresp="#entry3"/>
+                  <span target="#w3 #w4" ana="#fs4" corresp="#entry4"/>
+                  <span target="#w5" ana="#fs5" corresp="#entry5"/>
+                  <span target="#w6" ana="#fs6" corresp="#entry6"/>
+               </spanGrp>
+               <fs xml:id="fs1" corresp="#entry1">
+                  <f name="lemma">
+                     <string>I</string>
+                  </f>
+                  <f name="pos">
+                     <symbol value="PP"/>
+                  </f>
+               </fs>
+               <fs xml:id="fs2">
+                  <f name="lemma">
+                     <string>want</string>
+                  </f>
+                  <f name="pos">
+                     <symbol value="VBP"/>
+                  </f>
+               </fs>
+               <fs xml:id="fs3">
+                  <f name="lemma">
+                     <string>to</string>
+                  </f>
+                  <f name="pos">
+                     <symbol value="TO"/>
+                  </f>
+               </fs>
+               <fs xml:id="fs4">
+                  <f name="lemma">
+                     <string>put up</string>
+                  </f>
+                  <f name="pos">
+                     <symbol value="VB"/>
+                  </f>
+               </fs>
+               <fs xml:id="fs5">
+                  <f name="lemma">
+                     <string>new</string>
+                  </f>
+                  <f name="pos">
+                     <symbol value="JJ"/>
+                  </f>
+               </fs>
+               <fs xml:id="fs6">
+                  <f name="lemma">
+                     <string>wallpaper</string>
+                  </f>
+                  <f name="pos">
+                     <symbol value="NN"/>
+                  </f>
+               </fs>
+               <entry xml:id="entry1">
+                  <form type="lemma">
+                     <orth>I</orth>
+                  </form>
+               </entry>
+               <entry xml:id="entry2">
+                  <form type="lemma">
+                     <orth>want</orth>
+                  </form>
+               </entry>
+               <entry xml:id="entry3">
+                  <form type="lemma">
+                     <orth>to</orth>
+                  </form>
+               </entry>
+               <entry xml:id="entry4">
+                  <form type="lemma">
+                     <orth>put up</orth>
+                  </form>
+               </entry>
+               <entry xml:id="entry5">
+                  <form type="lemma">
+                     <orth>new</orth>
+                  </form>
+               </entry>
+               <entry xml:id="entry6">
+                  <form type="lemma">
+                     <orth>wallpaper</orth>
+                  </form>
+               </entry>
+            </egXML>
+         </div>
+         <div>
+            <head>Reference annotation</head>
+         </div>
+         <div>
+            <head>Parallel annotation of spoken utterances</head>
+         </div>
+         <div>
+            <head>Issues related to the header on <gi>standOff</gi></head>
+         </div>
+         <div>
+            <head>Towards a content model for <gi>annotationBlock</gi></head>
+         </div>
+      </body>
+      <back>
+         <div>
+            <head>References</head>
+            <listBibl type="references">
+               <bibl><title>Web Annotation Data Model</title>, W3C Recommendation 23 February 2017, <ptr target="https://www.w3.org/TR/2017/REC-annotation-model-20170223/"/></bibl>
+               <bibl xml:id="ISO24611"><title>ISO 24611:2012 Language resource management -- Morpho-syntactic annotation framework (MAF)</title>, <ptr target="https://www.iso.org/standard/51934.html"
+                  /></bibl>
+            </listBibl>
+         </div>
+         <div>
+            <head>Issues</head>
+            <p>Should not <att>resp</att> be made global?</p>
+         </div>
+      </back>
+   </text>
+</TEI>
