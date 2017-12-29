@@ -20,8 +20,7 @@
             <publicationStmt>
                 <authority>Berlin task force "standoff"</authority>
                 <availability>
-                    <!-- no licence allowed -->
-                    <p>CC+BY and BSD-2 licences</p>
+                    <licence>CC+BY and BSD-2 licences</licence>
                 </availability>
             </publicationStmt>
             <sourceDesc>
@@ -63,10 +62,13 @@
                 <moduleRef key="verse"/>
                 <moduleRef key="tagdocs"/>
 
+                <!-- Specific model for the new elements introduced here: <standOff> and <listAnnotation> -->
                 <moduleSpec ident="standOff">
                     <desc>Elements to allow stand-off annotations in a TEI document</desc>
                 </moduleSpec>
-
+                
+                
+                <!--  The entry point to stand-off annotations, as member of model.resourceLike-->
                 <elementSpec ident="standOff" mode="add" ns="http://standoff.proposal" module="standOff">
                     <desc>Container element for standoff annotations</desc>
                     <classes>
@@ -81,9 +83,9 @@
                     </classes>
                     <content>
                         <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
+                        <!-- Note: the following declaration makes <standOff> recursive (intentionally) -->
                         <classRef key="model.resourceLike" minOccurs="0" maxOccurs="unbounded"/>
                         <elementRef key="listAnnotation" minOccurs="0" maxOccurs="unbounded"/>
-                        <!--                        <elementRef key="standOff" minOccurs="0" maxOccurs="unbounded"/>-->
                     </content>
                     <constraintSpec ident="StandOffNamespace" scheme="isoschematron" mode="add">
                         <constraint>
@@ -97,7 +99,6 @@
                         </constraint>
                     </constraintSpec>
                 </elementSpec>
-
 
                 <elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff">
                     <desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc>

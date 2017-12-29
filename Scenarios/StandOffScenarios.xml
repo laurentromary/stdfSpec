@@ -30,21 +30,45 @@
    </teiHeader>
    <text>
       <body>
-         <div>
+         <div xml:id="Introduction">
             <head>Introduction</head>
             <p>This document compiles various concrete use cases implementing the suggested <gi>standOff</gi> element in order to refine the possible constraints that may bear upon it and its
                sub-elements. It is based on the experience gained in various projects since the initial workshop that launched the definition of this element as well as on some ongoing activities that
-               are being pursued in several national projects in France and Germany (mong others), in internaitonal institutions (EPO) as well as in the content of several ISO projects (some of which
+               are being pursued in several national projects in France and Germany (mong others), in international institutions (EPO) as well as in the content of several ISO projects (some of which
                have already been published as standards).</p>
             <p>The major conclusions that can be drawn from these use cases are the following:</p>
             <list>
                <item>...</item>
             </list>
          </div>
-         <div>
-            <head>Aligning with the Open Annotation model</head>
+         <div xml:id="OverviewSO">
+            <head>Overview of the <gi>standOff</gi> proposal</head>
+            <note>This section should be conceived as text that would go in the guidelines</note>
+            <list>
+               <item></item>
+            </list>
+            <div>
+               <head>The <gi>standOff</gi> element</head>
+            </div>
+            <div>
+               <head>The <gi>listAnotation</gi> element</head>
+            </div>
+            <div>
+               <head>Updating the <gi>annotationBlock</gi> element</head>
+            </div>
          </div>
-         <div>
+         <div xml:id="OAModel">
+            <head>Aligning with the Open Annotation model</head>
+            <p>The <ref target="#WADM">Open Annotation</ref> data model articulates around three complementary components:</p>
+            <list>
+               <item>Target: that identifies one or several <mentioned>resources</mentioned> about which something is said </item>
+               <item>Body: that contains what is said about the resource</item>
+               <item>Annotation: that links one or several targets with 0-n bodies</item>
+            </list>
+            <p>This model, which decouples resources and what is said about them by means of the <mentioned>annotation</mentioned> component is highly flexible and powerful. It could be reflected in
+               the <gi>standOff</gi> construct as follows:</p>
+         </div>
+         <div xml:id="MAF">
             <head>Morphosyntactic annotation</head>
             <p><ref target="#ISO24611">ISO 24611 (MAF)</ref> contains a TEI based serialisation for morpho-syntactic annotations. The underlying model of ISO 24611 is based upon a two level model
                distinguishing between:</p>
@@ -152,16 +176,16 @@
                </entry>
             </egXML>
          </div>
-         <div>
+         <div xml:id="RAF">
             <head>Reference annotation</head>
          </div>
-         <div>
+         <div xml:id="Spoken">
             <head>Parallel annotation of spoken utterances</head>
          </div>
-         <div>
+         <div xml:id="IssuesHeader">
             <head>Issues related to the header on <gi>standOff</gi></head>
          </div>
-         <div>
+         <div xml:id="ContentModelAnnotationBlock">
             <head>Towards a content model for <gi>annotationBlock</gi></head>
          </div>
       </body>
@@ -169,7 +193,7 @@
          <div>
             <head>References</head>
             <listBibl type="references">
-               <bibl><title>Web Annotation Data Model</title>, W3C Recommendation 23 February 2017, <ptr target="https://www.w3.org/TR/2017/REC-annotation-model-20170223/"/></bibl>
+               <bibl xml:id="WADM"><title>Web Annotation Data Model</title>, W3C Recommendation 23 February 2017, <ptr target="https://www.w3.org/TR/2017/REC-annotation-model-20170223/"/></bibl>
                <bibl xml:id="ISO24611"><title>ISO 24611:2012 Language resource management -- Morpho-syntactic annotation framework (MAF)</title>, <ptr target="https://www.iso.org/standard/51934.html"
                   /></bibl>
             </listBibl>
