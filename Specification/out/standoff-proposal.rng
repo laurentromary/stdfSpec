@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2017-12-29T07:45:31Z. .
+Schema generated from ODD source 2017-12-30T07:45:37Z. .
 TEI Edition: Version 3.2.0. Last updated on
 	10th July 2017, revision 0fcf651
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.2.0/
@@ -134,7 +134,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.2.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e118334-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e118331-constraint">
          <rule context="tei:content">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">content descendants must be in the
               namespaces
@@ -162,7 +162,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.2.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e118661-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e118658-constraint">
          <rule context="tei:constraint">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://purl.oclc.org/dsdl/schematron', 'http://www.tei-c.org/ns/1.0'))]">constraint descendants must be in the
               namespaces
@@ -190,7 +190,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.2.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e119550-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e119547-constraint">
          <rule context="tei:datatype">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">datatype descendants must be in the
               namespaces
@@ -15136,9 +15136,20 @@ Suggested values include: 1] tempo; 2] loud; 3] pitch; 4] tension; 5] rhythm; 6]
    <define name="annotationBlock">
       <element name="annotationBlock">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups together various annotations, e.g. for parallel interpretations of a spoken segment. [8.4.6. Analytic Coding]</a:documentation>
-         <oneOrMore>
-            <ref name="model.annotation"/>
-         </oneOrMore>
+         <choice>
+            <oneOrMore>
+               <ref name="model.annotation"/>
+            </oneOrMore>
+            <group>
+               <zeroOrMore>
+                  <ref name="model.OABody"/>
+               </zeroOrMore>
+               <ref name="model.OAAnnotation"/>
+               <zeroOrMore>
+                  <ref name="model.OATarget"/>
+               </zeroOrMore>
+            </group>
+         </choice>
          <ref name="att.ascribed.attributes"/>
          <ref name="att.timed.attributes"/>
          <ref name="att.global.attributes"/>
@@ -19933,6 +19944,21 @@ Suggested values include: 1] schematron(ISO Schematron) ; 2] schematron(ISO Sche
          <ref name="annotationBlock"/>
          <ref name="zone"/>
          <ref name="listAnnotation"/>
+      </choice>
+   </define>
+   <define name="model.OATarget">
+      <choice>
+         <ref name="span"/>
+      </choice>
+   </define>
+   <define name="model.OABody">
+      <choice>
+         <ref name="note"/>
+      </choice>
+   </define>
+   <define name="model.OAAnnotation">
+      <choice>
+         <ref name="interp"/>
       </choice>
    </define>
    <start>

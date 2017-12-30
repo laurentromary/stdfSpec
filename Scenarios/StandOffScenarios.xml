@@ -11,10 +11,10 @@
                <persName>
                   <forename>Laurent</forename>
                   <surname>Romary</surname>
-                  <affiliation>
-                     <orgName>Inria</orgName>
-                  </affiliation>
                </persName>
+               <affiliation>
+                  <orgName>Inria</orgName>
+               </affiliation>
             </author>
          </titleStmt>
          <publicationStmt>
@@ -45,7 +45,7 @@
             <head>Overview of the <gi>standOff</gi> proposal</head>
             <note>This section should be conceived as text that would go in the guidelines</note>
             <list>
-               <item></item>
+               <item/>
             </list>
             <div>
                <head>The <gi>standOff</gi> element</head>
@@ -178,15 +178,46 @@
          </div>
          <div xml:id="RAF">
             <head>Reference annotation</head>
+            <p>Reference annotation consists in identifying refering expression in text or discourse and qualify the relation between them (e.g. anaphorical links) or with existing or putative
+               external entities (e.g. in the case of deixis).</p>
+            <p>The work carried out within the project <ptr target="ISO24617-9"/> distinguishes to this purpose two types of annotation entities between which various types of links can hold:</p>
+            <list>
+               <item>referring expressions</item>
+               <item>discourse entities</item>
+            </list>
          </div>
          <div xml:id="Spoken">
             <head>Parallel annotation of spoken utterances</head>
          </div>
          <div xml:id="IssuesHeader">
             <head>Issues related to the header on <gi>standOff</gi></head>
+            <note>Annotating annotators, annotation tools, source documents in the case of legacy annotations (from other formats)</note>
          </div>
          <div xml:id="ContentModelAnnotationBlock">
             <head>Towards a content model for <gi>annotationBlock</gi></head>
+            <note>Intro: focusing on <gi>annotationBlock</gi></note>
+            <p>In the case of an OA compliant model, the content model of <gi>annotationBlock</gi> shall be based upon three classes:</p>
+            <list>
+               <item><code>model.OATarget</code></item>
+               <item><code>model.OABody</code></item>
+               <item><code>model.OAAnnotation</code>: a mandatory clas reference for this annotation profile. The class should contain <gi>interp</gi> by default and one should be cautious in adding
+                  extra element to avoid ambiguous content models when the added element may also appear in the other classes.</item>
+            </list>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <content>
+                  <sequence>
+                     <classRef key="model.OABody" minOccurs="0" maxOccurs="unbounded"/>
+                     <classRef key="model.OAAnnotation" minOccurs="1" maxOccurs="1"/>
+                     <classRef key="model.OATarget" minOccurs="0" maxOccurs="unbounded"/>
+                  </sequence>
+               </content>
+            </egXML>
+            <p>In order to differentiate between the different encoding variants we have identified, the <gi>annotationBlock</gi> element must be associated to a <att>notation</att> attribute which
+               can take one of the following values:</p>
+            <list>
+               <item><code>inSitu</code>: non stand-off usage of annotation Block as documented in the <title>Transcriptions of speech</title> chapter.</item>
+               <item><code>OAModel</code>: Open Annotation compliant model (Target, Body, Annotation)</item>
+            </list>
          </div>
       </body>
       <back>
@@ -196,11 +227,15 @@
                <bibl xml:id="WADM"><title>Web Annotation Data Model</title>, W3C Recommendation 23 February 2017, <ptr target="https://www.w3.org/TR/2017/REC-annotation-model-20170223/"/></bibl>
                <bibl xml:id="ISO24611"><title>ISO 24611:2012 Language resource management -- Morpho-syntactic annotation framework (MAF)</title>, <ptr target="https://www.iso.org/standard/51934.html"
                   /></bibl>
+               <bibl xml:id="ISO24624"><time>ISO 24624:2016 Language resource management -- Transcription of spoken language</time>, <ptr target="https://www.iso.org/standard/37338.html"/></bibl>
+               <bibl xml:id="ISO24617-9"><time>ISO/AWI 24617-9 Language resource management -- Semantic annotation framework -- Part 9: Reference annotation framework (RAF)</time>, <ptr
+                     target="https://www.iso.org/standard/69658.html?browse=tc"/></bibl>
             </listBibl>
          </div>
          <div>
             <head>Issues</head>
             <p>Should not <att>resp</att> be made global?</p>
+            <p>Should we document the importance of typing <gi>span</gi> to indicate the granularity of the object that is being referred to?</p>
          </div>
       </back>
    </text>

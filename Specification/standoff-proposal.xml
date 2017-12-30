@@ -66,8 +66,8 @@
                 <moduleSpec ident="standOff">
                     <desc>Elements to allow stand-off annotations in a TEI document</desc>
                 </moduleSpec>
-                
-                
+
+
                 <!--  The entry point to stand-off annotations, as member of model.resourceLike-->
                 <elementSpec ident="standOff" mode="add" ns="http://standoff.proposal" module="standOff">
                     <desc>Container element for standoff annotations</desc>
@@ -119,13 +119,21 @@
                     </remarks>
                 </elementSpec>
 
+                <!-- The content model for <annotationBlock is revised to deal with the various anticipated annotation use cases -->
 
                 <elementSpec ident="annotationBlock" mode="change" module="spoken">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                     <content>
-                        <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
+                        <alternate>
+                            <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
+                            <sequence>
+                                <classRef key="model.OABody" minOccurs="0" maxOccurs="unbounded"/>
+                                <classRef key="model.OAAnnotation" minOccurs="1" maxOccurs="1"/>
+                                <classRef key="model.OATarget" minOccurs="0" maxOccurs="unbounded"/>
+                            </sequence>
+                        </alternate>
                     </content>
                     <remarks>
                         <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
@@ -136,6 +144,52 @@
                 <classSpec type="model" ident="model.annotation" mode="add" module="standOff">
                     <desc>groups together any kind of element that may be used to annotate an annotable segment</desc>
                 </classSpec>
+
+                <!-- The following classes are introduced to have an Open Annotation compliant profile for <annotationBlock> -->
+
+                <!-- Open Annotation: Target -->
+
+                <classSpec type="model" ident="model.OATarget" mode="add" module="standOff">
+                    <desc>Class implementing the Target component from the Open Annotation model</desc>
+                </classSpec>
+
+                <!-- <span> is the basic implementation of the OA model Target component -->
+
+                <elementSpec ident="span" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OATarget" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+
+                <!-- Open Annotation: Body -->
+
+                <classSpec type="model" ident="model.OABody" mode="add" module="standOff">
+                    <desc>Class implementing the Body component from the Open Annotation model</desc>
+                </classSpec>
+
+                <!-- Providing a simple default to the OA Bodt with <note> -->
+
+                <elementSpec ident="note" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OABody" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+                <!-- Open Annotation: Annotation -->
+
+                <classSpec type="model" ident="model.OAAnnotation" mode="add" module="standOff">
+                    <desc>Class implementing the Annotation component from the Open Annotation model</desc>
+                </classSpec>
+
+                <!-- <interp> is the basic implementation of the OA model Annotation component -->
+
+                <elementSpec ident="interp" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OAAnnotation" mode="add"/>
+                    </classes>
+                </elementSpec>
+
                 <!--       *****       -->
                 <!-- Following are existing TEI declarations where we add our new class(es) -->
 
