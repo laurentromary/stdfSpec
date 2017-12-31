@@ -33,9 +33,9 @@
          <div xml:id="Introduction">
             <head>Introduction</head>
             <p>This document compiles various concrete use cases implementing the suggested <gi>standOff</gi> element in order to refine the possible constraints that may bear upon it and its
-               sub-elements. It is based on the experience gained in various projects since the initial workshop that launched the definition of this element as well as on some ongoing activities that
-               are being pursued in several national projects in France and Germany (mong others), in international institutions (EPO) as well as in the content of several ISO projects (some of which
-               have already been published as standards).</p>
+               sub-elements. It is based on the experience gained in various projects since the initial workshop that took place in <date>...</date> and that launched the definition of this element as
+               well as on some ongoing activities that are being pursued in several national projects in France and Germany (among others), in international institutions (EPO) as well as in the
+               content of several ISO projects (some of which have already been published as standards).</p>
             <p>The major conclusions that can be drawn from these use cases are the following:</p>
             <list>
                <item>...</item>
@@ -44,29 +44,158 @@
          <div xml:id="OverviewSO">
             <head>Overview of the <gi>standOff</gi> proposal</head>
             <note>This section should be conceived as text that would go in the guidelines</note>
+            <p>This proposal implements embedded stand-off annotations, i.e. annotations to an existing document that have the following properties:</p>
             <list>
-               <item/>
+               <item>Annotations do not alter any part of the document itself, header nor content</item>
+               <item>There may be as many complementary and competing annotations attached to a given document as wanted</item>
+               <item>Annotations occur at a precidsely determined place in the TEI docuement organisation, namely as an addtional resource, child of <gi>TEI</gi> or <gi>teiCorpus</gi>
+                  <note place="margin">We need a scenario for such a usage</note></item>
+               <item>Annotations are conveyed with their specific meta-data</item>
             </list>
             <div>
                <head>The <gi>standOff</gi> element</head>
+               <p>The <gi>standOff</gi> element is the container of any group of coherent annotations attached to a TEI docuemnt. Its main charcateristics are:</p>
+               <list>
+                  <item>It is attached to the top level of a TEI document by being a membe rof <code>model.resourceLike</code></item>
+                  <item>Its content model resembles that of a TEI document by comprising a header (<gi>teiHeader</gi>), additional resources (<code>model.resourceLike</code>) and a content (one or
+                     several <gi>listAnnotation</gi> elements)</item>
+               </list>
             </div>
             <div>
-               <head>The <gi>listAnotation</gi> element</head>
+               <head>The <gi>listAnnotation</gi> element</head>
+               <p>The <gi>listAnnotation</gi> element is a general container allowing one to structure annotaiton in various subsection. In this respect, its role is analogous to the one played by
+                     <gi>div</gi> in a general TEI document. Still, <gi>div</gi> could not be taken up here in order to be able to keep to a very restrained content model.</p>
+               <p>As an iterative and recursive element, <gi>listAnnotation</gi> can be typed to indicate the organisational logic of the annotations.</p>
             </div>
             <div>
                <head>Updating the <gi>annotationBlock</gi> element</head>
             </div>
+            <div>
+               <head>Taking up existing annotations mechanisms from the TEI vocabulary</head>
+               <p>span, zone, interp, link, and corresponding attributes</p>
+            </div>
+            <div>
+               <head>Linking components</head>
+            </div>
+            
          </div>
          <div xml:id="OAModel">
             <head>Aligning with the Open Annotation model</head>
-            <p>The <ref target="#WADM">Open Annotation</ref> data model articulates around three complementary components:</p>
-            <list>
-               <item>Target: that identifies one or several <mentioned>resources</mentioned> about which something is said </item>
-               <item>Body: that contains what is said about the resource</item>
-               <item>Annotation: that links one or several targets with 0-n bodies</item>
-            </list>
-            <p>This model, which decouples resources and what is said about them by means of the <mentioned>annotation</mentioned> component is highly flexible and powerful. It could be reflected in
-               the <gi>standOff</gi> construct as follows:</p>
+            <div>
+               <head>Quick presentation of the Open Annotation model</head>
+               <p>The <ref target="#WADM">Open Annotation</ref> data model articulates around three complementary components:</p>
+               <list>
+                  <item>Target: that identifies one or several <mentioned>resources</mentioned> about which something is said </item>
+                  <item>Body: that contains what is said about the resource</item>
+                  <item>Annotation: that links one or several targets with 0-n bodies</item>
+               </list>
+               <p>This model, which decouples resources and what is said about them by means of the <mentioned>annotation</mentioned> component is highly flexible and powerful. It could be reflected
+                  in the <gi>standOff</gi> construct as follows:</p>
+               <p>It is suggested that the Open Annotation model could be implemented as follows:</p>
+               <list>
+                  <item><p>The <mentioned>Target</mentioned> component</p>
+                     <note place="inline">See the proposed implementation of <gi>annotationBlock</gi>: we suggest to introduce a class <code>model.OATarget</code></note>
+                  </item>
+                  <item>
+                     <p>The <mentioned>Body</mentioned> component can be implemented by means of a wide variety of elements depending on the various use cases that we describe here.</p>
+                     <note place="inline">See the proposed implementation of <gi>annotationBlock</gi>: we suggest to introduce a class <code>model.OABody</code></note>
+                  </item>
+                  <item><p>The <mentioned>Annotation</mentioned> component is implemented by means of the <gi>interp</gi> element complemented with the three following atributes:</p>
+                     <list>
+                        <item><att>type</att></item>
+                        <item><att>inst</att></item>
+                        <item><att>ana</att></item>
+                     </list>
+                     <p>Additional elements could probably be used here, but we should provide univocal guidance here, in order to avoid content model ambiguities and in general too much heterogeneous
+                        implementations of the OA model.</p>
+                     <note place="inline">See the proposed implementation of <gi>annotationBlock</gi>: we suggest to introduce a class <code>model.OAAnnotation</code></note></item>
+               </list>
+            </div>
+
+            <div>
+               <head>Simplest annotation with <gi>note</gi></head>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <annotationBlock>
+                     <note xml:id="n1"> This series of sentences .... </note>
+                     <interp ana="#n1" inst="#sp1"/>
+                     <span from="#s1" to="#s3" xml:id="sp1"/>
+                  </annotationBlock>
+               </egXML>
+            </div>
+            <div>
+               <head>Named entity recognition within the OA model</head>
+               <div>
+                  <head>Introduction</head>
+                  <p>Named entity recognition is a typical use case for stand-off annotation. It is usually based upon an automatic analysis process of a digital text which produces various hypotheses
+                     as to which entities (persons, events, organisations, dates, etc.) are actually mentionned. Given the variety of possible hypotheses, and the quantity of information that a NER
+                     module may produce, it does not make sense in putting the resulting annotation inline. Besides, there is a need to record some specific metadata related to the NER process such as
+                     the tool that has been used, the parameters given to the tool, etc.</p>
+                  <p>The idea here is to contribute to the definition of a standardised output interface for NER components or online services so that such annotations can actually be re-used,
+                     compared, visualised in a systematic way.</p>
+               </div>
+               <div>
+                  <head>General document organisation for NER</head>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <TEI>
+                        <teiHeader>
+                           <!-- The header of the main document being annotated -->
+                        </teiHeader>
+                        <standOff>
+                           <teiHeader>
+                              <!-- The header of the annotation part -->
+                           </teiHeader>
+                           <listAnnotation>
+                              <!-- The annotations -->
+                           </listAnnotation>
+                        </standOff>
+                        <text>
+                           <body>
+                              <p>
+                                 <!-- The text being annotated, possibly segmented (e.g. in <w>) -->
+                              </p>
+                           </body>
+                        </text>
+                     </TEI>
+                  </egXML>
+               </div>
+               <div>
+                  <head>Grouping NER annotations with <gi>listAnnotation</gi></head>
+                  <p>NER annotations are usually organised according to the type of recognised entities. This facilitates the further filtering of the output of a NER Process when a user only needs a
+                     specific type of entities. A typical output may thus be represented as follows:</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <standOff>
+                        <listAnnotation type="individuals"> ... </listAnnotation>
+                        <listAnnotation type="places">...</listAnnotation>
+                        <listAnnotation type="organizations">...</listAnnotation>
+                        <listAnnotation type="dateTimes"> </listAnnotation> ... </standOff>
+                  </egXML>
+               </div>
+               <div>
+                  <head>Elementary NER annotations</head>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <annotationBlock>
+                        <person xml:id="E2N1">
+                           <persName>Léo Hamon</persName>
+                        </person>
+                        <interp ana="#E2N1" inst="#d1e80"/>
+                        <span from="#E2T5" to="#E2T6" xml:id="d1e80"/>
+                     </annotationBlock>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <annotationBlock>
+                        <person xml:id="_6117323d2cabbc17d44c2b44587f682c">
+                           <persName type="rawName">John Smith</persName>
+                        </person>
+                        <interp ana="#_6117323d2cabbc17d44c2b44587f682c" inst="#_b02f28110aa52495b3ec386d171bc20f"/>
+                        <span from="#string-range(//p[@xml:id='_899607cd21ce83fb3a8e35652ace2479'],259,269)" xml:id="_b02f28110aa52495b3ec386d171bc20f"/>
+                     </annotationBlock>
+                  </egXML>
+               </div>
+               <div>
+                  <head>Dealing with additional issues</head>
+                  <note>We need to mention how we represent weighting and ranking</note>
+               </div>
+            </div>
          </div>
          <div xml:id="MAF">
             <head>Morphosyntactic annotation</head>
@@ -178,7 +307,7 @@
          </div>
          <div xml:id="RAF">
             <head>Reference annotation</head>
-            <p>Reference annotation consists in identifying refering expression in text or discourse and qualify the relation between them (e.g. anaphorical links) or with existing or putative
+            <p>Reference annotation consists in identifying referring expression in text or discourse and qualify the relation between them (e.g. anaphorical links) or with existing or putative
                external entities (e.g. in the case of deixis).</p>
             <p>The work carried out within the project <ptr target="ISO24617-9"/> distinguishes to this purpose two types of annotation entities between which various types of links can hold:</p>
             <list>
@@ -200,7 +329,7 @@
             <list>
                <item><code>model.OATarget</code></item>
                <item><code>model.OABody</code></item>
-               <item><code>model.OAAnnotation</code>: a mandatory clas reference for this annotation profile. The class should contain <gi>interp</gi> by default and one should be cautious in adding
+               <item><code>model.OAAnnotation</code>: a mandatory class reference for this annotation profile. The class should contain <gi>interp</gi> by default and one should be cautious in adding
                   extra element to avoid ambiguous content models when the added element may also appear in the other classes.</item>
             </list>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -212,8 +341,8 @@
                   </sequence>
                </content>
             </egXML>
-            <p>In order to differentiate between the different encoding variants we have identified, the <gi>annotationBlock</gi> element must be associated to a <att>notation</att> attribute which
-               can take one of the following values:</p>
+            <p>In order to differentiate between the different encoding variants we have identified, the <gi>annotationBlock</gi> element must be associated to a <att>notation</att> attribute <note
+                  place="inline">Could also be <att>mode</att></note> which can take one of the following values:</p>
             <list>
                <item><code>inSitu</code>: non stand-off usage of annotation Block as documented in the <title>Transcriptions of speech</title> chapter.</item>
                <item><code>OAModel</code>: Open Annotation compliant model (Target, Body, Annotation)</item>
@@ -236,6 +365,7 @@
             <head>Issues</head>
             <p>Should not <att>resp</att> be made global?</p>
             <p>Should we document the importance of typing <gi>span</gi> to indicate the granularity of the object that is being referred to?</p>
+            <p><gi>interp</gi> should also be typed, with inheritance mechanisms from <gi>annotationBlock</gi></p>
          </div>
       </back>
    </text>

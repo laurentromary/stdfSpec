@@ -11052,32 +11052,14 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONANU">3.5.3. Numbers and
 Measures</ref>
   </listRef>
-</elementSpec><elementSpec module="core" ident="measure">
-  <gloss versionDate="2009-01-06" xml:lang="fr">mesure</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en">contains a word or phrase referring to some quantity of an object or commodity, usually
-        comprising a number, a unit, and a commodity name.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">개체 또는 물체의 수량을 지시하는 단어 또는 구를 포함한다. 이들은 숫자, 단위, 물체명으로
-        구성되어 있다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含用來表示某物品數量的字詞，通常是由數字、單位和物品名稱所組成。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">ある対象や商品の大きさを表す語句を示す．一般には，数値，単位，商品名 を含む．</desc>
-  <desc versionDate="2009-01-06" xml:lang="fr">contient un mot ou une expression faisant référence à
+</elementSpec><elementSpec rend="change" module="core" ident="measure"><gloss versionDate="2009-01-06" xml:lang="fr">mesure</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a word or phrase referring to some quantity of an object or commodity, usually
+        comprising a number, a unit, and a commodity name.</desc><desc versionDate="2007-12-20" xml:lang="ko">개체 또는 물체의 수량을 지시하는 단어 또는 구를 포함한다. 이들은 숫자, 단위, 물체명으로
+        구성되어 있다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含用來表示某物品數量的字詞，通常是由數字、單位和物品名稱所組成。</desc><desc versionDate="2008-04-05" xml:lang="ja">ある対象や商品の大きさを表す語句を示す．一般には，数値，単位，商品名 を含む．</desc><desc versionDate="2009-01-06" xml:lang="fr">contient un mot ou une expression faisant référence à
         la quantité d'un objet ou d'un produit, comprenant en général un nombre, une unité et le nom
-        d'un produit.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene una palabra o sintagma referido a alguna
+        d'un produit.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una palabra o sintagma referido a alguna
         cantidad de un objeto o producto, normalmente incluye un número, una unidad y un nombre de
-        producto.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene una parola o sintagma che fa riferimento alla
-        quantità di un oggetto o bene, contenente di solito il numero, l'unità e il nome del bene.</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.measureLike"/>
-    <memberOf key="att.measurement"/>
-  </classes>
-  <content>
-    <macroRef key="macro.phraseSeq"/>
-  </content>
-  <attList>
-    <attDef ident="type" usage="opt">
+        producto.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una parola o sintagma che fa riferimento alla
+        quantità di un oggetto o bene, contenente di solito il numero, l'unità e il nome del bene.</desc><classes><memberOf key="model.OABody"/><memberOf key="att.global"/><memberOf key="model.measureLike"/><memberOf key="att.measurement"/></classes><content><macroRef key="macro.phraseSeq"/></content><attList><attDef ident="type" usage="opt">
       <desc versionDate="2005-11-18" xml:lang="en">specifies the type of measurement in any convenient typology.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">편리한 방식으로 측정 유형을 명시한다.</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">用任何適合的分類方法來說明度量的種類。</desc>
@@ -11089,55 +11071,46 @@ Measures</ref>
       <desc versionDate="2007-01-21" xml:lang="it">specifica il tipo di misurazione in una
                 tipologia funzionale.</desc>
       <datatype><dataRef key="teidata.enumerated"/></datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
+    </attDef></attList><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <measure type="weight"><num>2</num> pounds of flesh</measure>
       <measure type="currency">£10-11-6d</measure>
       <measure type="area">2 merks of old extent</measure>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <measure type="weight"><num>2</num> kilos de sucre</measure>
       <measure type="currency">16,99 € </measure>
       <measure type="area">5 hectares</measure>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <measure quantity="1" unit="liquide" commodity="vin">un hectolitre de vin</measure>
       <measure quantity="12" unit="nombre" commodity="rose">1 douzaine de roses</measure>
       <measure quantity="1" unit="liquide" commodity="moule"> un litre de moules </measure>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <measure type="weight"><num>1</num>市斤豬肉</measure>
       <measure type="currency">人民幣20元</measure>
       <measure type="area">一個巴掌大小</measure>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <measure quantity="16" unit="weight" commodity="vegetable">一台斤青菜</measure>
       <measure quantity="12" unit="count" commodity="roses">一打玫瑰</measure>
       <measure quantity="1" unit="count" commodity="tulips">一朵黃色鬱金香</measure>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
+  </exemplum><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <measure quantity="40" unit="hogshead" commodity="rum">2 score hh rum</measure>
       <measure quantity="12" unit="count" commodity="roses">1 doz. roses</measure>
       <measure quantity="1" unit="count" commodity="tulips">a yellow tulip</measure>
     </egXML>
-  </exemplum>
-  <listRef>
+  </exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONANU">3.5.3. Numbers and
 Measures</ref>
-  </listRef>
-</elementSpec><elementSpec module="core" ident="measureGrp">
+  </listRef></elementSpec><elementSpec module="core" ident="measureGrp">
   <gloss versionDate="2007-07-04" xml:lang="en">measure group</gloss>
   <gloss versionDate="2007-12-20" xml:lang="ko">측정 그룹</gloss>
   <gloss versionDate="2008-04-06" xml:lang="es">grupo de medida</gloss>
@@ -11225,56 +11198,22 @@ Measures</ref>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#msdim">10.3.4. Dimensions</ref>
   </listRef>
-</elementSpec><elementSpec module="core" ident="date">
-  <gloss versionDate="2009-01-06" xml:lang="fr">date</gloss>
-  <gloss versionDate="2016-11-25" xml:lang="de">Datum</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en">contains a date in any format.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">다양한 형식의 날짜를 포함한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含任何格式的日期表示。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">日付を示す．</desc>
-  <desc versionDate="2009-01-06" xml:lang="fr">contient une date exprimée dans n'importe quel format.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene una fecha en cualquier formato.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene una data in qualsiasi foemato</desc>
-  <desc versionDate="2016-11-25" xml:lang="de">enthält ein Datum in beliebigem Format.</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.dateLike"/>
-    <memberOf key="model.publicationStmtPart.detail"/>
-    <memberOf key="att.datable"/>
-    <memberOf key="att.duration"/>
-    <memberOf key="att.editLike"/>
-    <memberOf key="att.typed"/>
-  </classes>
-  <content>
-    
-      <alternate minOccurs="0" maxOccurs="unbounded">
-        <textNode/>
-        <classRef key="model.gLike"/>
-        <classRef key="model.phrase"/>
-        <classRef key="model.global"/>
-      </alternate>
-    
-  </content>
-  
-  <exemplum xml:lang="en">
+</elementSpec><elementSpec rend="change" module="core" ident="date"><gloss versionDate="2009-01-06" xml:lang="fr">date</gloss><gloss versionDate="2016-11-25" xml:lang="de">Datum</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a date in any format.</desc><desc versionDate="2007-12-20" xml:lang="ko">다양한 형식의 날짜를 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含任何格式的日期表示。</desc><desc versionDate="2008-04-05" xml:lang="ja">日付を示す．</desc><desc versionDate="2009-01-06" xml:lang="fr">contient une date exprimée dans n'importe quel format.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una fecha en cualquier formato.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una data in qualsiasi foemato</desc><desc versionDate="2016-11-25" xml:lang="de">enthält ein Datum in beliebigem Format.</desc><classes><memberOf key="model.OABody"/><memberOf key="att.global"/><memberOf key="model.dateLike"/><memberOf key="model.publicationStmtPart.detail"/><memberOf key="att.datable"/><memberOf key="att.duration"/><memberOf key="att.editLike"/><memberOf key="att.typed"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><textNode/><classRef key="model.gLike"/><classRef key="model.phrase"/><classRef key="model.global"/></alternate></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <date when="1980-02">early February 1980</date>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <date when="1980-02">au début de février 1980</date>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Pascal_Pensees">
       <date when="1654-11-23">L'an de grâce 1654,<lb/> Lundi, 23 novembre, jour de saint Clément,
           pape et martyr et autres au martyrologe, <lb/>Veille de saint Chrysogone, martyr, et
           autres, <lb/> Depuis environ dix heures et demie du soir jusques environ minuit et
         demi.</date>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <date when="1990-09">septembre
                 mcmxc</date>
@@ -11282,43 +11221,35 @@ Measures</ref>
       <date when="2001-09-11T12:48:00">11
                 septembre, neuf heures moins douze GMT</date>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples"> 他出生於<date calendar="#gregorian">西元2007年12月24日</date> (<date calendar="#chinese" when="2007-12-24"> 丁亥年11月15日</date>).</egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <date when="1980-02">西元1980年2月初</date>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples"><date when="0637-11">貞觀十一年十一月</date>，唐太宗聽說年輕的武則天長得妖媚嬌艷，楚楚動人，便將她納入宮中，封為四品才人，賜號「武媚」。</egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <date when="1990-09">西元1990年9月</date>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
+  </exemplum><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">Given on the <date when="1977-06-12">Twelfth Day
         of June in the Year of Our Lord One Thousand Nine Hundred and Seventy-seven of the Republic
         the Two Hundredth and first and of the University the Eighty-Sixth.</date>
       </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
+  </exemplum><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <date when="1990-09">September 1990</date>
     </egXML>
-  </exemplum>
-  <listRef>
+  </exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONADA">3.5.4. Dates and Times</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD24">2.2.4. Publication, Distribution, Licensing, etc.</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD6">2.6. The Revision Description</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOI">3.11.2.4. Imprint, Size of a Document, and Reprint Information</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCAHSE">15.2.3. The Setting Description</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDDATE">13.3.6. Dates and Times</ref>
-  </listRef>
-</elementSpec><elementSpec module="core" ident="time">
+  </listRef></elementSpec><elementSpec module="core" ident="time">
   <gloss versionDate="2009-01-06" xml:lang="fr">temps</gloss>
   <gloss versionDate="2016-11-25" xml:lang="de">Zeit</gloss>
   <desc versionDate="2006-03-20" xml:lang="en">contains a phrase defining a time of day in any format.</desc>
@@ -45341,40 +45272,11 @@ specification.</p></remarks>
     
     
   </listRef>
-</elementSpec><elementSpec module="namesdates" ident="person">
-  <gloss versionDate="2008-12-09" xml:lang="fr">personne</gloss>
-  <desc versionDate="2005-12-14" xml:lang="en">provides information about an identifiable individual, for example a participant in a language interaction, or a person referred to in a
-        historical source.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">예를 들어 언어 상호작용의 참여자 또는 역사적 문헌에서 언급된 사람과 같이 식별가능한 개인에 관한 정보를 제공한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">提供一個已知人物的相關資料，例如語言互動中的參與者、或是歷史來源中提及的人物。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">特定可能な個人の情報を示す．例えば，言語交流の参加者，歴史資料中で参 照される人物など．</desc>
-  <desc versionDate="2009-03-19" xml:lang="fr">fournit des informations sur un individu identifiable, par exemple un participant à une interaction
-        linguistique, ou une personne citée dans une source historique.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">proporciona información relativa a un individuo específico, p.ej. un participante de una interacción
-        verbal o una persona identificada por una fuente histórica.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">fornisce informazioni relative a un soggetto specifico, come i partecipanti a un'interazione verbale o le
-        persone identificate da una fonte storica</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="att.editLike"/>
-    <memberOf key="model.personLike"/>
-    <memberOf key="att.sortable"/>
-  </classes>
-  <content>
-    <alternate>
-      
-        <classRef key="model.pLike" minOccurs="1" maxOccurs="unbounded"/>
-      
-      
-        <alternate minOccurs="0" maxOccurs="unbounded">
-          <classRef key="model.personPart"/>
-          <classRef key="model.global"/>
-        </alternate>
-      
-    </alternate>
-  </content>
-  <attList>
-    <attDef ident="role" usage="opt">
+</elementSpec><elementSpec rend="change" module="namesdates" ident="person"><gloss versionDate="2008-12-09" xml:lang="fr">personne</gloss><desc versionDate="2005-12-14" xml:lang="en">provides information about an identifiable individual, for example a participant in a language interaction, or a person referred to in a
+        historical source.</desc><desc versionDate="2007-12-20" xml:lang="ko">예를 들어 언어 상호작용의 참여자 또는 역사적 문헌에서 언급된 사람과 같이 식별가능한 개인에 관한 정보를 제공한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">提供一個已知人物的相關資料，例如語言互動中的參與者、或是歷史來源中提及的人物。</desc><desc versionDate="2008-04-05" xml:lang="ja">特定可能な個人の情報を示す．例えば，言語交流の参加者，歴史資料中で参 照される人物など．</desc><desc versionDate="2009-03-19" xml:lang="fr">fournit des informations sur un individu identifiable, par exemple un participant à une interaction
+        linguistique, ou une personne citée dans une source historique.</desc><desc versionDate="2007-05-04" xml:lang="es">proporciona información relativa a un individuo específico, p.ej. un participante de una interacción
+        verbal o una persona identificada por una fuente histórica.</desc><desc versionDate="2007-01-21" xml:lang="it">fornisce informazioni relative a un soggetto specifico, come i partecipanti a un'interazione verbale o le
+        persone identificate da una fonte storica</desc><classes><memberOf key="model.OABody"/><memberOf key="att.global"/><memberOf key="att.editLike"/><memberOf key="model.personLike"/><memberOf key="att.sortable"/></classes><content><alternate minOccurs="1" maxOccurs="1"><classRef key="model.pLike" minOccurs="1" maxOccurs="unbounded"/><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.personPart"/><classRef key="model.global"/></alternate></alternate></content><attList><attDef ident="role" usage="opt">
       <desc versionDate="2005-12-14" xml:lang="en">specifies a primary role or classification for the person.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">사람에 대한 주요 역할 또는 분류를 명시한다.</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">說明該人物的主要角色或分類。</desc>
@@ -45391,8 +45293,7 @@ specification.</p></remarks>
 	definition. Such local definitions will typically be provided by a
 	<gi>valList</gi> element in the project schema
 specification.</p></remarks>
-    </attDef>
-    <attDef ident="sex" usage="opt">
+    </attDef><attDef ident="sex" usage="opt">
       <desc versionDate="2005-12-14" xml:lang="en">specifies the sex of the person.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">사람의 성을 명시한다.</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">指出該人物的性別。</desc>
@@ -45412,8 +45313,7 @@ specification.</p></remarks>
           cf. CETH's <title>Recommendations for Inclusive Data Collection of Trans People</title>
                <ptr target="http://transhealth.ucsf.edu/trans?page=lib-data-collection"/>.</p>
       </remarks>
-    </attDef>
-    <attDef ident="age" usage="opt">
+    </attDef><attDef ident="age" usage="opt">
       <desc versionDate="2005-12-14" xml:lang="en">specifies an age group for the person.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">사람의 연령군을 명시한다.</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">指出該人物所屬的年齡層。</desc>
@@ -45430,25 +45330,21 @@ specification.</p></remarks>
 	definition. Such local definitions will typically be provided by a
 	<gi>valList</gi> element in the project schema
 specification.</p></remarks>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
+    </attDef></attList><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <person sex="F" age="adult">
         <p>Female respondent, well-educated, born in Shropshire UK, 12 Jan 1950, of unknown occupation. Speaks French fluently. Socio-Economic
           status B2.</p>
       </person>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
+  </exemplum><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <person sex="intersex" role="god" age="immortal">
         <persName>Hermaphroditos</persName>
         <persName xml:lang="grc">Ἑρμαφρόδιτος</persName>
       </person>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <person sex="2" age="adult">
         <p>Personne interrogée, de sexe féminin, instruite, née à Shropshire, au ROYAUME-UNI le 12
@@ -45456,8 +45352,7 @@ specification.</p></remarks>
             socio-économique B2.</p>
       </person>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <person xml:id="fr_Ovi01" sex="1" role="poet">
         <persName xml:lang="en">Ovid</persName>
@@ -45468,15 +45363,13 @@ specification.</p></remarks>
             </death>
       </person>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <person sex="2" age="adult">
         <p>女性被告。1950年1月12日生於西藏，受過良好教育，職業不明。能說流利漢語，中產階級。</p>
       </person>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <person xml:id="zh-tw_Ovi01" sex="1" role="poet">
         <persName xml:lang="en">Ovid</persName>
@@ -45487,8 +45380,7 @@ specification.</p></remarks>
             </death>
       </person>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
+  </exemplum><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <person xml:id="Ovi01" sex="1" role="poet">
         <persName xml:lang="en">Ovid</persName>
@@ -45499,23 +45391,18 @@ specification.</p></remarks>
             </death>
       </person>
     </egXML>
-  </exemplum>
-  <remarks versionDate="2005-12-14" xml:lang="en">
+  </exemplum><remarks versionDate="2005-12-14" xml:lang="en">
     <p rend="dataDesc">May contain either a prose description organized as paragraphs, or a sequence of more specific demographic elements drawn
             from the <ident type="class">model.personPart</ident> class.</p>
-  </remarks>
-  <remarks versionDate="2008-12-09" xml:lang="fr">
+  </remarks><remarks versionDate="2008-12-09" xml:lang="fr">
     <p rend="dataDesc">Peut contenir soit une description en prose organisée en paragraphes, soit une suite d'éléments spécifiques relatifs à la
             démographie extraits de la classe <ident type="class">model.personPart</ident>.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
+  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
     <p rend="dataDesc"> 段落による散文の解説，またはクラス <ident type="class">model.personPart</ident>にある一連の人口統計要 素を含むかもしれない． </p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSE">13.3.2. The Person Element</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCAHPA">15.2.2. The Participant Description</ref>
-  </listRef>
-</elementSpec><elementSpec module="namesdates" ident="persona">
+  </listRef></elementSpec><elementSpec module="namesdates" ident="persona">
   <desc versionDate="2016-02-16" xml:lang="en">provides information about one of the personalities identified for a given individual, where
     an individual has multiple personalities.</desc>
    <classes>
@@ -45747,58 +45634,7 @@ specification.</p></remarks>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCAHPA">15.2.2. The Participant Description</ref>
   </listRef>
-</elementSpec><elementSpec ident="place" module="namesdates">
-  <gloss versionDate="2008-12-09" xml:lang="fr">lieu</gloss>
-  <desc versionDate="2007-06-14" xml:lang="en">contains data about a geographic location</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">지리적 위치에 관한 데이터를 포함한다.</desc>
-  <desc versionDate="2008-04-06" xml:lang="es">contiene los datos sobre una localización geográfica</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">地理上の場所のデータを示す．</desc>
-  <desc versionDate="2008-12-09" xml:lang="fr">contient des informations sur un lieu géographique.</desc>
-  <desc versionDate="2007-11-06" xml:lang="it">contiene informazioni relative a un luogo geografico</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="att.editLike"/>
-    <memberOf key="att.sortable"/>
-    <memberOf key="model.placeLike"/>
-  </classes>
-  <content>
-    <sequence>
-      
-        <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
-      
-      <alternate>
-        
-          
-            <classRef key="model.pLike" minOccurs="0" maxOccurs="unbounded"/>
-          
-        
-        
-          <alternate minOccurs="0" maxOccurs="unbounded">
-            <classRef key="model.labelLike"/>
-            <classRef key="model.placeStateLike"/>
-            <classRef key="model.eventLike"/>
-          </alternate>
-        
-      </alternate>
-      
-        <alternate minOccurs="0" maxOccurs="unbounded">
-          <classRef key="model.noteLike"/>
-          <classRef key="model.biblLike"/>
-          <elementRef key="idno"/>
-          <elementRef key="linkGrp"/>
-          <elementRef key="link"/>
-        </alternate>
-      
-      
-        <alternate minOccurs="0" maxOccurs="unbounded">
-          <classRef key="model.placeLike"/>
-          <elementRef key="listPlace"/>
-        </alternate>
-      
-    </sequence>
-  </content>
-  <exemplum xml:lang="en">
+</elementSpec><elementSpec rend="change" ident="place" module="namesdates"><gloss versionDate="2008-12-09" xml:lang="fr">lieu</gloss><desc versionDate="2007-06-14" xml:lang="en">contains data about a geographic location</desc><desc versionDate="2007-12-20" xml:lang="ko">지리적 위치에 관한 데이터를 포함한다.</desc><desc versionDate="2008-04-06" xml:lang="es">contiene los datos sobre una localización geográfica</desc><desc versionDate="2008-04-05" xml:lang="ja">地理上の場所のデータを示す．</desc><desc versionDate="2008-12-09" xml:lang="fr">contient des informations sur un lieu géographique.</desc><desc versionDate="2007-11-06" xml:lang="it">contiene informazioni relative a un luogo geografico</desc><classes><memberOf key="model.OABody"/><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="att.editLike"/><memberOf key="att.sortable"/><memberOf key="model.placeLike"/></classes><content><sequence minOccurs="1" maxOccurs="1"><classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/><alternate minOccurs="1" maxOccurs="1"><classRef key="model.pLike" minOccurs="0" maxOccurs="unbounded"/><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.labelLike"/><classRef key="model.placeStateLike"/><classRef key="model.eventLike"/></alternate></alternate><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.noteLike"/><classRef key="model.biblLike"/><elementRef key="idno"/><elementRef key="linkGrp"/><elementRef key="link"/></alternate><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.placeLike"/><elementRef key="listPlace"/></alternate></sequence></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <place>
         <country>Lithuania</country>
@@ -45811,11 +45647,9 @@ specification.</p></remarks>
         </place>
       </place>
     </egXML>
-  </exemplum>
-  <listRef>
+  </exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDGEOG">13.3.4. Places</ref>
-  </listRef>
-</elementSpec><elementSpec ident="population" module="namesdates">
+  </listRef></elementSpec><elementSpec ident="population" module="namesdates">
   <gloss versionDate="2008-12-09" xml:lang="fr">population</gloss>
   <desc versionDate="2007-10-18" xml:lang="en">contains information about the population of a place.</desc>
   <desc versionDate="2009-01-05" xml:lang="fr">contient des informations sur la population d'un lieu.</desc>

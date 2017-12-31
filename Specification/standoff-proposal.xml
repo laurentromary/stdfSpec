@@ -161,16 +161,47 @@
                     </classes>
                 </elementSpec>
 
-
                 <!-- Open Annotation: Body -->
 
                 <classSpec type="model" ident="model.OABody" mode="add" module="standOff">
                     <desc>Class implementing the Body component from the Open Annotation model</desc>
                 </classSpec>
 
-                <!-- Providing a simple default to the OA Bodt with <note> -->
+                <!-- Providing a simple default to the OA Body with <note> -->
 
                 <elementSpec ident="note" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OABody" mode="add"/>
+                    </classes>
+                </elementSpec>
+                
+                <!-- Adding <person>, <measure>, <date>... to OA Body for the Named Entity use case -->
+                
+                <elementSpec ident="person" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OABody" mode="add"/>
+                    </classes>
+                </elementSpec>
+                
+                <elementSpec ident="measure" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OABody" mode="add"/>
+                    </classes>
+                </elementSpec>
+                
+                <elementSpec ident="date" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OABody" mode="add"/>
+                    </classes>
+                </elementSpec>
+                
+                <elementSpec ident="place" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OABody" mode="add"/>
+                    </classes>
+                </elementSpec>
+                
+                <elementSpec ident="org" mode="change">
                     <classes mode="change">
                         <memberOf key="model.OABody" mode="add"/>
                     </classes>
