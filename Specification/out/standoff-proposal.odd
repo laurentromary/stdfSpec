@@ -45036,65 +45036,11 @@ raiders and saved the town from capture.</desc>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCAHPA">15.2.2. The Participant Description</ref>
   </listRef>
-</elementSpec><elementSpec module="namesdates" ident="org">
-  <gloss versionDate="2007-07-04" xml:lang="en">organization</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">조직</gloss>
-  <gloss versionDate="2008-04-06" xml:lang="es">organización</gloss>
-  <gloss versionDate="2008-12-09" xml:lang="fr">organisation</gloss>
-  <gloss versionDate="2007-11-06" xml:lang="it">organizzazione</gloss>
-  <desc versionDate="2007-06-14" xml:lang="en">provides information about an identifiable organization such as a business, a tribe, or
-        any other grouping of people.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">업무, 종족, 또는 사람들의 다른 종류의 그룹과 같은 식별 가능한 조직에 대한 정보를 제공한다.</desc>
-  <desc versionDate="2008-04-06" xml:lang="es">proporciona a la información sobre una organización
-        identificable tal como un negocio, una tribu, o cualquier otro grupo de personas.</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">特定可能な団体の情報を示す．例えば，会社，集団など，人の集まり．</desc>
-  <desc versionDate="2008-12-09" xml:lang="fr">fournit des informations sur une organisation
-        identifiable, telle qu'une entreprise, une tribu ou tout autre groupement de personnes.</desc>
-  <desc versionDate="2007-11-06" xml:lang="it">fornisce informazioni relative a un'organizzazione
-        identificate come società, tribù, o qualsiasi altro raggruppamento di persone</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="att.editLike"/>
-    <memberOf key="model.personLike"/>
-    <memberOf key="att.sortable"/>
-  </classes>
-  <content>
-    <sequence>
-      
-        <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
-      
-      <alternate>
-        
-          
-            <classRef key="model.pLike" minOccurs="0" maxOccurs="unbounded"/>
-          
-        
-        
-          <alternate minOccurs="0" maxOccurs="unbounded">
-            <classRef key="model.labelLike"/>
-            <classRef key="model.nameLike"/>
-            <classRef key="model.placeLike"/>
-            <classRef key="model.orgPart"/>
-	    <classRef key="model.milestoneLike"/>
-          </alternate>
-        
-      </alternate>
-      
-        <alternate minOccurs="0" maxOccurs="unbounded">
-          <classRef key="model.noteLike"/>
-          <classRef key="model.biblLike"/>
-          <elementRef key="linkGrp"/>
-          <elementRef key="link"/>
-        </alternate>
-      
-      
-        <classRef key="model.personLike" minOccurs="0" maxOccurs="unbounded"/>
-      
-    </sequence>
-  </content>
-  <attList>
-    <attDef ident="role" usage="opt">
+</elementSpec><elementSpec rend="change" module="namesdates" ident="org"><gloss versionDate="2007-07-04" xml:lang="en">organization</gloss><gloss versionDate="2007-12-20" xml:lang="ko">조직</gloss><gloss versionDate="2008-04-06" xml:lang="es">organización</gloss><gloss versionDate="2008-12-09" xml:lang="fr">organisation</gloss><gloss versionDate="2007-11-06" xml:lang="it">organizzazione</gloss><desc versionDate="2007-06-14" xml:lang="en">provides information about an identifiable organization such as a business, a tribe, or
+        any other grouping of people.</desc><desc versionDate="2007-12-20" xml:lang="ko">업무, 종족, 또는 사람들의 다른 종류의 그룹과 같은 식별 가능한 조직에 대한 정보를 제공한다.</desc><desc versionDate="2008-04-06" xml:lang="es">proporciona a la información sobre una organización
+        identificable tal como un negocio, una tribu, o cualquier otro grupo de personas.</desc><desc versionDate="2008-04-05" xml:lang="ja">特定可能な団体の情報を示す．例えば，会社，集団など，人の集まり．</desc><desc versionDate="2008-12-09" xml:lang="fr">fournit des informations sur une organisation
+        identifiable, telle qu'une entreprise, une tribu ou tout autre groupement de personnes.</desc><desc versionDate="2007-11-06" xml:lang="it">fornisce informazioni relative a un'organizzazione
+        identificate come società, tribù, o qualsiasi altro raggruppamento di persone</desc><classes><memberOf key="model.OABody"/><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="att.editLike"/><memberOf key="model.personLike"/><memberOf key="att.sortable"/></classes><content><sequence minOccurs="1" maxOccurs="1"><classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/><alternate minOccurs="1" maxOccurs="1"><classRef key="model.pLike" minOccurs="0" maxOccurs="unbounded"/><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.labelLike"/><classRef key="model.nameLike"/><classRef key="model.placeLike"/><classRef key="model.orgPart"/><classRef key="model.milestoneLike"/></alternate></alternate><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.noteLike"/><classRef key="model.biblLike"/><elementRef key="linkGrp"/><elementRef key="link"/></alternate><classRef key="model.personLike" minOccurs="0" maxOccurs="unbounded"/></sequence></content><attList><attDef ident="role" usage="opt">
       <desc versionDate="2007-06-14" xml:lang="en">specifies a primary role or classification for the organization.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">조직에 대한 주요 역할 또는 분류를 명시한다.</desc>
       <desc versionDate="2008-04-05" xml:lang="ja">当該組織の，第一位の役割または分類を示す．</desc>
@@ -45114,9 +45060,7 @@ raiders and saved the town from capture.</desc>
 	<gi>valList</gi> element in the project schema
 specification.</p></remarks>
 
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
+    </attDef></attList><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <org xml:id="JAMs">
         <orgName>Justified Ancients of Mummu</orgName>
@@ -45131,11 +45075,9 @@ specification.</p></remarks>
         </bibl>
       </org>
     </egXML>
-  </exemplum>
-  <listRef>
+  </exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDORG">13.2.2. Organizational Names</ref>
-  </listRef>
-</elementSpec><elementSpec module="namesdates" ident="listRelation">
+  </listRef></elementSpec><elementSpec module="namesdates" ident="listRelation">
   <desc versionDate="2009-01-05" xml:lang="fr">donne des informations sur les relations qui existent
     entre des personnes, des lieux, ou des organisations, soit de manière informelle en prose, soit
     de manière formelle.</desc>
@@ -49405,7 +49347,7 @@ very loudly.</p>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSSASH">8.3.6. Shifts</ref>
   </listRef>
 </elementSpec><elementSpec rend="change" ident="annotationBlock" module="spoken"><desc xml:lang="en" versionDate="2016-02-27">groups together various annotations, e.g.
-        for parallel interpretations of a spoken segment.</desc><classes><memberOf key="model.annotation"/><memberOf key="model.divPart.spoken"/><memberOf key="att.ascribed"/><memberOf key="att.timed"/><memberOf key="att.global"/></classes><content><alternate minOccurs="1" maxOccurs="1"><classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/><sequence minOccurs="1" maxOccurs="1"><classRef key="model.OABody" minOccurs="0" maxOccurs="unbounded"/><classRef key="model.OAAnnotation" minOccurs="1" maxOccurs="1"/><classRef key="model.OATarget" minOccurs="0" maxOccurs="unbounded"/></sequence></alternate></content><attList/><exemplum xml:lang="en">
+        for parallel interpretations of a spoken segment.</desc><classes><memberOf key="model.annotation"/><memberOf key="att.notated"/><memberOf key="model.divPart.spoken"/><memberOf key="att.ascribed"/><memberOf key="att.timed"/><memberOf key="att.global"/></classes><content><alternate minOccurs="1" maxOccurs="1"><classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/><sequence minOccurs="1" maxOccurs="1"><classRef key="model.OABody" minOccurs="0" maxOccurs="unbounded"/><classRef key="model.OAAnnotation" minOccurs="1" maxOccurs="1"/><classRef key="model.OATarget" minOccurs="0" maxOccurs="unbounded"/></sequence></alternate></content><attList/><exemplum xml:lang="en">
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <annotationBlock who="#SPK1" start="#T2" end="#T3" xml:id="ag20">
                 <u xml:id="u20">
@@ -63066,15 +63008,17 @@ an attribute may take, additional to the information carried by the
   </listRef>
 </elementSpec><moduleSpec ident="standOff">
                     <desc>Elements to allow stand-off annotations in a TEI document</desc>
-                </moduleSpec><elementSpec rend="add" ident="standOff" mode="add" ns="http://standoff.proposal" module="standOff"><desc>Container element for standoff annotations</desc><classes>
-                        <memberOf key="model.resourceLike" mode="add"/>
-                        <memberOf key="att.global" mode="add"/>
-                        <memberOf key="att.datcat" mode="add"/>
-                        <memberOf key="att.ascribed" mode="add"/>
-                        <memberOf key="att.datable.w3c" mode="add"/>
+                </moduleSpec><elementSpec rend="add" ident="standOff" mode="add" ns="http://standoff.proposal" module="standOff"><desc>Container element for stand-off annotations embedded in a TEI document</desc><classes>
+                        <memberOf key="model.resourceLike"/>
                         
-                        <memberOf key="att.pointing" mode="add"/>
-                        <memberOf key="att.typed" mode="add"/>
+                        <memberOf key="att.global"/>
+                        <memberOf key="att.datcat"/>
+                        <memberOf key="att.ascribed"/>
+                        <memberOf key="att.datable.w3c"/>
+                        
+                        <memberOf key="att.pointing"/>
+                        <memberOf key="att.typed"/>
+                        <memberOf key="att.notated"/>   
                     </classes><content>
                         <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
                         
@@ -63096,6 +63040,7 @@ an attribute may take, additional to the information carried by the
                         <memberOf key="att.ascribed"/>
                         <memberOf key="att.typed"/>
                         <memberOf key="att.declaring"/>
+                        <memberOf key="att.notated"/>   
                     </classes><content>
                         <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
                     </content><remarks>

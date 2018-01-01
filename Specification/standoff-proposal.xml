@@ -70,16 +70,15 @@
 
                 <!--  The entry point to stand-off annotations, as member of model.resourceLike-->
                 <elementSpec ident="standOff" mode="add" ns="http://standoff.proposal" module="standOff">
-                    <desc>Container element for standoff annotations</desc>
+                    <desc>Container element for stand-off annotations embedded in a TEI document</desc>
                     <classes>
-                        <memberOf key="model.resourceLike" mode="add"/>
-                        <memberOf key="att.global" mode="add"/>
-                        <memberOf key="att.datcat" mode="add"/>
-                        <memberOf key="att.ascribed" mode="add"/>
-                        <memberOf key="att.datable.w3c" mode="add"/>
-                        <memberOf key="att.responsibility" mode="add"/>
-                        <memberOf key="att.pointing" mode="add"/>
-                        <memberOf key="att.typed" mode="add"/>
+                        <memberOf key="model.resourceLike"/>
+                        <!-- We need to check if and why we need to have all these attributes at the level of the <standOff> element. -->
+                        <memberOf key="att.global"/>
+                        <memberOf key="att.typed"/>
+                        <memberOf key="att.notated"/>
+                        <memberOf key="att.datable.w3c"/>
+                        <memberOf key="att.pointing"/>
                     </classes>
                     <content>
                         <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
@@ -104,14 +103,17 @@
                     <desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc>
                     <classes>
                         <memberOf key="model.annotation"/>
-                        <memberOf key="att.timed"/>
                         <memberOf key="att.global"/>
-                        <memberOf key="att.ascribed"/>
                         <memberOf key="att.typed"/>
+                        <memberOf key="att.notated"/>
+                        <memberOf key="att.timed"/>
                         <memberOf key="att.declaring"/>
                     </classes>
                     <content>
-                        <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
+                        <sequence>
+                            <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
+                            <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
+                        </sequence>
                     </content>
                     <remarks>
                         <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
@@ -124,6 +126,7 @@
                 <elementSpec ident="annotationBlock" mode="change" module="spoken">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
+                        <memberOf key="att.notated" mode="add"/>
                     </classes>
                     <content>
                         <alternate>
@@ -174,33 +177,33 @@
                         <memberOf key="model.OABody" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <!-- Adding <person>, <measure>, <date>... to OA Body for the Named Entity use case -->
-                
+
                 <elementSpec ident="person" mode="change">
                     <classes mode="change">
                         <memberOf key="model.OABody" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="measure" mode="change">
                     <classes mode="change">
                         <memberOf key="model.OABody" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="date" mode="change">
                     <classes mode="change">
                         <memberOf key="model.OABody" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="place" mode="change">
                     <classes mode="change">
                         <memberOf key="model.OABody" mode="add"/>
                     </classes>
                 </elementSpec>
-                
+
                 <elementSpec ident="org" mode="change">
                     <classes mode="change">
                         <memberOf key="model.OABody" mode="add"/>
@@ -265,44 +268,44 @@
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
+                
+                <!--graph, listgraph forest, -->
 
-                <elementSpec ident="graph" mode="change" module="header">
+                <elementSpec ident="graph" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
 
-                <elementSpec ident="forest" mode="change" module="header">
+                <elementSpec ident="forest" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
 
-                <elementSpec ident="listForest" mode="change" module="header">
+                <elementSpec ident="listForest" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
 
-                <elementSpec ident="tree" mode="change" module="header">
+                <elementSpec ident="tree" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
 
-                <elementSpec ident="eTree" mode="change" module="header">
+                <elementSpec ident="eTree" mode="change">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
                     </classes>
                 </elementSpec>
 
-                <elementSpec ident="zone" module="transcr" mode="change">
+                <elementSpec ident="zone" mode="change">
                     <classes mode="change">
                         <memberOf mode="add" key="model.annotation"/>
                     </classes>
                 </elementSpec>
-
-                <!--graph, listgraph forest, -->
 
             </schemaSpec>
         </body>

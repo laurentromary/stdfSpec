@@ -54,21 +54,30 @@
             </list>
             <div>
                <head>The <gi>standOff</gi> element</head>
-               <p>The <gi>standOff</gi> element is the container of any group of coherent annotations attached to a TEI docuemnt. Its main charcateristics are:</p>
+               <p>The <gi>standOff</gi> element is the container of any group of coherent annotations attached to a TEI document. Its main characteristics are:</p>
                <list>
-                  <item>It is attached to the top level of a TEI document by being a membe rof <code>model.resourceLike</code></item>
+                  <item>It is attached to the top level of a TEI document by being a member of <code>model.resourceLike</code></item>
                   <item>Its content model resembles that of a TEI document by comprising a header (<gi>teiHeader</gi>), additional resources (<code>model.resourceLike</code>) and a content (one or
                      several <gi>listAnnotation</gi> elements)</item>
+               </list>
+               <p>The actual nature of the <gi>standOff</gi> can be further specified by means of two attributes:</p>
+               <list>
+                  <item><att>type</att>: to indicate the general type of annotations which is being represented</item>
+                  <item><att>notation</att>: to elicit the specific notation used for the corresponding type of annotation in reference to an external standard or a documented practice.</item>
                </list>
             </div>
             <div>
                <head>The <gi>listAnnotation</gi> element</head>
-               <p>The <gi>listAnnotation</gi> element is a general container allowing one to structure annotaiton in various subsection. In this respect, its role is analogous to the one played by
+               <p>The <gi>listAnnotation</gi> element is a general container allowing one to structure annotation in various subsections. In this respect, its role is analogous to the one played by
                      <gi>div</gi> in a general TEI document. Still, <gi>div</gi> could not be taken up here in order to be able to keep to a very restrained content model.</p>
                <p>As an iterative and recursive element, <gi>listAnnotation</gi> can be typed to indicate the organisational logic of the annotations.</p>
+               <p>The <gi>listAnnotation</gi> element is also structured like other listXXX elements so that it may start with <code>model.headLike</code> memebrs (e.g. <gi>head</gi>).</p>
             </div>
             <div>
                <head>Updating the <gi>annotationBlock</gi> element</head>
+               <p>The <gi>annotationBlock</gi> was initially conceive as a construct with a dual role for the inline and stand-off annotation of textual content. For the sake of having it quickly
+                  inserted in the TEI guidelines, only a limited range of usages has been documented so far.</p>
+               <p>In the stand-off annotation proposal, <gi>annotationBlock</gi> takes amajor role as the elementary container for annotations.</p>
             </div>
             <div>
                <head>Taking up existing annotations mechanisms from the TEI vocabulary</head>
@@ -77,7 +86,7 @@
             <div>
                <head>Linking components</head>
             </div>
-            
+
          </div>
          <div xml:id="OAModel">
             <head>Aligning with the Open Annotation model</head>
@@ -207,120 +216,204 @@
 
             </list>
             <note>A token can also be associated to more than one word forms, e.g. in French: <mentioned>du</mentioned>, combining <mentioned>de</mentioned> and <mentioned>le</mentioned>.</note>
+            <p>In this use case, we make the assumption that the text is tokenized inline by means of <gi>w</gi> elements as follows, with each token being associated to a unique identifier by means
+               of an <att>xml:id</att> attribute:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <p>
-                  <w xml:id="w1">I</w>
-                  <w xml:id="w2">wanna</w>
-                  <w xml:id="w3">put</w>
-                  <w xml:id="w4">up</w>
-                  <w xml:id="w5">new</w>
-                  <w xml:id="w6">wallpaper</w>
-                  <pc>.</pc>
-               </p>
-               <spanGrp type="wordForm">
-                  <span target="#w1" ana="#fs1" corresp="#entry1"/>
-                  <span target="#w2" ana="#fs2" corresp="#entry2"/>
-                  <span target="#w2" ana="#fs3" corresp="#entry3"/>
-                  <span target="#w3 #w4" ana="#fs4" corresp="#entry4"/>
-                  <span target="#w5" ana="#fs5" corresp="#entry5"/>
-                  <span target="#w6" ana="#fs6" corresp="#entry6"/>
-               </spanGrp>
-               <fs xml:id="fs1" corresp="#entry1">
-                  <f name="lemma">
-                     <string>I</string>
-                  </f>
-                  <f name="pos">
-                     <symbol value="PP"/>
-                  </f>
-               </fs>
-               <fs xml:id="fs2">
-                  <f name="lemma">
-                     <string>want</string>
-                  </f>
-                  <f name="pos">
-                     <symbol value="VBP"/>
-                  </f>
-               </fs>
-               <fs xml:id="fs3">
-                  <f name="lemma">
-                     <string>to</string>
-                  </f>
-                  <f name="pos">
-                     <symbol value="TO"/>
-                  </f>
-               </fs>
-               <fs xml:id="fs4">
-                  <f name="lemma">
-                     <string>put up</string>
-                  </f>
-                  <f name="pos">
-                     <symbol value="VB"/>
-                  </f>
-               </fs>
-               <fs xml:id="fs5">
-                  <f name="lemma">
-                     <string>new</string>
-                  </f>
-                  <f name="pos">
-                     <symbol value="JJ"/>
-                  </f>
-               </fs>
-               <fs xml:id="fs6">
-                  <f name="lemma">
-                     <string>wallpaper</string>
-                  </f>
-                  <f name="pos">
-                     <symbol value="NN"/>
-                  </f>
-               </fs>
-               <entry xml:id="entry1">
-                  <form type="lemma">
-                     <orth>I</orth>
-                  </form>
-               </entry>
-               <entry xml:id="entry2">
-                  <form type="lemma">
-                     <orth>want</orth>
-                  </form>
-               </entry>
-               <entry xml:id="entry3">
-                  <form type="lemma">
-                     <orth>to</orth>
-                  </form>
-               </entry>
-               <entry xml:id="entry4">
-                  <form type="lemma">
-                     <orth>put up</orth>
-                  </form>
-               </entry>
-               <entry xml:id="entry5">
-                  <form type="lemma">
-                     <orth>new</orth>
-                  </form>
-               </entry>
-               <entry xml:id="entry6">
-                  <form type="lemma">
-                     <orth>wallpaper</orth>
-                  </form>
-               </entry>
+               <text>
+                  <body> ... <p>
+                        <w xml:id="w1">I</w>
+                        <w xml:id="w2">wanna</w>
+                        <w xml:id="w3">put</w>
+                        <w xml:id="w4">up</w>
+                        <w xml:id="w5">new</w>
+                        <w xml:id="w6">wallpaper</w>
+                        <pc>.</pc>
+                     </p> ... </body>
+               </text>
+            </egXML>
+
+            <p>In conformance to <ref target="#ISO24611">ISO 24611 (MAF)</ref>, word forms are represented by <gi>span</gi> elements, pointing to the corresponding token(s) in the source text (see the
+               note below soncerning the use of the proper attributes). The actual analysis of the word form is provided by means of a feature-structure referred to from the <gi>span</gi> element by
+               means of an <att>ana</att> attribute. The additional <att>corresp</att> attribute allows one to point to the lexical entries equivalent to the word form, when one links the
+               morpho-synytactic annotation to a reference lexicon.</p>
+
+            <note>This representation is not conformant to the Open Annotation model. In some way, the <gi>span</gi> element combines both roles of <mentioned>Target</mentioned> and
+                  <mentioned>Annotation</mentioned> from WADM. The actual <mentioned>Body</mentioned> is made of both the feature structure and the lexical entry that are being pointing to.</note>
+            <note>To be checked: should we use <att>from</att> and <att>to</att> instead of <att>target</att> here.</note>
+
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <standOff type="morphosyntax" notation="ISO24611">
+                  <teiHeader>
+                     <!-- here example of a reference to a tool -->
+                  </teiHeader>
+                  <listAnnotation type="wordForms">
+                     <!-- One <annotationBlock> per sentence (cf. speech annotation) -->
+                     <annotationBlock> </annotationBlock>
+                     <annotationBlock><spanGrp type="wordForm">
+                           <span target="#w1" ana="#fs1" corresp="#entry1"/>
+                           <span target="#w2" ana="#fs2" corresp="#entry2"/>
+                           <span target="#w2" ana="#fs3" corresp="#entry3"/>
+                           <span target="#w3 #w4" ana="#fs4" corresp="#entry4"/>
+                           <span target="#w5" ana="#fs5" corresp="#entry5"/>
+                           <span target="#w6" ana="#fs6" corresp="#entry6"/>
+                        </spanGrp>
+                     </annotationBlock>
+                  </listAnnotation>
+                  <listAnnotation type="wordFormProperties">
+                     <fs xml:id="fs1" corresp="#entry1">
+                        <f name="lemma">
+                           <string>I</string>
+                        </f>
+                        <f name="pos">
+                           <symbol value="PP"/>
+                        </f>
+                     </fs>
+                     <fs xml:id="fs2">
+                        <f name="lemma">
+                           <string>want</string>
+                        </f>
+                        <f name="pos">
+                           <symbol value="VBP"/>
+                        </f>
+                     </fs>
+                     <fs xml:id="fs3">
+                        <f name="lemma">
+                           <string>to</string>
+                        </f>
+                        <f name="pos">
+                           <symbol value="TO"/>
+                        </f>
+                     </fs>
+                     <fs xml:id="fs4">
+                        <f name="lemma">
+                           <string>put up</string>
+                        </f>
+                        <f name="pos">
+                           <symbol value="VB"/>
+                        </f>
+                     </fs>
+                     <fs xml:id="fs5">
+                        <f name="lemma">
+                           <string>new</string>
+                        </f>
+                        <f name="pos">
+                           <symbol value="JJ"/>
+                        </f>
+                     </fs>
+                     <fs xml:id="fs6">
+                        <f name="lemma">
+                           <string>wallpaper</string>
+                        </f>
+                        <f name="pos">
+                           <symbol value="NN"/>
+                        </f>
+                     </fs>
+                  </listAnnotation>
+               </standOff>
+            </egXML>
+
+            <p> The assumption is made here that a lexical resource is avialable and encodded according the ongoing work on <ref target="#ISO24613-4">LMF part 4 (TEI serialisation)</ref>
+            </p>
+
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <TEI type="lexicon">
+                  <text>
+                     <body>
+                        <entry xml:id="entry1">
+                           <form type="lemma">
+                              <orth>I</orth>
+                           </form>
+                        </entry>
+                        <entry xml:id="entry2">
+                           <form type="lemma">
+                              <orth>want</orth>
+                           </form>
+                        </entry>
+                        <entry xml:id="entry3">
+                           <form type="lemma">
+                              <orth>to</orth>
+                           </form>
+                        </entry>
+                        <entry xml:id="entry4">
+                           <form type="lemma">
+                              <orth>put up</orth>
+                           </form>
+                        </entry>
+                        <entry xml:id="entry5">
+                           <form type="lemma">
+                              <orth>new</orth>
+                           </form>
+                        </entry>
+                        <entry xml:id="entry6">
+                           <form type="lemma">
+                              <orth>wallpaper</orth>
+                           </form>
+                        </entry>
+                     </body>
+                  </text>
+               </TEI>
             </egXML>
          </div>
          <div xml:id="RAF">
             <head>Reference annotation</head>
             <p>Reference annotation consists in identifying referring expression in text or discourse and qualify the relation between them (e.g. anaphorical links) or with existing or putative
                external entities (e.g. in the case of deixis).</p>
-            <p>The work carried out within the project <ptr target="ISO24617-9"/> distinguishes to this purpose two types of annotation entities between which various types of links can hold:</p>
+            <p>The work carried out within the project <ref target="#ISO24617-9">ISO 24617-9 (RAF)</ref> distinguishes to this purpose two types of annotation entities between which various types of
+               links can hold:</p>
             <list>
                <item>referring expressions</item>
                <item>discourse entities</item>
             </list>
+
          </div>
          <div xml:id="Spoken">
             <head>Parallel annotation of spoken utterances</head>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <annotationBlock who="#SPK0" start="#T0" end="#T2">
+                  <u><w xml:id="w1">And</w><w xml:id="w2">what</w>
+                     <anchor synch="#T1"/><w xml:id="w3">comes</w>
+                  </u>
+                  <spanGrp type="pos">
+                     <span from="#w1" to="#w1">CONJ</span><span from="#w2" to="#w2">RELPRO</span><span from="#w3" to="#w3">V</span>
+                  </spanGrp>
+                  <spanGrp type="prosody">
+                     <span from="#T0" to="#T1">faster</span>
+                  </spanGrp>
+               </annotationBlock>
+            </egXML>
+
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <TEI>
+                  <teiHeader>...</teiHeader>
+                  <standOff type="multilayerTranscription" notation="ISO24624">
+                     <teiHeader>...</teiHeader>
+                     <listAnnotation>
+                        <annotationBlock corresp="#u1">
+                           <spanGrp type="pos">
+                              <span from="#w1" to="#w1">CONJ</span>
+                              <span from="#w2" to="#w2">RELPRO</span>
+                              <span from="#w3" to="#w3">V</span>
+                           </spanGrp>
+                           <spanGrp type="prosody">
+                              <span from="#T0" to="#T1">faster</span>
+                           </spanGrp>
+                        </annotationBlock>
+                     </listAnnotation>
+                  </standOff>
+                  <text> ... <u xml:id="u1" who="#SPK0" start="#T0" end="#T2">
+                        <w xml:id="w1">And</w>
+                        <w xml:id="w2">what</w>
+                        <anchor synch="#T1"/>
+                        <w xml:id="w3">comes</w>
+                     </u>
+                  </text>
+               </TEI>
+            </egXML>
          </div>
          <div xml:id="IssuesHeader">
             <head>Issues related to the header on <gi>standOff</gi></head>
             <note>Annotating annotators, annotation tools, source documents in the case of legacy annotations (from other formats)</note>
+            <note>Using <att>resp</att> and point to <gi>appInfo</gi> (machine) or <gi>author</gi> (human annotator): do we need a ticket to reconcile the two?</note>
          </div>
          <div xml:id="ContentModelAnnotationBlock">
             <head>Towards a content model for <gi>annotationBlock</gi></head>
@@ -341,6 +434,7 @@
                   </sequence>
                </content>
             </egXML>
+
             <p>In order to differentiate between the different encoding variants we have identified, the <gi>annotationBlock</gi> element must be associated to a <att>notation</att> attribute <note
                   place="inline">Could also be <att>mode</att></note> which can take one of the following values:</p>
             <list>
@@ -356,6 +450,7 @@
                <bibl xml:id="WADM"><title>Web Annotation Data Model</title>, W3C Recommendation 23 February 2017, <ptr target="https://www.w3.org/TR/2017/REC-annotation-model-20170223/"/></bibl>
                <bibl xml:id="ISO24611"><title>ISO 24611:2012 Language resource management -- Morpho-syntactic annotation framework (MAF)</title>, <ptr target="https://www.iso.org/standard/51934.html"
                   /></bibl>
+               <bibl xml:id="ISO24613-4"><title>ISO 24613-4 Language resource management - Lexical markup framework (LMF) - Part 4: TEI serialisation</title></bibl>
                <bibl xml:id="ISO24624"><time>ISO 24624:2016 Language resource management -- Transcription of spoken language</time>, <ptr target="https://www.iso.org/standard/37338.html"/></bibl>
                <bibl xml:id="ISO24617-9"><time>ISO/AWI 24617-9 Language resource management -- Semantic annotation framework -- Part 9: Reference annotation framework (RAF)</time>, <ptr
                      target="https://www.iso.org/standard/69658.html?browse=tc"/></bibl>
