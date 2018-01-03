@@ -364,7 +364,37 @@
                <item>referring expressions</item>
                <item>discourse entities</item>
             </list>
-
+            <p>In the following paragraphs of this section, we consider we have a simple tokenized version of the sentence: <q>Prendre une poire et la couper.</q> (<gloss>Take a pear and cut
+                  in.</gloss>) within a simple TEI docuement only outlined below:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <TEI>
+                  <teiHeader>...</teiHeader>
+                  <standOff>...</standOff>
+                  <text>
+                     <body>
+                        <s>
+                           <w xml:id="w0">Prendre</w>
+                           <w xml:id="w1">une</w>
+                           <w xml:id="w2">poire</w>
+                           <w xml:id="w3">et</w>
+                           <w xml:id="w4">la</w>
+                           <w xml:id="w5">couper</w>
+                           <pc>.</pc>
+                        </s>
+                     </body>
+                  </text>
+               </TEI>
+            </egXML>
+            <p>In keeping with the ISO 24617-9 model, we organize the annotations in four sub groups marked up by typed <gi>listAnnotation</gi> elements:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <standOff>
+                  <listAnnotation type="referingExpressions">... <span type="referringExpression"/>...</listAnnotation>
+                  <listAnnotation type="discourseEntities">...<interp type="discourseEntity"/>...</listAnnotation>
+                  <listAnnotation type="lexicalRelations">.....<link type="lexicalRelation"/>...</listAnnotation>
+                  <listAnnotation type="objectalRelations">...<link type="objectalRelation"/>...</listAnnotation>
+               </standOff>
+            </egXML>
+            <note>Sub-elements can be further structured in <gi>annotationBlock</gi> elements when they correspond to the same textual segment (e.g. sentence, utterance, etc.)</note>
          </div>
          <div xml:id="Spoken">
             <head>Parallel annotation of spoken utterances</head>
@@ -458,7 +488,6 @@
          </div>
          <div>
             <head>Issues</head>
-            <p>Should not <att>resp</att> be made global?</p>
             <p>Should we document the importance of typing <gi>span</gi> to indicate the granularity of the object that is being referred to?</p>
             <p><gi>interp</gi> should also be typed, with inheritance mechanisms from <gi>annotationBlock</gi></p>
          </div>
