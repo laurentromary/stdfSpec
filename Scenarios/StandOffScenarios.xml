@@ -32,10 +32,11 @@
       <body>
          <div xml:id="Introduction">
             <head>Introduction</head>
-            <p>This document compiles various concrete use cases implementing the suggested <gi>standOff</gi> element in order to refine the possible constraints that may bear upon it and its
-               sub-elements. It is based on the experience gained in various projects since the initial workshop that took place in <date>...</date> and that launched the definition of this element as
-               well as on some ongoing activities that are being pursued in several national projects in France and Germany (among others), in international institutions (EPO) as well as in the
-               content of several ISO projects (some of which have already been published as standards).</p>
+            <p>This document compiles various concrete use cases implementing the suggested <gi>standOff</gi> element in order to a) identify possible annotation configuration that may be used as
+               recommended practices for the corresponding phanomena and b) refine the possible constraints that may bear upon it and its sub-elements. It is based on the experience gained in various
+               projects since the initial workshop that took place in <date>...</date> and that launched the definition of this element as well as on some ongoing activities that are being pursued in
+               several national projects in France and Germany (among others), in international institutions (EPO) as well as in the content of several ISO projects (some of which have already been
+               published as standards).</p>
             <p>The major conclusions that can be drawn from these use cases are the following:</p>
             <list>
                <item>...</item>
@@ -388,13 +389,32 @@
             <p>In keeping with the ISO 24617-9 model, we organize the annotations in four sub groups marked up by typed <gi>listAnnotation</gi> elements:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <standOff>
-                  <listAnnotation type="referingExpressions">... <span type="referringExpression"/>...</listAnnotation>
+                  <teiHeader>...</teiHeader>
+                  <listAnnotation type="referingExpressions">...<annotationBlock><span type="referringExpression"/></annotationBlock>...</listAnnotation>
                   <listAnnotation type="discourseEntities">...<interp type="discourseEntity"/>...</listAnnotation>
-                  <listAnnotation type="lexicalRelations">.....<link type="lexicalRelation"/>...</listAnnotation>
+                  <listAnnotation type="lexicalRelations">....<link type="lexicalRelation"/>...</listAnnotation>
                   <listAnnotation type="objectalRelations">...<link type="objectalRelation"/>...</listAnnotation>
                </standOff>
             </egXML>
-            <note>Sub-elements can be further structured in <gi>annotationBlock</gi> elements when they correspond to the same textual segment (e.g. sentence, utterance, etc.)</note>
+            <note>Sub-elements can be further structured in <gi>annotationBlock</gi> elements when they correspond to the same textual segment (e.g. sentence, utterance, etc.). This is meaningful for referring expressions, whereas the other annotation objects are more likely to correspond to inter-sentential mechanisms.</note>
+            <p>For the sentence introduced before,we can markup two referring expression (<q>une poire</q>, <q>la</q>), further qualified my means of a feature structure:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <annotationBlock>
+                  <spanGrp type="referringExpression">
+                     <span xml:id="m1" from="#w1" to="#w2" ana="#fs1"><!-- une poire --></span>
+                     <span xml:id="m2" from="#w4" ana="#fs2"><!-- la --></span>
+                  </spanGrp>
+                  <fs xml:id="fs1">
+                     <f name="syntacticCategory"><symbol value="nounPhrase"/></f>
+                     <f name="determinerType"><symbol value="indefinite"/></f>
+                     <f name="referentialStatus"><symbol value="discourseNew"/></f>
+                  </fs>
+                  <fs xml:id="fs2">
+                     <f name="syntacticCategory"><symbol value="pronominalPhrase"/></f>
+                     <f name="referentialStatus"><symbol value="discourseOld"/></f>
+                  </fs>
+               </annotationBlock>
+            </egXML>
          </div>
          <div xml:id="Spoken">
             <head>Parallel annotation of spoken utterances</head>
