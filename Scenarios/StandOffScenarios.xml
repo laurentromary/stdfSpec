@@ -39,7 +39,12 @@
                published as standards).</p>
             <p>The major conclusions that can be drawn from these use cases are the following:</p>
             <list>
-               <item>...</item>
+               <item>There are only two new elements to add to the TEI space: <list>
+                     <item><gi>standOff</gi>: the general container, designed as a mini-<q><gi>TEI</gi></q></item>
+                     <item><gi>listAnnotation</gi>: a list like element to allow various types of groupings for stand-off annotations</item>
+                  </list></item>
+               <item>The content model of <gi>annotationBlock</gi> must be revised to integrate the multiple usage scenarios taht have been identified. Basically we need an alternative
+                     (<gi>choice</gi>) betwen 2 or 3 possible content models.</item>
             </list>
          </div>
          <div xml:id="OverviewSO">
@@ -82,7 +87,14 @@
             </div>
             <div>
                <head>Taking up existing annotations mechanisms from the TEI vocabulary</head>
-               <p>span, zone, interp, link, and corresponding attributes</p>
+               <p>The TEI guidelines has a wide variety of elments to implement stand-off annotations. The purpose of this document is to provide more precise guidance as to how to combine them and
+                  identify their complementarities.</p>
+               <list>
+                  <item><gi>span</gi></item>
+                  <item><gi>zone</gi>, which can be seen as playing a similar role as <gi>span</gi> in the case of images</item>
+                  <item><gi>interp</gi></item>
+                  <item><gi>link</gi></item>
+               </list>
             </div>
             <div>
                <head>Linking components</head>
@@ -396,7 +408,8 @@
                   <listAnnotation type="objectalRelations">...<link type="objectalRelation"/>...</listAnnotation>
                </standOff>
             </egXML>
-            <note>Sub-elements can be further structured in <gi>annotationBlock</gi> elements when they correspond to the same textual segment (e.g. sentence, utterance, etc.). This is meaningful for referring expressions, whereas the other annotation objects are more likely to correspond to inter-sentential mechanisms.</note>
+            <note>Sub-elements can be further structured in <gi>annotationBlock</gi> elements when they correspond to the same textual segment (e.g. sentence, utterance, etc.). This is meaningful for
+               referring expressions, whereas the other annotation objects are more likely to correspond to inter-sentential mechanisms.</note>
             <p>For the sentence introduced before,we can markup two referring expression (<q>une poire</q>, <q>la</q>), further qualified my means of a feature structure:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <annotationBlock>
@@ -468,7 +481,12 @@
          <div xml:id="ContentModelAnnotationBlock">
             <head>Towards a content model for <gi>annotationBlock</gi></head>
             <note>Intro: focusing on <gi>annotationBlock</gi></note>
-            <p>In the case of an OA compliant model, the content model of <gi>annotationBlock</gi> shall be based upon three classes:</p>
+            <div>
+               <head>Keeping the continuity with the transcription of speech view</head>
+            </div>
+            <div>
+               <head>An OA model compliant content model</head>
+               <p>In the case of an OA compliant model, the content model of <gi>annotationBlock</gi> should be based upon three classes:</p>
             <list>
                <item><code>model.OATarget</code></item>
                <item><code>model.OABody</code></item>
@@ -483,14 +501,22 @@
                      <classRef key="model.OATarget" minOccurs="0" maxOccurs="unbounded"/>
                   </sequence>
                </content>
-            </egXML>
+            </egXML></div>
 
-            <p>In order to differentiate between the different encoding variants we have identified, the <gi>annotationBlock</gi> element must be associated to a <att>notation</att> attribute <note
+            <div>
+               <head>Combining the various possibilities</head>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <choice>
+                     ...
+                  </choice>
+               </egXML>
+               <p>In order to differentiate between the different encoding variants we have identified, the <gi>annotationBlock</gi> element must be associated to a <att>notation</att> attribute <note
                   place="inline">Could also be <att>mode</att></note> which can take one of the following values:</p>
             <list>
-               <item><code>inSitu</code>: non stand-off usage of annotation Block as documented in the <title>Transcriptions of speech</title> chapter.</item>
+               <item><code>inSitu</code>: non stand-off usage of <gi>annotationBlock</gi> as documented in the <title>Transcriptions of speech</title> chapter.</item>
+               <item><code>exSitu</code>: equivalent to the <code>inSitu</code> case in stand-off mode</item>
                <item><code>OAModel</code>: Open Annotation compliant model (Target, Body, Annotation)</item>
-            </list>
+            </list></div>
          </div>
       </body>
       <back>
