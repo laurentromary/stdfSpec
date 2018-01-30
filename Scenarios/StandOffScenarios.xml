@@ -32,18 +32,19 @@
       <body>
          <div xml:id="Introduction">
             <head>Introduction</head>
-            <p>This document compiles various concrete use cases implementing the suggested <gi>standOff</gi> element in order to a) identify possible annotation configuration that may be used as
-               recommended practices for the corresponding phanomena and b) refine the possible constraints that may bear upon it and its sub-elements. It is based on the experience gained in various
-               projects since the initial workshop that took place in <date>...</date> and that launched the definition of this element as well as on some ongoing activities that are being pursued in
-               several national projects in France and Germany (among others), in international institutions (EPO) as well as in the content of several ISO projects (some of which have already been
-               published as standards).</p>
+            <p>This document compiles various concrete use cases implementing the suggested <gi>standOff</gi> element in order to a) identify possible annotation configurations that may be used as
+               recommended practices for the corresponding phenomena and b) refine the possible constraints that may bear upon it and its sub-elements. It is based on the experience gained in various
+               projects since the initial workshop that took place in <date>January 2014</date> and which launched the definition of this element, as well as on some ongoing activities that are being
+               pursued in several national projects in France and Germany (among others), in international institutions (EPO) and in the content of several ISO projects (some of which have already
+               been published as standards).</p>
             <p>The major conclusions that can be drawn from these use cases are the following:</p>
             <list>
                <item>There are only two new elements to add to the TEI space: <list>
-                     <item><gi>standOff</gi>: the general container, designed as a mini-<q><gi>TEI</gi></q></item>
-                     <item><gi>listAnnotation</gi>: a list like element to allow various types of groupings for stand-off annotations</item>
+                     <item><gi>standOff</gi>: the general container, designed as a mini-<q><gi>TEI</gi></q> document dedicated to gather all annotation related information for a given annotation
+                        layer</item>
+                     <item><gi>listAnnotation</gi>: a list like element within <gi>standOff</gi> to allow various types of groupings for stand-off annotations</item>
                   </list></item>
-               <item>The content model of <gi>annotationBlock</gi> must be revised to integrate the multiple usage scenarios taht have been identified. Basically we need an alternative
+               <item>The content model of <gi>annotationBlock</gi> must be revised to integrate the multiple usage scenarios that have been identified. Basically we need an alternative
                      (<gi>choice</gi>) betwen 2 or 3 possible content models.</item>
             </list>
          </div>
@@ -54,9 +55,9 @@
             <list>
                <item>Annotations do not alter any part of the document itself, header nor content</item>
                <item>There may be as many complementary and competing annotations attached to a given document as wanted</item>
-               <item>Annotations occur at a precidsely determined place in the TEI docuement organisation, namely as an addtional resource, child of <gi>TEI</gi> or <gi>teiCorpus</gi>
-                  <note place="margin">We need a scenario for such a usage</note></item>
-               <item>Annotations are conveyed with their specific meta-data</item>
+               <item>Annotations occur at a precisely determined place in the TEI documeent organisation, namely as an addtional resource, child of <gi>TEI</gi> or <gi>teiCorpus</gi>
+                  <note>We need a scenario for such a usage</note></item>
+               <item>Annotations are conveyed with their specific meta-data, to convey informaiton about origin (software, annotators), specific re-use rights, encoding schemes etc.</item>
             </list>
             <div>
                <head>The <gi>standOff</gi> element</head>
@@ -74,30 +75,32 @@
             </div>
             <div>
                <head>The <gi>listAnnotation</gi> element</head>
-               <p>The <gi>listAnnotation</gi> element is a general container allowing one to structure annotation in various subsections. In this respect, its role is analogous to the one played by
+               <p>The <gi>listAnnotation</gi> element is a general container allowing one to structure annotations in various subsections. In this respect, its role is analogous to the one played by
                      <gi>div</gi> in a general TEI document. Still, <gi>div</gi> could not be taken up here in order to be able to keep to a very restrained content model.</p>
                <p>As an iterative and recursive element, <gi>listAnnotation</gi> can be typed to indicate the organisational logic of the annotations.</p>
-               <p>The <gi>listAnnotation</gi> element is also structured like other listXXX elements so that it may start with <code>model.headLike</code> memebrs (e.g. <gi>head</gi>).</p>
+               <p>The <gi>listAnnotation</gi> element is also structured like other listXXX elements so that it may start with <code>model.headLike</code> members (e.g. <gi>head</gi>).</p>
             </div>
             <div>
                <head>Updating the <gi>annotationBlock</gi> element</head>
-               <p>The <gi>annotationBlock</gi> was initially conceive as a construct with a dual role for the inline and stand-off annotation of textual content. For the sake of having it quickly
+               <p>The <gi>annotationBlock</gi> was initially conceived as a construct with a dual role for the inline and stand-off annotation of textual content. For the sake of having it quickly
                   inserted in the TEI guidelines, only a limited range of usages has been documented so far.</p>
-               <p>In the stand-off annotation proposal, <gi>annotationBlock</gi> takes amajor role as the elementary container for annotations.</p>
+               <p>In the stand-off annotation proposal, <gi>annotationBlock</gi> takes a major role as the elementary container for annotations.</p>
             </div>
             <div>
                <head>Taking up existing annotations mechanisms from the TEI vocabulary</head>
                <p>The TEI guidelines has a wide variety of elments to implement stand-off annotations. The purpose of this document is to provide more precise guidance as to how to combine them and
-                  identify their complementarities.</p>
+                  identify their complementarities. As this stage we can characterised these elements as follows:</p>
                <list>
-                  <item><gi>span</gi></item>
-                  <item><gi>zone</gi>, which can be seen as playing a similar role as <gi>span</gi> in the case of images</item>
-                  <item><gi>interp</gi></item>
-                  <item><gi>link</gi></item>
+                  <item><gi>span</gi> is a genral purpose element to point to a location or a sequence in a document and ideal to cover the general notion of <mentioned>markable</mentioned> in the
+                     linguistic annotation literature.</item>
+                  <item><gi>zone</gi>, which can be seen as playing a similar role to <gi>span</gi> in the case of images</item>
+                  <item><gi>interp</gi>, which currently has a narrow scope in the TEI guidelines but offers the possibilities to connect annotated passages (<att>inst</att>) with annotation content
+                        (<att>ana</att>)</item>
                </list>
             </div>
             <div>
                <head>Linking components</head>
+               <p><gi>link</gi>...</p>
             </div>
 
          </div>
@@ -487,36 +490,36 @@
             <div>
                <head>An OA model compliant content model</head>
                <p>In the case of an OA compliant model, the content model of <gi>annotationBlock</gi> should be based upon three classes:</p>
-            <list>
-               <item><code>model.OATarget</code></item>
-               <item><code>model.OABody</code></item>
-               <item><code>model.OAAnnotation</code>: a mandatory class reference for this annotation profile. The class should contain <gi>interp</gi> by default and one should be cautious in adding
-                  extra element to avoid ambiguous content models when the added element may also appear in the other classes.</item>
-            </list>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <content>
-                  <sequence>
-                     <classRef key="model.OABody" minOccurs="0" maxOccurs="unbounded"/>
-                     <classRef key="model.OAAnnotation" minOccurs="1" maxOccurs="1"/>
-                     <classRef key="model.OATarget" minOccurs="0" maxOccurs="unbounded"/>
-                  </sequence>
-               </content>
-            </egXML></div>
+               <list>
+                  <item><code>model.OATarget</code></item>
+                  <item><code>model.OABody</code></item>
+                  <item><code>model.OAAnnotation</code>: a mandatory class reference for this annotation profile. The class should contain <gi>interp</gi> by default and one should be cautious in
+                     adding extra element to avoid ambiguous content models when the added element may also appear in the other classes.</item>
+               </list>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <content>
+                     <sequence>
+                        <classRef key="model.OABody" minOccurs="0" maxOccurs="unbounded"/>
+                        <classRef key="model.OAAnnotation" minOccurs="1" maxOccurs="1"/>
+                        <classRef key="model.OATarget" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+               </egXML>
+            </div>
 
             <div>
                <head>Combining the various possibilities</head>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <choice>
-                     ...
-                  </choice>
+                  <choice> ... </choice>
                </egXML>
                <p>In order to differentiate between the different encoding variants we have identified, the <gi>annotationBlock</gi> element must be associated to a <att>notation</att> attribute <note
-                  place="inline">Could also be <att>mode</att></note> which can take one of the following values:</p>
-            <list>
-               <item><code>inSitu</code>: non stand-off usage of <gi>annotationBlock</gi> as documented in the <title>Transcriptions of speech</title> chapter.</item>
-               <item><code>exSitu</code>: equivalent to the <code>inSitu</code> case in stand-off mode</item>
-               <item><code>OAModel</code>: Open Annotation compliant model (Target, Body, Annotation)</item>
-            </list></div>
+                     place="inline">Could also be <att>mode</att></note> which can take one of the following values:</p>
+               <list>
+                  <item><code>inSitu</code>: non stand-off usage of <gi>annotationBlock</gi> as documented in the <title>Transcriptions of speech</title> chapter.</item>
+                  <item><code>exSitu</code>: equivalent to the <code>inSitu</code> case in stand-off mode</item>
+                  <item><code>OAModel</code>: Open Annotation compliant model (Target, Body, Annotation)</item>
+               </list>
+            </div>
          </div>
       </body>
       <back>

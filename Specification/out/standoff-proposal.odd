@@ -63012,13 +63012,10 @@ an attribute may take, additional to the information carried by the
                         <memberOf key="model.resourceLike"/>
                         
                         <memberOf key="att.global"/>
-                        <memberOf key="att.datcat"/>
-                        <memberOf key="att.ascribed"/>
-                        <memberOf key="att.datable.w3c"/>
-                        
-                        <memberOf key="att.pointing"/>
                         <memberOf key="att.typed"/>
-                        <memberOf key="att.notated"/>   
+                        <memberOf key="att.notated"/>
+                        <memberOf key="att.datable.w3c"/>
+                        <memberOf key="att.pointing"/>
                     </classes><content>
                         <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
                         
@@ -63035,14 +63032,13 @@ an attribute may take, additional to the information carried by the
                         </constraint>
                     </constraintSpec></elementSpec><elementSpec rend="add" ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff"><desc>Groups together various annotations, for instance for parallel interpretations of a spoken segment</desc><classes>
                         <memberOf key="model.annotation"/>
-                        <memberOf key="att.timed"/>
                         <memberOf key="att.global"/>
-                        <memberOf key="att.ascribed"/>
                         <memberOf key="att.typed"/>
+                        <memberOf key="att.notated"/>
+                        <memberOf key="att.timed"/>
                         <memberOf key="att.declaring"/>
-                        <memberOf key="att.notated"/>   
                     </classes><content>
-                        <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
+                        <sequence minOccurs="1" maxOccurs="1"><classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/><classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/></sequence>
                     </content><remarks>
                         <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
                             elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p>
