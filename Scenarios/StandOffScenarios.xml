@@ -114,11 +114,11 @@
                   <item>Body: that contains what is said about the resource</item>
                   <item>Annotation: that links one or several targets with 0-n bodies</item>
                </list>
-               <p>This model, which decouples resources and what is said about them by means of the <mentioned>annotation</mentioned> component is highly flexible and powerful. It could be reflected
+               <p>This model, which decouples resources and what is said about them by means of the <mentioned>annotation</mentioned> component, is highly flexible and powerful. It could be reflected
                   in the <gi>standOff</gi> construct as follows:</p>
                <p>It is suggested that the Open Annotation model could be implemented as follows:</p>
                <list>
-                  <item><p>The <mentioned>Target</mentioned> component</p>
+                  <item><p>The <mentioned>Target</mentioned> component could be implement with either <gi>span</gi> for textual targets or <gi>zone</gi> when pointing to an image.</p>
                      <note place="inline">See the proposed implementation of <gi>annotationBlock</gi>: we suggest to introduce a class <code>model.OATarget</code></note>
                   </item>
                   <item>
@@ -127,22 +127,25 @@
                   </item>
                   <item><p>The <mentioned>Annotation</mentioned> component is implemented by means of the <gi>interp</gi> element complemented with the three following atributes:</p>
                      <list>
-                        <item><att>type</att></item>
-                        <item><att>inst</att></item>
-                        <item><att>ana</att></item>
+                        <item><att>type</att>: to indicate the type of the annotation (e.g. <q>quantity</q>, <q>person</q>, etc.)</item>
+                        <item><att>inst</att>: points to one or more <gi>span</gi> elements (possibly in the same <gi>annotationBlock</gi> when appropriate</item>
+                        <item><att>ana</att>: points to the actual content of the annotation, depending on the annotation scheme. In simple cases, these could be <gi>note</gi> (see below) or
+                              <gi>fs</gi> elements.</item>
                      </list>
-                     <p>Additional elements could probably be used here, but we should provide univocal guidance here, in order to avoid content model ambiguities and in general too much heterogeneous
-                        implementations of the OA model.</p>
+                     <p>Additional elements could probably be used here, but we should provide univocal guidance for such a use case, in order to avoid content model ambiguities and in general too
+                        much heterogeneous implementations of the OA model.</p>
                      <note place="inline">See the proposed implementation of <gi>annotationBlock</gi>: we suggest to introduce a class <code>model.OAAnnotation</code></note></item>
                </list>
             </div>
-
             <div>
                <head>Simplest annotation with <gi>note</gi></head>
+               <p>The following example shows a simple OA compliant construct where a span of text is associated to two different notes made by different annotators. The <att>resp</att> attributes
+                  would refer here to persons described in the <gi>teiHeader</gi> of the embedding <gi>standOff</gi>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <annotationBlock>
-                     <note xml:id="n1"> This series of sentences .... </note>
-                     <interp ana="#n1" inst="#sp1"/>
+                     <note xml:id="n1" resp="#annotator1">This series of sentences .... </note>
+                     <note xml:id="n2" resp="#annotator2">This series of sentences .... </note>
+                     <interp ana="#n1 #n2" inst="#sp1"/>
                      <span from="#s1" to="#s3" xml:id="sp1"/>
                   </annotationBlock>
                </egXML>
@@ -372,16 +375,17 @@
          </div>
          <div xml:id="RAF">
             <head>Reference annotation</head>
-            <p>Reference annotation consists in identifying referring expression in text or discourse and qualify the relation between them (e.g. anaphorical links) or with existing or putative
+            <p>Reference annotation consists in identifying referring expressions in text or discourse and qualify the relation between them (e.g. anaphorical links) or with existing or putative
                external entities (e.g. in the case of deixis).</p>
             <p>The work carried out within the project <ref target="#ISO24617-9">ISO 24617-9 (RAF)</ref> distinguishes to this purpose two types of annotation entities between which various types of
                links can hold:</p>
             <list>
-               <item>referring expressions</item>
-               <item>discourse entities</item>
+               <item><mentioned>referring expressions</mentioned>: correspond to the actual markables in the text. They may point to text spans, sequences of words (<gi>w</gi>) or higher level objects
+                  resulting from other annotation layers (e.g. word forms is the corpus has been morphosyntactically annotated);</item>
+               <item><mentioned>discourse entities</mentioned>: ...</item>
             </list>
             <p>In the following paragraphs of this section, we consider we have a simple tokenized version of the sentence: <q>Prendre une poire et la couper.</q> (<gloss>Take a pear and cut
-                  in.</gloss>) within a simple TEI docuement only outlined below:</p>
+                  it.</gloss>) within a simple TEI document only outlined below:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <TEI>
                   <teiHeader>...</teiHeader>
@@ -413,7 +417,7 @@
             </egXML>
             <note>Sub-elements can be further structured in <gi>annotationBlock</gi> elements when they correspond to the same textual segment (e.g. sentence, utterance, etc.). This is meaningful for
                referring expressions, whereas the other annotation objects are more likely to correspond to inter-sentential mechanisms.</note>
-            <p>For the sentence introduced before,we can markup two referring expression (<q>une poire</q>, <q>la</q>), further qualified my means of a feature structure:</p>
+            <p>For the sentence introduced before,we can markup two referring expressions (<q>une poire</q>, <q>la</q>), further qualified by means of a feature structure:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <annotationBlock>
                   <spanGrp type="referringExpression">
