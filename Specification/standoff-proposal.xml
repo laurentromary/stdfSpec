@@ -132,6 +132,10 @@
                         <alternate>
                             <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
                             <sequence>
+                                <classRef key="model.linguisticSegment" minOccurs="0" maxOccurs="1"/>
+                                <classRef key="model.interlinearAnnotation" minOccurs="0" maxOccurs="unbounded"/>
+                            </sequence>
+                            <sequence>
                                 <classRef key="model.OABody" minOccurs="0" maxOccurs="unbounded"/>
                                 <classRef key="model.OAAnnotation" minOccurs="1" maxOccurs="1"/>
                                 <classRef key="model.OATarget" minOccurs="0" maxOccurs="unbounded"/>

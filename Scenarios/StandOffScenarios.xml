@@ -483,6 +483,13 @@
                   </text>
                </TEI>
             </egXML>
+            <p>These types of annotations are not specific to the linguistic case and it reflects a general need to associate annotations with streches of text. The following example <note>Courtesy of
+               B. Gaiffe from ATILF></note> from the <ref target="http://www.agence-nationale-recherche.fr/Projet-ANR-12-FRAL-0001">OEF (Ovide en français)</ref> shows a highly parallel situation that we should reflect when upodating the content model of
+                  <gi>annotationBlock</gi>:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <annotationBlock> <l n="II.9">Et ses cuers li amonnestoit.</l> <note>li amons (amons biffé) ammonestoit <ref target="#D3"/></note>
+               </annotationBlock>
+            </egXML>
          </div>
          <div xml:id="IssuesHeader">
             <head>Issues related to the header on <gi>standOff</gi></head>
@@ -492,6 +499,12 @@
          <div xml:id="ContentModelAnnotationBlock">
             <head>Towards a content model for <gi>annotationBlock</gi></head>
             <note>Intro: focusing on <gi>annotationBlock</gi></note>
+            <div>
+               <head>The baseline</head>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <classRef key="model.annotation" minOccurs="0" maxOccurs="unbounded"/>
+               </egXML>
+            </div>
             <div>
                <head>Keeping the continuity with the transcription of speech view</head>
                <p>The first constraint bearing upon the content model of <gi>annotationBlock</gi> is to ensure the continuity with the its initial definition and to allow a stand-off verion of
