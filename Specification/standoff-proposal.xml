@@ -126,6 +126,8 @@
                 <elementSpec ident="annotationBlock" mode="change" module="spoken">
                     <classes mode="change">
                         <memberOf key="model.annotation" mode="add"/>
+                        <!-- The following declaration is to ensure that it appears wherever annotated segLike objects can -->
+                        <memberOf key="model.segLike" mode="add"/>
                         <memberOf key="att.notated" mode="add"/>
                     </classes>
                     <content>
