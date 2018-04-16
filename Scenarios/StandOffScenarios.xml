@@ -195,7 +195,8 @@
                         <listAnnotation type="individuals"> ... </listAnnotation>
                         <listAnnotation type="places">...</listAnnotation>
                         <listAnnotation type="organizations">...</listAnnotation>
-                        <listAnnotation type="dateTimes"> </listAnnotation> ... </standOff>
+                        <listAnnotation type="dateTimes"> </listAnnotation>
+                        <listAnnotation type="events"> </listAnnotation> ... </standOff>
                   </egXML>
                </div>
                <div>
@@ -218,6 +219,45 @@
                         <span from="#string-range(//p[@xml:id='_899607cd21ce83fb3a8e35652ace2479'],259,269)" xml:id="_b02f28110aa52495b3ec386d171bc20f"/>
                      </annotationBlock>
                   </egXML>
+                  <p>The example below shows the possible encoding of an event entitity from the following text:</p>
+                  <cit>
+                     <quote>The Holocaust (from the Greek ὁλόκαυστος holókaustos: hólos, "whole" and kaustós, "burnt"),[2] also known as the Shoah (Hebrew: השואה, HaShoah, "the catastrophe"), was a
+                        genocide in which Adolf Hitler's Nazi Germany and its collaborators killed about six million Jews.[3] The victims included 1.5 million children[4] and represented about
+                        two-thirds of the nine million Jews who had resided in Europe.[5] Some definitions of the Holocaust include the additional five million non-Jewish victims of Nazi mass murders,
+                        bringing the total to about 11 million. Killings took place throughout Nazi Germany and German-occupied territories.[6] From 1941 to 1945, Jews were systematically murdered in
+                        one of the deadliest genocides in history, which was part of a broader aggregate of acts of oppression and killings of various ethnic and political groups in Europe by the Nazi
+                        regime.[7] Every arm of Germany's bureaucracy was involved in the logistics and the carrying out of the genocide. Other victims of Nazi crimes included ethnic Poles, Soviet
+                        citizens and Soviet POWs, other Slavs, Romanis, communists, homosexuals, Jehovah's Witnesses and the mentally and physically disabled.[8][9] A network of about 42,500
+                        facilities in Germany and German-occupied territories was used to concentrate victims for slave labor, mass murder, and other human rights abuses.[10] Over 200,000 people are
+                        estimated to have been Holocaust perpetrators.[11] The persecution and genocide were carried out in stages, culminating in what Nazis termed the "Final Solution to the Jewish
+                        Question" (die Endlösung der Judenfrage), an agenda to exterminate Jews in Europe. Initially the German government passed laws to exclude Jews from civil society, most
+                        prominently the Nuremberg Laws of 1935. Nazis established a network of concentration camps starting in 1933 and ghettos following the outbreak of World War II in 1939. In 1941,
+                        as Germany conquered new territory in eastern Europe, specialized paramilitary units called Einsatzgruppen murdered around two million Jews and "partisans",[clarification
+                        needed] often in mass shootings. By the end of 1942, victims were being regularly transported by freight trains to extermination camps where, if they survived the journey, most
+                        were systematically killed in gas chambers. This continued until the end of World War II in Europe in April–May 1945.Jewish armed resistance was limited. The most notable
+                        exception was the Warsaw Ghetto Uprising of 1943, when thousands of poorly-armed Jewish fighters held the Waffen-SS at bay for four weeks. An estimated 20–30,000 Jewish
+                        partisans actively fought against the Nazis and their collaborators in Eastern Europe.[12][13] French Jews took part in the French Resistance, which conducted a guerilla
+                        campaign against the Nazis and Vichy French authorities. Over a hundred armed Jewish uprisings took place.[14]</quote>
+                     <bibl>Wikipedia</bibl>
+                  </cit>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <listAnnotation type="event">
+                        <annotationBlock>
+                           <event xml:id="fbb78bbe6849dc04a9347d81962322f9">
+                              <desc>
+                                 <term type="rawName">World War II</term>
+                                 <idno source="wikipedia-en">32927</idno>
+                              </desc>
+                           </event>
+                           <interp ana="#fbb78bbe6849dc04a9347d81962322f9" cert="0.7515" inst="#0b3a3d0449134d131318cce831cd7830"/>
+                           <span from="#string-range(//p[@xml:id='5b926a7bcbae0332f9a708a73b29481d'],1873,1885)" xml:id="0b3a3d0449134d131318cce831cd7830"/>
+                           <textClass type="categories"/>
+                           <interp ana="#fbb78bbe6849dc04a9347d81962322f9" cert="0.822" inst="#23376c008d2e9195c29f25363dd508be"/>
+                           <span from="#string-range(//p[@xml:id='5b926a7bcbae0332f9a708a73b29481d'],2328,2340)" xml:id="23376c008d2e9195c29f25363dd508be"/>
+                        </annotationBlock>
+                     </listAnnotation>
+                  </egXML>
+                  <p>For a full treatment of the example see: <ref>https://hedgehog-web.herokuapp.com/json2xml/index.html</ref></p>
                </div>
                <div>
                   <head>Dealing with additional issues</head>
@@ -484,10 +524,12 @@
                </TEI>
             </egXML>
             <p>These types of annotations are not specific to the linguistic case and it reflects a general need to associate annotations with streches of text. The following example <note>Courtesy of
-               B. Gaiffe from ATILF></note> from the <ref target="http://www.agence-nationale-recherche.fr/Projet-ANR-12-FRAL-0001">OEF (Ovide en français)</ref> shows a highly parallel situation that we should reflect when upodating the content model of
-                  <gi>annotationBlock</gi>:</p>
+                  B. Gaiffe from ATILF></note> from the <ref target="http://www.agence-nationale-recherche.fr/Projet-ANR-12-FRAL-0001">OEF (Ovide en français)</ref> shows a highly parallel situation
+               that we should reflect when upodating the content model of <gi>annotationBlock</gi>:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <annotationBlock> <l n="II.9">Et ses cuers li amonnestoit.</l> <note>li amons (amons biffé) ammonestoit <ref target="#D3"/></note>
+               <annotationBlock>
+                  <l n="II.9">Et ses cuers li amonnestoit.</l>
+                  <note>li amons (amons biffé) ammonestoit <ref target="#D3"/></note>
                </annotationBlock>
             </egXML>
          </div>
