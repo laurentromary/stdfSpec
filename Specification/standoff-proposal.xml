@@ -128,7 +128,10 @@
                         <memberOf key="model.annotation" mode="add"/>
                         <!-- The following declaration is to ensure that it appears wherever annotated segLike objects can -->
                         <memberOf key="model.segLike" mode="add"/>
+                        <!-- This is added to account for the notation variants introduced as content models for annotationBlock -->
                         <memberOf key="att.notated" mode="add"/>
+                        <!-- Needs to be typed in stand-off context to reflect the ... type of annotaiotn we are dealing with -->
+                        <memberOf key="att.typed"/>
                     </classes>
                     <content>
                         <alternate>
