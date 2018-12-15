@@ -543,9 +543,13 @@
             <note>Intro: focusing on <gi>annotationBlock</gi></note>
             <div>
                <head>The baseline</head>
+               <p>In the initial proposal, the content model of <gi>annotationBlock</gi> was limited to a plain and flat class, <code>model.annotation</code>, with the following constraints added to
+                  the elements that one would want to use fro annotaiton purposes (whether as source, annotation or body in the WADM):</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <classRef key="model.annotation" minOccurs="0" maxOccurs="unbounded"/>
                </egXML>
+               <p>The major difficulty with this is that there is no way to constraint that one would want to use specific elements as source, annotation or body.</p>
+               <p>Suggestion has been made (LB, I think) that such a class should better be called <code>model.annotationBlockPart</code></p>
             </div>
             <div>
                <head>Keeping the continuity with the transcription of speech view</head>
@@ -562,7 +566,7 @@
                <head>An OA model compliant content model</head>
                <p>In the case of an OA compliant model, the content model of <gi>annotationBlock</gi> should be based upon three classes:</p>
                <list>
-                  <item><code>model.OATarget</code></item>
+                  <item><code>model.OATarget</code>: the class could be pre-filled with such elements as <gi>span</gi> and <gi>surface</gi>.</item>
                   <item><code>model.OABody</code></item>
                   <item><code>model.OAAnnotation</code>: a mandatory class reference for this annotation profile. The class should contain <gi>interp</gi> by default and one should be cautious in
                      adding extra element to avoid ambiguous content models when the added element may also appear in the other classes.</item>
@@ -574,6 +578,7 @@
                      <classRef key="model.OATarget" minOccurs="0" maxOccurs="unbounded"/>
                   </sequence>
                </egXML>
+               <note>The naming to be change to be more explicit as to the relation to the WADM W3C proposal: <code>model.WADMBody</code>, etc.</note>
             </div>
             <div>
                <head>Combining the various possibilities</head>
@@ -588,6 +593,9 @@
                   <item><code>OAModel</code>: Open Annotation compliant model (Target, Body, Annotation)</item>
                </list>
             </div>
+            <note>A simplification of the annotation model may consist in adding <att>inst</att> to <gi>annotationBlock</gi>, with the semantics that <gi>annotationBlock</gi> +is+ the annotation level
+               (in the sense of WADM), the target being expressed by the <att>inst</att> and the content of <gi>annotationBlock</gi> is the body level. From an implementation point of view, this would
+               mean adding <gi>annotationBlock</gi> to <code>att.interpLike</code>.</note>
          </div>
       </body>
       <back>
@@ -607,6 +615,7 @@
             <head>Issues</head>
             <p>Should we document the importance of typing <gi>span</gi> to indicate the granularity of the object that is being referred to?</p>
             <p><gi>interp</gi> must also be typed, with inheritance mechanisms from <gi>annotationBlock</gi></p>
+            <p>Shall we use <gi>specDesc</gi> to implement annotation crystals?</p>
          </div>
       </back>
    </text>
