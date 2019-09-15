@@ -589,7 +589,7 @@
                <list>
                   <item><code>inSitu</code>: non stand-off usage of <gi>annotationBlock</gi> as documented in the <title>Transcriptions of speech</title> chapter.</item>
                   <item><code>exSitu</code>: equivalent to the <code>inSitu</code> case in stand-off mode</item>
-                  <item><code>OAModel</code>: Open Annotation compliant model (Target, Body, Annotation)</item>
+                  <item><code>WADM</code>: Open Annotation compliant model (Target, Body, Annotation)</item>
                </list>
             </div>
             <note>A simplification of the annotation model may consist in adding <att>inst</att> to <gi>annotationBlock</gi>, with the semantics that <gi>annotationBlock</gi> +is+ the annotation level
