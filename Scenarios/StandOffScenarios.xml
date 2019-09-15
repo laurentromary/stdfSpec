@@ -77,18 +77,18 @@
                <head>The <gi>listAnnotation</gi> element</head>
                <p>The <gi>listAnnotation</gi> element is a general container allowing one to structure annotations in various subsections. In this respect, its role is analogous to the one played by
                      <gi>div</gi> in a general TEI document. Still, <gi>div</gi> could not be taken up here in order to be able to keep to a very restrained content model.</p>
-               <p>As an iterative and recursive element, <gi>listAnnotation</gi> can be typed to indicate the organisational logic of the annotations.</p>
+               <p>As an iterative and recursive element, <gi>listAnnotation</gi> can be typed to indicate the organisational logic of the annotations (e.g. per annotation layer, per annotator, per annotation objects in the case of NER).</p>
                <p>The <gi>listAnnotation</gi> element is also structured like other listXXX elements so that it may start with <code>model.headLike</code> members (e.g. <gi>head</gi>).</p>
             </div>
             <div>
                <head>Updating the <gi>annotationBlock</gi> element</head>
                <p>The <gi>annotationBlock</gi> was initially conceived as a construct with a dual role for the inline and stand-off annotation of textual content. For the sake of having it quickly
                   inserted in the TEI guidelines, only a limited range of usages has been documented so far.</p>
-               <p>In the stand-off annotation proposal, <gi>annotationBlock</gi> takes a major role as the elementary container for annotations.</p>
+               <p>In the stand-off annotation proposal, <gi>annotationBlock</gi> takes a major role as the container for elementary annotations.</p>
             </div>
             <div>
                <head>Taking up existing annotations mechanisms from the TEI vocabulary</head>
-               <p>The TEI guidelines has a wide variety of elements to implement stand-off annotations. The purpose of this document is to provide more precise guidance as to how to combine them and
+               <p>The TEI guidelines has a wide variety of elements to implement elementary mechanisms for stand-off annotation. The purpose of this document is to provide more precise guidance as to how to combine them and
                   identify their complementarities. As this stage we can characterised these elements as follows:</p>
                <list>
                   <item><gi>span</gi> is a general purpose element to point to a location or a sequence in a document and ideal to cover the general notion of <mentioned>markable</mentioned> in the
@@ -100,23 +100,22 @@
             </div>
             <div>
                <head>Linking components</head>
-               <p><gi>link</gi>...</p>
+               <p><gi>link</gi>... [To be discussed when we are far enough with the rest: specific role of <gi>link</gi> for annotations, integration in the content model of <gi>annotationBlock</gi> etc.]</p>
             </div>
 
          </div>
          <div xml:id="OAModel">
-            <head>Aligning with the Open Annotation model</head>
+            <head>Aligning with the W3C Web Annotation Data Model (formerly known as Open Annotation model)</head>
             <div>
-               <head>Quick presentation of the Open Annotation model</head>
-               <p>The <ref target="#WADM">Open Annotation</ref> data model articulates around three complementary components:</p>
+               <head>Quick presentation of the Web Annotation Data Model</head>
+               <p>The <ref target="#WADM">Web Annotation Data Model</ref> (WADM) articulates around three complementary components:</p>
                <list>
-                  <item>Target: that identifies one or several <mentioned>resources</mentioned> about which something is said </item>
-                  <item>Body: that contains what is said about the resource</item>
-                  <item>Annotation: that links one or several targets with 0-n bodies</item>
+                  <item><mentioned>target</mentioned>: that identifies one or several <mentioned>resources</mentioned> about which something is said </item>
+                  <item><mentioned>body</mentioned>: that contains what is said about the resource</item>
+                  <item><mentioned>annotation</mentioned>: that links one or several targets with 0-n bodies</item>
                </list>
-               <p>This model, which decouples resources and what is said about them by means of the <mentioned>annotation</mentioned> component, is highly flexible and powerful. It could be reflected
-                  in the <gi>standOff</gi> construct as follows:</p>
-               <p>It is suggested that the Open Annotation model could be implemented as follows:</p>
+               <p>This model decouples resources and what is said about them by means of the <mentioned>annotation</mentioned> component. It is highly flexible and powerful since it allows one to associated as many targets with as many bodies as needed.</p>
+               <p>It is suggested that the Open Annotation model could be implemented as in the <gi>standOff</gi> construct follows:</p>
                <list>
                   <item><p>The <mentioned>Target</mentioned> component could be implement with either <gi>span</gi> for textual targets or <gi>zone</gi> when pointing to an image.</p>
                      <note place="inline">See the proposed implementation of <gi>annotationBlock</gi>: we suggest to introduce a class <code>model.OATarget</code></note>
@@ -133,13 +132,13 @@
                               <gi>fs</gi> elements.</item>
                      </list>
                      <p>Additional elements could probably be used here, but we should provide univocal guidance for such a use case, in order to avoid content model ambiguities and in general too
-                        much heterogeneous implementations of the OA model.</p>
+                        much heterogeneous implementations of the WADM model.</p>
                      <note place="inline">See the proposed implementation of <gi>annotationBlock</gi>: we suggest to introduce a class <code>model.OAAnnotation</code></note></item>
                </list>
             </div>
             <div>
                <head>Simplest annotation with <gi>note</gi></head>
-               <p>The following example shows a simple OA compliant construct where a span of text is associated to two different notes made by different annotators. The <att>resp</att> attributes
+               <p>The following example shows a simple WADM compliant construct where a span of text is associated to two different notes made by different annotators. The <att>resp</att> attributes
                   would refer here to persons described in the <gi>teiHeader</gi> of the embedding <gi>standOff</gi>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <annotationBlock>
@@ -151,7 +150,7 @@
                </egXML>
             </div>
             <div>
-               <head>Named entity recognition within the OA model</head>
+               <head>Named entity recognition within the WADM model</head>
                <div>
                   <head>Introduction</head>
                   <p>Named entity recognition is a typical use case for stand-off annotation. It is usually based upon an automatic analysis process of a digital text which produces various hypotheses
@@ -257,7 +256,7 @@
                         </annotationBlock>
                      </listAnnotation>
                   </egXML>
-                  <p>For a full treatment of the example see: <ref>https://hedgehog-web.herokuapp.com/json2xml/index.html</ref></p>
+                  
                </div>
                <div>
                   <head>Dealing with additional issues</head>
@@ -296,8 +295,8 @@
                means of an <att>ana</att> attribute. The additional <att>corresp</att> attribute allows one to point to the lexical entries equivalent to the word form, when one links the
                morpho-syntactic annotation to a reference lexicon.</p>
 
-            <note>This representation is not conformant to the Open Annotation model. In some way, the <gi>span</gi> element combines both roles of <mentioned>Target</mentioned> and
-                  <mentioned>Annotation</mentioned> from WADM. The actual <mentioned>Body</mentioned> is made of both the feature structure and the lexical entry that are being pointing to.</note>
+            <note>This representation is not conformant to the WADM model. In some way, the <gi>span</gi> element combines both roles of <mentioned>target</mentioned> and
+                  <mentioned>annotation</mentioned> classes from WADM. The actual <mentioned>body</mentioned> is made of both the feature structure and the lexical entry that are being pointing to.</note>
             <note>To be checked: should we use <att>from</att> and <att>to</att> instead of <att>target</att> here.</note>
 
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -371,7 +370,7 @@
                </standOff>
             </egXML>
 
-            <p> The assumption is made here that a lexical resource is available and encoded according the on-going work on <ref target="#ISO24613-4">LMF part 4 (TEI serialisation)</ref>.</p>
+            <p> The assumption is made here that a lexical resource is available and encoded according the on-going work on <ref target="#ISO24613-4">ISO 24613 - LMF part 4 (TEI serialisation)</ref>.</p>
 
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <TEI type="lexicon">
@@ -563,8 +562,8 @@
                </egXML>
             </div>
             <div>
-               <head>An OA model compliant content model</head>
-               <p>In the case of an OA compliant model, the content model of <gi>annotationBlock</gi> should be based upon three classes:</p>
+               <head>An WADM model compliant content model</head>
+               <p>In the case of an WADM compliant model, the content model of <gi>annotationBlock</gi> should be based upon three classes:</p>
                <list>
                   <item><code>model.OATarget</code>: the class could be pre-filled with such elements as <gi>span</gi> and <gi>surface</gi>.</item>
                   <item><code>model.OABody</code></item>
