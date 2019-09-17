@@ -148,8 +148,8 @@
                         </alternate>
                     </content>
                     <remarks>
-                        <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
-                            elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p>
+                        <p>The global <att>xml:base</att> attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
+                            elements. If this attribute is not supplied, the <gi>listAnnotation</gi> element must be embedded within the complete TEI document to which it applies.</p>
                     </remarks>
                 </elementSpec>
 
