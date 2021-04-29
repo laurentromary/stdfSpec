@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Reference specification for encoding standoff annotations in TEI</title>
+                <author>
+                    <persName>
+                        <forename>Laurent</forename>
+                        <surname>Romary</surname>
+                    </persName>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>The author</authority>
+                <availability>
+                    <licence>CC+BY and BSD-2 licences</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>This document is a revision of the initial proposal by the standOff group, see <ptr
+                        target="https://hal.inria.fr/hal-01374102"/></p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <schemaSpec ident="fullStandoff" start="TEI teiCorpus standOff">
+                <moduleRef key="tei"/>
+                <moduleRef key="core"/>
+                <moduleRef key="analysis"/>
+                <moduleRef key="certainty"/>
+                <moduleRef key="corpus"/>
+                <moduleRef key="dictionaries"/>
+                <moduleRef key="drama"/>
+                <moduleRef key="figures"/>
+                <moduleRef key="gaiji"/>
+                <moduleRef key="header"/>
+                <moduleRef key="iso-fs"/>
+                <moduleRef key="linking"/>
+                <moduleRef key="msdescription"/>
+                <moduleRef key="namesdates"/>
+                <moduleRef key="nets"/>
+                <moduleRef key="spoken"/>
+                <moduleRef key="textcrit"/>
+                <moduleRef key="textstructure"/>
+                <moduleRef key="transcr"/>
+                <moduleRef key="verse"/>
+                <moduleRef key="tagdocs"/>
+
+                <!-- Specific model for the new elements introduced here: <standOff> and <listAnnotation> -->
+                <moduleSpec ident="standOff">
+                    <desc>Elements to allow stand-off annotations in a TEI document</desc>
+                </moduleSpec>
+
+
+                <!--  The entry point to stand-off annotations, as member of model.resourceLike-->
+                <elementSpec ident="standOff" mode="change">
+                    <classes mode="change">
+                        <memberOf key="att.notated" mode="add"/>
+                        <memberOf key="att.datable.w3c" mode="add"/>
+                        <memberOf key="att.pointing" mode="add"/>
+                    </classes>
+                    <content>
+                        <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
+                        <classRef key="model.resource" minOccurs="0" maxOccurs="unbounded" except="text"/>
+                        <elementRef key="listAnnotation" minOccurs="0" maxOccurs="unbounded"/>
+                    </content>
+                    <!--<constraintSpec ident="StandOffNamespace" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="stdf"
+                                uri="http://standoff.proposal"/>
+                        </constraint>
+                    </constraintSpec>
+                    <constraintSpec ident="SecondLevelStandOffTyping" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <assert xmlns="http://purl.oclc.org/dsdl/schematron"
+                                test="@type or not(ancestor::standOff)">This <name/> element must have a @type
+                                attribute, since it has an ancestor <name/></assert>
+                        </constraint>
+                    </constraintSpec>-->
+                </elementSpec>
+
+
+                <elementSpec ident="listAnnotation" mode="change">
+                    <classes mode="change">
+                        <memberOf key="att.timed" mode="add"/>
+                    </classes>
+                    <content>
+                        <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
+                        <alternate>
+                            <classRef key="model.standOffPart" minOccurs="1" maxOccurs="unbounded"/>
+                        </alternate>
+                    </content>
+                    <remarks mode="add">
+                        <p>The global xml:base attribute is used on this element both to specify the target of the
+                            annotations and to serve as the base for any target URIs contained by the annotation
+                            elements. If this attribute is not supplied, the listAnnotation must be embedded within the
+                            complete TEI document to which it applies. </p>
+                    </remarks>
+                </elementSpec>
+
+                <!-- The content model for <annotationBlock is revised to deal with the various anticipated annotation use cases -->
+
+                <elementSpec ident="annotationBlock" mode="change" module="spoken">
+                    <classes mode="change">
+                        <!-- The following declaration is to ensure that it appears wherever annotated segLike objects can -->
+                        <memberOf key="model.segLike" mode="add"/>
+                        <!-- This is added to account for the notation variants introduced as content models for annotationBlock -->
+                        <memberOf key="att.notated" mode="add"/>
+                        <!-- Needs to be typed in stand-off context to reflect the ... type of annotaiotn we are dealing with -->
+                        <memberOf key="att.typed"/>
+                    </classes>
+                    <content>
+                        <alternate>
+                            <classRef key="model.standOffPart" minOccurs="1" maxOccurs="unbounded"/>
+                            <sequence>
+                                <classRef key="model.linguisticSegment" minOccurs="0" maxOccurs="1"/>
+                                <classRef key="model.interlinearAnnotation" minOccurs="0" maxOccurs="unbounded"/>
+                            </sequence>
+                            <sequence>
+                                <classRef key="model.OABody" minOccurs="0" maxOccurs="unbounded"/>
+                                <classRef key="model.OAAnnotation" minOccurs="1" maxOccurs="1"/>
+                                <classRef key="model.OATarget" minOccurs="0" maxOccurs="unbounded"/>
+                            </sequence>
+                        </alternate>
+                    </content>
+                    <remarks>
+                        <p>The global <att>xml:base</att> attribute is used on this element both to specify the target
+                            of the annotations and to serve as the base for any target URIs contained by the annotation
+                            elements. If this attribute is not supplied, the <gi>listAnnotation</gi> element must be
+                            embedded within the complete TEI document to which it applies.</p>
+                    </remarks>
+                </elementSpec>
+
+                <!-- The following classes are introduced to have an Open Annotation compliant profile for <annotationBlock> -->
+
+                <!-- Open Annotation: Target -->
+
+                <classSpec type="model" ident="model.OATarget" mode="add" module="standOff">
+                    <desc>Class implementing the Target component from the Open Annotation model</desc>
+                </classSpec>
+
+                <!-- <span> is the basic implementation of the OA model Target component -->
+
+                <elementSpec ident="span" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OATarget" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+                <!-- <span> is the basic implementation of the OA model Target component for graphical annotations -->
+                
+                <elementSpec ident="surface" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OATarget" mode="add"/>
+                    </classes>
+                </elementSpec>
+                
+                <!-- Open Annotation: Body -->
+
+                <classSpec type="model" ident="model.OABody" mode="add" module="standOff">
+                    <desc>Class implementing the Body component from the Open Annotation model</desc>
+                </classSpec>
+
+                <!-- Providing a simple default to the OA Body with <note> -->
+
+                <elementSpec ident="note" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OABody" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+                <!-- Adding <person>, <measure>, <date>... to OA Body for the Named Entity use case -->
+
+                <elementSpec ident="person" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OABody" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+                <elementSpec ident="measure" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OABody" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+                <elementSpec ident="date" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OABody" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+                <elementSpec ident="place" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OABody" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+                <elementSpec ident="org" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OABody" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+                <!-- Open Annotation: Annotation -->
+
+                <classSpec type="model" ident="model.OAAnnotation" mode="add" module="standOff">
+                    <desc>Class implementing the Annotation component from the Open Annotation model</desc>
+                </classSpec>
+
+                <!-- <interp> is the basic implementation of the OA model Annotation component -->
+
+                <elementSpec ident="interp" mode="change">
+                    <classes mode="change">
+                        <memberOf key="model.OAAnnotation" mode="add"/>
+                    </classes>
+                </elementSpec>
+
+
+            </schemaSpec>
+        </body>
+    </text>
+</TEI>
